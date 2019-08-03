@@ -1,0 +1,52 @@
+<DOCTYPE html>
+<html>
+<form>
+    <head>
+        <title>Formulario de Prueba</title>
+        <meta charset="utf=8"/>
+    </head>
+    <body>
+        <h1>REPORTE DE CONSEJERIA VOLUNTARIA Y PRUEBA DE VIH</h1>
+        <div>
+            <h4>Datos iniciales</h4>
+            Fecha:
+            <input type="date" id="date"/>
+            <br>
+            Subrecptor:
+            <input type="text" name="subreceptor" id="subreceptor"/>
+            <br>
+            Nombre del promotor:
+            <input type="text" name="promotor" id="promotor"/>
+        </div>
+        <div>
+            <h4>Datos Personales</h4>
+            Cedula:
+            <input type="text" name="cedula" id="cedula"/>
+            <br>
+            Poblacion:<br>
+            <input type="radio" name="poblacion" value="HSH" id="poblacion"/>HSH<br>
+            <input type="radio" name="poblacion" value="TSF" id="poblacion"/>TSF<br>
+            <input type="radio" name="poblacion" value="TRANS" id="poblacion"/>TRANS<br>
+        </div>
+        <div>
+            <ul>
+                <li>Consejeria Pre-prueba</li>
+                <input type="checkbox" name="pre-prueba" value="" id="preprueba"/><br>
+                <li>Resultado</li> <!--No se si se puede poner asi. Con una tabulacion indentada-->
+                    <input type="radio" name="resultado" id="resultado" value="No se realizo"/>No se realizo<br/>
+                    <input type="radio" name="resultado" id="resultado" value="Reactivo"/>Reactivo<br/>
+                    <input type="radio" name="resultado" id="resultado" value="No reactivo"/>No reactivo<br/>
+                    <input type="radio" name="resultado" id="resultado" value="Indeterminado"/>Indeterminado<br/>
+                <li>Consejeria Post-prueba</li>
+                <input type="checkbox" name="post-prueba" value="" id="postprueba"/><br>
+
+            </ul>
+        </div>
+        <div>
+            <input type="submit" name="buscar" value="enviar"/>
+            <br>
+            <input type="reset" name="limpiar" value="reset"/>
+        </div>
+    </body>
+</form>
+</html> 
