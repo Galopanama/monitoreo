@@ -46,111 +46,111 @@ class EntrevistaGrupal extends Entrevista {
         $this->region_de_salud = $region_de_salud;
     }
 
-    public function getRegion_de_salud($region_de_salud){
-        return $this->region_de_salud = $region_de_salud;
+    public function getRegion_de_salud(){
+        return $this->region_de_salud;
     }
 
     public function setArea($area){
         $this->area = $area;
     }
 
-    public function getArea($area){
-        return $this->area = $area;
+    public function getArea(){
+        return $this->area;
     }
 
     public function setEstilos_de_autocuidado($estilos_de_autocuidado){
         $this->estilos_de_autocuidado = $estilos_de_autocuidado;
     }
 
-    public function getEstilos_de_autocuidado($estilos_de_autocuidado){
-        return $this->estilos_de_autocuidado = $estilos_de_autocuidado;
+    public function getEstilos_de_autocuidado(){
+        return $this->estilos_de_autocuidado;
     }
 
     public function setDdhh_estigma_discriminacion($ddhh_estigma_discriminacion){
         $this->ddhh_estigma_discriminacion = $ddhh_estigma_discriminacion;
     }
 
-    public function getDdhh_estigma_discriminacion ($ddhh_estigma_discriminacion){
-        return $this->ddhh_estigma_discriminacion = $ddhh_estigma_discriminacion;
+    public function getDdhh_estigma_discriminacion (){
+        return $this->ddhh_estigma_discriminacion;
     }
 
     public function setUso_correcto_y_constantes_del_condon ($uso_correcto_y_constantes_del_condon){
         $this->uso_correcto_y_constantes_del_condon = $uso_correcto_y_constantes_del_condon;
     }
 
-    public function getUso_correcto_y_constantes_del_condon ($uso_correcto_y_constantes_del_condon){
-        return $this->uso_correcto_y_constantes_del_condon = $uso_correcto_y_constantes_del_condon;
+    public function getUso_correcto_y_constantes_del_condon (){
+        return $this->uso_correcto_y_constantes_del_condon;
     }
 
     public function setSalud_sexual_e_its ($salud_sexual_e_its){
         $this->salud_sexual_e_its = $salud_sexual_e_its;
     }
 
-    public function getSalud_sexual_e_its ($salud_sexual_e_its){
-        return $this->salud_sexual_e_its = $salud_sexual_e_its;
+    public function getSalud_sexual_e_its (){
+        return $this->salud_sexual_e_its;
     }
 
     public function setOfrecimiento_y_referencia_a_la_prueba_de_vih ($ofrecimiento_y_referencia_a_la_prueba_de_vih){
         $this->ofrecimiento_y_referencia_a_la_prueba_de_vih = $ofrecimiento_y_referencia_a_la_prueba_de_vih;
     }
 
-    public function getOfrecimiento_y_referencia_a_la_prueba_de_vih ($ofrecimiento_y_referencia_a_la_prueba_de_vih){
-        return $this->ofrecimiento_y_referencia_a_la_prueba_de_vih = $ofrecimiento_y_referencia_a_la_prueba_de_vih;
+    public function getOfrecimiento_y_referencia_a_la_prueba_de_vih (){
+        return $this->ofrecimiento_y_referencia_a_la_prueba_de_vih;
     }
 
     public function setClam_y_otros_servicios ($clam_y_otros_servicios){
         $this->clam_y_otros_servicios = $clam_y_otros_servicios;
     }
 
-    public function getClam_y_otros_servicios ($clam_y_otros_servicios){
-        return $this->clam_y_otros_servicios = $clam_y_otros_servicios;
+    public function getClam_y_otros_servicios (){
+        return $this->clam_y_otros_servicios;
     }
 
     public function setSalud_anal ($salud_anal){
         $this->salud_anal = $salud_anal;
     }
 
-    public function getSalud_anal ($salud_anal){
-        return $this->salud_anal = $salud_anal;
+    public function getSalud_anal (){
+        return $this->salud_anal;
     }
 
     public function setHormonizacion ($hormonizacion){
         $this->hormonizacion = $hormonizacion;
     }
 
-    public function getHormonizacion ($hormonizacion){
-        return $this->hormonizacion = $hormonizacion;
+    public function getHormonizacion (){
+        return $this->hormonizacion;
     }
 
     public function setApoyo_y_orientacion_psicologica ($apoyo_y_orientacion_psicologica){
         $this->apoyo_y_orientacion_psicologica = $apoyo_y_orientacion_psicologica;
     }   
 
-    public function getApoyo_y_orientacion_psicologica ($apoyo_y_orientacion_psicologica){
-        return $this->apoyo_y_orientacion_psicologica = $apoyo_y_orientacion_psicologica;
+    public function getApoyo_y_orientacion_psicologica (){
+        return $this->apoyo_y_orientacion_psicologica;
     }   
     
     public function setDiversidad_sexual_identidad_expresion_de_genero ($diversidad_sexual_identidad_expresion_de_genero){
         $this->diversidad_sexual_identidad_expresion_de_genero = $diversidad_sexual_identidad_expresion_de_genero;
     }
 
-    public function getDiversidad_sexual_identidad_expresion_de_genero ($diversidad_sexual_identidad_expresion_de_genero){
-        return $this->diversidad_sexual_identidad_expresion_de_genero = $diversidad_sexual_identidad_expresion_de_genero;
+    public function getDiversidad_sexual_identidad_expresion_de_genero (){
+        return $this->diversidad_sexual_identidad_expresion_de_genero;
     }
 
     public function setTuberculosis_y_coinfecciones ($tuberculosis_y_coinfecciones){
         $this->tuberculosis_y_coinfecciones = $tuberculosis_y_coinfecciones;
     }
 
-    public function getTuberculosis_y_coinfecciones ($tuberculosis_y_coinfecciones){
-        return $this->tuberculosis_y_coinfecciones = $tuberculosis_y_coinfecciones;
+    public function getTuberculosis_y_coinfecciones (){
+        return $this->tuberculosis_y_coinfecciones;
     }
 
     public function setInfecciones_oportunistas ($infecciones_oportunistas){
         $this->infecciones_oportunistas = $infecciones_oportunistas;
     }
 
-    public function getInfecciones_oportunistas ($infecciones_oportunistas){
-        return $this->infecciones_oportunistas = $infecciones_oportunistas;
+    public function getInfecciones_oportunistas (){
+        return $this->infecciones_oportunistas;
     }
 }  

@@ -28,64 +28,64 @@ class Usuario{
         $this->id = $id;
     }
 
-    public function getId ($id){
-        return $this->id = $id;
+    public function getId (){
+        return $this->id;
     }
 
     public function setLogin ($login){
         $this->login = $login;
     }
 
-    public function getLogin ($login){
-        return $this->login = $login;
+    public function getLogin (){
+        return $this->login;
     }
 
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
 
-    public function getNombre($nombre){
-        return $this->nombre = $nombre;
+    public function getNombre(){
+        return $this->nombre;
     }    
 
     public function setApellidos($apellidos){
         $this->apellidos = $apellidos;
     }
 
-    public function getApellidos($apellidos){
-        return $this->apellidos = $apellidos;
+    public function getApellidos(){
+        return $this->apellidos;
     }
 
     public function setTipo_de_usuario($tipo_de_usuario){
         $this->tipo_de_usuario = $tipo_de_usuario;
     }
 
-    public function getTipo_de_usuario($tipo_de_usuario){
-        return $this->tipo_de_usuario = $tipo_de_usuario;
+    public function getTipo_de_usuario(){
+        return $this->tipo_de_usuario;
     } 
 
     public function setTelefono($telefono){
         $this->telefono = $telefono;
     }
 
-    public function getTelefono($telefono){
-        return $this->telefono = $telefono;
+    public function getTelefono(){
+        return $this->telefono;
     }
 
     public function setPassword($password){
         $this->password = $password;
     }
 
-    public function getPassword($password){
-        return $this->password = $password;
+    public function getPassword(){
+        return $this->password;
     }    
 
     public function setSalt($salt){
         $this->salt = $salt;
     }
 
-    public function getSalt($salt){
-        return $this->salt = $salt;
+    public function getSalt(){
+        return $this->salt;
     }
 }
 
@@ -104,8 +104,8 @@ class Administrador extends Usuario{
         $this->$administrador = $administrator;
     }
 
-    public function getAdminstrator ($administrador){
-        return $this->$administrador = $administrator;
+    public function getAdminstrator (){
+        return $this->$administrador;
     }
 }
 
@@ -124,8 +124,8 @@ class Subreceptor extends Usuario{
         $this->ubicacion = $ubicacion;
     }
 
-    public function getUbicacion ($ubicacion){
-        return $this->ubicacion = $ubicacion;
+    public function getUbicacion (){
+        return $this->ubicacion;
     }
 }
 
@@ -146,16 +146,16 @@ class Promotor extends Usuario{
         $this->$id_cedula = $id_cedula;
     }
 
-    public function getId_cedula ($id_cedula){
-        return $this->$id_cedula = $id_cedula;
+    public function getId_cedula (){
+        return $this->$id_cedula;
     }
 
     public function setOrganizacion ($organizacion){
         $this->$organizacion = $organizacion;
     }
 
-    public function getOrganizacion ($organizacion){
-        return $this->$organizacion = $organizacion;
+    public function getOrganizacion (){
+        return $this->$organizacion;
     }
 }
 
@@ -176,16 +176,16 @@ class Tecnologo extends Usuario{
         $this->$numero_de_registro = $numero_de_registro;
     }
 
-    public function getNumero_de_registro($numero_de_registro){
-        return $this->$numero_de_registro = $numero_de_registro;
+    public function getNumero_de_registro(){
+        return $this->$numero_de_registro;
     }
 
     public function setId_cedula($id_cedula){
         $this->$id_cedula = $id_cedula;
     }
 
-    public function getId_cedula ($id_cedula){
-        return $this->$id_cedula = $id_cedula;
+    public function getId_cedula (){
+        return $this->$id_cedula;
     }
 
 } 
