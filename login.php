@@ -1,4 +1,5 @@
 <?php
+
 require_once ("DB.php");
 require_once ("model/Usuario.php");
 

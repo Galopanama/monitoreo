@@ -11,7 +11,7 @@ class Usuario{
     private $password;
     private $salt;
 
-    protected function __construct($id,$login,$nombre,$apellidos = null ,$tipo_de_usuario,$telefono,$password,$salt){
+    public function __construct($id,$login,$nombre,$apellidos ,$tipo_de_usuario,$telefono,$password,$salt){
 
         $this->id = $id;
         $this->login = $login;
@@ -93,7 +93,7 @@ class Administrador extends Usuario{
 
     private $administrador;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$administrador = $administrator;
@@ -113,7 +113,7 @@ class Subreceptor extends Usuario{
 
     private $ubicacion;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->ubicacion = $ubicacion;
@@ -134,7 +134,7 @@ class Promotor extends Usuario{
     private $id_cedula;
     private $organizacion;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
     
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
@@ -164,7 +164,7 @@ class Tecnologo extends Usuario{
     private $numero_de_registro;
     private $id_cedula;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$numero_de_registro = $numero_de_registro;
