@@ -11,7 +11,7 @@ class Usuario{
     private $password;
     private $salt;
 
-    protected function __construct($id,$login,$nombre,$apellidos = null ,$tipo_de_usuario,$telefono,$password,$salt){
+    public function __construct($id,$login,$nombre,$apellidos ,$tipo_de_usuario,$telefono,$password,$salt){
 
         $this->id = $id;
         $this->login = $login;
@@ -28,64 +28,64 @@ class Usuario{
         $this->id = $id;
     }
 
-    public function getId ($id){
-        return $this->id = $id;
+    public function getId (){
+        return $this->id;
     }
 
     public function setLogin ($login){
         $this->login = $login;
     }
 
-    public function getLogin ($login){
-        return $this->login = $login;
+    public function getLogin (){
+        return $this->login;
     }
 
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
 
-    public function getNombre($nombre){
-        return $this->nombre = $nombre;
+    public function getNombre(){
+        return $this->nombre;
     }    
 
     public function setApellidos($apellidos){
         $this->apellidos = $apellidos;
     }
 
-    public function getApellidos($apellidos){
-        return $this->apellidos = $apellidos;
+    public function getApellidos(){
+        return $this->apellidos;
     }
 
     public function setTipo_de_usuario($tipo_de_usuario){
         $this->tipo_de_usuario = $tipo_de_usuario;
     }
 
-    public function getTipo_de_usuario($tipo_de_usuario){
-        return $this->tipo_de_usuario = $tipo_de_usuario;
+    public function getTipo_de_usuario(){
+        return $this->tipo_de_usuario;
     } 
 
     public function setTelefono($telefono){
         $this->telefono = $telefono;
     }
 
-    public function getTelefono($telefono){
-        return $this->telefono = $telefono;
+    public function getTelefono(){
+        return $this->telefono;
     }
 
     public function setPassword($password){
         $this->password = $password;
     }
 
-    public function getPassword($password){
-        return $this->password = $password;
+    public function getPassword(){
+        return $this->password;
     }    
 
     public function setSalt($salt){
         $this->salt = $salt;
     }
 
-    public function getSalt($salt){
-        return $this->salt = $salt;
+    public function getSalt(){
+        return $this->salt;
     }
 }
 
@@ -93,7 +93,7 @@ class Administrador extends Usuario{
 
     private $administrador;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$administrador = $administrator;
@@ -104,8 +104,8 @@ class Administrador extends Usuario{
         $this->$administrador = $administrator;
     }
 
-    public function getAdminstrator ($administrador){
-        return $this->$administrador = $administrator;
+    public function getAdminstrator (){
+        return $this->$administrador;
     }
 }
 
@@ -113,7 +113,7 @@ class Subreceptor extends Usuario{
 
     private $ubicacion;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->ubicacion = $ubicacion;
@@ -124,8 +124,8 @@ class Subreceptor extends Usuario{
         $this->ubicacion = $ubicacion;
     }
 
-    public function getUbicacion ($ubicacion){
-        return $this->ubicacion = $ubicacion;
+    public function getUbicacion (){
+        return $this->ubicacion;
     }
 }
 
@@ -134,7 +134,7 @@ class Promotor extends Usuario{
     private $id_cedula;
     private $organizacion;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
     
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
@@ -146,16 +146,16 @@ class Promotor extends Usuario{
         $this->$id_cedula = $id_cedula;
     }
 
-    public function getId_cedula ($id_cedula){
-        return $this->$id_cedula = $id_cedula;
+    public function getId_cedula (){
+        return $this->$id_cedula;
     }
 
     public function setOrganizacion ($organizacion){
         $this->$organizacion = $organizacion;
     }
 
-    public function getOrganizacion ($organizacion){
-        return $this->$organizacion = $organizacion;
+    public function getOrganizacion (){
+        return $this->$organizacion;
     }
 }
 
@@ -164,7 +164,7 @@ class Tecnologo extends Usuario{
     private $numero_de_registro;
     private $id_cedula;
 
-    protected function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
         $this->$numero_de_registro = $numero_de_registro;
@@ -176,16 +176,16 @@ class Tecnologo extends Usuario{
         $this->$numero_de_registro = $numero_de_registro;
     }
 
-    public function getNumero_de_registro($numero_de_registro){
-        return $this->$numero_de_registro = $numero_de_registro;
+    public function getNumero_de_registro(){
+        return $this->$numero_de_registro;
     }
 
     public function setId_cedula($id_cedula){
         $this->$id_cedula = $id_cedula;
     }
 
-    public function getId_cedula ($id_cedula){
-        return $this->$id_cedula = $id_cedula;
+    public function getId_cedula (){
+        return $this->$id_cedula;
     }
 
 } 

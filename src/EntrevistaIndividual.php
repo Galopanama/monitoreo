@@ -26,40 +26,40 @@ public function setUso_del_condon ($uso_del_condon){
     $this->uso_del_condon = $uso_del_condon;
 }
 
-public function getUso_del_condon ($uso_del_condon){
-    return $this->uso_del_condon = $uso_del_condon;
+public function getUso_del_condon (){
+    return $this->uso_del_condon;
 } 
 
 public function setUso_de_alcohol_y_drogas_ilicitas ($uso_de_alcohol_y_drogas_ilicitas){
     $this->uso_de_alcohol_y_drogas_ilicitas = $uso_de_alcohol_y_drogas_ilicitas;
 }
 
-public function getUso_de_alcohol_y_drogas_ilicitas ($uso_de_alcohol_y_drogas_ilicitas){
-    return $this->uso_de_alcohol_y_drogas_ilicitas = $uso_de_alcohol_y_drogas_ilicitas;
+public function getUso_de_alcohol_y_drogas_ilicitas (){
+    return $this->uso_de_alcohol_y_drogas_ilicitas;
 }
 
 public function setInformacion_clam ($informacion_clam){
     $this->informacion_clam = $informacion_clam;
 }
 
-public function getInformacion_clam ($informacion_clam){
-    return $this->informacion_clam = $informacion_clam;
+public function getInformacion_clam (){
+    return $this->informacion_clam;
 }
 
 public function setReferencia_a_pruebas_de_vih ($referencia_a_pruebas_de_vih){
     $this->referencia_a_pruebas_de_vih = $referencia_a_pruebas_de_vih;
 }
 
-public function getReferencia_a_pruebas_de_vih ($referencia_a_pruebas_de_vih){
-    return $this->referencia_a_pruebas_de_vih = $referencia_a_pruebas_de_vih;
+public function getReferencia_a_pruebas_de_vih (){
+    return $this->referencia_a_pruebas_de_vih;
 }
  
 public function setReferencia_a_clinica_tb ($referencia_a_clinica_tb){
     $this->referencia_a_clinica_tb = $referencia_a_clinica_tb;
 }
 
-public function getReferencia_a_clinica_tb ($referencia_a_clinica_tb){
-    return $this->referencia_a_clinica_tb = $referencia_a_clinica_tb;
+public function getReferencia_a_clinica_tb (){
+    return $this->referencia_a_clinica_tb;
 }
 
 }
