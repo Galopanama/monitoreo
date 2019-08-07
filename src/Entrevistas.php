@@ -3,6 +3,7 @@
 require_once 'Entrevista.php';
 require_once 'EntrevistaIndividual.php';
 require_once 'EntrevistaGrupal.php';
+require_once 'Constantes.php'; // retocar las constantes y cambiarlas por los nombres de las variables privadas??
 require_once '../lib/DB.php';
 
 
