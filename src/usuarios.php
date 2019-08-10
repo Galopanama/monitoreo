@@ -1,196 +1,80 @@
 <?php
 
-class Usuario{
+require_once '../lib/DB.php';
+require_once 'Usuario.php';
+//TODO: cargar las clases de los distintos tipos de usuario existentes
 
-    private $id;
-    private $login;
-    private $nombre;
-    private $apellidos;
-    private $tipo_de_usuario;
-    private $telefono;
-    private $password;
-    private $salt;
+class Usuarios {
+    public static function getUsuarioByUsername($username = '', $activo = true) {
+        // Escribimos la consulta básica para prepararla
+        $sql = "select * from usuario where login = ? ";
 
-    public function __construct($id,$login,$nombre,$apellidos ,$tipo_de_usuario,$telefono,$password,$salt){
+        if ($activo) {
+            $sql .= " AND estado = 'activo' ";
+        }
 
-        $this->id = $id;
-        $this->login = $login;
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->tipo_de_usuario = $tipo_de_usuario;
-        $this->telefono = $telefono;
-        $this->password = $password;
-        $this->salt = $salt;
+        // Abrimos la conexion de la base de datos
+        $db = new DB();
+        try {
+            $mysqli = $db->conecta();
+        }
+        catch (Exception $e) {
+            // Si se produce un error al conectar con la base de datos, no tenemos otra que enviar a una página de error genérico
+            $_SESSION["error_message"] = $e->getMessage();
+            header('Location: ' . _WEB_PATH_ . '/error.php');
+            exit;
+        }
+                    
+        // Preparaos la sentencia anterior
+        if ($stmt = $mysqli->prepare($sql)) {
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            $stmt->bind_param('s', $username);
 
-    }
+            // Ejecutamos la sentencia con los valores ya establecidos
+            $stmt->execute();
 
-    public function setId ($id){
-        $this->id = $id;
-    }
+            if ($stmt->errno) {
+                throw new Exception("Error de conexión con la BD");
+            }
 
-    public function getId (){
-        return $this->id;
-    }
+            /*
+            if($stmt->num_rows !== 1) {
+                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
+                throw new UsuarioNotFoundException("El usuario con username $username no existe");
+            }
+            */
+                        
+            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
+            $result = $stmt->get_result();
 
-    public function setLogin ($login){
-        $this->login = $login;
-    }
+            // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
+            $usuarios = $result->fetch_all(MYSQLI_ASSOC);
+            
+            // Cerramos la conexión
+            $stmt->close();
+            $db->desconecta();
+            
+            if(sizeof($usuarios) !== 1) {
+                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
+                throw new UsuarioNotFoundException("El usuario con username $username no existe");
+            }
 
-    public function getLogin (){
-        return $this->login;
-    }
-
-    public function setNombre($nombre){
-        $this->nombre = $nombre;
-    }
-
-    public function getNombre(){
-        return $this->nombre;
-    }    
-
-    public function setApellidos($apellidos){
-        $this->apellidos = $apellidos;
-    }
-
-    public function getApellidos(){
-        return $this->apellidos;
-    }
-
-    public function setTipo_de_usuario($tipo_de_usuario){
-        $this->tipo_de_usuario = $tipo_de_usuario;
-    }
-
-    public function getTipo_de_usuario(){
-        return $this->tipo_de_usuario;
-    } 
-
-    public function setTelefono($telefono){
-        $this->telefono = $telefono;
-    }
-
-    public function getTelefono(){
-        return $this->telefono;
-    }
-
-    public function setPassword($password){
-        $this->password = $password;
-    }
-
-    public function getPassword(){
-        return $this->password;
-    }    
-
-    public function setSalt($salt){
-        $this->salt = $salt;
-    }
-
-    public function getSalt(){
-        return $this->salt;
+            // Puesto que esta consulta sólo ha devuelto 1 usuario, obtenemos los datos de la primera posición del array
+            $usuario = $usuarios[0];
+            return new Usuario(
+                $usuario['id_usuario'],
+                $usuario['login'],
+                $usuario['nombre'],
+                $usuario['apellidos'],
+                $usuario['tipo_de_usuario'],
+                $usuario['telefono'],
+                $usuario['password']
+            );        
+        }
+        else {
+            throw new Exception("Error de BD: " . $mysqli->error);
+        }
     }
 }
 
-class Administrador extends Usuario{
-
-    private $administrador;
-
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
-
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$administrador = $administrator;
-
-    }
-
-    public function setAdminstrador ($administrador){
-        $this->$administrador = $administrator;
-    }
-
-    public function getAdminstrator (){
-        return $this->$administrador;
-    }
-}
-
-class Subreceptor extends Usuario{
-
-    private $ubicacion;
-
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
-
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->ubicacion = $ubicacion;
-
-    }
-
-    public function setUbicacion ($ubicacion){
-        $this->ubicacion = $ubicacion;
-    }
-
-    public function getUbicacion (){
-        return $this->ubicacion;
-    }
-}
-
-class Promotor extends Usuario{
-
-    private $id_cedula;
-    private $organizacion;
-
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
-    
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
-        $this->$organizacion = $organizacion;
-
-    }
-
-    public function setId_cedula ($id_cedula){
-        $this->$id_cedula = $id_cedula;
-    }
-
-    public function getId_cedula (){
-        return $this->$id_cedula;
-    }
-
-    public function setOrganizacion ($organizacion){
-        $this->$organizacion = $organizacion;
-    }
-
-    public function getOrganizacion (){
-        return $this->$organizacion;
-    }
-}
-
-class Tecnologo extends Usuario{
-
-    private $numero_de_registro;
-    private $id_cedula;
-
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
-
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$numero_de_registro = $numero_de_registro;
-        $this->$id_cedula = $id_cedula;  // se repite con el campo en la clase Promotor** propuesta de cambio para otro nombre 
-
-    }
-
-    public function setNumero_de_registro($numero_de_registro){
-        $this->$numero_de_registro = $numero_de_registro;
-    }
-
-    public function getNumero_de_registro(){
-        return $this->$numero_de_registro;
-    }
-
-    public function setId_cedula($id_cedula){
-        $this->$id_cedula = $id_cedula;
-    }
-
-    public function getId_cedula (){
-        return $this->$id_cedula;
-    }
-
-} 
-
-// Dependiendo del tipo de usuario hay que crear un nivel de acceso a la base de datos. Por lo tanto,
-// tendria que ser desde este fichero o mas bien desde el fichero de acceso. 
-
-?>
+class UsuarioNotFoundException extends Exception {}
