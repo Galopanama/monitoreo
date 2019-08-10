@@ -4,9 +4,9 @@ class DB {
     private $conexion;
 
     public function conecta () {
-        $this->conexion = new mysqli('127.0.0.1', 'root', 'Panama2019', 'monitoreo_y_evaluacion');
+        $this->conexion = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($this->conexion->connect_errno) {
-            echo "fallo al cargar";
+            throw new Exception("Fallo de BD: " . $this->conexion->connect_error);
         }
         return $this->conexion;
     }
