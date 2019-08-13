@@ -88,109 +88,116 @@ class Usuario{
         return $this->salt;
     }
 }
+// Se ha movido al fichero de "administrador.php"
 
-class Administrador extends Usuario{
+// class Administrador extends Usuario{
 
-    private $administrador;
+//     private $administrador;
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
+//     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$administrador){
 
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$administrador = $administrator;
+//         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
+//         $this->$administrador = $administrator;
 
-    }
+//     }
 
-    public function setAdminstrador ($administrador){
-        $this->$administrador = $administrator;
-    }
+//     public function setAdminstrador ($administrador){
+//         $this->$administrador = $administrator;
+//     }
 
-    public function getAdminstrator (){
-        return $this->$administrador;
-    }
-}
+//     public function getAdminstrator (){
+//         return $this->$administrador;
+//     }
+// }
 
-class Subreceptor extends Usuario{
 
-    private $ubicacion;
+// Se ha movido al fichero de "subrecptor.php"
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
+// class Subreceptor extends Usuario{
 
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->ubicacion = $ubicacion;
+//     private $ubicacion;
 
-    }
+//     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$ubicacion){
 
-    public function setUbicacion ($ubicacion){
-        $this->ubicacion = $ubicacion;
-    }
+//         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
+//         $this->ubicacion = $ubicacion;
 
-    public function getUbicacion (){
-        return $this->ubicacion;
-    }
-}
+//     }
 
-class Promotor extends Usuario{
+//     public function setUbicacion ($ubicacion){
+//         $this->ubicacion = $ubicacion;
+//     }
 
-    private $id_cedula;
-    private $organizacion;
+//     public function getUbicacion (){
+//         return $this->ubicacion;
+//     }
+// }
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
+
+// Se ha movido al fichero de "promotor.php"
+
+// class Promotor extends Usuario{
+
+//     private $id_cedula;
+//     private $organizacion;
+
+//     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$id_cedula,$organizacion){
     
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
-        $this->$organizacion = $organizacion;
+//         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
+//         $this->$id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
+//         $this->$organizacion = $organizacion;
 
-    }
+//     }
 
-    public function setId_cedula ($id_cedula){
-        $this->$id_cedula = $id_cedula;
-    }
+//     public function setId_cedula ($id_cedula){
+//         $this->$id_cedula = $id_cedula;
+//     }
 
-    public function getId_cedula (){
-        return $this->$id_cedula;
-    }
+//     public function getId_cedula (){
+//         return $this->$id_cedula;
+//     }
 
-    public function setOrganizacion ($organizacion){
-        $this->$organizacion = $organizacion;
-    }
+//     public function setOrganizacion ($organizacion){
+//         $this->$organizacion = $organizacion;
+//     }
 
-    public function getOrganizacion (){
-        return $this->$organizacion;
-    }
-}
+//     public function getOrganizacion (){
+//         return $this->$organizacion;
+//     }
+// }
 
-class Tecnologo extends Usuario{
 
-    private $numero_de_registro;
-    private $id_cedula;
+// Se mueve al fichero de "tecnologo.php"
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
+// class Tecnologo extends Usuario{
 
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
-        $this->$numero_de_registro = $numero_de_registro;
-        $this->$id_cedula = $id_cedula;  // se repite con el campo en la clase Promotor** propuesta de cambio para otro nombre 
+//     private $numero_de_registro;
+//     private $id_cedula;
 
-    }
+//     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt,$numero_de_registro,$id_cedula){
 
-    public function setNumero_de_registro($numero_de_registro){
-        $this->$numero_de_registro = $numero_de_registro;
-    }
+//         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$salt);
+//         $this->$numero_de_registro = $numero_de_registro;
+//         $this->$id_cedula = $id_cedula;  // se repite con el campo en la clase Promotor** propuesta de cambio para otro nombre 
 
-    public function getNumero_de_registro(){
-        return $this->$numero_de_registro;
-    }
+//     }
 
-    public function setId_cedula($id_cedula){
-        $this->$id_cedula = $id_cedula;
-    }
+//     public function setNumero_de_registro($numero_de_registro){
+//         $this->$numero_de_registro = $numero_de_registro;
+//     }
 
-    public function getId_cedula (){
-        return $this->$id_cedula;
-    }
+//     public function getNumero_de_registro(){
+//         return $this->$numero_de_registro;
+//     }
 
-} 
+//     public function setId_cedula($id_cedula){
+//         $this->$id_cedula = $id_cedula;
+//     }
 
-// Dependiendo del tipo de usuario hay que crear un nivel de acceso a la base de datos. Por lo tanto,
-// tendria que ser desde este fichero o mas bien desde el fichero de acceso. 
+//     public function getId_cedula (){
+//         return $this->$id_cedula;
+//     }
+
+// } 
 
 ?>
