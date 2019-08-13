@@ -1,4 +1,27 @@
-<!doctype html>
+<?php
+/* Smarty version 3.1.33, created on 2019-08-13 12:56:04
+  from '/Applications/nginxstack-1.14.2-3/nginx/html/panama/tpl/main.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d5315d4e5e284_38483752',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6d57c514944b8a8838a35e03041db2f102626480' => 
+    array (
+      0 => '/Applications/nginxstack-1.14.2-3/nginx/html/panama/tpl/main.html',
+      1 => 1565725748,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d5315d4e5e284_38483752 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -13,7 +36,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="{$_WEB_PATH_}/css/dashboard.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['_WEB_PATH_']->value;?>
+/css/dashboard.css" rel="stylesheet">
   </head>
 
   <body>
@@ -106,7 +130,8 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          {$contenido_principal}
+          <?php echo $_smarty_tpl->tpl_vars['contenido_principal']->value;?>
+
         </main>
       </div>
     </div>
@@ -114,19 +139,32 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"><?php echo '</script'; ?>
+>
 
     <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script>
+    <?php echo '<script'; ?>
+ src="https://unpkg.com/feather-icons/dist/feather.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
       feather.replace()
-    </script>
+    <?php echo '</script'; ?>
+>
 
     <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
@@ -154,6 +192,9 @@
           }
         }
       });
-    </script>
+    <?php echo '</script'; ?>
+>
   </body>
 </html>
+<?php }
+}
