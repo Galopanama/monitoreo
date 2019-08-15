@@ -1,2 +1,3 @@
 web/
 .vscode/
+tpl/smarty/templates_c/*
