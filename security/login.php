@@ -32,11 +32,11 @@ if($_POST['username'] || $_POST['password']){
     if(!isset($_SESSION['login_error'])){
         // Redirigir a cada usuario a su web correspondiente
         switch ($_SESSION['tipo_de_usuario']){
-            case 'admin':
-                header('Location: admin/index.php');
+            case 'administrador':
+                header('Location: ' . _WEB_PATH_ . '/admin/index.php');
                 break;
             default:
-                header('Location: user/index.php');
+                header('Location: ' . _WEB_PATH_ . '/user/index.php');
                 break;
         }
     }
