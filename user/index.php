@@ -1,5 +1,5 @@
 <?php
-require_once '../config/config_admin.php';
+require_once '../config/config_registrado.php';
 
 // En principio no se necesitan headers especiales para la página principal
 //$header = $smarty->fetch("");
