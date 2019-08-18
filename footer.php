@@ -1,11 +1,13 @@
 <?php
 
 // En este fichero, tal y como me recomendó Jose, voy a poner las acciones comunes de smarty
-// Por ejemplo, la carga de los menús y 
+// Por ejemplo, la carga de los menús y la asignación del contenido principal (main) al sitio correcto
+
+// En la mayoría de páginas necesitaremos la variable tipo de usuario para poder realizar cierto tipo de acciones
+$smarty->assign('tipo_usuario', $_SESSION['tipo_de_usuario']);
 
 // Generamos el menú
-$menu_izq = $smarty->fetch("menu_izquierda.tpl");
-$smarty->assign("_MENU_IZQUIERDA", $menu_izq);
+require_once 'menu_izquierda.php';
 
 // Generamos la barra de navegación superior
 $nav_sup = $smarty->fetch("navegacion.tpl");
