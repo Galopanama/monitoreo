@@ -1,6 +1,7 @@
 <?php
 
-class Usuario{
+// issue_17. Se necesita implementar la interfaz JsonSerializable para poder pasar al objeto json los atributos privados posteriormente
+class Usuario implements \JsonSerializable{
 
     private $id;
     private $login;
@@ -84,6 +85,17 @@ class Usuario{
 
     public function getSalt(){
         return $this->salt;
+    }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
     }
 }
 
