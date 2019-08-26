@@ -15,6 +15,7 @@
             <th>Login</th>
             <th>Tipo de usuario</th>
             <th>Teléfono</th>
+            <th>Editar</th>
         </tr>
     </thead>
     <tfoot>
@@ -24,6 +25,7 @@
             <th>Login</th>
             <th>Tipo de usuario</th>
             <th>Teléfono</th>
+            <th>Editar</th>
         </tr>
     </tfoot>
 </table>
