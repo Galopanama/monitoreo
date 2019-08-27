@@ -14,7 +14,7 @@ class Usuarios {
     /**
      * Devuelve un objeto Usuario (o un subtipo del mismo), cuyo login coincida con $username. Si no, lanza una excepción UsuarioNotFoundException
      */
-    public static function getUsuarioByUsername($username = '', $activo = true) {
+    public static function getUsuarioByUsername($username = '', $activo = true, $show_password = false) {
         // Escribimos la consulta básica para prepararla
         $sql = "select * from usuario where login = ? ";
 
@@ -64,6 +64,9 @@ class Usuarios {
             // Puesto que esta consulta sólo ha devuelto 1 usuario, obtenemos los datos de la primera posición del array
             $usuario = $usuarios[0];
 
+            // Si no queremos mostrar el password, mandaremos una cadena vacía
+            $usuario['password'] = $show_password?$usuario['password']:'';
+
             // Llamamos a un método que nos devolverá un objeto de tipo Usuario, Tecnologo, Promotor o Subreceptor, dependiendo del tipo
             return Usuarios::getUsuarioTipado($usuario);
         }
@@ -75,7 +78,7 @@ class Usuarios {
     /**
      * Devuelve un objeto Usuario (o un subtipo del mismo), cuyo identificador coincida con $id. Si no, lanza una excepción UsuarioNotFoundException
      */
-    public static function getUsuarioById($id) {
+    public static function getUsuarioById($id, $show_password = false) {
         // Escribimos la consulta básica para prepararla
         $sql = "select * from usuario where id_usuario = ? ";
 
@@ -121,6 +124,9 @@ class Usuarios {
             // Puesto que esta consulta sólo ha devuelto 1 usuario, obtenemos los datos de la primera posición del array
             $usuario = $usuarios[0];
 
+            // Si no queremos mostrar el password, mandaremos una cadena vacía
+            $usuario['password'] = $show_password?$usuario['password']:'';
+
             // Llamamos a un método que nos devolverá un objeto de tipo Usuario, Tecnologo, Promotor o Subreceptor, dependiendo del tipo
             return Usuarios::getUsuarioTipado($usuario);
         }
@@ -129,7 +135,7 @@ class Usuarios {
         }
     }
 
-    public static function getAll($show_password = false, $activo = true) {
+    public static function getAll($show_password = false, $activo = false) {
         // Escribimos la consulta básica para prepararla
         $sql = "select * from usuario ";
 
@@ -334,6 +340,173 @@ class Usuarios {
             else {
                 throw new Exception("Error de BD: " . $mysqli->error);
             }
+        }
+    }
+
+    public static function update($usuario) {
+        // Vamos a comprobar primero que el usuario ya existía
+        try{
+            // El parámetro activo debe estar a false, en caso contrario, si el usuario se va a "activar" (por lo que estaría desactivado) no se encontraría y fallaría
+            Usuarios::getUsuarioByUsername($usuario->getLogin(), false);
+
+            // El usuario existe, por tanto, podemos modificarlo
+            // Escribimos la consulta básica para prepararla
+            // Hay que tener en cuenta que ni el login ni el tipo de usuario se podrán cambiar, y que si el password llega vacío, no se modificará
+            $sql = "update usuario 
+                    set nombre = ?, 
+                    apellidos = ?,
+                    estado = ?, 
+                    telefono = ? ";
+
+            //Si el password viene con algún valor, lo actualizaremos
+            if(!empty($usuario->getPassword())){
+                $sql .= ", password = ? ";
+            }
+
+            $sql .= " where id_usuario = ?";
+
+            // Abrimos la conexion de la base de datos
+            $db = new DB();
+
+            // No controlamos la excepción a propósito, ya que al ser una llamada ajax, si mandamos a una página de error el usuario no notará nada
+            // Controlaremos la excepción en el php encargado de responder al ajax
+            $mysqli = $db->conecta();
+
+            // TODO: Realizar comprobaciones sobre los datos introducidos. Por ejemplo:
+            // Campos vacíos
+            // El password tiene longitud adecuada
+
+            // Errores será un array donde se guardarán los errores de validación del formulario, para después poder mostrarlas al usuario
+            // Es MUY IMPORTANTE que las claves del array sean los nombres de los campos que venían en el formulario, para poder informar al usuario
+            // posteriormente de cuales han sido los campos en los que se ha fallado
+            $errores = array();
+
+            // Si quiere cambiar el password, este debe ser válido
+            if (!empty($usuario->getPassword()) && (strlen($usuario->getPassword()) < Usuarios::MIN_TAM_PASSWORD || strlen($usuario->getPassword()) > Usuarios::MAX_TAM_PASSWORD)) {
+                $errores['password'] = "Tamaño del campo password incorrecto. Debe ser entre " . Usuarios::MIN_TAM_PASSWORD . ' y ' . Usuarios::MAX_TAM_PASSWORD . ' caracteres.';
+            }
+
+            // Ya hemos llegado al final de las validaciones. Si el array no está vacío, significa que han ocurrido errores, por tanto, lanzamos una excepción
+            if (sizeof($errores) > 0){
+                throw new ValidationException (serialize($errores));
+            }
+
+            // Preparaos la sentencia anterior
+            $activo = $usuario->getActivo() ? "activo" : "no activo"; // En la preparación de sentencias se necesitan variables, no podemos escribir la palabra directamente
+            if ($stmt = $mysqli->prepare($sql)) {
+                //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+                // Tendremos en cuenta si hay que cambiar el password o no
+                if(!empty($usuario->getPassword())){
+                    $stmt->bind_param("sssssi", 
+                        $usuario->getNombre(),
+                        $usuario->getApellidos(),
+                        $activo,
+                        $usuario->getTelefono(),
+                        password_hash($usuario->getPassword(),  PASSWORD_DEFAULT),
+                        $usuario->getId()
+                    );
+                }
+                else {
+                    $stmt->bind_param("ssssi", 
+                        $usuario->getNombre(),
+                        $usuario->getApellidos(),
+                        $activo,
+                        $usuario->getTelefono(),
+                        $usuario->getId()
+                    );
+                }                
+
+                // La inserción o modificación de usuarios debe ejecutarse en una transacción, ya que si no podemos encontrar que el usuario se añadió a la tabla de usuarios pero no a la de promotor, tecnologo...
+                $mysqli->autocommit(false);
+
+                // Ejecutamos la sentencia con los valores ya establecidos
+                if(!$stmt->execute()){
+                    throw new Exception("Ocurrió un problema al introducir el usuario: " . $stmt->error);
+                }
+
+                // Ahora, si el usuario es tecnologo, promotor o subreceptor, vamos a incluir la fila en la tabla correspondiente
+                switch ($usuario->getTipo_de_usuario()) {
+                    case "subreceptor":
+                        $sql2 = "update subreceptor 
+                                 set ubicacion = ?
+                                 where id_subreceptor = ?";
+
+                        if($stmt2 = $mysqli->prepare($sql2)){
+                            $stmt2->bind_param('si', 
+                                $usuario->getUbicacion(),
+                                $usuario->getId()
+                            );
+
+                            if(!$stmt2->execute()){
+                                throw new Exception("Ocurrió un problema al modificar el usuario: " . $stmt2->error);
+                            }
+                        }
+                        else {
+                            throw new Exception("Error de BD: " . $mysqli->error);
+                        }
+                        break;
+                    case "promotor":
+
+                        // Aquí no comprobaremos el subreceptor, ya que es un campo que no se permite actualizar
+                        $sql2 = "update promotor 
+                                 set id_cedula = ?, 
+                                 organizacion = ?
+                                 where id_usuario = ?";
+                                 
+                        if($stmt2 = $mysqli->prepare($sql2)){
+                            // Esta consulta necesita el id que se acaba de insertar (autogenerado por mysql), el subreceptor con el que trabaja, su cedula y la organizacion
+                            $stmt2->bind_param('ssi', 
+                                $usuario->getId_cedula(),
+                                $usuario->getOrganizacion(),
+                                $usuario->getId()
+                            );
+
+                            if(!$stmt2->execute()){
+                                throw new Exception("Ocurrió un problema al modificar el usuario: " . $stmt2->error);
+                            }
+                        }
+                        else {
+                            throw new Exception("Error de BD: " . $mysqli->error);
+                        }
+                        break;
+                    case "tecnologo":
+                        $sql2 = "update tecnologo 
+                                 set numero_de_registro = ?, 
+                                 id_cedula = ?
+                                 where id_tecnologo = ?";
+                        if($stmt2 = $mysqli->prepare($sql2)){
+                            // Esta consulta necesita el id que se acaba de insertar (autogenerado por mysql), el numero de registro y su cedula
+                            $stmt2->bind_param('isi', 
+                                $usuario->getNumero_de_registro(),
+                                $usuario->getId_cedula(),
+                                $usuario->getId()
+                            );
+
+                            if(!$stmt2->execute()){
+                                throw new Exception("Ocurrió un problema al modificar el usuario: " . $stmt2->error);
+                            }
+                        }
+                        else {
+                            throw new Exception("Error de BD: " . $mysqli->error);
+                        }
+                        break;
+                }
+
+                // Si todo ha salido bien, ejecutamos la transacción
+                $mysqli->commit();
+                
+                // Cerramos la conexión
+                $stmt->close();
+                $db->desconecta();
+                        
+            }
+            else {
+                throw new Exception("Error de BD: " . $mysqli->error);
+            }
+
+        }
+        catch (UsuarioNotFoundException $e) {
+            
         }
     }
 

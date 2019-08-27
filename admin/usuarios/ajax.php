@@ -7,7 +7,10 @@ switch($_GET['funcion']){
         echo json_encode(getAll());
         exit;
     case "desactivar":
-        desactivar($_GET['id_usuario']);
+        echo json_encode(desactivar($_POST['id_usuario']));
+        exit;
+    case "activar":
+        echo json_encode(activar($_POST['id_usuario']));
         exit;
     default:
         exit;
@@ -24,17 +27,66 @@ function getAll() {
 }
 
 /**
- * 
+ * Desactiva a un usuario, si es posible
  */
 function desactivar($id_usuario){
     try {
+        // Un usuario no puede desactivarse a sí mismo (por motivos de seguriad)
+        if ($id_usuario == $_SESSION['usuario_id']) {
+            $array_response['error'] = 1;
+            $array_response['errorMessage'] = "No puedes desactivarte a tí mismo";
+            return $array_response;
+        }
         $usuario = Usuarios::getUsuarioById($id_usuario);
+        $usuario->setActivo(false);
+
+        Usuarios::update($usuario);
+
+        // Todo OK
+        $array_response['error'] = 0;
+        return $array_response;
     }
     catch (UsuarioNotFoundException $e) {
-        // El usuario no existe
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = "El usuario no existe";
+        return $array_response;
     }
     catch (Exception $e) {
-        // Ocurrió un error inesperado
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = "Ocurrió un error inesperado";
+        return $array_response;
+    }
+}
+
+/**
+ * Desactiva a un usuario, si es posible
+ */
+function activar($id_usuario){
+    try {
+        // Un usuario no puede activarse a sí mismo (por motivos de seguriad). Este caso es muy raro, pero se deja por si pudiera darse 
+        if ($id_usuario == $_SESSION['usuario_id']) {
+            $array_response['error'] = 1;
+            $array_response['errorMessage'] = "No puedes activarte a tí mismo";
+            return $array_response;
+        }
+        $usuario = Usuarios::getUsuarioById($id_usuario);
+        $usuario->setActivo(true);
+
+        Usuarios::update($usuario);
+
+        // Todo OK
+        $array_response['error'] = 0;
+        return $array_response;
+    }
+    catch (UsuarioNotFoundException $e) {
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = "El usuario no existe";
+        return $array_response;
+    }
+    catch (Exception $e) {
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = "Ocurrió un error inesperado";
+        return $array_response;
     }
 }
 

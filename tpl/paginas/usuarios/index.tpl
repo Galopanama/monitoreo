@@ -7,6 +7,7 @@
   </div>
 </div>
 
+<input type="checkbox" id="mostrar_inactivos"/> Mostrar usuarios inactivos
 <table id="usuarios" class="display" style="width:100%">
     <thead>
         <tr>
@@ -15,7 +16,8 @@
             <th>Login</th>
             <th>Tipo de usuario</th>
             <th>Teléfono</th>
-            <th>Editar</th>
+            <th>Activo</th>
+            <th>Activar/Desactivar</th>
         </tr>
     </thead>
     <tfoot>
@@ -25,7 +27,8 @@
             <th>Login</th>
             <th>Tipo de usuario</th>
             <th>Teléfono</th>
-            <th>Editar</th>
+            <th>Activo</th>
+            <th>Activar/Desactivar</th>
         </tr>
     </tfoot>
 </table>

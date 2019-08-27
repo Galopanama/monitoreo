@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">{$titulo}</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button class="btn btn-sm btn-outline-secondary">Exportar</button>
+    </div>
+  </div>
+</div>
+
+<form method="POST" >
+    <input type="hidden" name="user_id" value="{$id_usuario}" />
+    
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Información personal</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="{$nombre}" required>
+              <div class="invalid-feedback">
+                El nombre es obligatorio.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Apellidos</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="{$apellidos}" required>
+              <div class="invalid-feedback">
+                El apellido es obligatorio
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="login">Login (username):</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="login" name="login" value="{$login}" placeholder="Username" required {if $id_usuario ne '' } disabled {/if}>
+              <div class="invalid-feedback" style="width: 100%;">
+                El campo login es obligatorio, y debe ser único en el sistema.
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="XXX-XXXX" value="{$telefono}" required>
+            <div class="invalid-feedback">
+              El número de teléfono es obligatorio
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="tipo_de_usuario">Tipo de usuario</label>
+              <select class="custom-select d-block w-100" id="tipo_de_usuario" required {if $id_usuario ne '' } disabled {/if}>
+                {html_options values=$tipos_de_usuario output=$tipos_de_usuario|capitalize selected=$tipo_de_usuario}
+              </select>
+              <div class="invalid-feedback">
+                Por favor, selecciona un tipo de usuario válido.
+              </div>
+            </div>
+            
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+
+
+</form>
