@@ -44,7 +44,7 @@ if (!empty($_POST['login'])) {
         if (empty($errores)){
             // No ha habido errores, redirigimos a la página del listado
             $_SESSION['exito_titulo'] = "Usuario creado con éxito";
-            $_SESSION['exito_mensaje'] = "Usuario creado con éxito";
+            $_SESSION['exito_mensaje'] = "El usuario ha sido dado de alta correctamente en el sistema";
             header('Location: ' . _WEB_PATH_ . '/admin/usuarios/index.php');
             exit;
         }

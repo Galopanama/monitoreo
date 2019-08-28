@@ -7,12 +7,19 @@
   </div>
 </div>
 
+<div class="alert alert-danger d-none" role="alert">
+  <p>{$error}</p>
+</div>
+
 <div class="alert alert-success d-none" role="alert">
   <h4 class="alert-heading">{$exito_titulo}</h4>
   <p>{$exito_mensaje}</p>
 </div>
 
-<input type="checkbox" id="mostrar_inactivos"/> Mostrar usuarios inactivos
+<div class="form-group mb-2 float-right">
+  <input class="form-check-input" type="checkbox" id="mostrar_inactivos"/>
+  <label class="form-check-label" for="mostrar_inactivos">Mostrar usuarios inactivos</label>
+</div>
 <table id="usuarios" class="display" style="width:100%">
     <thead>
         <tr>
@@ -24,6 +31,7 @@
             <th>Teléfono</th>
             <th>Activo</th>
             <th>Activar/Desactivar</th>
+            <th>Editar</th>
         </tr>
     </thead>
     <tfoot>
@@ -36,6 +44,7 @@
             <th>Teléfono</th>
             <th>Activo</th>
             <th>Activar/Desactivar</th>
+            <th>Editar</th>
         </tr>
     </tfoot>
 </table>

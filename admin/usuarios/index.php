@@ -15,6 +15,15 @@ if ($_SESSION['exito_mensaje']){
     unset($_SESSION['exito_mensaje']);
 }
 
+// De la misma manera vamos a ver si hay algún error
+if ($_SESSION['error']){
+    // hay mensajes de error. Los mostramos
+    $smarty->assign('error', $_SESSION['error']);
+
+    // Y los borramos de la sesión para no mostrarlos de nuevo en futuras visitas a la página
+    unset($_SESSION['error']);
+}
+
 // La variable main se utilizará en el archivo footer.php
 $main = $smarty->fetch("paginas/usuarios/index.tpl");
 
