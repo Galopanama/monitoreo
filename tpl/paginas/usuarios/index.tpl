@@ -2,9 +2,14 @@
   <h1 class="h2">Usuarios</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <button class="btn btn-sm btn-outline-secondary">Exportar</button>
+      <a href="{$_WEB_PATH_}/admin/usuarios/add.php" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Añadir usuario</a>
     </div>
   </div>
+</div>
+
+<div class="alert alert-success d-none" role="alert">
+  <h4 class="alert-heading">{$exito_titulo}</h4>
+  <p>{$exito_mensaje}</p>
 </div>
 
 <input type="checkbox" id="mostrar_inactivos"/> Mostrar usuarios inactivos

@@ -116,4 +116,12 @@ $(document).ready(function() {
                      
     } );
 
+    /**
+     * Vamos a mostrar los posibles mensajes de exito que hubiesen ocurrido
+     */
+    if ($(".alert-success").find('h4').html() != "") {
+        $(".alert-success").toggleClass('d-none');
+    }
+        
+
 } );

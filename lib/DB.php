@@ -19,7 +19,9 @@ class DB {
     }
 
     public function desconecta() {
-        $this->conexion->close();
+        if (isset($this->conexion)){
+            $this->conexion->close();
+        }
     }
 
     public function __destruct()

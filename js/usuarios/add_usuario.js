@@ -24,3 +24,22 @@
         false
     );
 })();
+
+$(document).ready(function() {
+    if ($(".alert-danger").find('ul').children().length > 0) {
+        $(".alert-danger").toggleClass('d-none');
+    }
+
+    $(document).on('change', '#tipo_de_usuario', showSpecificFields);
+
+    function showSpecificFields() {
+        // Primero ocultamos todos los tipos específicos
+        $('.tipo_hidden').addClass('d-none');
+
+        // Y luego mostramos el tipo particular
+        $('.' + $('#tipo_de_usuario').val()).toggleClass('d-none');
+    }
+
+    // Llamamos al cargar la página, por si estuviésemos modificando, o volviésemos de un error
+    showSpecificFields();
+});

@@ -177,6 +177,72 @@ class Usuarios {
         }
     }
 
+    public static function buscaUsuarioSubreceptor($cadena, $show_password = false, $activo = true) {
+        // Cadena debe llevar los % para poder compararse con parte de los nombres
+        $cadena = "%$cadena%";
+
+        // Escribimos la consulta básica para prepararla
+        $sql = "select * from usuario u, subreceptor s ";
+
+        $sql .= " WHERE u.id_usuario = s.id_subreceptor 
+                  AND (
+                      u.login like ? OR
+                      u.nombre like ? OR
+                      u.apellidos like ? OR
+                      s.ubicacion like ?
+                  )";
+
+        if ($activo) {
+            $sql .= " AND u.estado = 'activo' ";
+        }
+
+        // Abrimos la conexion de la base de datos
+        $db = new DB();
+        // La siguiente llamada puede generar una excepción, que habrá que recoger en el método que la llame, o dejar que se propague
+        $mysqli = $db->conecta();
+        
+        // Creamos un array en el que guardaremos los usuarios
+        $array_usuarios = array();
+
+        if ($stmt = $mysqli->prepare($sql)) {
+            
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            $stmt->bind_param('ssss', $cadena, $cadena, $cadena, $cadena);
+
+            // Ejecutamos la sentencia con los valores ya establecidos
+            $stmt->execute();
+
+            if ($stmt->errno) {
+                throw new Exception("Error de conexión con la BD");
+            }
+                                    
+            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
+            $result = $stmt->get_result();
+
+            // Le pedimos al objeto de resultados que nos devuelva una fila en forma de array asociativo
+            while ($usuario = $result->fetch_array(MYSQLI_ASSOC)) {
+                
+                // Si no queremos mostrar el password, mandaremos una cadena vacía
+                $usuario['password'] = $show_password?$usuario['password']:'';
+                
+                // Llamamos a un método que nos devolverá un objeto de tipo Usuario, Tecnologo, Promotor o Subreceptor, dependiendo del tipo
+                $array_usuarios[] = Usuarios::getUsuarioTipado($usuario);
+            }
+
+            // limpiamos los resultados de la memoria
+            $result->free();
+            // por último desconectamos de la base de datos
+            $db->desconecta();
+
+            // Devolvemos el array
+            return $array_usuarios;
+        }
+        else {
+            $db->desconecta();
+            throw new Exception("Error de BD: " . $mysqli->error);
+        }
+    }
+
     public static function add($datos){
         // Vamos a comprobar primero que no existe un usuario con el login que se ha escrito
         try{

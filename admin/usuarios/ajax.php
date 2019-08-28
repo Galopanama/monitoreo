@@ -12,6 +12,8 @@ switch($_GET['funcion']){
     case "activar":
         echo json_encode(activar($_POST['id_usuario']));
         exit;
+    case "buscar":
+        echo json_encode(buscar_subreceptor($_GET['key']));
     default:
         exit;
 }
@@ -21,9 +23,15 @@ switch($_GET['funcion']){
  * Devuelve todos los usuarios
  */
 function getAll() {
-    $lista = Usuarios::getAll();
-    
-    return prepara_para_json($lista);
+    try {
+        $lista = Usuarios::getAll();
+        return prepara_para_json($lista);
+    }
+    catch (Exception $e) {
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = $e->getMessage();
+        return $array_response;
+    }
 }
 
 /**
@@ -86,6 +94,30 @@ function activar($id_usuario){
     catch (Exception $e) {
         $array_response['error'] = 1;
         $array_response['errorMessage'] = "Ocurrió un error inesperado";
+        return $array_response;
+    }
+}
+
+/**
+ * Busca un usuario SUBRECEPTOR dada una cadena de búsqueda
+ */
+function buscar_subreceptor ($cadena) {
+    try{
+        $lista = array();
+
+        // Solo necesitamos el nombre (completo) y el id
+        foreach(Usuarios::buscaUsuarioSubreceptor($cadena) as $subreceptor){
+            $lista[] = [
+                "nombre" => $subreceptor->getNombre() . ' ' . $subreceptor->getApellidos() . ' (' . $subreceptor->getUbicacion() . ')',
+                "id" => $subreceptor->getId()
+            ];
+        }
+
+        return $lista;
+    }
+    catch (Exception $e){
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = $e->getMessage();
         return $array_response;
     }
 }
