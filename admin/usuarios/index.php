@@ -1,8 +1,8 @@
 <?php
 require_once '../../config/config_admin.php';
 
-// En principio no se necesitan headers especiales para la página principal
-//$header = $smarty->fetch("");
+// Cargamos el estilo de la página
+$header = $smarty->fetch("header/usuarios.tpl");
 
 // Vamos a comprobar si hay mensajes en la sesión
 if ($_SESSION['exito_mensaje']){

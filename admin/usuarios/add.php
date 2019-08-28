@@ -66,7 +66,7 @@ $smarty->assign('titulo', 'Añadir nuevo usuario');
 $smarty->assign('tipos_de_usuario', Usuarios::tipos_usuario_permitidos);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/usuarios/add_update.html");
+$main = $smarty->fetch("paginas/usuarios/add_update.tpl");
 
 // Esta página necesita un javascript especial
 $footer = $smarty->fetch("footer/add_usuario.tpl");

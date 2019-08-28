@@ -1,7 +1,18 @@
+
+/**
+ * Inicializamos la tabla con las siguientes opciones
+ */
 $(document).ready(function() {
     var table = $('#usuarios').DataTable( {
         "ajax": "ajax.php?funcion=getAll",
         "columns": [
+            // La primera columna nos permitirá expandir para mostrar datos extra
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": ''
+            },
             { "data": "nombre" },
             { "data": "apellidos" },
             { "data": "login" },
@@ -30,7 +41,9 @@ $(document).ready(function() {
                 }
             }
         ],
+        // La siguiente línea permite que, por defecto, los usuarios no activos no aparezcan en el listado (aunque internamente se hayan cargado)
         "searchCols": [
+            null,
             null,
             null,
             null,
@@ -39,12 +52,16 @@ $(document).ready(function() {
             { "search": "^Activo", bRegex: true, bSmart: false},
             null
         ],
+        // Botones para exportar el listado
         dom: 'Bfrtip',
         "buttons": [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     } );
 
+    /**
+     * Con este "truco" conseguimos que exista un checkbox que permita ver o no los usuarios desactivados
+     */
     $(document).on('change', '#mostrar_inactivos', function(){
         let buscar = '^Activo';
 
@@ -55,7 +72,10 @@ $(document).ready(function() {
         table.column( 5 ).search(buscar, true, false).draw(false);
     });
     
-
+    /**
+     * Cuando se pulse el botón desactivar en un usuario, se producirá una llamada ajax
+     * que enviará el id del usuario que queremos desactivar
+     */
     $('#usuarios tbody').on( 'click', 'button.desactivar', function () {
         var data = table.row( $(this).parents('tr') ).data();
 
@@ -86,14 +106,18 @@ $(document).ready(function() {
                      
     } );
 
+    /**
+     * Cuando se pulse el botón activar en un usuario, se producirá una llamada ajax
+     * que enviará el id del usuario que queremos activar
+     */
     $('#usuarios tbody').on( 'click', 'button.activar', function () {
-        var data = table.row( $(this).parents('tr') ).data();
+        let data = table.row( $(this).parents('tr') ).data();
 
         if (data.tipo_de_usuario === "administrador" && !confirm("¿Estás seguro de que quieres ACTIVAR a este usuario ADMINISTRADOR?")){
             return;
         }
 
-        var request = $.ajax({
+        let request = $.ajax({
             url: "ajax.php?funcion=activar",
             method: "POST",
             data: { id_usuario: data.id },
@@ -116,12 +140,81 @@ $(document).ready(function() {
                      
     } );
 
+    // Add event listener for opening and closing details
+    $('#usuarios tbody').on('click', 'td.details-control', function () {
+        let tr = $(this).closest('tr');
+        let row = table.row( tr );
+ 
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
+
+    /* Formatting function for row details - modify as you need */
+    function format ( d ) {
+        let tabla = '';
+        switch (d.tipo_de_usuario){
+            case 'subreceptor':
+                tabla = creaSubtabla(
+                    {
+                        'Ubicación': d.ubicacion
+                    }
+                );
+                break;
+            case 'tecnologo':
+                tabla = creaSubtabla(
+                    {
+                        'Nº de registro': d.numero_de_registro,
+                        'Cédula': d.id_cedula
+                    }
+                );
+                break;
+            case 'promotor':
+                tabla = creaSubtabla(
+                    {
+                        'Organización': d.organizacion,
+                        'Cédula': d.id_cedula,
+                        'Subreceptor': d.id_subreceptor
+                    }
+                );
+                break;
+        }
+
+        return tabla;
+    }
+
+    /**
+     * Este método creará una subtabla con los datos necesarios para cada tipo de usuario.
+     * Dichos datos deberán pasarse en un objeto json, que deberá tener tantos datos como filas tendrá la tabla
+     * @param {json} element El objeto con los datos que se necesitan mostrar
+     */
+    function creaSubtabla(element) {
+        let tabla = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+        for (let key in element){
+            tabla += '<tr>';
+            tabla +=    '<td>' + key + '</td>';
+            tabla +=    '<td>' + element[key] + '</td>';
+            tabla += '</tr>';
+        }
+
+        tabla += '</table>';
+
+        return tabla;
+    }
+
+
     /**
      * Vamos a mostrar los posibles mensajes de exito que hubiesen ocurrido
      */
     if ($(".alert-success").find('h4').html() != "") {
         $(".alert-success").toggleClass('d-none');
     }
-        
-
+    
 } );

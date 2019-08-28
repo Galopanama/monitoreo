@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../src/Usuarios.php';
 try{
     $usuario = Usuarios::buscaUsuarioSubreceptor("pa");
 
-    print_r($usuario);
+    echo json_encode($usuario);
 }
 catch (Exception $e){
     echo "Error: " . $e->getMessage();

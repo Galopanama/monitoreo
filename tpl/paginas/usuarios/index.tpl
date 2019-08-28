@@ -16,6 +16,7 @@
 <table id="usuarios" class="display" style="width:100%">
     <thead>
         <tr>
+            <th></th>
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Login</th>
@@ -27,6 +28,7 @@
     </thead>
     <tfoot>
         <tr>
+            <th></th>
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Login</th>
