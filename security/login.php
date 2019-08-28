@@ -6,7 +6,7 @@ if($_POST['username'] || $_POST['password']){
     //Realiza el login
     require_once '../src/Usuarios.php';
     try {
-        $usuario = Usuarios::getUsuarioByUsername($_POST['username']);
+        $usuario = Usuarios::getUsuarioByUsername($_POST['username'], true, true);
         
         // Si el password es correcto
         if (password_verify($_POST["password"], $usuario->getPassword())) {
