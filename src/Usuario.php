@@ -126,6 +126,17 @@ class Subreceptor extends Usuario{
     public function getUbicacion (){
         return $this->ubicacion;
     }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = array_merge(parent::jsonSerialize(), get_object_vars($this));
+
+        return $vars;
+    }
 }
 
 class Promotor extends Usuario{
@@ -166,6 +177,17 @@ class Promotor extends Usuario{
     public function setId_subreceptor($id_subreceptor) {
         $this->id_subreceptor = $id_subreceptor;
     }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = array_merge(parent::jsonSerialize(), get_object_vars($this));
+
+        return $vars;
+    }
 }
 
 class Tecnologo extends Usuario{
@@ -195,6 +217,17 @@ class Tecnologo extends Usuario{
 
     public function getId_cedula(){
         return $this->id_cedula;
+    }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = array_merge(parent::jsonSerialize(), get_object_vars($this));
+
+        return $vars;
     }
 
 } 
