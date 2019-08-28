@@ -193,7 +193,7 @@ $(document).ready(function() {
                     {
                         'Organización': d.organizacion,
                         'Cédula': d.id_cedula,
-                        'Subreceptor': d.id_subreceptor
+                        'Subreceptor': d.nombre_subreceptor
                     }
                 );
                 break;

@@ -25,6 +25,17 @@ switch($_GET['funcion']){
 function getAll() {
     try {
         $lista = Usuarios::getAll();
+
+        // Vamos a editar la lista, y en aquellos casos en los que el usuario sea promotor, vamos a añadir un campo nombre_subreceptor, para mostrar el nombre en lugar del id
+
+        foreach($lista as $usuario) {
+            if ($usuario->getTipo_de_usuario() === 'promotor') {
+                // La siguiente línea puede lanzar una excepción, pero esta sería recogida por el catch general
+                $subreceptor = Usuarios::getUsuarioById($usuario->getId_subreceptor());
+                $usuario->nombre_subreceptor = $subreceptor->getNombre() . ' ' . $subreceptor->getApellidos() . ' (' . $subreceptor->getUbicacion() . ')';
+            }
+        }
+
         return prepara_para_json($lista);
     }
     catch (Exception $e) {

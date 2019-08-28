@@ -77,10 +77,15 @@ class Usuarios {
 
     /**
      * Devuelve un objeto Usuario (o un subtipo del mismo), cuyo identificador coincida con $id. Si no, lanza una excepción UsuarioNotFoundException
+     * En este caso, se busca por defecto el usuario, esté activo o no
      */
-    public static function getUsuarioById($id, $show_password = false) {
+    public static function getUsuarioById($id, $activo = false, $show_password = false) {
         // Escribimos la consulta básica para prepararla
         $sql = "select * from usuario where id_usuario = ? ";
+
+        if ($activo) {
+            $sql .= " AND estado = 'activo' ";
+        }
 
         // Abrimos la conexion de la base de datos
         $db = new DB();
@@ -335,28 +340,17 @@ class Usuarios {
                         break;
                     case "promotor":
 
-                        // Como los promotores dependen de un usuario subreceptor vamos primero a comprobar que el usuario existe y es promotor
-                        $sql_check = "select * from subreceptor where id_subreceptor = ?";
-                        if($stmt_check = $mysqli->prepare($sql_check)){
-                            $stmt_check->bind_param('i', $datos['id_subreceptor']);
-                            if(!$stmt_check->execute()){
-                                throw new ValidationException(serialize(array('id_subreceptor' => "El usuario subreceptor " . $datos['id_subreceptor'] . " no existe")));
-                            }
-                            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
-                            $result = $stmt_check->get_result();
-
-                            // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
-                            $usuario_subreceptor = $result->fetch_all(MYSQLI_ASSOC);
-                            
-                            if(sizeof($usuario_subreceptor) !== 1) {
-                                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el subreceptor indicado no es válido
+                        // Como los promotores dependen de un usuario subreceptor vamos primero a comprobar que el usuario existe, está activo y es subreceptor
+                        try {
+                            $subreceptor = Usuarios::getUsuarioById($datos['id_subreceptor'], true);
+                            if (!$subreceptor instanceof Subreceptor) {
                                 throw new ValidationException(serialize(array('id_subreceptor' => "El usuario subreceptor " . $datos['id_subreceptor'] . " no existe")));
                             }
                         }
-                        else {
-                            throw new Exception("Error de BD: " . $mysqli->error);
+                        catch (UsuarioNotFoundException $e) {
+                            throw new ValidationException(serialize(array('id_subreceptor' => "El usuario subreceptor " . $datos['id_subreceptor'] . " no existe")));
                         }
-
+                        
                         $sql2 = "insert into promotor (id_usuario, id_subreceptor, id_cedula, organizacion) values (?, ?, ?, ?)";
                         if($stmt2 = $mysqli->prepare($sql2)){
                             // Esta consulta necesita el id que se acaba de insertar (autogenerado por mysql), el subreceptor con el que trabaja, su cedula y la organizacion
