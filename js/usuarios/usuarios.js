@@ -17,7 +17,10 @@ $(document).ready(function() {
             { "data": "apellidos" },
             { "data": "login" },
             { "data": "tipo_de_usuario" },
-            { "data": "telefono" },
+            { 
+                "data": "telefono",
+                "sortable": false
+            },
             {
                 "data": "activo",                
                 "render": function ( data, type, row ) {
@@ -38,7 +41,15 @@ $(document).ready(function() {
                     else{
                         return "<button class=\"activar\">Activar</button>";
                     }
-                }
+                },
+                "sortable": false
+            },
+            {
+                "data": null,                
+                "render": function ( data, type, row ) {
+                    return '<a href="update.php?id_usuario=' + row.id + '" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Editar</a>';                    
+                },
+                "sortable": false
             }
         ],
         // La siguiente línea permite que, por defecto, los usuarios no activos no aparezcan en el listado (aunque internamente se hayan cargado)
@@ -50,6 +61,7 @@ $(document).ready(function() {
             null,
             null,
             { "search": "^Activo", bRegex: true, bSmart: false},
+            null,
             null
         ],
         // Botones para exportar el listado
@@ -69,7 +81,7 @@ $(document).ready(function() {
             buscar = '';
         }
 
-        table.column( 5 ).search(buscar, true, false).draw(false);
+        table.column( 6 ).search(buscar, true, false).draw(false);
     });
     
     /**
@@ -215,6 +227,11 @@ $(document).ready(function() {
      */
     if ($(".alert-success").find('h4').html() != "") {
         $(".alert-success").toggleClass('d-none');
+    }
+    
+    // Y los mensajes de error
+    if ($(".alert-danger").find('p').html() != "") {
+        $(".alert-danger").toggleClass('d-none');
     }
     
 } );

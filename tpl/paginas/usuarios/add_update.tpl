@@ -16,7 +16,7 @@
 </div>
 
 <form method="POST">
-  <input type="hidden" name="user_id" value="{$id_usuario}" />
+  <input type="hidden" name="id_usuario" value="{$id_usuario}" />
 
   <div class="row">
     <div class="col-md-8 order-md-1">
@@ -55,9 +55,9 @@
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="password">Contraseña</label>
-        <input type="password" autocomplete="off" class="form-control" id="password" name="password" placeholder="Contraseña" value="" required>
+        <input type="password" autocomplete="off" class="form-control" id="password" name="password" placeholder="Contraseña" value="" {if $id_usuario eq '' } required {/if}>
         <small id="passwordHelpBlock" class="form-text text-muted">
-          La contraseña debe tener entre 8 y 16 caracteres y no puede contener espacios, caracteres especiales o emojis.
+          {if $id_usuario ne '' } Deje el campo en blanco si no desea actualizar la contraseña del usuario <br/> {/if}La contraseña debe tener entre 8 y 16 caracteres y no puede contener espacios, caracteres especiales o emojis.
         </small>
         <div class="invalid-feedback">
           La contraseña es obligatoria (8 a 16 caracteres sin espacios)
@@ -65,7 +65,7 @@
       </div>
       <div class="col-md-6 mb-3">
         <label for="password_confirm">Confirme contraseña</label>
-        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="" value="" required>
+        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="" value="" {if $id_usuario eq '' } required {/if}>
       </div>
     </div>
 
@@ -122,8 +122,8 @@
       <div class="mb-3">
         <label for="id_cedula">Subreceptor:</label>
         <input type="text" class="form-control typeahead" id="search_subreceptor" name="search_subreceptor" 
-          value="{$search_subreceptor}" placeholder="Introduce login, nombre, apellidos o ubicación para buscar" {if $id_usuario ne '' } disabled {/if}>
-        <input type="hidden" name="id_subreceptor" id="id_subreceptor" value="{$subreceptor}" />
+          value="{$search_subreceptor}" placeholder="Introduce login, nombre, apellidos o ubicación para buscar" {if $id_usuario ne '' } readonly {/if}>
+        <input type="hidden" name="id_subreceptor" id="id_subreceptor" value="{$id_subreceptor}" />
       </div>
     </div>
 
