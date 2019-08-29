@@ -1,6 +1,6 @@
 <?php
 
-abstract class Entrevista {
+abstract class Entrevista implements \JsonSerializable{
 
     private $id_promotor;
     private $id_persona_receptora;
@@ -68,4 +68,14 @@ abstract class Entrevista {
         return $this->materiales_educativos_entregados;
     }
 
+    /**
+     * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
+    }
 }
