@@ -4,14 +4,30 @@ class DB {
     private $conexion;
 
     public function conecta () {
-        $this->conexion = new mysqli('127.0.0.1', 'root', 'Panama2019', 'monitoreo_y_evaluacion');
-        if ($this->conexion->connect_errno) {
-            echo "fallo al cargar";
+        if (!isset($this->conexion)){
+            // Abrimos la conexión con los parámetros de la base de datos que hay en config.php
+            $this->conexion = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+            // Si se ha producido un error conectando lanzamos una excepción
+            if ($this->conexion->connect_errno) {
+                throw new Exception("Fallo de BD: " . $this->conexion->connect_error);
+            }
         }
+
+        // Si todo ha ido bien, devolvemos el objeto de la conexión
         return $this->conexion;
     }
 
     public function desconecta() {
-        $this->conexion->close();
+        if (isset($this->conexion)){
+            $this->conexion->close();
+        }
+    }
+
+    public function __destruct()
+    {
+        if (isset($this->conexion)){
+            $this->desconecta();
+        }
     }
 }
