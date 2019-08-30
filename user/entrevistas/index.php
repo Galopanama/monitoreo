@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios administradores
-$perfiles_aceptados = array('administrador');
+// Restringimos el acceso sólo a usuarios promotores y subreceptores
+$perfiles_aceptados = array('promotor', 'subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
 
 // Cargamos el estilo de la página
-$header = $smarty->fetch("header/usuarios.tpl");
+$header = $smarty->fetch("header/entrevistas.tpl");
 
 // Vamos a comprobar si hay mensajes en la sesión
 if ($_SESSION['exito_mensaje']){
@@ -28,9 +28,9 @@ if ($_SESSION['error']){
 }
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/usuarios/index.tpl");
+$main = $smarty->fetch("paginas/entrevistas/individuales.tpl");
 
-$footer = $smarty->fetch("footer/usuarios.tpl");
+$footer = $smarty->fetch("footer/entrevistasIndividuales.tpl");
 
 require_once '../../footer.php';
 

@@ -129,12 +129,20 @@ class Entrevistas {
         $grupal['diversidad_sexual_identidad_expresion_de_genero'], $grupal['tuberculosis_y_coinfecciones'],$grupal['infecciones_oportunistas']);
     }
 
-    public static function getAllEntrevistasIndividuales ($id_promotor = null){
-        $sql = "select * from " . Constantes::INDIVIDUAL;
+    public static function getAllEntrevistasIndividuales ($id_promotor = null, $id_subreceptor = null){
+        $sql = "select * from " . Constantes::INDIVIDUAL . " e ";
 
         if (!is_null($id_promotor)) {
-            $sql .= " where id_promotor = ?";
+            $sql .= " where e.id_promotor = ?";
         }
+        else if (!is_null($id_subreceptor)) {
+            $sql .= ", " . Constantes::PROMOTOR . " p 
+                where e.id_promotor = p.id_usuario
+                and p.id_subreceptor = ? ";
+        }
+
+        // Vamos a ordenar las más nuevas primero
+        $sql .= " order by e.fecha desc ";
 
         // Abrimos la conexion de la base de datos
         $db = new DB();
@@ -151,6 +159,9 @@ class Entrevistas {
             if (!is_null($id_promotor)) {
                 $stmt->bind_param('i', $id_promotor);
             }
+            else if (!is_null($id_subreceptor)) {
+                $stmt->bind_param('i', $id_subreceptor);
+            }
 
             // Ejecutamos la sentencia con los valores ya establecidos
             $stmt->execute();
@@ -165,10 +176,12 @@ class Entrevistas {
             // Le pedimos al objeto de resultados que nos devuelva una fila en forma de array asociativo
             while ($entrevista = $result->fetch_array(MYSQLI_ASSOC)) {
                 
+                $date = new DateTime($entrevista['fecha']);
+                
                 $array_entrevistas[] = new EntrevistaIndividual(
                     $entrevista['id_promotor'],
                     $entrevista['id_persona_receptora'],
-                    $entrevista['fecha'],
+                    $date->format('d-m-Y'),
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
                     $entrevista['materiales_educativos_entregados'],
@@ -183,13 +196,15 @@ class Entrevistas {
             // limpiamos los resultados de la memoria
             $result->free();
             // por último desconectamos de la base de datos
-            $db->desconecta();
+            $stmt->close();
+            $mysqli->close();
 
             // Devolvemos el array
             return $array_entrevistas;
         }
         else {
-            $db->desconecta();
+            // por último desconectamos de la base de datos
+            $mysqli->close();
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }

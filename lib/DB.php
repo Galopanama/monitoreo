@@ -18,20 +18,6 @@ class DB {
         return $this->conexion;
     }
 
-    public function getConexion() {
-        return $this->conexion;
-    }
+    // Después de muchos errores, se decide eliminar el uso de desconecta()
 
-    public function desconecta() {
-        if (isset($this->conexion)){
-            $this->conexion->close();
-        }
-    }
-
-    public function __destruct()
-    {
-        if (isset($this->conexion) && !is_null($this->conexion)){
-            $this->desconecta();
-        }
-    }
 }

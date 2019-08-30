@@ -172,13 +172,14 @@ class Usuarios {
             // limpiamos los resultados de la memoria
             $result->free();
             // por último desconectamos de la base de datos
-            $db->desconecta();
+            $mysqli->close();
 
             // Devolvemos el array
             return $array_usuarios;
         }
         else {
-            $db->desconecta();
+            // por último desconectamos de la base de datos
+            $mysqli->close();
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
@@ -238,13 +239,15 @@ class Usuarios {
             // limpiamos los resultados de la memoria
             $result->free();
             // por último desconectamos de la base de datos
-            $db->desconecta();
+            $stmt->close();
+            $mysqli->close();
 
             // Devolvemos el array
             return $array_usuarios;
         }
         else {
-            $db->desconecta();
+            // por último desconectamos de la base de datos
+            $mysqli->close();
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
@@ -393,9 +396,9 @@ class Usuarios {
                 // Si todo ha salido bien, ejecutamos la transacción
                 $mysqli->commit();
                 
-                // Cerramos la conexión
+                // por último desconectamos de la base de datos
                 $stmt->close();
-                $db->desconecta();
+                $mysqli->close();
                         
             }
             else {
@@ -556,9 +559,9 @@ class Usuarios {
                 // Si todo ha salido bien, ejecutamos la transacción
                 $mysqli->commit();
                 
-                // Cerramos la conexión
+                // por último desconectamos de la base de datos
                 $stmt->close();
-                $db->desconecta();
+                $mysqli->close();
                         
             }
             else {
