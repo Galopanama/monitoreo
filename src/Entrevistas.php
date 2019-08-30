@@ -215,7 +215,7 @@ class Entrevistas {
 
     public static function add($datos, $db = null){
         
-        // Si el objeto mysqli no es nulo, estamos en una transacción
+        // Si el objeto db no es nulo, estamos en una transacción
         $transaccion = !is_null($db);
 
         // Vamos a comprobar si este método forma parte de una transacción, para crear si no nuestro propio objeto de conexión a DB

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
 // Restringimos el acceso sólo a usuarios administradores
-$perfiles_aceptados = array('administrador');
+$perfiles_aceptados = array('promotor');
 require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
@@ -38,9 +38,9 @@ if (!empty($_POST['id_persona_receptora'])) {
             // TODO: ¿actualizar los datos?
         }
         catch (PersonaReceptoraNotFoundException $e) {
-            // Hay que crearla
+            // Si no existe, el identificador no lo obtenemos del campo id_persona_receptora, sino de id_persona_receptora_buscada
             $datos_persona_receptora = [
-                'id_persona_receptora' => $_POST['id_persona_receptora'],
+                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
                 'poblacion' => $_POST['poblacion'],
                 'poblacion_originaria' => $_POST['poblacion_originaria']?true:false
             ];
@@ -110,10 +110,12 @@ $smarty->assign('titulo', 'Añadir entrevista individual');
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/entrevistas/add_individual.tpl");
+$main = $smarty->fetch("paginas/entrevistas/add_individual.html");
 
 // Esta página necesita un javascript especial
-$footer = $smarty->fetch("footer/add_entrevista_individual.tpl");
+$footer = $smarty->fetch("footer/entrevistasIndividuales.tpl");
+
+// Esta página necesita un javascript especial
 require_once '../../footer.php';
 
 $smarty->display('esqueleto_dashboard.html');

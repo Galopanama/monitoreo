@@ -12,7 +12,7 @@ switch($_GET['funcion']){
         echo json_encode(getAllIndividuales());
         exit;
     case "buscar":
-        echo json_encode(buscar_subreceptor($_GET['key']));
+        echo json_encode(buscar_persona_receptora($_POST['key']));
     default:
         exit;
 }
@@ -53,27 +53,26 @@ function getAllIndividuales() {
 
 
 /**
- * Busca un usuario SUBRECEPTOR dada una cadena de búsqueda
+ * Busca una PERSONA RECEPTORA dada una cadena de búsqueda
  */
-function buscar_subreceptor ($cadena) {
+function buscar_persona_receptora($cadena) {
+    $array_response['found'] = 1;
+    $array_response['error'] = 0;
     try{
-        $lista = array();
-
-        // Solo necesitamos el nombre (completo) y el id
-        foreach(Usuarios::buscaUsuarioSubreceptor($cadena) as $subreceptor){
-            $lista[] = [
-                "nombre" => $subreceptor->getNombre() . ' ' . $subreceptor->getApellidos() . ' (' . $subreceptor->getUbicacion() . ')',
-                "id" => $subreceptor->getId()
-            ];
-        }
-
-        return $lista;
+        $persona = PersonasReceptoras::getPersonaReceptora($cadena);
+        $array_response['poblacion'] = $persona->getPoblacion();
+        $array_response['poblacion_originaria'] = $persona->getPoblacion_originaria();
+    }
+    catch (PersonaReceptoraNotFoundException $e) {
+        $array_response['found'] = 0;
     }
     catch (Exception $e){
         $array_response['error'] = 1;
         $array_response['errorMessage'] = $e->getMessage();
-        return $array_response;
+        $array_response['found'] = 0;
     }
+
+    return $array_response;
 }
 
 function prepara_para_json($array) {

@@ -29,4 +29,37 @@ $(document).ready(function() {
     if ($(".alert-danger").find('ul').children().length > 0) {
         $(".alert-danger").toggleClass('d-none');
     }
+
+    $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);
+
+    function checkPersonaExiste(){
+        var request = $.ajax({
+            url: "ajax.php?funcion=buscar",
+            method: "POST",
+            data: { key: $("#id_persona_receptora_buscada").val() },
+            dataType: "json"
+        });
+
+        request.done(function (response) {
+            if(response.error == 0){
+                if (response.found == 1) {
+                    $("#id_persona_receptora").val($("#id_persona_receptora_buscada").val());
+                    $("#poblacion").val(response.poblacion).prop( "disabled", true );
+                    $("#poblacion_originaria").prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
+                }
+                else {
+                    $("#id_persona_receptora").val('');
+                    $("#poblacion_originaria").prop( "disabled", false );
+                    $("#poblacion").prop( "disabled", false );
+                }
+            }
+            else {
+                alert(response.errorMessage);
+            }
+        });
+
+        request.fail(function (jqXHR, textStatus) {
+            alert("Ocurrió un error: " + textStatus);
+        });
+    }
 });
