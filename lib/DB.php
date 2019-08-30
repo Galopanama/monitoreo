@@ -18,6 +18,10 @@ class DB {
         return $this->conexion;
     }
 
+    public function getConexion() {
+        return $this->conexion;
+    }
+
     public function desconecta() {
         if (isset($this->conexion)){
             $this->conexion->close();
@@ -26,7 +30,7 @@ class DB {
 
     public function __destruct()
     {
-        if (isset($this->conexion)){
+        if (isset($this->conexion) && !is_null($this->conexion)){
             $this->desconecta();
         }
     }

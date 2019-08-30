@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Usuario.php';
+require_once __DIR__ . '/Excepciones.php';
 
 class Usuarios {
 
@@ -680,5 +681,3 @@ class Usuarios {
 }
 
 class UsuarioNotFoundException extends Exception {}
-class UsuarioAlreadyExistsException extends Exception {}
-class ValidationException extends Exception {}
