@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios administradores
-$perfiles_aceptados = array('administrador');
+// Restringimos el acceso sólo a usuarios promotores y subreceptores
+$perfiles_aceptados = array('promotor', 'subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
@@ -23,7 +23,14 @@ switch($_GET['funcion']){
  */
 function getAllIndividuales() {
     try {
-        $lista = Entrevistas::getAllEntrevistasIndividuales();
+        if($_SESSION['tipo_de_usuario'] === 'promotor'){
+            // Si el usuario es un promotor, pasamos su id en el campo id_promotor
+            $lista = Entrevistas::getAllEntrevistasIndividuales($_SESSION['usuario_id'], null);
+        }
+        else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
+            // Si el usuario es subreceptor, pasamos el segundo argumento al método para indicar el id
+            $lista = Entrevistas::getAllEntrevistasIndividuales(null, $_SESSION['usuario_id']);
+        }
 
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
         foreach($lista as $entrevistaIndividual) {
