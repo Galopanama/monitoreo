@@ -24,7 +24,4 @@ if (password_verify($_POST["inputPassword"], $usuario["password"])) {
     echo 'Invalid password.';
 }
 
-
-$db->desconecta();
-
 ?>
