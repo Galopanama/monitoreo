@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap r pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Añadir entrevista individual</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
@@ -18,7 +18,7 @@
 
 
 <div class="row">
-  <div class="col-md-8 order-md-1">
+  <div class="container-fluid">
     <h4 class="mb-3">Información de la entrevista</h4>
     <form method="POST" class="needs-validation" novalidate>
       <table class="table">
@@ -35,7 +35,7 @@
             <th>Ref. a clínica</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="">
           <tr>
             <td>
               <input type="text" class="form-control typeahead" id="search_receptora" name="search_receptora"
@@ -45,33 +45,33 @@
             </td>
             <td>
               <input type="number" class="form-control" id="condones_entregados" name="condones_entregados"
-                value="{$condones_entregados}" required />
+                value="{$condones_entregados}" min="0" required />
             </td>
             <td>
               <input type="number" class="form-control" id="lubricantes_entregados" name="lubricantes_entregados"
-                value="{$lubricantes_entregados}" required />
+                value="{$lubricantes_entregados}" min="0" required />
             </td>
             <td>
               <input type="number" class="form-control" id="materiales_educativos_entregados"
-                name="materiales_educativos_entregados" value="{$materiales_educativos_entregados}" required />
+                name="materiales_educativos_entregados" value="{$materiales_educativos_entregados}" min="0" required />
             </td>
-            <td>
+            <td class="text-center">
               <input class="form-check-input" type="checkbox" id="uso_del_condon" name="uso_del_condon"
                 value="{$uso_del_condon}" />
             </td>
-            <td>
+            <td class="text-center">
               <input class="form-check-input" type="checkbox" id="uso_de_alcohol_y_drogas_ilicitas"
                 name="uso_de_alcohol_y_drogas_ilicitas" value="{$uso_de_alcohol_y_drogas_ilicitas}" />
             </td>
-            <td>
+            <td class="text-center">
               <input class="form-check-input" type="checkbox" id="informacion_CLAM" name="informacion_CLAM"
                 value="{$informacion_CLAM}" />
             </td>
-            <td>
+            <td class="text-center">
               <input class="form-check-input" type="checkbox" id="referencia_a_prueba_de_VIH"
                 name="referencia_a_prueba_de_VIH" value="{$referencia_a_prueba_de_VIH}" />
             </td>
-            <td>
+            <td class="text-center">
               <input class="form-check-input" type="checkbox" id="referencia_a_clinica_TB"
                 name="referencia_a_clinica_TB" value="{$referencia_a_clinica_TB}" />
             </td>

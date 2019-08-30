@@ -1,5 +1,8 @@
 <?php
-require_once '../../config/config_admin.php';
+require_once __DIR__ . '/../../config/config.php';
+// Restringimos el acceso sólo a usuarios administradores
+$perfiles_aceptados = array('administrador');
+require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
@@ -107,10 +110,10 @@ $smarty->assign('titulo', 'Añadir entrevista individual');
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/entrevistas/add.tpl");
+$main = $smarty->fetch("paginas/entrevistas/add_individual.tpl");
 
 // Esta página necesita un javascript especial
-$footer = $smarty->fetch("footer/add_entrevista.tpl");
+$footer = $smarty->fetch("footer/add_entrevista_individual.tpl");
 require_once '../../footer.php';
 
 $smarty->display('esqueleto_dashboard.html');
