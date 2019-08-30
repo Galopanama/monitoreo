@@ -1,5 +1,8 @@
 <?php
-require_once '../../config/config_admin.php';
+require_once __DIR__ . '/../../config/config.php';
+// Restringimos el acceso sólo a usuarios administradores
+$perfiles_aceptados = array('administrador');
+require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
 
 // Cargamos los estilos necesarios para mostrar el desplegable
