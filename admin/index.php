@@ -5,7 +5,7 @@ require_once '../config/config_admin.php';
 //$header = $smarty->fetch("");
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/example.tpl");
+$main = $smarty->fetch("paginas/index_admin.tpl");
 
 require_once '../footer.php';
 
