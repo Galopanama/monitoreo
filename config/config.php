@@ -26,3 +26,6 @@ define ('DB_NAME', 'monitoreo');
 include_once _ROOT_PATH_ . '/lib/Smarty/mySmarty.php';
 $smarty = new MySmarty();
 $smarty->assign('_WEB_PATH_', _WEB_PATH_);
+
+// En la mayoría de páginas necesitaremos la variable tipo de usuario para poder realizar cierto tipo de acciones
+$smarty->assign('tipo_usuario', $_SESSION['tipo_de_usuario']);

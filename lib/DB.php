@@ -18,6 +18,10 @@ class DB {
         return $this->conexion;
     }
 
+    public function getConexion() {
+        return $this->conexion;
+    }
+
     // Después de muchos errores, se decide eliminar el uso de desconecta()
 
 }
