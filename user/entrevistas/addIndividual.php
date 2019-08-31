@@ -8,24 +8,24 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
 //$header = $smarty->fetch("header/.tpl");
 
-if (!empty($_POST['id_persona_receptora'])) {
+if (!empty($_POST['id_persona_receptora_buscada'])) {
     // Se han enviado datos
     $errores = array();
 
     // Vamos a comprobar si los datos necesarios están
-    if (empty($_POST['id_persona_receptora'])){
-        $errores['id_persona_receptora'] = "Debe especificar la persona a la que va a realizar la entrevista";
+    if (empty($_POST['id_persona_receptora_buscada'])){
+        $errores['id_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la entrevista";
     }
 
-    if (empty($_POST['condones_entregados'])){
+    if (!is_numeric($_POST['condones_entregados'])){
         $errores['condones_entregados'] = "Debe especificar el número de condones entregados, aunque sea 0";
     }
 
-    if (empty($_POST['lubricantes_entregados'])){
+    if (!is_numeric($_POST['lubricantes_entregados'])){
         $errores['lubricantes_entregados'] = "Debe especificar el número de lubricantes entregados, aunque sea 0";
     }
 
-    if (empty($_POST['materiales_educativos_entregados'])){
+    if (!is_numeric($_POST['materiales_educativos_entregados'])){
         $errores['materiales_educativos_entregados'] = "Debe especificar el número de materiales educativos entregados, aunque sea 0";
     }
 
@@ -62,8 +62,8 @@ if (!empty($_POST['id_persona_receptora'])) {
             // Aunque en principio los nombres del formulario deberían de ser los mismos que los que espera la clase EntrevistaIndividual, 
             // vamos a crear un array con dichas claves
             $datos = [
-                'id_promotor' => $_SESSION['id_usuario'],
-                'id_persona_receptora' => $_POST['id_persona_receptora'],
+                'id_promotor' => $_SESSION['usuario_id'],
+                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
                 'condones_entregados' => $_POST['condones_entregados'],
                 'lubricantes_entregados' => $_POST['lubricantes_entregados'],
                 'materiales_educativos_entregados' => $_POST['materiales_educativos_entregados'],
@@ -110,10 +110,10 @@ $smarty->assign('titulo', 'Añadir entrevista individual');
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/entrevistas/add_individual.html");
+$main = $smarty->fetch("paginas/entrevistas/add_individual.tpl");
 
 // Esta página necesita un javascript especial
-$footer = $smarty->fetch("footer/entrevistasIndividuales.tpl");
+$footer = $smarty->fetch("footer/add_entrevista_individual.tpl");
 
 // Esta página necesita un javascript especial
 require_once '../../footer.php';

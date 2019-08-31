@@ -134,7 +134,7 @@ class PersonasReceptoras {
                 else {
                     // Si no estamos en una transacción, cerramos la conexión
                     $stmt->close();
-                    $db->desconecta();
+                    $mysqli->close();
                 }
                         
             }

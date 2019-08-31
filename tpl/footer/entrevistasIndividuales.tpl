@@ -1,1 +1,1 @@
-<script type="text/javascript" src="{$_WEB_PATH_}/js/entrevistas/add_individual.js"></script>
+<script type="text/javascript" src="{$_WEB_PATH_}/js/entrevistas/individuales.js"></script>

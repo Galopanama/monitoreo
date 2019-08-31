@@ -2,7 +2,10 @@
   <h1 class="h2">Entrevistas individuales</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      
+    {if $tipo_usuario eq 'promotor'}
+      <a href="{$_WEB_PATH_}/user/entrevistas/addIndividual.php" class="btn btn-sm btn-outline-secondary" role="button"
+        aria-pressed="true">Añadir Individual</a>
+    {/if}
     </div>
   </div>
 </div>

@@ -287,7 +287,7 @@ class Entrevistas {
             }
 
             $stmt->close();
-            $db->desconecta();
+            $mysqli->close();
         }
         else {
             throw new Exception("Error de BD: " . $mysqli->error);

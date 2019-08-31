@@ -30,6 +30,7 @@ $(document).ready(function() {
         $(".alert-danger").toggleClass('d-none');
     }
 
+    $(document).on('change', '#id_persona_receptora_buscada', checkPersonaExiste);
     $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);
 
     function checkPersonaExiste(){
