@@ -153,4 +153,15 @@ class EntrevistaGrupal extends Entrevista {
     public function getInfecciones_oportunistas (){
         return $this->infecciones_oportunistas;
     }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = array_merge(parent::jsonSerialize(), get_object_vars($this));
+
+        return $vars;
+    }
 }  
