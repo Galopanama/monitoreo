@@ -1,6 +1,6 @@
 <?php
 
-class TecnologoRealizaPrueba{
+abstract class TecnologoRealizaPrueba implements \JsonSerializable{
 
     private $id_tecnologo;
     private $id_cedula_persona_receptora;
@@ -77,6 +77,17 @@ class TecnologoRealizaPrueba{
 
     public function getRealizacion_prueba () {
         return $this->realizacion_prueba;
+    }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
     }
 }
 
