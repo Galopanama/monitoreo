@@ -10,17 +10,23 @@ session_start();
 if ($_SERVER['SERVER_NAME'] === "monitoreo.test") {
     // monitoreo.test es el nombre del servidor cuando lo ejecuto en windows
     define ('_ROOT_PATH_', 'C:/WinNMP/WWW/Monitoreo/monitoreo');
+    // Base de datos
+    define ('DB_HOST', 'localhost');
+    define ('DB_USER', 'root');
+    define ('DB_PASS', '');
+    define ('DB_NAME', 'monitoreo');
 }
 else {
     define ('_ROOT_PATH_', '/Applications/nginxstack-1.14.2-3/nginx/html/monitoreo');
+    // Base de datos
+    define ('DB_HOST', '127.0.0.1');
+    define ('DB_USER', 'root');
+    define ('DB_PASS', 'Panama2019');
+    define ('DB_NAME', 'monitoreo');
 }
-define ('_WEB_PATH_', 'http://' . $_SERVER['SERVER_NAME'] . '/monitoreo');
+define ('_WEB_PATH_', 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/monitoreo');
 
-// Base de datos
-define ('DB_HOST', 'localhost');
-define ('DB_USER', 'root');
-define ('DB_PASS', '');
-define ('DB_NAME', 'monitoreo');
+
 
 // Vamos a crear el objeto Smarty, pues se usará en todas las páginas
 include_once _ROOT_PATH_ . '/lib/Smarty/mySmarty.php';
