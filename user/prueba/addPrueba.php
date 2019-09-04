@@ -47,7 +47,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             // vamos a crear un array con dichas claves
             $datos = [
                 'id_tecnologo' => $_SESSION['usuario_id'],
-                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
+                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'], 
                 'consejeria_pre_prueba' => $_POST['consejeria_pre_prueba']?true:false,
                 'consejeria_post_prueba' => $_POST['consejeria_post_prueba']?true:false,
                 'resultado_prueba' => $_POST['resultado_prueba']?true:false,

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PruebaDelTecnologo.php';
+require_once 'Prueba.php';
 require_once 'constantes.php'; 
 require_once '../lib/DB.php';
 
