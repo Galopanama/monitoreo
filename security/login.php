@@ -9,7 +9,7 @@ if($_POST['username'] || $_POST['password']){
         $usuario = Usuarios::getUsuarioByUsername($_POST['username'], true, true);
         
         // Si el password es correcto
-        if (password_verify($_POST["password"], $usuario->getPassword())) {
+        if (password_verify($_POST["password"], $usuario->getPassword())) { // metodo para verificar el password 
             // Pondremos en la sesión los datos necesarios
             $_SESSION['usuario_id'] = $usuario->getId();
             $_SESSION['tipo_de_usuario'] = $usuario->getTipo_de_usuario();

@@ -1,61 +1,93 @@
 <?php
 
-require_once 'TecnologoRealizaPrueba.php';
-require_once 'constantes.php';
+class Prueba implements \JsonSerializable{
 
+    private $id_tecnologo;
+    private $id_cedula_persona_receptora;
+    private $fecha;
+    private $consejeria_pre_prueba;
+    private $consejeria_post_prueba;
+    private $resultado_prueba;
+    private $realizacion_prueba;
 
-class Prueba {
+    protected function __contruct ($id_tecnologo,$id_cedula_persona_receptora,$fecha,$consejeria_pre_prueba,$consejeria_post_prueba,
+    $resultado_prueba,$realizacion_prueba){
 
-    private $registro_de_prueba = 'tecnologo_realiza_prueba_vih_a_persona_receptora';
-    private $tecnologo = 'tecnologo';
-    private $subrecptor = 'subreceptor';
-    private $tec_colabora_sub ='tecnologo_colabora_con_subreceptor';
+        $this->id_tecnologo = $id_tecnologo;
+        $this->id_cedula_persona_receptora = $id_cedula_persona_receptora;
+        $this->fecha = $fecha;
+        $this->consejeria_pre_prueba = $consejeria_pre_prueba;
+        $this->consejeria_post_prueba = $consejeria_post_prueba;
+        $this->resultado_prueba = $resultado_prueba;
+        $this->realizacion_prueba = $realizacion_prueba;
 
-    public static function getResultadosDeLaPrueba ($tecnologo, $id_persona_receptora, $fecha){
-        $sql = "SELECT * FROM $registro_de_prueba ";
+    } 
 
-        if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= ", $tec_colabora_sub "; 
-        }
+    public function setId_tecnologo ($id_tecnologo){
+        $this->id_tecnologo = $id_tecnologo;
+    }
 
-        $sql .= "WHERE id_tecnologo = ? and " .
-                "id_persona_receptora = ? and " .
-                "fecha = ? ";
+    public function getId_tecnologo (){
+        return $this->id_tecnologo; 
+    }
 
-        if ($_SESSION["tipo_de_usuario"] === "tecnologo") {
-            $sql .= "AND id_tecnologo = " . $_SESSION["id_usuario"] . " "; // Esta linea permite ver la info que genera un tecnologo
-                                                                            // de manera persona_receptora.
-        }
-        else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " AND $tec_colabora_sub.id_tecnologo = $registro_de_prueba.id_tecnologo
-                    AND id_subreceptor = " . $_SESSION["id_usuario"] . " ";// mientras que esta rama permite acceder a la informacion
-                                                                            // generada a partir de un unico subreceptor.
-        }
-    
-        // Abrimos la conexion de la base de datos
-        $db = new DB();
-        $mysqli = $db->conecta();
-    
-        // Preparaos la sentencia anterior
-        $mysqli->prepare($sql);
-    
-        //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
-        $mysqli->bind_param('iss', $id_promotor, $id_persona_receptora, $fecha);
-    
-        // Ejecutamos la sentencia con los valores ya establecidos
-        $mysqli->execute();
-    
-        // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
-        $result = $mysqli->get_result();
-    
-        // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
-        $persona_receptora = $result->fetch_array(MYSQL_ASSOC); 
-            
-        // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de EntrevistaIndividual
-        return new Prueba($persona_receptora['id_tecnologo'], $inndividual['id_cedula_persona_receptora'], $persona_receptora['fecha'], 
-        $persona_receptora['consejeria_pre_prueba'], $persona_receptora['consejeria_post_prueba'], $persona_receptora['resultado_prueba'], 
-        $persona_receptora['realizacion_prueba']);
+    public function setId_cedula_persona_receptora ($id_cedula_persona_receptora){
+        $this->id_cedula_persona_receptora = $id_cedula_persona_receptora;
+    }
 
+    public function getId_cedula_persona_receptora (){
+        return $this->id_cedula_persona_receptora;
+    }
+
+    public function setFecha ($fecha){
+        $this->fecha = $fecha;
+    }
+
+    public function getFecha (){
+        return $this->fecha;
+    }
+
+    public function setConsejeria_pre_prueba ($consejeria_pre_prueba){
+        $this->consejeria_pre_prueba = $consejeria_pre_prueba;
+    }
+
+    public function getConsejeria_pre_prueba (){
+        return $this->consejeria_pre_prueba;
+    }
+
+    public function setConsejeria_post_prueba ($consejeria_post_prueba){
+        $this->consejeria_post_prueba = $consejeria_post_prueba;
+    }
+
+    public function getConsejeria_post_prueba (){
+        return $this->consejeria_post_prueba;
+    }
+
+    public function setResultado_prueba ($resultado_prueba) {
+        $this->resultado_prueba = $resultado_prueba;
+    }
+
+    public function getResultado_prueba () {
+        return $this->resultado_prueba;
+    }
+
+    public function setRealizacion_prueba ($realizacion_prueba) {
+        $this->realizacion_prueba = $realizacion_prueba;
+    }  
+
+    public function getRealizacion_prueba () {
+        return $this->realizacion_prueba;
+    }
+
+    /**
+     * Este método devuelve todas las propiedades del objeto Prueba
+     * Es necesario para poder utilizar el método json_encode (issue_17)
+     */
+    public function jsonSerialize()
+    {
+        $vars = get_object_vars($this);
+
+        return $vars;
     }
 }
 
