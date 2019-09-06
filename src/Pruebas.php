@@ -1,9 +1,9 @@
 <?php
 
-require_once 'Prueba.php';
-require_once 'constantes.php'; 
-require_once '../lib/DB.php';
-
+require_once __DIR__ . 'Prueba.php';
+require_once __DIR__ . 'constantes.php'; 
+require_once __DIR__ . '../lib/DB.php';
+require_once __DIR__ . '/Excepciones.php';
 
 class Pruebas {
 
