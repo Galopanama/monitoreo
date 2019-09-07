@@ -27,7 +27,7 @@ function getAllPruebas() {
 
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del tecnologo
         foreach($lista as $prueba) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_cedula_persona_receptora());
                         // FALTA UNA SEGUNDA  REVISION A ESTE DETALLE DEL SINGULAR Y PLURAL // TAMBIEN getId_persona_receptora//
             $tecnologo = Usuarios::getUsuarioById($prueba->getId_tecnologo());
             $prueba->nombre_tecnologo = $tecnologo->getNombre() . ' ' . $tecnologo->getApellidos();

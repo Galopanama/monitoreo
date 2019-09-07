@@ -10,7 +10,7 @@ class Prueba implements \JsonSerializable{
     private $resultado_prueba;
     private $realizacion_prueba;
 
-    protected function __contruct ($id_tecnologo,$id_cedula_persona_receptora,$fecha,$consejeria_pre_prueba,$consejeria_post_prueba,
+    public function __construct($id_tecnologo,$id_cedula_persona_receptora,$fecha,$consejeria_pre_prueba,$consejeria_post_prueba,
     $resultado_prueba,$realizacion_prueba){
 
         $this->id_tecnologo = $id_tecnologo;
