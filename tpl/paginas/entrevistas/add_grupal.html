@@ -31,7 +31,7 @@
         </div>
         <div class="col-auto">
           <label for="area">Área</label>
-          <input type="text" class="form-control" id="area" placeholder="Área" required>
+          <input type="text" class="form-control" id="area" name="area" placeholder="Área" required>
           <small id="areaHelpBlock" class="form-text text-muted">
               Máx. 20 caracteres
             </small>
@@ -70,9 +70,11 @@
               <input type="hidden" id="id_persona_receptora_{$index}" name="id_persona_receptora_{$index}" value="{$valores[$index]['id_persona_receptora']}" /> 
               <input type="text" class="form-control typeahead" id="id_persona_receptora_buscada_{$index}" name="id_persona_receptora_buscada_{$index}"
                 value="{$valores[$index]['id_persona_receptora_buscada']}" placeholder="Cédula" {if $index eq 1}required{/if} />
-              <small id="registroHelpBlock" class="form-text text-muted">
-                Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
-              </small>
+                {if $index eq 1}
+                  <small id="registroHelpBlock" class="form-text text-muted">
+                    Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
+                  </small>
+                {/if}
             </td>
             <td class="col-md-1">
               <input class="form-check-input col-sm-10" type="checkbox" id="poblacion_originaria_{$index}" name="poblacion_originaria_{$index}"

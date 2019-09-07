@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
 //$header = $smarty->fetch("header/.tpl");
-$numero_filas_mostrar = 20;
+$numero_filas_mostrar = 10;
 
 if (!empty($_POST['id_persona_receptora_buscada_1'])) {
     // Se han enviado datos
@@ -54,7 +54,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
         $mysqli = $db->conecta();
         $mysqli->autocommit(false);
 
-        for ($i = 1; $i < $numero_filas_enviadas; $i++){
+        for ($i = 1; $i <= $numero_filas_enviadas; $i++){
             // Tenemos que tener en cuenta que si la persona no existe, hay que crearla antes de introducir los datos en la tabla entrevistas
             // ya que existe una clave ajena que afecta
             try {
@@ -87,7 +87,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
         // Si no han ocurrido errores hasta ahora, procedemos a intentar añadir las entrevistas
         if (empty($errores)){
 
-            for ($i = 1; $i < $numero_filas_enviadas; $i++){
+            for ($i = 1; $i <= $numero_filas_enviadas; $i++){
                 // Aunque en principio los nombres del formulario deberían de ser los mismos que los que espera la clase EntrevistaGrupal, 
                 // vamos a crear un array con dichas claves
                 $datos = [
