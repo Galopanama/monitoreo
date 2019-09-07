@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . 'Prueba.php';
-require_once __DIR__ . 'constantes.php'; 
-require_once __DIR__ . '../lib/DB.php';
+require_once __DIR__ . '/Prueba.php';
+require_once __DIR__ . '/constantes.php'; 
+require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
 
 class Pruebas {
@@ -51,10 +51,10 @@ class Pruebas {
                 
                 $array_pruebas[] = new Prueba( // AQUI NO ESTOY SEGURO DE QUE ESTE NOMBRE DE OBJETO SEA CORRECTO
                     $prueba['id_tecnologo'],
-                    $prueba['id_persona_receptora'],
+                    $prueba['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
-                    $prueba['consejeria_pre_prueba'],
-                    $prueba['consejeria_post_prueba'],
+                    $prueba['consejeria_pre-prueba'],
+                    $prueba['consejeria_post-prueba'],
                     $prueba['resultado_prueba'],
                     $prueba['realizacion_prueba']
                 );

@@ -16,48 +16,30 @@ $(document).ready(function() {
             { "data": "nombre_tecnologo" },
             { "data": "fecha" },
             { 
-                "data": "consejeria_pre_prueba",
+                "data": "consejeria_pre_prueba"
+            },
+            {
+                "data": "consejeria_post_prueba"
+            },
+            {
+                "data": "resultado_prueba",
                 "render": function ( data, type, row ) {
-                    if(row.consejeria_pre_prueba) {
-                        return "Sí";
+                    if(row.resultado_prueba === "reactivo") {
+                        return "Reactivo";
                     }
                     else{
-                        return "No";
+                        return "No reactivo";
                     }
                 }
             },
             {
-                "data": "consejeria_post_prueba",                
+                "data": "realizacion_prueba",
                 "render": function ( data, type, row ) {
-                    if(row.consejeria_post_prueba) {
-                        return "Sí";
+                    if(row.realizacion_prueba === "se_realizó") {
+                        return "Se realizó";
                     }
                     else{
-                        return "No";
-                    }
-                }
-            }
-            ,
-            {
-                "data": "resultado_prueba",                
-                "render": function ( data, type, row ) {
-                    if(row.resultado_prueba) {
-                        return "Sí";
-                    }
-                    else{
-                        return "No";
-                    }
-                }
-            }
-            ,
-            {
-                "data": "realizacion_prueba",                
-                "render": function ( data, type, row ) {
-                    if(row.realizacion_prueba) {
-                        return "Sí";
-                    }
-                    else{
-                        return "No";
+                        return "No se realizó";
                     }
                 }
             }
