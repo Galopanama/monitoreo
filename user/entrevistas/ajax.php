@@ -11,6 +11,9 @@ switch($_GET['funcion']){
     case "getAllIndividuales":
         echo json_encode(getAllIndividuales());
         exit;
+    case "getAllGrupales":
+        echo json_encode(getAllGrupales());
+        exit;
     case "buscar":
         echo json_encode(buscar_persona_receptora($_POST['key']));
     default:
@@ -19,7 +22,7 @@ switch($_GET['funcion']){
 
 
 /**
- * Devuelve todas las entrevistas
+ * Devuelve todas las entrevistas individuales
  */
 function getAllIndividuales() {
     try {
@@ -33,13 +36,47 @@ function getAllIndividuales() {
         }
 
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
-        foreach($lista as $entrevistaIndividual) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevistaIndividual->getId_persona_receptora());
-            $entrevistaIndividual->poblacion = $persona_receptora->getPoblacion();      // esto se hace para añadir atributos a un objeto que no 
-            $entrevistaIndividual->poblacion_originaria = $persona_receptora->getPoblacion_originaria();// son parte del objeto en si. Solo se hace
+        foreach($lista as $entrevista) {
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $entrevista->poblacion = $persona_receptora->getPoblacion();      // esto se hace para añadir atributos a un objeto que no 
+            $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();// son parte del objeto en si. Solo se hace
                                                                                         // porque PHP lo permite. igual que Java 
-            $promotor = Usuarios::getUsuarioById($entrevistaIndividual->getId_promotor());
-            $entrevistaIndividual->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
+            $promotor = Usuarios::getUsuarioById($entrevista->getId_promotor());
+            $entrevista->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
+        }
+
+        return prepara_para_json($lista);
+    }
+    catch (Exception $e) {
+        $array_response['error'] = 1;
+        $array_response['errorMessage'] = $e->getMessage();
+        return $array_response;
+    }
+}
+
+
+/**
+ * Devuelve todas las entrevistas grupales
+ */
+function getAllGrupales() {
+    try {
+        if($_SESSION['tipo_de_usuario'] === 'promotor'){
+            // Si el usuario es un promotor, pasamos su id en el campo id_promotor
+            $lista = Entrevistas::getAllEntrevistasGrupales($_SESSION['usuario_id'], null);
+        }
+        else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
+            // Si el usuario es subreceptor, pasamos el segundo argumento al método para indicar el id
+            $lista = Entrevistas::getAllEntrevistasGrupales(null, $_SESSION['usuario_id']);
+        }
+
+        // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
+        foreach($lista as $entrevista) {
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $entrevista->poblacion = $persona_receptora->getPoblacion();      // esto se hace para añadir atributos a un objeto que no 
+            $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();// son parte del objeto en si. Solo se hace
+                                                                                        // porque PHP lo permite. igual que Java 
+            $promotor = Usuarios::getUsuarioById($entrevista->getId_promotor());
+            $entrevista->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
         }
 
         return prepara_para_json($lista);

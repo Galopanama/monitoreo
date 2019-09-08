@@ -58,7 +58,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
             // Tenemos que tener en cuenta que si la persona no existe, hay que crearla antes de introducir los datos en la tabla entrevistas
             // ya que existe una clave ajena que afecta
             try {
-                PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_' . $i]);
+                PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_buscada_' . $i]);
 
                 // TODO: ¿actualizar los datos?
             }
@@ -174,7 +174,7 @@ $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacio
 $smarty->assign('regiones_de_salud', Entrevistas::regiones_de_salud_permitidas);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/entrevistas/add_grupal.html");
+$main = $smarty->fetch("paginas/entrevistas/add_grupal.tpl");
 
 // Esta página necesita un javascript especial
 $footer = $smarty->fetch("footer/add_entrevista_grupal.tpl");

@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/Entrevista.php';
 require_once __DIR__ . '/EntrevistaIndividual.php';
-//require_once __DIR__ . '/EntrevistaGrupal.php';
+require_once __DIR__ . '/EntrevistaGrupal.php';
 require_once __DIR__ . '/constantes.php'; // retocar las constantes y cambiarlas por los nombres de las variables privadas??
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
@@ -211,8 +211,93 @@ class Entrevistas {
         }
     }
 
-    public static function getCondones_entregados($condones_entregados) {
+    public static function getAllEntrevistasGrupales ($id_promotor = null, $id_subreceptor = null){
+        $sql = "select * from " . Constantes::GRUPAL . " e ";
+
+        if (!is_null($id_promotor)) {
+            $sql .= " where e.id_promotor = ?";
+        }
+        else if (!is_null($id_subreceptor)) {
+            $sql .= ", " . Constantes::PROMOTOR . " p 
+                where e.id_promotor = p.id_usuario
+                and p.id_subreceptor = ? ";
+        }
+
+        // Vamos a ordenar las más nuevas primero
+        $sql .= " order by e.fecha desc ";
+
+        // Abrimos la conexion de la base de datos
+        $db = new DB();
+        // La siguiente llamada puede generar una excepción, que habrá que recoger en el método que la llame, o dejar que se propague
+        $mysqli = $db->conecta();
         
+                    
+        // Creamos un array en el que guardaremos los usuarios
+        $array_entrevistas = array();
+
+        if ($stmt = $mysqli->prepare($sql)) {
+            
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            if (!is_null($id_promotor)) {
+                $stmt->bind_param('i', $id_promotor);
+            }
+            else if (!is_null($id_subreceptor)) {
+                $stmt->bind_param('i', $id_subreceptor);
+            }
+
+            // Ejecutamos la sentencia con los valores ya establecidos
+            $stmt->execute();
+
+            if ($stmt->errno) {
+                throw new Exception("Error de conexión con la BD");
+            }
+                                    
+            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
+            $result = $stmt->get_result();
+
+            // Le pedimos al objeto de resultados que nos devuelva una fila en forma de array asociativo
+            while ($entrevista = $result->fetch_array(MYSQLI_ASSOC)) {
+                
+                $date = new DateTime($entrevista['fecha']);
+                
+                $array_entrevistas[] = new EntrevistaGrupal(
+                    $entrevista['id_promotor'],
+                    $entrevista['id_persona_receptora'],
+                    $date->format('d-m-Y'),
+                    $entrevista['condones_entregados'],
+                    $entrevista['lubricantes_entregados'],
+                    $entrevista['materiales_educativos_entregados'],
+                    $entrevista['region_de_salud'],
+                    $entrevista['area'],
+                    $entrevista['estilos_autocuidado'],
+                    $entrevista['ddhh_estigma_discriminacion'],
+                    $entrevista['uso_correcto_y_constantes_del_condon'],
+                    $entrevista['salud_sexual_e_ITS'],
+                    $entrevista['ofrecimiento_y_referencia_a_la_prueba_de_VIH'],
+                    $entrevista['CLAM_y_otros_servicios'],
+                    $entrevista['salud_anal'],
+                    $entrevista['hormonizacion'],
+                    $entrevista['apoyo_y_orientacion_psicologico'],
+                    $entrevista['diversidad_sexual_identidad_expresion_de_genero'],
+                    $entrevista['tuberculosis_y_coinfecciones'],
+                    $entrevista['infecciones_oportunistas']
+                );
+            }
+
+            // limpiamos los resultados de la memoria
+            $result->free();
+            // por último desconectamos de la base de datos
+            $stmt->close();
+            $mysqli->close();
+
+            // Devolvemos el array
+            return $array_entrevistas;
+        }
+        else {
+            // por último desconectamos de la base de datos
+            $mysqli->close();
+            throw new Exception("Error de BD: " . $mysqli->error);
+        }
     }
 
     public static function addIndividual($datos, $db = null){
@@ -368,7 +453,7 @@ class Entrevistas {
         if ($stmt = $mysqli->prepare($sql)) {
             $fecha = "now()"; // Como ya sabemos, bind_param no permite cadenas o números directamente si no es con variables
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
-            $stmt->bind_param('isiiiiiiiiiiiiiiiii', 
+            $stmt->bind_param('isiiissiiiiiiiiiiii', 
                 $datos['id_promotor'],
                 $datos['id_persona_receptora'],
                 $datos['condones_entregados'],
