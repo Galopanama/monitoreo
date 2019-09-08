@@ -68,7 +68,7 @@
           <tr>
             <td class="col-md-15">
               <input type="hidden" id="id_persona_receptora_{$index}" name="id_persona_receptora_{$index}" value="{$valores[$index]['id_persona_receptora']}" /> 
-              <input type="text" class="form-control typeahead" id="id_persona_receptora_buscada_{$index}" name="id_persona_receptora_buscada_{$index}"
+              <input type="text" class="form-control typeahead id_persona_receptora_buscada" id="id_persona_receptora_buscada_{$index}" name="id_persona_receptora_buscada_{$index}"
                 value="{$valores[$index]['id_persona_receptora_buscada']}" placeholder="Cédula" {if $index eq 1}required{/if} />
                 {if $index eq 1}
                   <small id="registroHelpBlock" class="form-text text-muted">

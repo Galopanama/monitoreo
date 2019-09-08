@@ -30,28 +30,30 @@ $(document).ready(function() {
         $(".alert-danger").toggleClass('d-none');
     }
 
-    $(document).on('change', '#id_persona_receptora_buscada', checkPersonaExiste);
-    $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);
+    $(document).on('change', '.id_persona_receptora_buscada', checkPersonaExiste);
+    $(document).on('keyup', '.id_persona_receptora_buscada', checkPersonaExiste);
 
     function checkPersonaExiste(){
         var request = $.ajax({
             url: "ajax.php?funcion=buscar",
             method: "POST",
-            data: { key: $("#id_persona_receptora_buscada").val() },
+            data: { key: $(this).val() },
             dataType: "json"
         });
+
+        let index = $(this).attr("id").substring($(this).attr("id").lastIndexOf('_') + 1);
 
         request.done(function (response) {
             if(response.error == 0){
                 if (response.found == 1) {
-                    $("#id_persona_receptora").val($("#id_persona_receptora_buscada").val());
-                    $("#poblacion").val(response.poblacion).prop( "disabled", true );
-                    $("#poblacion_originaria").prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
+                    $("#id_persona_receptora_" + index).val($("#id_persona_receptora_buscada").val());
+                    $("#poblacion_" + index).val(response.poblacion).prop( "disabled", true );
+                    $("#poblacion_originaria_" + index).prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
                 }
                 else {
-                    $("#id_persona_receptora").val('');
-                    $("#poblacion_originaria").prop( "disabled", false );
-                    $("#poblacion").prop( "disabled", false );
+                    $("#id_persona_receptora_" + index).val('');
+                    $("#poblacion_originaria_" + index).prop( "disabled", false );
+                    $("#poblacion_" + index).prop( "disabled", false );
                 }
             }
             else {
