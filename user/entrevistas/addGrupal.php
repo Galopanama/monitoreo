@@ -71,7 +71,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
                 ];
                 // Le pedimos al método que nos devuelva el objeto de la conexión, para poder hacer la transacción
                 try {
-                    PersonasReceptoras::add($datos_persona_receptora, true, $db);
+                    PersonasReceptoras::add($datos_persona_receptora, $db);
                 }
                 catch (ValidationException $e) {
                     // Los mensajes de validación vienen como un array serializado en el mensaje de la excepción
@@ -96,8 +96,8 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
                     'condones_entregados' => $_POST['condones_entregados_' . $i],
                     'lubricantes_entregados' => $_POST['lubricantes_entregados_' . $i],
                     'materiales_educativos_entregados' => $_POST['materiales_educativos_entregados_' . $i],
-                    'region_de_salud' => $_POST['region_de_salud_' . $i],
-                    'area' => $_POST['area_' . $i],
+                    'region_de_salud' => $_POST['region_de_salud'],
+                    'area' => $_POST['area'],
                     'estilos_autocuidado' => $_POST['estilos_autocuidado_' . $i]?true:false,
                     'ddhh_estigma_discriminacion' => $_POST['ddhh_estigma_discriminacion_' . $i]?true:false,
                     'uso_correcto_y_constantes_del_condon' => $_POST['uso_correcto_y_constantes_del_condon_' . $i]?true:false, 
@@ -145,10 +145,19 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
     for ($i = 1; $i <= $numero_filas_enviadas; $i++){
         foreach (array_keys($_POST) as $elem) {
             $name = $elem;
-            if (is_numeric(substr($elem, -1, 1))){
-                $name = substr($elem, 0, strrpos($elem, '_'));
+            $posicion_guion = strrpos($elem, '_') + 1;
+            // Tenemos que analizar si el elemento en cuestión termina en número o no, pues si termina en número es de una fila
+            if (is_numeric($index = substr($elem, $posicion_guion))){
+                if ($index == $i) { // Sólo tenemos que analizar aquellos elementos que tengan que ver con la fila en cuestión
+                    // Si el elemento pertenece a una fila, lo pondremos en el array valores
+                    $name = substr($elem, 0, strrpos($elem, '_'));
+                    $valores[$i][$name] = $_POST[$elem];
+                }                
             }
-            $valores[$i][$name] = $_POST[$elem];            
+            else {
+                // Si no, lo asignamos directamente
+                $smarty->assign($name, $_POST[$elem]);
+            }
         }
     }
     $smarty->assign('valores', $valores);

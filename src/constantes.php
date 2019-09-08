@@ -3,7 +3,7 @@
 class Constantes {
 
     const INDIVIDUAL = 'promotor_realiza_entrevista_individual';
-    const GRUPAL = 'promotor_realiza_actividad_grupal_con_personal_receptoras';
+    const GRUPAL = 'promotor_realiza_actividad_grupal_con_personas_receptoras';
     const PRUEBA = 'tecnologo_realiza_prueba_vih_a_persona_receptora';
     const SUBRECEPTOR = 'subreceptor';
     const TECNOLOGO = 'tecnologo';
