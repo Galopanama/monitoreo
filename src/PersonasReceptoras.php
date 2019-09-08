@@ -63,7 +63,9 @@ class PersonasReceptoras {
     /**
      * @return mysqli Si transaccion está a true. No devuelve nada en caso contrario
      */
-    public static function add($datos, $transaccion = true){
+    public static function add($datos, $db = null){
+        $transaccion = !is_null($db);
+
         // Vamos a comprobar primero que no existe una persona con el mismo id (cédula)
         try{
             PersonasReceptoras::getPersonaReceptora($datos['id_persona_receptora']);
@@ -76,17 +78,22 @@ class PersonasReceptoras {
             // Escribimos la consulta básica para prepararla
             $sql = "insert into persona_receptora (id_cedula, poblacion_originaria, poblacion) values (?, ?, ?) ";
 
-            // Abrimos la conexion de la base de datos
-            $db = new DB();
+            if ($transaccion){
+                // Si estamos en medio de una transacción, continuamos con el objeto ya abierto
+                $mysqli = $db->getConexion();
+            }
+            else {
+                // Abrimos la conexion de la base de datos
+                $db = new DB();
 
-            // No controlamos la excepción a propósito, ya que al ser una llamada ajax, si mandamos a una página de error el usuario no notará nada
-            // Controlaremos la excepción en el php encargado de responder al ajax
-            $mysqli = $db->conecta();
+                // No controlamos la excepción a propósito, ya que al ser una llamada ajax, si mandamos a una página de error el usuario no notará nada
+                // Controlaremos la excepción en el php encargado de responder al ajax
+                $mysqli = $db->conecta();
+            }
 
             // TODO: Realizar comprobaciones sobre los datos introducidos. Por ejemplo:
             // Campos vacíos
-            // El password tiene longitud adecuada
-
+            
             // Errores será un array donde se guardarán los errores de validación del formulario, para después poder mostrarlas al usuario
             // Es MUY IMPORTANTE que las claves del array sean los nombres de los campos que venían en el formulario, para poder informar al usuario
             // posteriormente de cuales han sido los campos en los que se ha fallado
@@ -116,22 +123,12 @@ class PersonasReceptoras {
                     $datos['poblacion']
                 );
 
-                // Si nos piden transacción, debe ejecutarse en una transacción, 
-                // ya que si no podemos encontrar que la persona receptora se añadió, pero no la entrevista
-                if ($transaccion) {
-                    $mysqli->autocommit(false);
-                }
-
                 // Ejecutamos la sentencia con los valores ya establecidos
                 if(!$stmt->execute()){
                     throw new Exception("Ocurrió un problema al introducir  la persona receptora: " . $stmt->error);
                 }
 
-                if ($transaccion) {
-                    // Si queremos que la transacción pueda realizarse, debemos devolver el mismo objeto que la creó
-                    return $db;
-                }
-                else {
+                if (!$transaccion) {
                     // Si no estamos en una transacción, cerramos la conexión
                     $stmt->close();
                     $mysqli->close();

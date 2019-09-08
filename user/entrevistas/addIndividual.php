@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../config/config.php';
 // Restringimos el acceso sólo a usuarios administradores
 $perfiles_aceptados = array('promotor');
 require_once __DIR__ . '/../../security/autorizador.php';
+require_once __DIR__ . '/../../lib/DB.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
@@ -32,8 +33,14 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
     if (empty($errores)) {
         // Tenemos que tener en cuenta que si la persona no existe, hay que crearla antes de introducir los datos en la tabla entrevistas
         // ya que existe una clave ajena que afecta
+        
+        // Además, lo haremos dentro de una transacción
+        $db = new Db();
+        $mysqli = $db->conecta();
+        $mysqli->autocommit(false);
+
         try {
-            PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora']);
+            PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_buscada']);
 
             // TODO: ¿actualizar los datos?
         }
@@ -46,7 +53,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             ];
             // Le pedimos al método que nos devuelva el objeto de la conexión, para poder hacer la transacción
             try {
-                $db = PersonasReceptoras::add($datos_persona_receptora, true);
+                PersonasReceptoras::add($datos_persona_receptora, $db);
             }
             catch (ValidationException $e) {
                 // Los mensajes de validación vienen como un array serializado en el mensaje de la excepción
@@ -74,7 +81,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
                 'referencia_a_clinica_TB' => $_POST['referencia_a_clinica_TB']?true:false
             ];
             try {
-                Entrevistas::add($datos, $db);
+                Entrevistas::addIndividual($datos, $db);
             }
             catch (ValidationException $e) {
                 // Los mensajes de validación vienen como un array serializado en el mensaje de la excepción
@@ -92,6 +99,9 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
                 exit;
             }
         }
+
+        // Por último, hacemos commit
+        $mysqli->autocommit(false);
     }
 
     // Asignamos los errores si los hubiera (que si el código ha llegado aquí, los hay)

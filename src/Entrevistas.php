@@ -10,6 +10,8 @@ require_once __DIR__ . '/Excepciones.php';
 
 class Entrevistas {
 
+    const regiones_de_salud_permitidas = array('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas');
+
     /**
      * @param fecha Debe ser una fecha en el formato YYYY-MM-DD
      */
@@ -213,7 +215,7 @@ class Entrevistas {
         
     }
 
-    public static function add($datos, $db = null){
+    public static function addIndividual($datos, $db = null){
         
         // Si el objeto db no es nulo, estamos en una transacción
         $transaccion = !is_null($db);
@@ -288,6 +290,116 @@ class Entrevistas {
 
             $stmt->close();
             $mysqli->close();
+        }
+        else {
+            throw new Exception("Error de BD: " . $mysqli->error);
+        }
+        
+    }
+
+    public static function addGrupal($datos, $db = null){
+        
+        // Si el objeto db no es nulo, estamos en una transacción
+        $transaccion = !is_null($db);
+
+        // Vamos a comprobar si este método forma parte de una transacción, para crear si no nuestro propio objeto de conexión a DB
+        if (!$transaccion){
+            // Abrimos la conexion de la base de datos
+            $db = new DB();
+
+            // No controlamos la excepción a propósito, ya que al ser una llamada ajax, si mandamos a una página de error el usuario no notará nada
+            // Controlaremos la excepción en el php encargado de responder al ajax
+            $mysqli = $db->conecta();
+        }
+        else {
+            $mysqli = $db->getConexion();
+        }
+
+        // Errores será un array donde se guardarán los errores de validación del formulario, para después poder mostrarlas al usuario
+        // Es MUY IMPORTANTE que las claves del array sean los nombres de los campos que venían en el formulario, para poder informar al usuario
+        // posteriormente de cuales han sido los campos en los que se ha fallado
+        $errores = array();
+
+        if (!in_array($datos['region_de_salud'], Entrevistas::regiones_de_salud_permitidas)){
+            $errores['region_de_salud'] = "Seleccione una región de salud correcta";
+        }
+
+        if (!is_numeric($datos['condones_entregados']) || $datos['condones_entregados'] < 0) {
+            $errores['condones_entregados'] = 'El número de condones entregados debe ser 0 o más';
+        }
+
+        if (!is_numeric($datos['lubricantes_entregados']) || $datos['lubricantes_entregados'] < 0) {
+            $errores['lubricantes_entregados'] = 'El número de lubricantes entregados debe ser 0 o más';
+        }
+
+        if (!is_numeric($datos['materiales_educativos_entregados']) || $datos['materiales_educativos_entregados'] < 0) {
+            $errores['materiales_educativos_entregados'] = 'El número de materiales educativos entregados debe ser 0 o más';
+        }
+
+        // Ya hemos llegado al final de las validaciones. Si el array no está vacío, significa que han ocurrido errores, por tanto, lanzamos una excepción
+        if (sizeof($errores) > 0){
+            throw new ValidationException (serialize($errores));
+        }
+
+        $sql = "insert into " . Constantes::GRUPAL . " (
+                id_promotor, 
+                id_persona_receptora, 
+                fecha, 
+                condones_entregados, 
+                lubricantes_entregados,
+                materiales_educativos_entregados, 
+                region_de_salud, 
+                area, 
+                estilos_autocuidado, 
+                ddhh_estigma_discriminacion, 
+                uso_correcto_y_constantes_del_condon, 
+                salud_sexual_e_ITS, 
+                ofrecimiento_y_referencia_a_la_prueba_de_VIH, 
+                CLAM_y_otros_servicios, 
+                salud_anal, 
+                hormonizacion, 
+                apoyo_y_orientacion_psicologico, 
+                diversidad_sexual_identidad_expresion_de_genero, 
+                tuberculosis_y_coinfecciones, 
+                infecciones_oportunistas) " .
+            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+
+        // Preparamos la sentencia anterior
+        if ($stmt = $mysqli->prepare($sql)) {
+            $fecha = "now()"; // Como ya sabemos, bind_param no permite cadenas o números directamente si no es con variables
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            $stmt->bind_param('isiiiiiiiiiiiiiiiii', 
+                $datos['id_promotor'],
+                $datos['id_persona_receptora'],
+                $datos['condones_entregados'],
+                $datos['lubricantes_entregados'],
+                $datos['materiales_educativos_entregados'],
+                $datos['region_de_salud'],
+                $datos['area'],
+                $datos['estilos_autocuidado'],
+                $datos['ddhh_estigma_discriminacion'],
+                $datos['uso_correcto_y_constantes_del_condon'],
+                $datos['salud_sexual_e_ITS'],
+                $datos['ofrecimiento_y_referencia_a_la_prueba_de_VIH'],
+                $datos['CLAM_y_otros_servicios'],
+                $datos['salud_anal'],
+                $datos['hormonizacion'],
+                $datos['apoyo_y_orientacion_psicologico'],
+                $datos['diversidad_sexual_identidad_expresion_de_genero'],
+                $datos['tuberculosis_y_coinfecciones'],
+                $datos['infecciones_oportunistas']
+            );
+
+
+            // Ejecutamos la sentencia con los valores ya establecidos
+            if(!$stmt->execute()){
+                throw new Exception("Ocurrió un problema al introducir la entrevista grupal: " . $stmt->error);
+            }
+            
+            if (!$transaccion) {
+                $stmt->close();
+                $mysqli->close();
+            }            
         }
         else {
             throw new Exception("Error de BD: " . $mysqli->error);
