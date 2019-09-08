@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-10 14:34:16
+/* Smarty version 3.1.33, created on 2019-09-07 21:40:45
   from 'C:\WinNMP\WWW\Monitoreo\monitoreo\tpl\login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d4ed5e8852625_44521747',
+  'unifunc' => 'content_5d7423dd23e2d9_50174831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5d4816471d84f3d7e7f136f1e5066aea6c0d7fa4' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\Monitoreo\\monitoreo\\tpl\\login.html',
-      1 => 1565447651,
+      1 => 1567892387,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d4ed5e8852625_44521747 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d7423dd23e2d9_50174831 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
   <head>
@@ -28,7 +28,7 @@ function content_5d4ed5e8852625_44521747 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico"> 
 
     <title>Identificación en Monitoreo</title>
 
@@ -42,7 +42,7 @@ function content_5d4ed5e8852625_44521747 (Smarty_Internal_Template $_smarty_tpl)
 
   <body class="text-center">
     <form class="form-signin" method="POST">
-      <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <img class="mb-4" src="./img/panama fingerprint.png" alt="" width="72" height="72"> <!--introduccion del enlace de la imagen-->
       <?php if (isset($_smarty_tpl->tpl_vars['login_error']->value)) {?>
         <div><?php echo $_smarty_tpl->tpl_vars['login_error']->value;?>
 </div>

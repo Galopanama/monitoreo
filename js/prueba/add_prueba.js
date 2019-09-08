@@ -42,16 +42,12 @@ $(document).ready(function() {
         });
 
         request.done(function (response) {
-            if(response.error == 0){    // errores controlados tales como error en la "BD en la consulta"
+            if(response.error == 0){    // errores controladosm tales como error en la "BD en la consulta"
                 if (response.found == 1) {
                     $("#id_persona_receptora").val($("#id_persona_receptora_buscada").val());
-                    $("#poblacion").val(response.poblacion).prop( "disabled", true );
-                    $("#poblacion_originaria").prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
                 }
                 else {
                     $("#id_persona_receptora").val('');
-                    $("#poblacion_originaria").prop( "disabled", false );
-                    $("#poblacion").prop( "disabled", false );
                 }
             }
             else {

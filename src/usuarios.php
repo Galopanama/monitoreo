@@ -310,7 +310,7 @@ class Usuarios {
                     $datos['tipo_de_usuario'],
                     $activo, 
                     $datos['telefono'],
-                    password_hash($datos['password'],  PASSWORD_DEFAULT)
+                    password_hash($datos['password'],  PASSWORD_DEFAULT) // metodo de PHP
                 );
 
                 // La inserción de usuarios debe ejecutarse en una transacción, ya que si no podemos encontrar que el usuario se añadió a la tabla de usuarios pero no a la de promotor, tecnologo...

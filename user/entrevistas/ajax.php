@@ -35,9 +35,9 @@ function getAllIndividuales() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
         foreach($lista as $entrevistaIndividual) {
             $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevistaIndividual->getId_persona_receptora());
-            $entrevistaIndividual->poblacion = $persona_receptora->getPoblacion();
-            $entrevistaIndividual->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
-
+            $entrevistaIndividual->poblacion = $persona_receptora->getPoblacion();      // esto se hace para añadir atributos a un objeto que no 
+            $entrevistaIndividual->poblacion_originaria = $persona_receptora->getPoblacion_originaria();// son parte del objeto en si. Solo se hace
+                                                                                        // porque PHP lo permite. igual que Java 
             $promotor = Usuarios::getUsuarioById($entrevistaIndividual->getId_promotor());
             $entrevistaIndividual->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
         }
