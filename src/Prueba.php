@@ -5,10 +5,11 @@ class Prueba implements \JsonSerializable{
     private $id_tecnologo;
     private $id_cedula_persona_receptora;
     private $fecha;
+    private $realizacion_prueba;
     private $consejeria_pre_prueba;
     private $consejeria_post_prueba;
     private $resultado_prueba;
-    private $realizacion_prueba;
+    
 
     public function __construct($id_tecnologo,$id_cedula_persona_receptora,$fecha,$consejeria_pre_prueba,$consejeria_post_prueba,
     $resultado_prueba,$realizacion_prueba){
@@ -16,10 +17,10 @@ class Prueba implements \JsonSerializable{
         $this->id_tecnologo = $id_tecnologo;
         $this->id_cedula_persona_receptora = $id_cedula_persona_receptora;
         $this->fecha = $fecha;
+        $this->realizacion_prueba = $realizacion_prueba;
         $this->consejeria_pre_prueba = $consejeria_pre_prueba;
         $this->consejeria_post_prueba = $consejeria_post_prueba;
         $this->resultado_prueba = $resultado_prueba;
-        $this->realizacion_prueba = $realizacion_prueba;
 
     } 
 
@@ -47,6 +48,13 @@ class Prueba implements \JsonSerializable{
         return $this->fecha;
     }
 
+    public function setRealizacion_prueba ($realizacion_prueba) {
+        $this->realizacion_prueba = $realizacion_prueba;
+    }  
+
+    public function getRealizacion_prueba () {
+        return $this->realizacion_prueba;
+    }
     public function setConsejeria_pre_prueba ($consejeria_pre_prueba){
         $this->consejeria_pre_prueba = $consejeria_pre_prueba;
     }
@@ -69,14 +77,6 @@ class Prueba implements \JsonSerializable{
 
     public function getResultado_prueba () {
         return $this->resultado_prueba;
-    }
-
-    public function setRealizacion_prueba ($realizacion_prueba) {
-        $this->realizacion_prueba = $realizacion_prueba;
-    }  
-
-    public function getRealizacion_prueba () {
-        return $this->realizacion_prueba;
     }
 
     /**

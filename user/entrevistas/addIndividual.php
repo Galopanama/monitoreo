@@ -12,7 +12,6 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 if (!empty($_POST['id_persona_receptora_buscada'])) {
     // Se han enviado datos
     $errores = array();
-
     // Vamos a comprobar si los datos necesarios están
     if (empty($_POST['id_persona_receptora_buscada'])){
         $errores['id_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la entrevista";
@@ -41,7 +40,6 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
 
         try {
             PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_buscada']);
-
             // TODO: ¿actualizar los datos?
         }
         catch (PersonaReceptoraNotFoundException $e) {

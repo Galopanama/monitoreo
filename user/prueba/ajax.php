@@ -11,7 +11,7 @@ switch($_GET['funcion']){
         echo json_encode(getAllPruebas());                 // me quedo en la linea anterior. Aunque ahora entiendo que se tenga que 
         exit;                                                   // fichero AJAX. 
     case "buscar":
-        echo json_encode(buscar_subreceptor($_GET['key']));
+        echo json_encode(buscar_persona_receptora($_POST['key']));
     default:
         exit;
 }
@@ -24,8 +24,8 @@ function getAllPruebas() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del tecnologo
         foreach($lista as $prueba) {
             $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_persona_receptora());
-            // $prueba->poblacion = $persona_receptora->getPoblacion();
-            // $prueba->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
+            $prueba->poblacion = $persona_receptora->getPoblacion();                        // Estaban comentados estos campos, ahora no
+            $prueba->poblacion_originaria = $persona_receptora->getPoblacion_originaria();  // me refiero a los de poblacion y poblacion originaria
             $tecnologo = Usuarios::getUsuarioById($prueba->getId_tecnologo());
             $prueba->nombre_tecnologo = $tecnologo->getNombre() . ' ' . $tecnologo->getApellidos();
         }
@@ -37,27 +37,30 @@ function getAllPruebas() {
         return $array_response;
     }
 }
+
 /**
- * Busca un usuario SUBRECEPTOR dada una cadena de búsqueda
+ * Busca una PERSONA RECEPTORA dada una cadena de búsqueda
  */
-function buscar_subreceptor ($cadena) {
+function buscar_persona_receptora($cadena) {
+    $array_response['found'] = 1;
+    $array_response['error'] = 0;
     try{
-        $lista = array();
-        // Solo necesitamos el nombre (completo) y el id
-        foreach(Usuarios::buscaUsuarioSubreceptor($cadena) as $subreceptor){
-            $lista[] = [
-                "nombre" => $subreceptor->getNombre() . ' ' . $subreceptor->getApellidos() . ' (' . $subreceptor->getUbicacion() . ')',
-                "id" => $subreceptor->getId()
-            ];
-        }
-        return $lista;
+        $persona = PersonasReceptoras::getPersonaReceptora($cadena);
+        $array_response['poblacion'] = $persona->getPoblacion();
+        $array_response['poblacion_originaria'] = $persona->getPoblacion_originaria();
+    }
+    catch (PersonaReceptoraNotFoundException $e) {
+        $array_response['found'] = 0;
     }
     catch (Exception $e){
         $array_response['error'] = 1;
         $array_response['errorMessage'] = $e->getMessage();
-        return $array_response;
+        $array_response['found'] = 0;
     }
+
+    return $array_response;
 }
+
 function prepara_para_json($array) {
     return array("data" => $array);
 }

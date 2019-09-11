@@ -7,6 +7,10 @@ require_once __DIR__ . '/Excepciones.php';
 
 class Pruebas {
 
+    const realizacion_prueba = array('no_se_realizó','se_realizó');
+    const resultados_posibles = array('no_reactivo','reactivo');
+    
+
     public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){ // VOY POR AQUI 
         $sql = "select * from " . Constantes::PRUEBA . " p ";   // usamos el alias "p" para la tabla pruebas
         if (!is_null($id_tecnologo)) {
@@ -53,10 +57,10 @@ class Pruebas {
                     $prueba['id_tecnologo'],
                     $prueba['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
+                    $prueba['realizacion_prueba'],
                     $prueba['consejeria_pre-prueba'],
                     $prueba['consejeria_post-prueba'],
-                    $prueba['resultado_prueba'],
-                    $prueba['realizacion_prueba']
+                    $prueba['resultado_prueba']
                 );
             }
             // limpiamos los resultados de la memoria
@@ -111,10 +115,10 @@ class Pruebas {
             $stmt->bind_param('isiiii', 
                 $prueba['id_tecnologo'],
                 $prueba['id_persona_receptora'],
+                $prueba['realizacion_prueba'],
                 $prueba['consejeria_pre_prueba'],
                 $prueba['consejeria_post_prueba'],
-                $prueba['resultado_prueba'],
-                $prueba['realizacion_prueba']
+                $prueba['resultado_prueba']
                 );
 
 
