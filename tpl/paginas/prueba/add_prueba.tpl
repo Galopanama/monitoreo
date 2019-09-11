@@ -25,51 +25,74 @@
         <thead>
           <tr>
             <th>Datos de la persona receptor@</th>
-            <th>Tecnolog@</th>
-            <th>Fecha</th>
+            <th>Población originaria</th>
+            <th>Población</th>
+            <th>Realizacion Prueba</th>
             <th>Consejeria Pre-prueba</th>
             <th>Consejeria Post-prueba</th>
             <th>Resultado Prueba</th>
-            <th>Realizacion Prueba</th>
+            
           </tr>
         </thead>
         <tbody class="">
           <tr>
-            <td class="col-md-3">     <--AQUI UTILIZAMOS EL id: id_persona_receptora, CUANDO EN LA TABLA DE LA BD TENEMOS id_cedula_persona_receptora-->
-              <input type="hidden" id="id_persona_receptora" name="id_persona_receptora" value="{$id_persona_receptora}" /> 
-              <input type="text" class="form-control typeahead" id="id_persona_receptora_buscada" name="id_persona_receptora_buscada"
-                value="{$id_persona_receptora_buscada}" placeholder="Cédula" />
+            <td class="col-md-3">     
+              <input type="hidden" id="id_cedula_persona_receptora" name="id_cedula_persona_receptora" value="{$id_cedula_persona_receptora}" /> 
+              <input type="text" class="form-control typeahead" id="id_cedula_persona_receptora_buscada" name="id_cedula_persona_receptora_buscada"
+                value="{$id_cedula_persona_receptora_buscada}" placeholder="Cédula" />
               <small id="registroHelpBlock" class="form-text text-muted">
                 Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
               </small>
+            <!--
+              <td class="col-md-3">
+                <input type="hidden" id="id_persona_receptora" name="id_persona_receptora" value="{$id_persona_receptora}" /> 
+                <input type="text" class="form-control typeahead" id="id_persona_receptora_buscada" name="id_persona_receptora_buscada"
+                  value="{$id_persona_receptora_buscada}" placeholder="Cédula" />
+                <small id="registroHelpBlock" class="form-text text-muted">
+                  Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
+                </small>
+              </td>
+            -->
+
+            </td>
+            <td class="col-md-1">
+              <input class="form-check-input col-sm-10" type="checkbox" id="poblacion_originaria" name="poblacion_originaria"
+                {if $poblacion_originaria ne ''} checked{/if} {if $id_persona_receptora ne '' } disabled {/if}/>
+            </td>
+            <td class="col-md-1">
+              <select class="custom-select d-block" id="poblacion" name="poblacion" required {if $id_persona_receptora ne '' } disabled {/if}> 
+                {html_options values=$tipos_poblacion_permitidos output=$tipos_poblacion_permitidos selected=$poblacion}
+              </select>
             </td>
             <td class="text-center col-md-1">
-              <input type="number" class="form-control" id="consejeria_pre_prueba" name="consejeria_pre_prueba"
-                value="{$consejeria_pre_prueba}" min="0" required />
+              <select class="custom-select d-block" id="realizacion_prueba" name="realizacion_prueba" required {if $id_persona_receptora ne '' } disabled {/if}> 
+                  {html_options values=$realizacion_prueba output=$realizacion_prueba selected=$realizacion_prueba}
+                </select>
             </td>
             <td class="text-center col-md-1">
-              <input type="number" class="form-control" id="consejeria_post_prueba" name="consejeria_post_prueba"
-                value="{$consejeria_post_prueba}" min="0" required />
+              <input class="form-check-input" type="checkbox" id="consejeria_pre_prueba" name="consejeria_pre_prueba"
+                {if $consejeria_pre_prueba ne ''} checked{/if} />
             </td>
             <td class="text-center col-md-1">
-              <input type="number" class="form-control" id="resultado_prueba"
-                name="resultado_prueba" value="{$resultado_prueba}" min="0" required />
+              <input class="form-check-input" type="checkbox" id="consejeria_post_prueba"
+                name="consejeria_post_prueba" {if $consejeria_post_prueba ne ''} checked{/if} />
             </td>
             <td class="text-center col-md-1">
-              <input class="form-check-input" type="checkbox" id="realizacion_prueba" name="realizacion_prueba"
-                {if $realizacion_prueba ne ''} checked{/if} />
+              <select class="custom-select d-block" id="resultado_prueba" name="resultado_prueba" required {if $id_persona_receptora ne '' } disabled {/if}> 
+                  {html_options values=$resultados_posibles output=$resultados_posibles selected=$resultado_prueba}
+                </select>
             </td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
-            <th>Datos de la persona receptor@</th>
-            <th>Tecnolog@</th>      //  
-            <th>Fecha</th>
+            <th>Datos de la persona receptor@</th>   
+            <th>Población originaria</th>
+            <th>Población</th>   
+            <th>Realizacion Prueba</th> 
             <th>Consejeria Pre-prueba</th>
             <th>Consejeria Post-prueba</th>
             <th>Resultado Prueba</th>
-            <th>Realizacion Prueba</th>
           </tr>
       </tfoot>
       </table>

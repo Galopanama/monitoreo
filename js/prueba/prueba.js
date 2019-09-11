@@ -15,6 +15,17 @@ $(document).ready(function() {
             },
             { "data": "nombre_tecnologo" },
             { "data": "fecha" },
+            {
+                "data": "realizacion_prueba",
+                "render": function ( data, type, row ) {
+                    if(row.realizacion_prueba === "se_realizó") {
+                        return "Se realizó";
+                    }
+                    else{
+                        return "No se realizó";
+                    }
+                }
+            },
             { 
                 "data": "consejeria_pre_prueba"
             },
@@ -29,17 +40,6 @@ $(document).ready(function() {
                     }
                     else{
                         return "No reactivo";
-                    }
-                }
-            },
-            {
-                "data": "realizacion_prueba",
-                "render": function ( data, type, row ) {
-                    if(row.realizacion_prueba === "se_realizó") {
-                        return "Se realizó";
-                    }
-                    else{
-                        return "No se realizó";
                     }
                 }
             }
