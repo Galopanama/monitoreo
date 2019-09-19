@@ -833,3 +833,195 @@
 [10-Sep-2019 14:53:58 America/Los_Angeles] PHP Notice:  Undefined index: resultado_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
 [10-Sep-2019 14:53:58 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
 [10-Sep-2019 14:53:58 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: errores in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: poblacion_originaria in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: poblacion in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_pre_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_post_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined index: resultado_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:29:56 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: errores in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: poblacion_originaria in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: poblacion in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_pre_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_post_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined index: resultado_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:36:18 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: errores in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: poblacion_originaria in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: poblacion in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_pre_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_post_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined index: resultado_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 12:41:05 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: errores in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 40
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 74
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_cedula_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 77
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 84
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora_buscada in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 87
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: poblacion_originaria in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 98
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 101
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: poblacion in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 102
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 107
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_pre_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 114
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: consejeria_post_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 118
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: id_persona_receptora in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 121
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined index: resultado_prueba in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/93046426a023337b0ecf0b98f274016838e45eeb_0.file.add_prueba.tpl.php on line 122
+[19-Sep-2019 13:09:00 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[19-Sep-2019 14:00:51 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 14:00:51 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 14:00:51 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[19-Sep-2019 14:00:53 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:02:15 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:02:22 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:02:43 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:02:58 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:03:04 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:42:50 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:47:27 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:47:33 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:49:19 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 14:49:19 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 14:49:19 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[19-Sep-2019 14:49:21 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:49:36 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 14:49:45 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 16:10:53 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 16:10:53 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 16:10:53 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[19-Sep-2019 16:11:02 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[19-Sep-2019 16:11:06 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 16:11:06 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 16:11:06 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[19-Sep-2019 16:11:10 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 16:11:10 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 16:11:10 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[19-Sep-2019 16:11:12 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[19-Sep-2019 16:11:12 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[19-Sep-2019 16:11:12 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195

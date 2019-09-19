@@ -56,7 +56,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
                 'resultado_prueba' => $_POST['resultado_prueba']?true:false,        // son correctos o no? si no lo son, cual seria el valor correcto??
             ];
             try {
-                Pruebas::add($datos, $db);
+                Pruebas::add($datos);
             }
             catch (ValidationException $e) {
                 // Los mensajes de validación vienen como un array serializado en el mensaje de la excepción

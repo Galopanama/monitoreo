@@ -8,7 +8,7 @@ require_once __DIR__ . '/Excepciones.php';
 class Pruebas {
 
     const realizacion_prueba = array('no_se_realizó','se_realizó');
-    const resultados_posibles = array('no_reactivo','reactivo');
+    const resultado_prueba = array('no_reactivo','reactivo');
     
 
     public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){ // VOY POR AQUI 
@@ -106,15 +106,15 @@ class Pruebas {
             throw new ValidationException (serialize($errores));
         }
 
-        $sql = "insert into " . Constantes::PRUEBA . " (id_tecnologo, id_persona_receptora, fecha,  (?, ?, now(), ?, ?, ?, ?)";
+        $sql = "insert into " . Constantes::PRUEBA . " (id_tecnologo, id_cedula_persona_receptora, fecha,  (?, ?, now(), ?, ?, ?, ?)";
 
         // Preparamos la sentencia anterior
         if ($stmt = $mysqli->prepare($sql)) {
             $fecha = "now()"; // Como ya sabemos, bind_param no permite cadenas o números directamente si no es con variables
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
-            $stmt->bind_param('isiiii', 
+            $stmt->bind_param('issiis', 
                 $prueba['id_tecnologo'],
-                $prueba['id_persona_receptora'],
+                $prueba['id_cedula_persona_receptora'],
                 $prueba['realizacion_prueba'],
                 $prueba['consejeria_pre_prueba'],
                 $prueba['consejeria_post_prueba'],

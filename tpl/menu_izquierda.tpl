@@ -61,15 +61,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="{$_WEB_PATH_}/admin/prueba/prueba.php">
                   <span data-feather="heart"></span>
                   Tecnologo
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="{$_WEB_PATH_}/admin/entrevistas/individuales.php">
                   <span data-feather="bookmark"></span>
-                  Promotor
+                  Entrevistas Individuales del Promotor 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{$_WEB_PATH_}/admin/entrevistas/grupales.php">
+                  <span data-feather="bookmark"></span>
+                  Actividades Grupales
                 </a>
               </li>
             </ul>
@@ -83,9 +89,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="">
-              <span data-feather="people"></span>
-              Promotores
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/individuales.php">
+              <span data-feather="columns"></span>
+              Ver Entrevistas Individuales
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/grupales.php">
+              <span data-feather="columns"></span>
+              Ver Entrevistas Grupales
             </a>
           </li>
           <li class="nav-item">
@@ -143,6 +155,12 @@
             <a class="nav-link active" href="{$_WEB_PATH_}/user/prueba/addPrueba.php">
               <span data-feather="droplet"></span>
               Añadir Prueba
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/prueba/prueba.php">
+              <span data-feather="droplet"></span>
+              Ver Pruebas
             </a>
           </li>
           <li class="nav-item">
@@ -205,6 +223,18 @@
             <a class="nav-link active" href="#">
               <span data-feather="columns"></span>
               Estadisticas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/individuales.php">
+              <span data-feather="columns"></span>
+              Ver Entrevistas Individuales
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/grupales.php">
+              <span data-feather="columns"></span>
+              Ver Entrevistas Grupales
             </a>
           </li>
           <li class="nav-item">
