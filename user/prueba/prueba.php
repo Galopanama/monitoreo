@@ -19,6 +19,7 @@ if ($_SESSION['exito_mensaje']){
     unset($_SESSION['exito_titulo']);
     unset($_SESSION['exito_mensaje']);
 }
+
 // De la misma manera vamos a ver si hay algún error
 if ($_SESSION['error']){
 
@@ -30,8 +31,11 @@ if ($_SESSION['error']){
 }
 // La variable main se utilizará en el archivo footer.php
 $main = $smarty->fetch("paginas/pruebas.tpl");
+
 $footer = $smarty->fetch("footer/pruebas.tpl");
+
 require_once '../../footer.php';
+
 $smarty->display('esqueleto_dashboard.html');
 
 ?>

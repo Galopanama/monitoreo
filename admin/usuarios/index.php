@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../../config/config.php';
 // Restringimos el acceso sólo a usuarios administradores
 $perfiles_aceptados = array('administrador');
@@ -9,6 +10,7 @@ $header = $smarty->fetch("header/usuarios.tpl");
 
 // Vamos a comprobar si hay mensajes en la sesión
 if ($_SESSION['exito_mensaje']){
+
     // hay mensajes de exito. Los mostramos
     $smarty->assign('exito_titulo', $_SESSION['exito_titulo']);
     $smarty->assign('exito_mensaje', $_SESSION['exito_mensaje']);
@@ -20,6 +22,7 @@ if ($_SESSION['exito_mensaje']){
 
 // De la misma manera vamos a ver si hay algún error
 if ($_SESSION['error']){
+
     // hay mensajes de error. Los mostramos
     $smarty->assign('error', $_SESSION['error']);
 
@@ -35,3 +38,5 @@ $footer = $smarty->fetch("footer/usuarios.tpl");
 require_once '../../footer.php';
 
 $smarty->display('esqueleto_dashboard.html');
+
+?>

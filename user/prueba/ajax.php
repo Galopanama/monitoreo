@@ -6,8 +6,9 @@ require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Pruebas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
+
 switch($_GET['funcion']){
-    case "getAllPruebas":                                  // estaba cambiando este fichero y haciendolo para pruebas y tecnologoes
+    case "getAllPruebas":                                  // estaba cambiando este fichero y haciendolo para pruebas y tecnologos
         echo json_encode(getAllPruebas());                 // me quedo en la linea anterior. Aunque ahora entiendo que se tenga que 
         exit;                                                   // fichero AJAX. 
     case "buscar":
