@@ -9,24 +9,24 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
 //$header = $smarty->fetch("header/.tpl");
 
-if (!empty($_POST['id_persona_receptora_buscada'])) {
+if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {
     // Se han enviado datos
     $errores = array();
     // Vamos a comprobar si los datos necesarios están
-    if (empty($_POST['id_persona_receptora_buscada'])){
-        $errores['id_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la prueba";
+    if (empty($_POST['id_cedula_persona_receptora_buscada'])){
+        $errores['id_cedula_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la prueba";
     }
     if (empty($errores)) {
         // Tenemos que tener en cuenta que si la persona no existe, hay que crearla antes de introducir los datos en la tabla entrevistas
         // ya que existe una clave ajena que afecta
         try {
-            PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora']);
+            PersonasReceptoras::getPersonaReceptora($_POST['id_cedula_persona_receptora']);
             // TODO: ¿actualizar los datos?
         }
         catch (PersonaReceptoraNotFoundException $e) {
             // Si no existe, el identificador no lo obtenemos del campo id_persona_receptora, sino de id_persona_receptora_buscada
             $datos_persona_receptora = [
-                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
+                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada'],
                 'poblacion' => $_POST['poblacion'],
                 'poblacion_originaria' => $_POST['poblacion_originaria']?true:false
             ];
@@ -49,11 +49,11 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             // vamos a crear un array con dichas claves
             $datos = [
                 'id_tecnologo' => $_SESSION['usuario_id'],
-                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'], 
-                'realizacion_prueba' => $_POST['realizacion_prueba']?true:false,    // DUDA SOBRE LOS VALORES true:false en realizacion prueba y resultado_prueba
+                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada'], 
+                'realizacion_prueba' => $_POST['realizacion_prueba'],    // DUDA SOBRE LOS VALORES true:false en realizacion prueba y resultado_prueba
                 'consejeria_pre_prueba' => $_POST['consejeria_pre_prueba']?true:false,
                 'consejeria_post_prueba' => $_POST['consejeria_post_prueba']?true:false,
-                'resultado_prueba' => $_POST['resultado_prueba']?true:false,        // son correctos o no? si no lo son, cual seria el valor correcto??
+                'resultado_prueba' => $_POST['resultado_prueba']        // son correctos o no? si no lo son, cual seria el valor correcto??
             ];
             try {
                 Pruebas::add($datos);
@@ -69,7 +69,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             // No ha habido errores, redirigimos a la página del listado
                 $_SESSION['exito_titulo'] = "Prueba añadida con éxito";
                 $_SESSION['exito_mensaje'] = "La prueba ha sido dada de alta correctamente en el sistema";
-                header('Location: ' . _WEB_PATH_ . '/user/pruebas/index.php');
+                header('Location: ' . _WEB_PATH_ . '/user/pruebas/pruebas.php');
                 exit;
             }
         }

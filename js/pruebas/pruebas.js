@@ -75,9 +75,24 @@ $(document).ready(function() {
         
             tabla += '<tr>';
             tabla +=    '<td>Cédula</td>';
-            tabla +=    '<td>' + d.id_persona_receptora + '</td>';
+            tabla +=    '<td>' + d.id_cedula_persona_receptora + '</td>';
             tabla += '</tr>';
-    
+
+            tabla += '<tr>';
+            tabla +=    '<td>Población originaria</td>';
+            if(d.poblacion_originaria==1){
+                tabla +=    '<td>Sí</td>';
+            }
+            else{
+                tabla +=    '<td>No</td>';
+            }
+            tabla += '</tr>';
+
+            tabla += '<tr>';
+            tabla +=    '<td>Población</td>';
+            tabla +=    '<td>' + d.poblacion + '</td>';
+            tabla += '</tr>';
+        
         tabla += '</table>';
 
         return tabla;

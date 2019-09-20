@@ -56,10 +56,10 @@ class Pruebas {
                     $prueba['id_tecnologo'],
                     $prueba['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
-                    $prueba['realizacion_prueba'],
                     $prueba['consejeria_pre-prueba'],
                     $prueba['consejeria_post-prueba'],
-                    $prueba['resultado_prueba']
+                    $prueba['resultado_prueba'],
+                    $prueba['realizacion_prueba']
                 );
             }
             // limpiamos los resultados de la memoria
@@ -105,7 +105,7 @@ class Pruebas {
             throw new ValidationException (serialize($errores));
         }
 
-        $sql = "insert into " . Constantes::PRUEBA . " (id_tecnologo, id_cedula_persona_receptora, fecha,  (?, ?, now(), ?, ?, ?, ?)";
+        $sql = "insert into " . Constantes::PRUEBA . " (id_tecnologo, id_cedula_persona_receptora, fecha, realizacion_prueba, `consejeria_pre-prueba`, `consejeria_post-prueba`, resultado_prueba) values (?, ?, now(), ?, ?, ?, ?)";
 
         // Preparamos la sentencia anterior
         if ($stmt = $mysqli->prepare($sql)) {

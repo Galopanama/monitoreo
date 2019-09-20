@@ -25,10 +25,10 @@
             <th>Datos receptor/a</th>
             <th>Tecnologo</th>
             <th>Fecha</th>
+            <th>Realizacion Prueba</th>
             <th>Consejeria Pre-prueba</th>
             <th>Consejeria Post-prueba</th>
             <th>Resultado Prueba</th>
-            <th>Realizacion Prueba</th>
         </tr>
     </thead>
     <tfoot>
@@ -36,10 +36,10 @@
             <th>Datos receptor/a</th>
             <th>Tecnologo</th>
             <th>Fecha</th>
+            <th>Realizacion Prueba</th>
             <th>Consejeria Pre-prueba</th>
             <th>Consejeria Post-prueba</th>
             <th>Resultado Prueba</th>
-            <th>Realizacion Prueba</th>
         </tr>
     </tfoot>
 </table>
