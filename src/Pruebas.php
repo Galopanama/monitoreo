@@ -8,7 +8,7 @@ require_once __DIR__ . '/Excepciones.php';
 class Pruebas {
 
     const realizacion_prueba = array('no_se_realizó','se_realizó');
-    const resultados_posible = array('no_reactivo','reactivo');
+    const resultados_posibles = array('no_reactivo','reactivo');
 
     public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){ // VOY POR AQUI 
         $sql = "select * from " . Constantes::PRUEBA . " p ";   // usamos el alias "p" para la tabla pruebas
@@ -59,7 +59,8 @@ class Pruebas {
                     $prueba['realizacion_prueba'],
                     $prueba['consejeria_pre-prueba'],
                     $prueba['consejeria_post-prueba'],
-                    $prueba['resultado_prueba']
+                    $prueba['resultad
+                    o_prueba']
                 );
             }
             // limpiamos los resultados de la memoria
