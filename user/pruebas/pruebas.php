@@ -30,7 +30,7 @@ if ($_SESSION['error']){
     unset($_SESSION['error']);
 }
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/pruebas.tpl");
+$main = $smarty->fetch("paginas/pruebas/pruebas.tpl");
 
 $footer = $smarty->fetch("footer/pruebas.tpl");
 

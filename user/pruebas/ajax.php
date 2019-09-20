@@ -24,7 +24,7 @@ function getAllPruebas() {
         $lista = Pruebas::getAllPruebas();
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del tecnologo
         foreach($lista as $prueba) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_cedula_persona_receptora());
             $prueba->poblacion = $persona_receptora->getPoblacion();                        // Estaban comentados estos campos, ahora no
             $prueba->poblacion_originaria = $persona_receptora->getPoblacion_originaria();  // me refiero a los de poblacion y poblacion originaria
             $tecnologo = Usuarios::getUsuarioById($prueba->getId_tecnologo());

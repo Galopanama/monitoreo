@@ -69,7 +69,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             // No ha habido errores, redirigimos a la página del listado
                 $_SESSION['exito_titulo'] = "Prueba añadida con éxito";
                 $_SESSION['exito_mensaje'] = "La prueba ha sido dada de alta correctamente en el sistema";
-                header('Location: ' . _WEB_PATH_ . '/user/prueba/index.php');
+                header('Location: ' . _WEB_PATH_ . '/user/pruebas/index.php');
                 exit;
             }
         }
@@ -87,11 +87,11 @@ $smarty->assign('titulo', 'Añadir prueba');
 
 // Necesitamos cargar un array con los tipos de usuario válidos. Dicho array está en la clase Usuarios
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
-$smarty->assign('resultados_posibles', Pruebas::resultados_posibles);
+$smarty->assign('resultados_posible', Pruebas::resultados_posible); 
 $smarty->assign('realizacion_prueba', Pruebas::realizacion_prueba);
 
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/prueba/add_prueba.tpl");
+$main = $smarty->fetch("paginas/pruebas/add_prueba.tpl");
 
 // Esta página necesita un javascript especial
 $footer = $smarty->fetch("footer/add_prueba.tpl");
