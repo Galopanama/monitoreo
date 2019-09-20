@@ -59,8 +59,7 @@ class Pruebas {
                     $prueba['realizacion_prueba'],
                     $prueba['consejeria_pre-prueba'],
                     $prueba['consejeria_post-prueba'],
-                    $prueba['resultad
-                    o_prueba']
+                    $prueba['resultado_prueba']
                 );
             }
             // limpiamos los resultados de la memoria
