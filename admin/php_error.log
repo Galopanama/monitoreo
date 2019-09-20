@@ -68,3 +68,41 @@
 [19-Sep-2019 16:05:58 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
 [19-Sep-2019 16:14:46 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
 [19-Sep-2019 16:14:46 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 09:55:16 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 09:55:16 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 10:05:20 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 10:05:20 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 10:05:20 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:menu_izquierda.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 10:05:44 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 10:05:44 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 10:05:44 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:menu_izquierda.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 10:06:31 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 10:06:31 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 10:07:26 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 10:07:26 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:07:33 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:07:33 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:07:33 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:menu_izquierda.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 11:08:03 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:08:03 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:08:10 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:08:10 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:08:14 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:08:14 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:08:17 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:08:17 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:10:26 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:10:26 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:10:37 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:10:37 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:10:46 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:10:46 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:12:06 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:12:06 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:13:35 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:13:35 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8
+[20-Sep-2019 11:14:40 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 6
+[20-Sep-2019 11:14:40 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 8

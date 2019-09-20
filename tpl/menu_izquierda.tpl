@@ -10,16 +10,32 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="briefcase"></span>
-              Organizaciones
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/admin/usuarios/index.php">
-              <span data-feather="users"></span>
-              Usuarios
-            </a>
+            <ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                  <span data-feather="briefcase"></span>
+                  MCdP
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                  <span data-feather="briefcase"></span>
+                  Org - HSH
+                </a>
+              </li>
+              <li>            
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                  <span data-feather="briefcase"></span>
+                  Org - TSF
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                  <span data-feather="briefcase"></span>
+                  Org - TRANS
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="#">
@@ -34,9 +50,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="https://ydray.com/
+            ">
               <span data-feather="document"></span>
-              Recursos Compartidos
+              Transferencia de Archivos
             </a>
           </li>
           <li class="nav-item">
@@ -89,6 +106,34 @@
             </a>
           </li>
           <li class="nav-item">
+            <ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                  <span data-feather="briefcase"></span>
+                  MCdP
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                  <span data-feather="briefcase"></span>
+                  Org - HSH
+                </a>
+              </li>
+              <li>            
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                  <span data-feather="briefcase"></span>
+                  Org - TSF
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                  <span data-feather="briefcase"></span>
+                  Org - TRANS
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/individuales.php">
               <span data-feather="columns"></span>
               Ver Entrevistas Individuales
@@ -119,9 +164,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="https://ydray.com/
+            ">
               <span data-feather="document"></span>
-              Recursos Compartidos
+              Transferencia de Archivos
             </a>
           </li>
           <li class="nav-item">
@@ -144,6 +190,34 @@
               <span data-feather="home"></span>
               Proyecto global
             </a>
+          </li>
+          <li class="nav-item">
+            <ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                  <span data-feather="briefcase"></span>
+                  MCdP
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                  <span data-feather="briefcase"></span>
+                  Org - HSH
+                </a>
+              </li>
+              <li>            
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                  <span data-feather="briefcase"></span>
+                  Org - TSF
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                  <span data-feather="briefcase"></span>
+                  Org - TRANS
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/pruebas.php">
@@ -176,9 +250,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="https://ydray.com/
+            ">
               <span data-feather="document"></span>
-              Recursos Compartidos
+              Transferencia de Archivos
             </a>
           </li>
           <li class="nav-item">
@@ -200,6 +275,34 @@
               <span data-feather="home"></span>
               Proyecto global
             </a>
+          </li>
+          <li class="nav-item">
+            <ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                  <span data-feather="briefcase"></span>
+                  MCdP
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                  <span data-feather="briefcase"></span>
+                  Org - HSH
+                </a>
+              </li>
+              <li>            
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                  <span data-feather="briefcase"></span>
+                  Org - TSF
+                </a>
+              </li>
+              <li>
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                  <span data-feather="briefcase"></span>
+                  Org - TRANS
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/addIndividual.php">
@@ -238,9 +341,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="https://ydray.com/
+            ">
               <span data-feather="document"></span>
-              Recursos Compartidos
+              Transferencia de Archivos
             </a>
           </li>
           <li class="nav-item">
