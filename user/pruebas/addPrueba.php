@@ -87,7 +87,7 @@ $smarty->assign('titulo', 'Añadir prueba');
 
 // Necesitamos cargar un array con los tipos de usuario válidos. Dicho array está en la clase Usuarios
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
-$smarty->assign('resultados_posible', Pruebas::resultados_posible); 
+$smarty->assign('resultados_posibles', Pruebas::resultados_posible); 
 $smarty->assign('realizacion_prueba', Pruebas::realizacion_prueba);
 
 // La variable main se utilizará en el archivo footer.php
