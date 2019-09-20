@@ -93,7 +93,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
                 // No ha habido errores, redirigimos a la página del listado
                 $_SESSION['exito_titulo'] = "Entrevista añadida con éxito";
                 $_SESSION['exito_mensaje'] = "La entrevista ha sido dada de alta correctamente en el sistema";
-                header('Location: ' . _WEB_PATH_ . '/user/entrevistas/index.php');
+                header('Location: ' . _WEB_PATH_ . '/user/entrevistas/individuales.php');
                 exit;
             }
         }
