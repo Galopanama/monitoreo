@@ -6,7 +6,7 @@ $perfiles_aceptados = array('tecnologo', 'subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';   // PENDIENTE DE IR A SECURITY Y HACER EL CAMBIO PERTINENTE
 
 // Cargamos el estilo de la página
-$header = $smarty->fetch("header/prueba.tpl");
+$header = $smarty->fetch("header/pruebas.tpl");
 
 // Vamos a comprobar si hay mensajes en la sesión
 if ($_SESSION['exito_mensaje']){
@@ -30,9 +30,9 @@ if ($_SESSION['error']){
     unset($_SESSION['error']);
 }
 // La variable main se utilizará en el archivo footer.php
-$main = $smarty->fetch("paginas/prueba.tpl");
+$main = $smarty->fetch("paginas/pruebas.tpl");
 
-$footer = $smarty->fetch("footer/prueba.tpl");
+$footer = $smarty->fetch("footer/pruebas.tpl");
 
 require_once '../../footer.php';
 

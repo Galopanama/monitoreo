@@ -61,7 +61,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{$_WEB_PATH_}/admin/prueba/prueba.php">
+                <a class="nav-link active" href="{$_WEB_PATH_}/admin/pruebas/pruebas.php">
                   <span data-feather="heart"></span>
                   Tecnologo
                 </a>
@@ -146,19 +146,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/prueba/prueba.php">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/pruebas.php">
               <span class="fi-beaker"></span>
               Ver Pruebas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/prueba/addPrueba.php">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/addPrueba.php">
               <span data-feather="droplet"></span>
               Añadir Prueba
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/prueba/prueba.php">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/pruebas.php">
               <span data-feather="droplet"></span>
               Ver Pruebas
             </a>

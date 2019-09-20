@@ -3,7 +3,7 @@
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
     {if $tipo_usuario eq 'tecnologo'}
-      <a href="{$_WEB_PATH_}/user/prueba/addPrueba.php" class="btn btn-sm btn-outline-secondary" role="button"
+      <a href="{$_WEB_PATH_}/user/pruebas/addPrueba.php" class="btn btn-sm btn-outline-secondary" role="button"
         aria-pressed="true">Añadir Prueba</a>
     {/if}
     </div>

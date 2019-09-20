@@ -1025,3 +1025,39 @@ Stack trace:
 [19-Sep-2019 16:11:12 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
 [19-Sep-2019 16:11:12 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
   thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:38:42 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[20-Sep-2019 05:39:59 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 12
+[20-Sep-2019 05:39:59 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/prueba.php on line 24
+[20-Sep-2019 05:39:59 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/prueba.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:40:05 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/prueba/addPrueba.php on line 90
+[20-Sep-2019 05:49:07 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 12
+[20-Sep-2019 05:49:07 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 24
+[20-Sep-2019 05:49:07 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/pruebas.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:49:10 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Undefined class constant 'resultados_posibles' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:90
+Stack trace:
+#0 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php on line 90
+[20-Sep-2019 05:49:12 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 12
+[20-Sep-2019 05:49:12 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 24
+[20-Sep-2019 05:49:12 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/pruebas.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:49:19 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 12
+[20-Sep-2019 05:49:19 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 24
+[20-Sep-2019 05:49:19 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/pruebas.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:49:25 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 12
+[20-Sep-2019 05:49:25 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 24
+[20-Sep-2019 05:49:25 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/pruebas.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
+[20-Sep-2019 05:49:34 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 12
+[20-Sep-2019 05:49:34 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/pruebas.php on line 24
+[20-Sep-2019 05:49:34 America/Los_Angeles] PHP Fatal error:  Uncaught  --> Smarty: Unable to load template 'file:paginas/pruebas.tpl' <-- 
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php on line 195
