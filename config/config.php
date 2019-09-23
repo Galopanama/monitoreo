@@ -29,8 +29,12 @@ define ('_WEB_PATH_', 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERV
 
 
 // Vamos a crear el objeto Smarty, pues se usará en todas las páginas
-include_once _ROOT_PATH_ . '/lib/Smarty/mySmarty.php';
-$smarty = new MySmarty();
+include_once _ROOT_PATH_ . '/lib/Smarty/Smarty.class.php';
+$smarty = new Smarty();
+$smarty->setTemplateDir(_ROOT_PATH_ . '/tpl/');
+$smarty->setCompileDir(_ROOT_PATH_ . '/tpl/smarty/templates_c/');
+$smarty->setConfigDir(_ROOT_PATH_ . '/tpl/smarty/configs/');
+$smarty->setCacheDir(_ROOT_PATH_ . '/tpl/smarty/cache/');
 $smarty->assign('_WEB_PATH_', _WEB_PATH_);
 
 // En la mayoría de páginas necesitaremos la variable tipo de usuario para poder realizar cierto tipo de acciones

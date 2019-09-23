@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/constantes.php'; // retocar las constantes y cambiarlas por los nombres de las variables privadas??
+require_once __DIR__ . '/constantes.php'; 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/PersonaReceptora.php';
 require_once __DIR__ . '/Excepciones.php';
@@ -102,7 +102,7 @@ class PersonasReceptoras {
             if (strlen($datos['id_persona_receptora']) < PersonasReceptoras::MIN_TAM_CEDULA || strlen($datos['id_persona_receptora']) > PersonasReceptoras::MAX_TAM_CEDULA) {
                 $errores['id_persona_receptora'] = "Tamaño del campo cédula de la persona receptora incorrecto. Debe ser entre " . PersonasReceptoras::MIN_TAM_CEDULA . ' y ' . PersonasReceptoras::MAX_TAM_CEDULA . ' caracteres.';
             }
-            // TODO: comprobar que la cédula es válida
+            // TODO: comprobar que la cédula es válida - buscar u algoritmo que valide la cedula. Los hay que comprueban el DNI
 
             if (!in_array($datos['poblacion'], PersonasReceptoras::tipos_poblacion_permitidos)){
                 $errores['poblacion'] = "Seleccione una población correcta";

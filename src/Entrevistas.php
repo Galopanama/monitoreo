@@ -3,7 +3,7 @@
 require_once __DIR__ . '/Entrevista.php';
 require_once __DIR__ . '/EntrevistaIndividual.php';
 require_once __DIR__ . '/EntrevistaGrupal.php';
-require_once __DIR__ . '/constantes.php'; // retocar las constantes y cambiarlas por los nombres de las variables privadas??
+require_once __DIR__ . '/constantes.php'; 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
 

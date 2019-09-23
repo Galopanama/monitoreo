@@ -263,9 +263,8 @@ class Usuarios {
         catch (UsuarioNotFoundException $e) {
             // El usuario no existe, por tanto, podemos crearlo
             // Escribimos la consulta básica para prepararla
-            $sql = "insert into usuario (login, nombre, apellidos, tipo_de_usuario, estado, telefono, password, salt) 
-                    values (?, ?, ?, ?, ?, ?, ?, '') "; // Salt ya no se utiliza, por lo que por ahora insertamos un espacio vacío
-
+            $sql = "insert into usuario (login, nombre, apellidos, tipo_de_usuario, estado, telefono, password) 
+                    values (?, ?, ?, ?, ?, ?, ?) "; 
             // Abrimos la conexion de la base de datos
             $db = new DB();
 

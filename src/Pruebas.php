@@ -10,7 +10,7 @@ class Pruebas {
     const realizacion_prueba = array('no_se_realizó','se_realizó');
     const resultados_posibles = array('no_reactivo','reactivo');
 
-    public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){ // VOY POR AQUI 
+    public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){  
         $sql = "select * from " . Constantes::PRUEBA . " p ";   // usamos el alias "p" para la tabla pruebas
         if (!is_null($id_tecnologo)) {
             $sql .= " where p.id_tecnologo = ?";
@@ -52,7 +52,7 @@ class Pruebas {
                 
                 $date = new DateTime($prueba['fecha']);
                 
-                $array_pruebas[] = new Prueba( // AQUI NO ESTOY SEGURO DE QUE ESTE NOMBRE DE OBJETO SEA CORRECTO
+                $array_pruebas[] = new Prueba( 
                     $prueba['id_tecnologo'],
                     $prueba['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
@@ -102,7 +102,7 @@ class Pruebas {
 
         // Ya hemos llegado al final de las validaciones. Si el array no está vacío, significa que han ocurrido errores, por tanto, lanzamos una excepción
         if (sizeof($errores) > 0){
-            throw new ValidationException (serialize($errores));
+            throw new ValidationException (serialize($errores)); // serialize stores the values that have a mistake or that have not???
         }
 
         $sql = "insert into " . Constantes::PRUEBA . " (id_tecnologo, id_cedula_persona_receptora, fecha, realizacion_prueba, `consejeria_pre-prueba`, `consejeria_post-prueba`, resultado_prueba) values (?, ?, now(), ?, ?, ?, ?)";

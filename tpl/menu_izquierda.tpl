@@ -50,13 +50,15 @@
               Estadisticas
             </a>
           </li>
+          GESTIONAR USUARIOS
           <li class="nav-item">
-            <a class="nav-link active" href="https://ydray.com/">
-              <span data-feather="folder-plus"></span>
-              Transferencia de Archivos
+            <a class="nav-link active" href="{$_WEB_PATH_}/admin/usuarios/index.php">
+              <span data-feather="glyphicon glyphicon-search"></span>
+              Usuarios
             </a>
           </li>
-          <li>OBSERVATIORIO DE ACTIVIDADES SEGUN LOS ACTORES
+          OBSERVATIORIO DE ACTIVIDADES SEGUN LOS ACTORES
+          <li>
             <ul class="nav flex-column">
               <li class="nav-item">
                 <ul>
@@ -119,7 +121,7 @@
           ORGANIZACIONES
             <ul> 
               <li class="nav-item">
-                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/" target="_blank">
                   <span data-feather="home"></span>
                   MCdP - Movimiento Coordinador de Panama
                 </a>
