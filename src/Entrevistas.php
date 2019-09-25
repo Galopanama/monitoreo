@@ -16,22 +16,22 @@ class Entrevistas {
      * @param fecha Debe ser una fecha en el formato YYYY-MM-DD
      */
     public static function getEntrevistaIndividual ($id_promotor, $id_persona_receptora, $fecha){
-        $sql = "SELECT * FROM " . Constantes::INDIVIDUAL;
+        $sql = "select * from " . Constantes::INDIVIDUAL;
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
             $sql .= ", " . Constantes::PROMOTOR; 
         }
 
-        $sql .= " WHERE id_promotor = ? and " .
+        $sql .= " where id_promotor = ? and " .
                 "id_persona_receptora = ? and " .
                 "fecha = ? ";
 
         if ($_SESSION["tipo_de_usuario"] === "promotor") {
-            $sql .= " AND id_promotor = " . $_SESSION["id_usuario"] . " ";
+            $sql .= " and id_promotor = " . $_SESSION["id_usuario"] . " ";
         }
         else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " AND " . Constantes::PROMOTOR . ".id_usuario = " . Constantes::INDIVIDUAL . ".id_promotor
-                    AND id_subreceptor = " . $_SESSION["id_usuario"] . " ";
+            $sql .= " and " . Constantes::PROMOTOR . ".id_usuario = " . Constantes::INDIVIDUAL . ".id_promotor
+                    and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
         }   
 
         // Abrimos la conexion de la base de datos
@@ -85,22 +85,22 @@ class Entrevistas {
     }
 
     public static function getEntrevistaGrupal($id_promotor, $id_persona_receptora, $fecha){
-        $sql = "SELECT * FROM $nombre_tabla_ent_grup ";
+        $sql = "select * from " . Constantes::GRUPAL ;
     
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= ", $nombre_tabla_promotor ";
+            $sql .= ", " . Constantes::PROMOTOR ;
         }
 
-        $sql .= "WHERE id_promotor = ? and " .
+        $sql .= "where id_promotor = ? and " .
                 "id_persona_receptora = ? and " .
                 "fecha = ? ";
 
         if ($_SESSION["tipo_de_usuario"] === "promotor") {
-            $sql .= "AND id_promotor = " . $_SESSION["id_usuario"] . " ";
+            $sql .= "and id_promotor = " . $_SESSION["id_usuario"] . " ";
         }
-        else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " AND $nombre_tabla_promotor.id_usuario = $nombre_tabla_ent_grup.id_promotor
-                    AND id_subreceptor = " . $_SESSION["id_usuario"] . " ";
+        else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {             
+            $sql .= " and " . Constantes::PROMOTOR . ".id_usuario  = " . Constantes::GRUPAL . ".id_promotor
+                    and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
         }
         
         // Abrimos la conexion de la base de datos

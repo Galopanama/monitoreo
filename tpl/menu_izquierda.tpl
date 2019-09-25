@@ -12,25 +12,25 @@
           <li class="nav-item">
              <ul>ORGANIZACIONES
               <li class="nav-item">
-                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/" target="_blank">
                   <span data-feather="home"></span>
                   MCdP - Movimiento Coordinador de Panama
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion HSH
                 </a>
               </li>
               <li>            
-                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TSF
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TRANS
                 </a>
@@ -127,19 +127,19 @@
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion HSH
                 </a>
               </li>
               <li>            
-                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TSF
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TRANS
                 </a>
@@ -197,25 +197,25 @@
           ORGANIZACIONES
             <ul>
               <li class="nav-item">
-                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/" target="_blank">
                   <span data-feather="home"></span>
                   MCdP - Movimiento Coordinador de Panama
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion HSH
                 </a>
               </li>
               <li>            
-                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TSF
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TRANS
                 </a>
@@ -267,25 +267,25 @@
           <li class="nav-item">
             <ul>
               <li class="nav-item">
-                <a class="nav-link active" href="https://www.facebook.com/MCdPma/">
+                <a class="nav-link active" href="https://www.facebook.com/MCdPma/" target="_blank">
                   <span data-feather="home"></span>
                   MCdP - Movimiento Coordinador de Panama
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/">
+                <a class="nav-link active" href="https://www.facebook.com/AHMNPLGBT/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion HSH
                 </a>
               </li>
               <li>            
-                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/">
+                <a class="nav-link active" href="https://www.facebook.com/viviendo.positivamente/" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TSF
                 </a>
               </li>
               <li>
-                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en">
+                <a class="nav-link active" href="https://twitter.com/apptranspanama?lang=en" target="_blank">
                   <span data-feather="home"></span>
                   Subreceptor para poblacion TRANS
                 </a>

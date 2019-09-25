@@ -3,15 +3,17 @@ require_once '../config/config.php';
 
 //Comprobamos si es sólo para mostrar la página o es para realizar el logado
 if($_POST['username'] || $_POST['password']){
+    
     //Realiza el login
     require_once '../src/Usuarios.php';
     try {
         $usuario = Usuarios::getUsuarioByUsername($_POST['username'], true, true);
         
         // Si el password es correcto
-        if (password_verify($_POST["password"], $usuario->getPassword())) { // metodo para verificar el password 
-            // Pondremos en la sesión los datos necesarios
-            $_SESSION['usuario_id'] = $usuario->getId();
+
+
+        if (password_verify($_POST["password"], $usuario->getPassword())) {                 // metodo para verificar el password 
+            $_SESSION['usuario_id'] = $usuario->getId();                                    // Pondremos en la sesión los datos necesarios
             $_SESSION['tipo_de_usuario'] = $usuario->getTipo_de_usuario();
         }
         else {

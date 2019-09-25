@@ -22,6 +22,4 @@ class DB {
         return $this->conexion;
     }
 
-    // Después de muchos errores, se decide eliminar el uso de desconecta()
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-// issue_17. Se necesita implementar la interfaz JsonSerializable para poder pasar al objeto json los atributos privados posteriormente
+
 class Usuario implements \JsonSerializable{
 
     private $id;
@@ -148,7 +148,7 @@ class Promotor extends Usuario{
     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$id_cedula,$organizacion,$id_subreceptor){
     
         parent::__construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
-        $this->id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
+        $this->id_cedula = $id_cedula; 
         $this->organizacion = $organizacion;
         $this->id_subreceptor = $id_subreceptor;
 
@@ -199,7 +199,7 @@ class Tecnologo extends Usuario{
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
         $this->numero_de_registro = $numero_de_registro;
-        $this->id_cedula = $id_cedula;  // se repite con el campo en la clase Promotor** propuesta de cambio para otro nombre 
+        $this->id_cedula = $id_cedula;   
 
     }
 
@@ -232,7 +232,5 @@ class Tecnologo extends Usuario{
 
 } 
 
-// Dependiendo del tipo de usuario hay que crear un nivel de acceso a la base de datos. Por lo tanto,
-// tendria que ser desde este fichero o mas bien desde el fichero de acceso. 
 
 ?>
