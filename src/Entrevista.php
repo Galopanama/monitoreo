@@ -1,4 +1,6 @@
 <?php
+// The class Entrevista belong to the Model that it is necessary for the application
+// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
 
 abstract class Entrevista implements \JsonSerializable{
 
@@ -70,7 +72,7 @@ abstract class Entrevista implements \JsonSerializable{
 
     /**
      * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {

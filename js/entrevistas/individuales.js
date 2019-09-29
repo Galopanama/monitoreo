@@ -1,9 +1,9 @@
-
+// este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
 /**
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#entrevistasIndividuales').DataTable( {
+    var table = $('#entrevistasIndividuales').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
         "ajax": "ajax.php?funcion=getAllIndividuales",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
@@ -20,8 +20,8 @@ $(document).ready(function() {
             { "data": "materiales_educativos_entregados" },
             { 
                 "data": "uso_del_condon",
-                "render": function ( data, type, row ) {
-                    if(row.uso_del_condon) {
+                "render": function ( data, type, row ) {// parametro como se representan . Es un parametro de la columna
+                    if(row.uso_del_condon) { // la funcion viene asi por fuerza... 
                         return "Sí";
                     }
                     else{

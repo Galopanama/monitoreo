@@ -1,5 +1,8 @@
 <?php
 
+// The class Prueba belong to the Model.  
+// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
+
 class Prueba implements \JsonSerializable{
 
     private $id_tecnologo;
@@ -81,7 +84,7 @@ class Prueba implements \JsonSerializable{
 
     /**
      * Este método devuelve todas las propiedades del objeto Prueba
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {

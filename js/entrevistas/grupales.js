@@ -7,6 +7,7 @@ $(document).ready(function() {
         "ajax": "ajax.php?funcion=getAllGrupales",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
+            // The first column will expand 
             {
                 "className":      'details-control',
                 "orderable":      false,
@@ -212,12 +213,14 @@ $(document).ready(function() {
 
     /**
      * Vamos a mostrar los posibles mensajes de exito que hubiesen ocurrido
+     * Sohw the possible messahe of succeed if there are some
      */
     if ($(".alert-success").find('h4').html() != "") {
         $(".alert-success").toggleClass('d-none');
     }
     
     // Y los mensajes de error
+    // Show the error messages
     if ($(".alert-danger").find('p').html() != "") {
         $(".alert-danger").toggleClass('d-none');
     }

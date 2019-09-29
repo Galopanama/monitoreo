@@ -1,5 +1,8 @@
 <?php
+// This page will redirect the user depending on their user type
+
 require_once 'config/config.php';
+
 
 switch ($_SESSION['tipo_de_usuario']){
     case 'administrador':

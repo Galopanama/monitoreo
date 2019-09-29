@@ -30,9 +30,9 @@ $(document).ready(function() {
         $(".alert-danger").toggleClass('d-none');
     }
 
-    $(document).on('change', '#id_persona_receptora_buscada', checkPersonaExiste);  // DISPARADORES DE JQUERY
-    $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);   // change y keyup son eventos de la pagina, relacionados 
-
+    $(document).on('change', '#id_persona_receptora_buscada', checkPersonaExiste);                                              // DISPARADORES DE JQUERY
+    $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);                                                // change y keyup son eventos de la pagina, relacionados 
+                                                                                                                                  //# busca en el id del elemento html no de la clase. 
     function checkPersonaExiste(){
         var request = $.ajax({
             url: "ajax.php?funcion=buscar",
@@ -42,7 +42,7 @@ $(document).ready(function() {
         });
 
         request.done(function (response) {
-            if(response.error == 0){    // errores controlados tales como error en la "BD en la consulta"
+            if(response.error == 0){                                                                                            // errores controlados tales como error en la "BD en la consulta"
                 if (response.found == 1) {
                     $("#id_persona_receptora").val($("#id_persona_receptora_buscada").val());
                     $("#poblacion").val(response.poblacion).prop( "disabled", true );
@@ -60,7 +60,7 @@ $(document).ready(function() {
         });
 
         request.fail(function (jqXHR, textStatus) {
-            alert("Ocurrió un error: " + textStatus);  // para reflejar los errores que no son controlados en el script, como errores de conexion
+            alert("Ocurrió un error: " + textStatus);                                                                            // para reflejar los errores que no son controlados en el script, como errores de conexion
         });
     }
 });

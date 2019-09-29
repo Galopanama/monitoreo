@@ -64,36 +64,6 @@ $(document).ready(function() {
         });
     }
 
-    // Aqui no se si realmente funciona. Imagino que no porque solo esta aqui escrita la condicion, e intuyo que deberia ir tambien en el PHP de addPrueba//
-    
-    //  AQUI VA UN INTENTO
-    
-    // function checkPruebaRealizada (){
-    //     var request = $.ajax({
-    //         url: "ajax.php?funcion=buscar",
-    //         method: "POST",
-    //         data: { key: $("#realizacion_de_prueba").val() },
-    //         dataType: "json"
-    //     });   
-        
-    //     request.done(function (response) {
-    //         if(response.error == 0){    // errores controlados tales como error en la "BD en la consulta"
-    //             if (response.found == 1) {              // el valor seria 1 == se realizo
-    //                 $("#consejeria_pre_prueba").val(response.consejeria_pre_prueba).prop( "disabled", true);
-    //                 $("#consejeria_post_prueba").val(response.consejeria_post_prueba).prop( "disabled", true);
-    //                 $("#resultado_prueba").val(response.resultado_prueba).prop( "disabled", true);
-    //             }
-    //             else {
-    //                 $("#consejeria_pre_prueba").prop( "disabled", false );
-    //                 $("#consejeria_post_prueba").prop( "disabled", false );
-    //                 $("#resultado_prueba").prop( "disabled", false );
-    //             }
-    //         }
-    //         else {
-    //             alert(response.errorMessage);
-    //         }
-    //     });
-        
-    // }
+
 
 });

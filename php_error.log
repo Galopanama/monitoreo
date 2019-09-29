@@ -1,2 +1,0 @@
-[10-Sep-2019 14:05:33 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 5
-[19-Sep-2019 14:11:33 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 5

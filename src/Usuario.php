@@ -1,5 +1,7 @@
 <?php
-
+// The class Usuario belong to the Model.  
+// It is a father class 
+// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
 
 class Usuario implements \JsonSerializable{
 
@@ -98,7 +100,7 @@ class Usuario implements \JsonSerializable{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -107,6 +109,8 @@ class Usuario implements \JsonSerializable{
         return $vars;
     }
 }
+
+// The class Subreceptor is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Subreceptor extends Usuario{
 
@@ -129,7 +133,7 @@ class Subreceptor extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -138,6 +142,8 @@ class Subreceptor extends Usuario{
         return $vars;
     }
 }
+
+// The class Promotor is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Promotor extends Usuario{
 
@@ -180,7 +186,7 @@ class Promotor extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -189,6 +195,8 @@ class Promotor extends Usuario{
         return $vars;
     }
 }
+
+// The class Tecnologo is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Tecnologo extends Usuario{
 
@@ -221,7 +229,7 @@ class Tecnologo extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
