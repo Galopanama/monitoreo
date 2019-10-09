@@ -104,7 +104,7 @@
           </li>
           COMPARTIR 
           <li class="nav-item">
-            <a class="nav-link active" href="https://ydray.com/">
+            <a class="nav-link active" href="https://ydray.com/" target="_blank">
               <span data-feather="folder-plus"></span>
               Transferencia de Archivos
             </a>
@@ -179,7 +179,7 @@
           </li>
           COMPARTIR 
           <li class="nav-item">
-            <a class="nav-link active" href="https://ydray.com/">
+            <a class="nav-link active" href="https://ydray.com/" target="_blank">
               <span data-feather="folder-plus"></span>
               Transferencia de Archivos
             </a>
@@ -250,7 +250,7 @@
           </li>
           COMPARTIR
           <li class="nav-item">
-            <a class="nav-link active" href="https://ydray.com/">
+            <a class="nav-link active" href="https://ydray.com/" target="_blank">
               <span data-feather="folder-plus"></span>
               Transferencia de Archivos
             </a>
@@ -332,7 +332,7 @@
           </li>
           COMPARTIR
           <li class="nav-item">
-            <a class="nav-link active" href="https://ydray.com/">
+            <a class="nav-link active" href="https://ydray.com/" target="_blank">
               <span data-feather="folder-plus"></span>
               Transferencia de Archivos
             </a>
