@@ -19,7 +19,7 @@ class Entrevistas {
     // El parametro fecha debe ser una fecha en el formato YYYY-MM-DD
     // the parameter fecha must be in the format YYYY-MM-DD
 
-    // The function request the database one entrevista individual  
+    // The function request the database one Entrevista Individual  
     public static function getEntrevistaIndividual ($id_promotor, $id_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::INDIVIDUAL; 
 
@@ -98,7 +98,7 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // the function request the databse the infromation from the Entrevistas Grupales 
+    // the function request the databse information about the Entrevistas Grupales 
     public static function getEntrevistaGrupal($id_promotor, $id_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::GRUPAL ;  // The query is declared in a variable called $sql
     
@@ -153,8 +153,7 @@ class Entrevistas {
         $grupal['clam_y_otros_servicios'], $grupal['salud_anal'], $grupal['hormonizacion'], $grupal['apoyo_y_orientacion_psicologica'], 
         $grupal['diversidad_sexual_identidad_expresion_de_genero'], $grupal['tuberculosis_y_coinfecciones'],$grupal['infecciones_oportunistas']);
     }
-
-    // The function request the database all entrevistas individuales  
+    // The function request the database all Entrevistas Individuales  
     public static function getAllEntrevistasIndividuales ($id_promotor = null, $id_subreceptor = null){
         $sql = "select * from " . Constantes::INDIVIDUAL . " e ";   // The query is declared in a variable called $sql
     
@@ -251,7 +250,7 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // The function request the database all entrevistas grupales 
+    // The function request the database all Entrevistas Grupales 
     public static function getAllEntrevistasGrupales ($id_promotor = null, $id_subreceptor = null){
         $sql = "select * from " . Constantes::GRUPAL . " e ";   // The query is declared in a variable called $sql
 
@@ -357,7 +356,81 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // This function will be use to add individual interviews
+    // The function request the database all Alcanzados
+    public static function getAlcanzado ($id_promotor, $id_persona_receptora){
+
+        $sql = "select * from " . Constantes::INDIVIDUAL . Constantes::GRUPAL; // Becasue it has to be the two tables 
+
+        if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
+            $sql .= ", " . Constantes::PROMOTOR; // The id of subreceptor is required to enforce that only show entrevistas of certain promotores associated to them 
+        }
+
+        $sql .= " where id_promotor = ? and " .
+                "id_persona_receptora = ? and " .
+                "condones_entregados >= 40 "  . // Because we want to find only those who have been ALCANZADOS
+                "lubricantes_entregados >= 40 " .
+                "materiales_educativos_entregados >= 40 ";
+
+        if ($_SESSION["tipo_de_usuario"] === "promotor") {   // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
+            $sql .= " and id_promotor = " . $_SESSION["id_usuario"] . " ";
+        }
+        else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
+            $sql .= " and " . Constantes::PROMOTOR . ".id_usuario = " . Constantes::INDIVIDUAL . ".id_promotor
+                    and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
+        }   
+
+
+        // Abrimos la conexion de la base de datos
+        // The connection to the database is open
+        $db = new DB();
+        $mysqli = $db->conecta();
+
+        // Preparaos la sentencia anterior
+        // The sentence gets prepared in the variable $stmt
+        if ($stmt = $mysqli->prepare($sql)) {
+
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            // The parameter are associated to the attriute listed as well as the datatype is specified
+            $stmt->bind_param('is', $id_promotor, $id_persona_receptora);
+
+            // Ejecutamos la sentencia con los valores ya establecidos
+            // The sentence get executed
+            $stmt->execute();
+
+            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
+            // Once requested the sentece, we would be able to manipulate the information in the object called $result
+            $result = $stmt->get_result();
+
+            // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
+            // We request the object to return the information in one line per entrevista
+            $alcanzados = $result->fetch_all(MYSQLI_ASSOC);
+
+            // Cerramos la conexión
+            // The connection gets close
+            $stmt->close();
+                
+            if(sizeof($alcanzados) !== 1) {
+                // If there size is 0 or more than 1 there is an error with the login of with the itreview requested. The user gets informed with an error message
+                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
+                throw new AlcanzadoNotFoundException("La entrevista buscada no se encuentra");
+            }
+
+            // Puesto que esta consulta sólo ha devuelto 1 entrevista, obtenemos los datos de la primera posición del array
+            // if the size 1, the object indivudual would display the only entrevista individual that the user has requested 
+            $alcanzado = $alcanzados[0];
+            
+            // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de Alcanzado
+            // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
+            return new Alcanzado(
+                $alcanzado['id_promotor'], 
+                $alcanzado['id_persona_receptora'], 
+                $alcanzado['condones_entregados'], 
+                $alcanzado['lubricantes_entregados'], 
+                $alcanzado['materiales_educativos_entregados']
+            );
+        }
+    }
+    // This function will be use to add Individual Interviews
     public static function addIndividual($datos, $db = null){
         
         // Si el objeto db no es nulo, estamos en una transacción
@@ -444,7 +517,7 @@ class Entrevistas {
         }
         
     }
-
+    // This function will be use to add Group Interviews
     public static function addGrupal($datos, $db = null){
         
         // Si el objeto db no es nulo, estamos en una transacción
