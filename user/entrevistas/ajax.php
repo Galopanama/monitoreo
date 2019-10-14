@@ -107,20 +107,20 @@ function getAllGrupales() {
 }
 
 /**
- * Devuelve todas las entrevistas individuales
- * Return all the personal interviews
+ * Devuelve todas las personas receptoras Alcanzadas
+ * Return all the Personas receptoras Alcanzadas
  */
 function getAllAlcanzados() {
     try {
         if($_SESSION['tipo_de_usuario'] === 'promotor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor
             // If the user is promotor, we pass the id to show only the interviews with the same id
-            $lista = Entrevistas::getAlcanzados($_SESSION['usuario_id'], null); // The object Entrevista gets called
+            $lista = Entrevistas::getAlcanzado($_SESSION['usuario_id'], null); // The object Entrevista gets called
         }
         else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
             // Si el usuario es subreceptor, pasamos el segundo argumento al método para indicar el id
             // If the user is subreceptor, we pass the id and only return the objects that contains the same id
-            $lista = Entrevistas::getAlcanzados(null, $_SESSION['usuario_id']); // The object Entrevista gets called
+            $lista = Entrevistas::getAlcanzado(null, $_SESSION['usuario_id']); // The object Entrevista gets called
         }
 
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor

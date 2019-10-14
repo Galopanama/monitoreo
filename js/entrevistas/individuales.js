@@ -3,7 +3,7 @@
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#entrevistasIndividuales').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
+    var table = $('#entrevistasIndividuales').DataTable( {// plugin de JQuery al que le das las colunas de una clase. llama al ajax
         "ajax": "ajax.php?funcion=getAllIndividuales",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra

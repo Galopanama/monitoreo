@@ -36,9 +36,9 @@ if ($_SESSION['error']){
 }
 
 // Rest of the View is called
-$main = $smarty->fetch("paginas/entrevistas/individuales.tpl");
+$main = $smarty->fetch("paginas/entrevistas/alcanzados.tpl");
 
-$footer = $smarty->fetch("footer/entrevistasIndividuales.tpl"); 
+$footer = $smarty->fetch("footer/alcanzados.tpl"); 
 
 require_once '../../footer.php';
 
