@@ -22,8 +22,8 @@ switch($_GET['funcion']){
     case "getAllGrupales":
         echo json_encode(getAllGrupales());
         exit;
-    case "getAllAlcanzados":
-        echo json_encode(getAllAlcanzados());
+    case "getAlcanzados":
+        echo json_encode(getAlcanzados());
         exit;
     case "buscar":
         echo json_encode(buscar_persona_receptora($_POST['key']));
@@ -110,7 +110,7 @@ function getAllGrupales() {
  * Devuelve todas las personas receptoras Alcanzadas
  * Return all the Personas receptoras Alcanzadas
  */
-function getAllAlcanzados() {
+function getAlcanzados() {
     try {
         if($_SESSION['tipo_de_usuario'] === 'promotor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor

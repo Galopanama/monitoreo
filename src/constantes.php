@@ -11,5 +11,6 @@ class Constantes {
     const TECNOLOGO = 'tecnologo';
     const PROMOTOR = 'promotor';
     const PERSONA_RECEPTORA = 'persona_receptora';
+    const ALCANZADOS = 'totales_entregados';        //introducido para conseguir manipular esa vista
 } 
 ?>

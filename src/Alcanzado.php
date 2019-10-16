@@ -4,11 +4,13 @@
 // The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
 require_once 'Entrevista.php';
 
+
+
 class Alcanzado extends Entrevista
 {
-    private $condones_recibidos;
-    private $lubricantes_recibidos;
-    private $materiales_educativos_recibidos;
+    private $total_condones;
+    private $total_lubricantes;
+    private $total_materiales_educativos;
 
     public function __construct(
         $id_promotor,
@@ -17,55 +19,39 @@ class Alcanzado extends Entrevista
         $condones_entregados,
         $lubricantes_entregados,
         $materiales_educativos_entregados,
-        $condones_recibidos,
-        $lubricantes_recibidos,
-        $materiales_educativos_recibidos
+        $total_condones,
+        $total_lubricantes,
+        $total_materiales_educativos
     ) {
 
         parent::__construct($id_promotor, $id_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
-        $this->condones_recibidos = $condones_recibidos;
-        $this->lubricantes_recibidos = $lubricantes_recibidos;
-        $this->materiales_educativos_recibidos = $materiales_educativos_recibidos;
+        $this->total_condones = $total_condones;
+        $this->total_lubricantes = $total_lubricantes;
+        $this->total_materiales_educativos = $total_materiales_educativos;
     }
 
-    public function setCondones_recibidos($condones_recibidos)
-    {
-        $this->condones_recibidos = parent::$condones_entregados;
+    public function setTotal_condones($total_condones){
+        $this->total_condones = $total_condones;
     }
 
-    public function getCondones_recibidos()
-    {
-        if ($this->condones_recibidos >= 40)
-            return $this->condones_recibidos;
-        else
-            return "Faltan" . 40 - $this->condones_recibidos . " condones para alcanzar el minimo";
+    public function getTotal_condones(){
+        return $this->total_condones;
     }
 
-    public function setLubricantes_recibidos($lubricantes_recibidos)
-    {
-        $this->lubricantes_recibidos = parent::$lubricantes_entregados; 
+    public function setTotal_lubricantes($total_lubricantes){
+        $this->total_lubricantes = $total_lubricantes;
     }
 
-    public function getLubricantes_entregados()
-    {
-        if ($this->lubricantes_recibidos >= 40)
-            return $this->lubricantes_recibidos;
-        else
-            return "Faltan" . 40 - $this->lubricantes_recibidos . " lubrincantes para alcanzar el minimo";
+    public function getLubricantes_entregados(){
+        return $this->total_lubricantes;
     }
     
-
-    public function setMateriales_educativos_recibidos($materiales_educativos_recibidos)
-    {
-        $this->$materiales_educativos_recibidos = parent::$materiales_educativos_entregados;
+    public function setTotal_materiales_educativos($total_materiales_educativos){
+        $this->total_materiales_educativos = $total_materiales_educativos;
     }
 
-    public function getMateriales_educativos_entregados()
-    {
-        if ($this->materiales_educativos_recibidos >= 40)
-            return $this->materiales_educativos_recibidos;
-        else
-            return "Faltan" . 40 - $this->materiales_educativos_recibidos . " materiales educativos para alcanzar el minimo";
+    public function getMateriales_educativos_entregados(){
+        return $this->total_materiales_educativos;
     }
 
 

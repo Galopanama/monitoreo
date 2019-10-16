@@ -3,8 +3,8 @@
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#alcanzados').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
-        "ajax": "ajax.php?funcion=getAllAlcanzados",
+    var table = $('#totales_entregados').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
+        "ajax": "ajax.php?funcion=getAlcanzados",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
             {
@@ -12,9 +12,9 @@ $(document).ready(function() {
                 "orderable":      false,
                 "data":           null,
                 "defaultContent": ''},
-            { "data": "condones_entregados" },
-            { "data": "lubricantes_entregados" },
-            { "data": "materiales_educativos_entregados" }
+            { "data": "total_condones" },
+            { "data": "total_lubricantes" },
+            { "data": "total_materiales_educativos" }
         ],
         // Botones para exportar el listado
         dom: 'Bfrtip',
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     
     // Add event listener for opening and closing details
-    $('#alcanzados tbody').on('click', 'td.details-control', function () {
+    $('#totales_entregados tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  

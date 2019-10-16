@@ -320,7 +320,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/alcanzados.php">
-              <span data-feather="activity"></span>
+              <span data-feather=""></span>
               Ver Alcanzados
             </a>
           </li>

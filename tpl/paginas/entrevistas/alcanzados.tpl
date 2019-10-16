@@ -19,21 +19,21 @@
   <p>{$exito_mensaje}</p>
 </div>
 
-<table id="alcanzados" class="display" style="width:100%">
+<table id="totales_entregados" class="display" style="width:100%">
     <thead>
         <tr>
             <th>Datos receptor/a</th>
-            <th>Condones entregados</th>
-            <th>Lubricantes entregados</th>
-            <th>Materiales educativos entregados</th>
+            <th>Total de condones entregados</th>
+            <th>Total de lubricantes entregados</th>
+            <th>Total de materiales educativos entregados</th>
         </tr>
     </thead>
     <tfoot>
         <tr>
             <th>Datos receptor/a</th>
-            <th>Condones entregados</th>
-            <th>Lubricantes entregados</th>
-            <th>Materiales educativos entregados</th>
+            <th>Total de condones entregados</th>
+            <th>Total de lubricantes entregados</th>
+            <th>Total de materiales educativos entregados</th>
         </tr>
     </tfoot>
 </table>

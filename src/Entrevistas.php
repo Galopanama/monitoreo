@@ -357,9 +357,9 @@ class Entrevistas {
         }
     }
     // The function request the database all Alcanzados
-    public static function getAlcanzado ($id_promotor, $id_persona_receptora){
+    public static function getAlcanzados ($id_promotor, $id_persona_receptora){
 
-        $sql = "select * from " . Constantes::INDIVIDUAL . Constantes::GRUPAL; // Becasue it has to be the two tables 
+        $sql = "select * from view " . Constantes::ALCANZADOS; // As there is a view created with that purpose 
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
             $sql .= ", " . Constantes::PROMOTOR; // The id of subreceptor is required to enforce that only show entrevistas of certain promotores associated to them 
@@ -367,9 +367,9 @@ class Entrevistas {
 
         $sql .= " where id_promotor = ? and " .
                 "id_persona_receptora = ? and " .
-                "condones_entregados >= 40 "  . // Because we want to find only those who have been ALCANZADOS
-                "lubricantes_entregados >= 40 " .
-                "materiales_educativos_entregados >= 40 ";
+                "total_condones >= 40 "  . // Because we want to find only those who have been ALCANZADOS
+                "total_lubricantes >= 40 " .
+                "total_materiales_educativos >= 40 ";
 
         if ($_SESSION["tipo_de_usuario"] === "promotor") {   // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
             $sql .= " and id_promotor = " . $_SESSION["id_usuario"] . " ";
@@ -412,7 +412,7 @@ class Entrevistas {
             if(sizeof($alcanzados) !== 1) {
                 // If there size is 0 or more than 1 there is an error with the login of with the itreview requested. The user gets informed with an error message
                 // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
-                throw new AlcanzadoNotFoundException("La entrevista buscada no se encuentra");
+                throw new AlcanzadoNotFoundException("La persona no ha sido alcanzada aún");
             }
 
             // Puesto que esta consulta sólo ha devuelto 1 entrevista, obtenemos los datos de la primera posición del array
@@ -423,10 +423,14 @@ class Entrevistas {
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
             return new Alcanzado(
                 $alcanzado['id_promotor'], 
-                $alcanzado['id_persona_receptora'], 
-                $alcanzado['condones_entregados'], 
-                $alcanzado['lubricantes_entregados'], 
-                $alcanzado['materiales_educativos_entregados']
+                $alcanzado['id_persona_receptora'],
+                $alcanzado['fecha'],
+                $alcanzado['condones_entregados'],
+                $alcanzado['lubricantes_entregados'],
+                $alcanzado['materiales_educativos_entregados'], 
+                $alcanzado['total_condones'], 
+                $alcanzado['total_lubricantes'], 
+                $alcanzado['total_materiales_educativos']
             );
         }
     }
