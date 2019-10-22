@@ -13,6 +13,8 @@ require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
+
+
 //the user can retrieve the information of all the interviews. 
 //The information return as an Json object
 switch($_GET['funcion']){

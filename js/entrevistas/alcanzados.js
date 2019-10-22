@@ -3,7 +3,7 @@
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#totales_entregados').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
+    var table = $('#total').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
         "ajax": "ajax.php?funcion=getAlcanzados",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     
     // Add event listener for opening and closing details
-    $('#totales_entregados tbody').on('click', 'td.details-control', function () {
+    $('#total tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  

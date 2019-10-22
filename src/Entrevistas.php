@@ -6,6 +6,7 @@
 require_once __DIR__ . '/Entrevista.php';
 require_once __DIR__ . '/EntrevistaIndividual.php';
 require_once __DIR__ . '/EntrevistaGrupal.php';
+
 require_once __DIR__ . '/constantes.php'; 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
@@ -357,9 +358,9 @@ class Entrevistas {
         }
     }
     // The function request the database all Alcanzados
-    public static function getAlcanzados ($id_promotor, $id_persona_receptora){
+    public static function getAlcanzado ($id_promotor, $id_persona_receptora){
 
-        $sql = "select * from view " . Constantes::ALCANZADOS; // As there is a view created with that purpose 
+        $sql = "select * from " . Constantes::ALCANZADOS; // As there is a view created with that purpose 
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
             $sql .= ", " . Constantes::PROMOTOR; // The id of subreceptor is required to enforce that only show entrevistas of certain promotores associated to them 

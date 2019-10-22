@@ -19,7 +19,7 @@
   <p>{$exito_mensaje}</p>
 </div>
 
-<table id="totales_entregados" class="display" style="width:100%">
+<table id="total" class="display" style="width:100%">
     <thead>
         <tr>
             <th>Datos receptor/a</th>
