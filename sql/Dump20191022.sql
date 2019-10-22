@@ -37,6 +37,7 @@ CREATE TABLE `persona_receptora` (
 
 LOCK TABLES `persona_receptora` WRITE;
 /*!40000 ALTER TABLE `persona_receptora` DISABLE KEYS */;
+INSERT INTO `persona_receptora` VALUES ('111111111',1,'TSF','2019-10-10 13:16:56'),('1212121212',1,'HSH','2019-10-10 13:20:33'),('12345678',1,'HSH','2019-10-10 13:13:58'),('20202020',1,'TRANS','2019-10-18 18:26:04'),('2222222',1,'HSH','2019-10-11 18:39:57'),('31433333',0,'TSF','2019-10-10 13:15:02'),('3333333',1,'HSH','2019-10-11 18:40:57'),('44444444',1,'HSH','2019-10-12 18:30:43'),('55555555',1,'HSH','2019-10-12 18:31:29'),('88888888',1,'TRANS','2019-10-19 16:29:59'),('99999999',1,'TRANS','2019-10-19 16:28:34');
 /*!40000 ALTER TABLE `persona_receptora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,6 +111,7 @@ CREATE TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` (
 
 LOCK TABLES `promotor_realiza_actividad_grupal_con_personas_receptoras` WRITE;
 /*!40000 ALTER TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` DISABLE KEYS */;
+INSERT INTO `promotor_realiza_actividad_grupal_con_personas_receptoras` VALUES (17,'111111111','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'111111111','2019-10-16','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,2,2,2),(17,'1212121212','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'12345678','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'20202020','2019-10-18','Bocas_del_Toro','Bocas',1,1,0,0,0,0,0,0,0,0,0,0,20,20,20),(17,'2222222','2019-10-11','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,8,8,8),(17,'2222222','2019-10-18','Bocas_del_Toro','Bocas',0,1,0,0,0,0,0,0,0,0,0,0,5,5,35),(17,'31433333','2019-10-18','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,6,7,8),(17,'3333333','2019-10-19','Panamá_Oeste_1','Panama',1,1,0,0,1,0,0,1,1,1,1,1,22,22,22),(17,'44444444','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'44444444','2019-10-18','Bocas_del_Toro','Bocas',1,1,1,0,0,1,0,0,0,0,0,0,9,9,9),(17,'55555555','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,30,30,30),(17,'88888888','2019-10-19','Herrera','Los santos',1,0,0,0,0,0,0,0,0,1,0,0,1,1,1),(17,'99999999','2019-10-19','Coclé','Cocle',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,6 +147,7 @@ CREATE TABLE `promotor_realiza_entrevista_individual` (
 
 LOCK TABLES `promotor_realiza_entrevista_individual` WRITE;
 /*!40000 ALTER TABLE `promotor_realiza_entrevista_individual` DISABLE KEYS */;
+INSERT INTO `promotor_realiza_entrevista_individual` VALUES (17,'111111111','2019-10-10',1,0,1,0,0,0,0,0),(17,'111111111','2019-10-16',0,0,0,1,1,39,39,39),(17,'1212121212','2019-10-15',1,0,0,0,0,40,40,40),(17,'1212121212','2019-10-18',1,1,1,1,1,4,4,4),(17,'12345678','2019-10-10',1,1,1,1,1,5,5,5),(17,'12345678','2019-10-16',0,0,1,1,0,35,35,35),(17,'20202020','2019-10-18',1,1,1,1,1,20,20,20),(17,'2222222','2019-10-11',1,1,0,0,0,1,0,0),(17,'2222222','2019-10-17',0,0,0,0,0,20,20,20),(17,'31433333','2019-10-10',1,0,0,0,0,1,1,1),(17,'31433333','2019-10-19',0,0,1,1,1,3,2,1),(17,'3333333','2019-10-11',1,0,0,0,0,22,2,2),(17,'44444444','2019-10-12',1,0,0,0,0,50,50,50),(17,'55555555','2019-10-12',1,0,0,0,0,15,15,15),(17,'88888888','2019-10-19',1,1,1,1,1,4,4,4),(17,'99999999','2019-10-19',1,0,1,1,1,75,75,75);
 /*!40000 ALTER TABLE `promotor_realiza_entrevista_individual` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,8 +261,54 @@ CREATE TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` (
 
 LOCK TABLES `tecnologo_realiza_prueba_vih_a_persona_receptora` WRITE;
 /*!40000 ALTER TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` DISABLE KEYS */;
+INSERT INTO `tecnologo_realiza_prueba_vih_a_persona_receptora` VALUES (16,'111111111','2019-10-10','se_realizó','si','si','reactivo'),(16,'2222222','2019-10-11','se_realizó','si','si','no_reactivo');
 /*!40000 ALTER TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `total`
+--
+
+DROP TABLE IF EXISTS `total`;
+/*!50001 DROP VIEW IF EXISTS `total`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `total` AS SELECT 
+ 1 AS `id_persona_receptora`,
+ 1 AS `C`,
+ 1 AS `L`,
+ 1 AS `M`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `total_grupales`
+--
+
+DROP TABLE IF EXISTS `total_grupales`;
+/*!50001 DROP VIEW IF EXISTS `total_grupales`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `total_grupales` AS SELECT 
+ 1 AS `total_C`,
+ 1 AS `total_L`,
+ 1 AS `total_M`,
+ 1 AS `id_persona_receptora`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `total_individuales`
+--
+
+DROP TABLE IF EXISTS `total_individuales`;
+/*!50001 DROP VIEW IF EXISTS `total_individuales`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `total_individuales` AS SELECT 
+ 1 AS `total_C`,
+ 1 AS `total_L`,
+ 1 AS `total_M`,
+ 1 AS `id_persona_receptora`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `usuario`
@@ -292,6 +341,60 @@ LOCK TABLES `usuario` WRITE;
 INSERT INTO `usuario` VALUES (1,'gonzalo','Gonzalo','Cabezas','administrador','activo',234,'$2y$10$przh9Zi7GvyCrTbZcVQf0eBbEXLVj1mYYvI1i5KrsR0.glljxjb.W','as'),(15,'subreceptor','subreceptor','Panama','subreceptor','activo',1234567,'$2y$10$fXwYX5N/0m3z4N/RFWjE6.HwoE412gxG3zU4mW5RzB.wPc1j7Ruc.',''),(16,'tecnologo','tecnologo','medico','tecnologo','activo',2345678,'$2y$10$upAOeEwO91ix.1Wv5ohQKO6rOpFZFsTzxppNmRFtBw4ibWNoSa2wS',''),(17,'promotor','promotor','deSalud','promotor','activo',3456789,'$2y$10$5PedXwsgUEqfzJC3QZOqmO5du25ckUS0OQjLgaMC/U3c3mvFF/FsG','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `total`
+--
+
+/*!50001 DROP VIEW IF EXISTS `total`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
+/*!50001 VIEW `total` AS select `i`.`id_persona_receptora` AS `id_persona_receptora`,(`i`.`total_C` + `g`.`total_C`) AS `C`,(`i`.`total_L` + `g`.`total_L`) AS `L`,(`i`.`total_M` + `g`.`total_M`) AS `M` from (`total_grupales` `i` left join `total_individuales` `g` on((`i`.`id_persona_receptora` = `g`.`id_persona_receptora`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `total_grupales`
+--
+
+/*!50001 DROP VIEW IF EXISTS `total_grupales`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
+/*!50001 VIEW `total_grupales` AS select sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`condones_entregados`) AS `total_C`,sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`lubricantes_entregados`) AS `total_L`,sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`materiales_educativos_entregados`) AS `total_M`,`promotor_realiza_actividad_grupal_con_personas_receptoras`.`id_persona_receptora` AS `id_persona_receptora` from `promotor_realiza_actividad_grupal_con_personas_receptoras` group by `promotor_realiza_actividad_grupal_con_personas_receptoras`.`id_persona_receptora` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `total_individuales`
+--
+
+/*!50001 DROP VIEW IF EXISTS `total_individuales`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
+/*!50001 VIEW `total_individuales` AS select sum(`promotor_realiza_entrevista_individual`.`condones_entregados`) AS `total_C`,sum(`promotor_realiza_entrevista_individual`.`lubricantes_entregados`) AS `total_L`,sum(`promotor_realiza_entrevista_individual`.`materiales_educativos_entregados`) AS `total_M`,`promotor_realiza_entrevista_individual`.`id_persona_receptora` AS `id_persona_receptora` from `promotor_realiza_entrevista_individual` group by `promotor_realiza_entrevista_individual`.`id_persona_receptora` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -302,4 +405,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-30  1:39:37
+-- Dump completed on 2019-10-22 16:13:48

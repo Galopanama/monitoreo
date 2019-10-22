@@ -174,3 +174,11 @@
 [22-Oct-2019 13:56:25 America/Los_Angeles] PHP Stack trace:
 [22-Oct-2019 13:56:25 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:0
 [22-Oct-2019 13:56:25 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:17
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 5
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:0
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:17
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 7
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:0
+[22-Oct-2019 14:06:18 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/index.php:17
