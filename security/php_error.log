@@ -510,3 +510,31 @@
 [22-Oct-2019 14:06:18 America/Los_Angeles] PHP Stack trace:
 [22-Oct-2019 14:06:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
 [22-Oct-2019 14:06:18 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Notice:  Undefined index: tipo_de_usuario in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 49
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Notice:  Undefined index: username in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php on line 7
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Notice:  Undefined index: password in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php on line 7
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:17:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:17:52 America/Los_Angeles] PHP Notice:  Undefined index: tipo_de_usuario in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 49
+[22-Oct-2019 14:17:52 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:17:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:17:52 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Notice:  Undefined index: tipo_de_usuario in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 49
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Notice:  Undefined index: username in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php on line 7
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Notice:  Undefined index: password in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php on line 7
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:38:47 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:38:52 America/Los_Angeles] PHP Notice:  Undefined index: tipo_de_usuario in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 49
+[22-Oct-2019 14:38:52 America/Los_Angeles] PHP Stack trace:
+[22-Oct-2019 14:38:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
+[22-Oct-2019 14:38:52 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
