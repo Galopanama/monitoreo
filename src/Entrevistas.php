@@ -6,7 +6,7 @@
 require_once __DIR__ . '/Entrevista.php';
 require_once __DIR__ . '/EntrevistaIndividual.php';
 require_once __DIR__ . '/EntrevistaGrupal.php';
-
+require_once __DIR__ . '/Alcanzado.php';
 require_once __DIR__ . '/constantes.php'; 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
@@ -358,28 +358,16 @@ class Entrevistas {
         }
     }
     // The function request the database all Alcanzados
-    public static function getAlcanzado ($id_promotor, $id_persona_receptora){
+    public static function getAlcanzado ($id_persona_receptora , $id_subreceptor){
 
-        $sql = "select * from " . Constantes::ALCANZADOS; // As there is a view created with that purpose 
+        $sql = "select * from " . Constantes::ALCANZADOS ;// As there is a view created with that purpose 
+
+        $sql .= " where id_persona_receptora = ? and ";
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= ", " . Constantes::PROMOTOR; // The id of subreceptor is required to enforce that only show entrevistas of certain promotores associated to them 
-        }
-
-        $sql .= " where id_promotor = ? and " .
-                "id_persona_receptora = ? and " .
-                "total_condones >= 40 "  . // Because we want to find only those who have been ALCANZADOS
-                "total_lubricantes >= 40 " .
-                "total_materiales_educativos >= 40 ";
-
-        if ($_SESSION["tipo_de_usuario"] === "promotor") {   // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
-            $sql .= " and id_promotor = " . $_SESSION["id_usuario"] . " ";
-        }
-        else if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " and " . Constantes::PROMOTOR . ".id_usuario = " . Constantes::INDIVIDUAL . ".id_promotor
-                    and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
+            $sql .= " and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
         }   
-
+        echo $sql;
 
         // Abrimos la conexion de la base de datos
         // The connection to the database is open
@@ -392,7 +380,7 @@ class Entrevistas {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // The parameter are associated to the attriute listed as well as the datatype is specified
-            $stmt->bind_param('is', $id_promotor, $id_persona_receptora);
+            $stmt->bind_param('si', $id_persona_receptora, $id_subreceptor);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The sentence get executed
@@ -422,7 +410,7 @@ class Entrevistas {
             
             // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de Alcanzado
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
-            return new Alcanzado(
+            return new Alcanzado_por_Subreceptor(
                 $alcanzado['id_promotor'], 
                 $alcanzado['id_persona_receptora'],
                 $alcanzado['fecha'],

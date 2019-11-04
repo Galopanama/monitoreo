@@ -7,7 +7,7 @@ require_once '../config/config.php';
 if($_POST['username'] || $_POST['password']){
     
     //Realiza el login
-    // The usuarios from the database needs to be called as the informationstored there will be used to compared with the one introduced by the user
+    // The usuarios from the database needs to be called as the information stored there will be used to compared with the one introduced by the user
     require_once '../src/Usuarios.php';
     try {
         $usuario = Usuarios::getUsuarioByUsername($_POST['username'], true, true);

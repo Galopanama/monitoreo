@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios promotores y subreceptores
-// Access only permited to the user 'promotores' and 'subreceptor'
-$perfiles_aceptados = array('promotor', 'subreceptor');
+// Restringimos el acceso sólo a usuarios subreceptores
+// Access only permited to the user 'subreceptor'
+$perfiles_aceptados = array ('subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
 
 // Cargamos el estilo de la página

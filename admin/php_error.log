@@ -22,3 +22,19 @@
 [09-Oct-2019 15:45:54 America/Los_Angeles] PHP Stack trace:
 [09-Oct-2019 15:45:54 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:0
 [09-Oct-2019 15:45:54 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:18
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 5
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:0
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:18
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 7
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:0
+[26-Oct-2019 08:05:58 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:18
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP Notice:  Undefined variable: header in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 5
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:0
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:18
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP Notice:  Undefined variable: footer in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/footer.php on line 7
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:0
+[26-Oct-2019 08:08:38 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/index.php:18

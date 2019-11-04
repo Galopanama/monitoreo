@@ -6,7 +6,7 @@ require_once 'Entrevista.php';
 
 
 
-class Alcanzado extends Entrevista
+class Alcanzado extends Entrevista 
 {
     private $total_condones;
     private $total_lubricantes;
@@ -23,7 +23,6 @@ class Alcanzado extends Entrevista
         $total_lubricantes,
         $total_materiales_educativos
     ) {
-
         parent::__construct($id_promotor, $id_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
         $this->total_condones = $total_condones;
         $this->total_lubricantes = $total_lubricantes;
@@ -54,16 +53,15 @@ class Alcanzado extends Entrevista
         return $this->total_materiales_educativos;
     }
 
-
     /**
-     * Este método devuelve todas las propiedades del objeto Alcanzados, tanto públicas como privadas
+     * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
      * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
-
     public function jsonSerialize()
     {
         $vars = array_merge(parent::jsonSerialize(), get_object_vars($this));
 
         return $vars;
     }
+
 }

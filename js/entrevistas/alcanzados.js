@@ -3,7 +3,7 @@
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#total').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
+    var table = $('#total_por_subreceptor').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
         "ajax": "ajax.php?funcion=getAlcanzados",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
@@ -14,7 +14,8 @@ $(document).ready(function() {
                 "defaultContent": ''},
             { "data": "total_condones" },
             { "data": "total_lubricantes" },
-            { "data": "total_materiales_educativos" }
+            { "data": "total_materiales_educativos" },
+            { "data": "id_subreceptor"} 
         ],
         // Botones para exportar el listado
         dom: 'Bfrtip',
@@ -25,7 +26,7 @@ $(document).ready(function() {
 
     
     // Add event listener for opening and closing details
-    $('#total tbody').on('click', 'td.details-control', function () {
+    $('#total_por_subreceptor tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  

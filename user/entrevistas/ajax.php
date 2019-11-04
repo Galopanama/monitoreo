@@ -15,6 +15,9 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
 
 
+require_once __DIR__ . '/../../src/Alcanzado.php';
+
+
 //the user can retrieve the information of all the interviews. 
 //The information return as an Json object
 switch($_GET['funcion']){
@@ -114,14 +117,9 @@ function getAllGrupales() {
  */
 function getAlcanzados() {
     try {
-        if($_SESSION['tipo_de_usuario'] === 'promotor'){
+        if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor
             // If the user is promotor, we pass the id to show only the interviews with the same id
-            $lista = Entrevistas::getAlcanzado($_SESSION['usuario_id'], null); // The object Entrevista gets called
-        }
-        else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
-            // Si el usuario es subreceptor, pasamos el segundo argumento al método para indicar el id
-            // If the user is subreceptor, we pass the id and only return the objects that contains the same id
             $lista = Entrevistas::getAlcanzado(null, $_SESSION['usuario_id']); // The object Entrevista gets called
         }
 
@@ -132,8 +130,8 @@ function getAlcanzados() {
             $entrevista->poblacion = $persona_receptora->getPoblacion();      
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
                                                                                         
-            $promotor = Usuarios::getUsuarioById($entrevista->getId_promotor());
-            $entrevista->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
+            $subreceptor = Usuarios::getUsuarioById($entrevista->getId_subreceptor());
+            $entrevista->nombre_subreceptor = $subreceptor->getNombre();
         }
 
         return prepara_para_json($lista);

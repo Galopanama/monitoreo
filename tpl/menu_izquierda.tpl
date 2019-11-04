@@ -166,6 +166,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/alcanzados.php">
+              <span data-feather=""></span>
+              Ver Alcanzados
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="activity"></span>
               Graficas
@@ -316,12 +322,6 @@
             <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/grupales.php">
               <span data-feather="user-plus"></span>
               Ver Entrevistas Grupales
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/alcanzados.php">
-              <span data-feather=""></span>
-              Ver Alcanzados
             </a>
           </li>
           <li class="nav-item">

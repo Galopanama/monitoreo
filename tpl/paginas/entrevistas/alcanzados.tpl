@@ -19,13 +19,14 @@
   <p>{$exito_mensaje}</p>
 </div>
 
-<table id="total" class="display" style="width:100%">
+<table id="total_por_subreceptor" class="display" style="width:100%">
     <thead>
         <tr>
             <th>Datos receptor/a</th>
             <th>Total de condones entregados</th>
             <th>Total de lubricantes entregados</th>
             <th>Total de materiales educativos entregados</th>
+            <th>Id_subreceptor</th>
         </tr>
     </thead>
     <tfoot>
@@ -34,6 +35,7 @@
             <th>Total de condones entregados</th>
             <th>Total de lubricantes entregados</th>
             <th>Total de materiales educativos entregados</th>
+            <th>Id_subreceptor</th>
         </tr>
     </tfoot>
 </table>
