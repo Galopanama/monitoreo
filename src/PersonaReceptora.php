@@ -17,11 +17,11 @@ class PersonaReceptora implements \JsonSerializable{
         $this->datos_actualizados = $datos_actualizados;
     }
 
-    public function setid_cedula_persona_receptora ($id_cedula_persona_receptora){
+    public function setId_cedula_persona_receptora ($id_cedula_persona_receptora){
         $this->id_cedula_persona_receptora= $id_cedula_persona_receptora;
     }
 
-    public function getid_cedula_persona_receptora (){
+    public function getId_cedula_persona_receptora (){
         return $this->id_cedula_persona_receptora;
     }
 

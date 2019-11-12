@@ -21,7 +21,7 @@ class PersonasReceptoras {
         // The basic query starts here
         $sql = "select * from " . Constantes::PERSONA_RECEPTORA;
 
-        $sql .= " where id_cedula = ? ";
+        $sql .= " where id_cedula_persona_receptora = ? ";
 
         // Abrimos la conexion de la base de datos
          // The connection to the database is open
@@ -65,7 +65,7 @@ class PersonasReceptoras {
             // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de PersonaReceptora
             // A new object is created with the attributes listed below
             return new PersonaReceptora(
-                $persona['id_cedula'],
+                $persona['id_cedula_persona_receptora'],
                 $persona['poblacion_originaria'],
                 $persona['poblacion'],
                 $persona['datos_actualizados']
@@ -96,7 +96,7 @@ class PersonasReceptoras {
             // Escribimos la consulta básica para prepararla
             // If the person does not exist, we can proceed to create the instance of the class.
             // Start the basic query
-            $sql = "insert into persona_receptora (id_cedula, poblacion_originaria, poblacion) values (?, ?, ?) ";
+            $sql = "insert into persona_receptora (id_cedula_persona_receptora, poblacion_originaria, poblacion) values (?, ?, ?) ";
 
             if ($transaccion){
                 // Si estamos en medio de una transacción, continuamos con el objeto ya abierto
