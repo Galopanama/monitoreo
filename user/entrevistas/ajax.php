@@ -13,8 +13,6 @@ require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
-
-
 require_once __DIR__ . '/../../src/Alcanzado.php';
 
 
@@ -120,11 +118,11 @@ function getAlcanzados() {
         if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor
             // If the user is promotor, we pass the id to show only the interviews with the same id
-            $lista = Entrevistas::getAlcanzado(null, $_SESSION['usuario_id']); // The object Entrevista gets called
+            $lista = Entrevistas::getAlcanzado($_SESSION['usuario_id']); // The object Entrevista gets called
         }
 
-        // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
-        // Edit a list with all the instances of class Persona Receptora and name and Id from Promotor
+        // Vamos a editar la lista, y añadir los datos de la persona receptora 
+        // Edit a list with all the instances of class Persona Receptora and name 
         foreach($lista as $entrevista) {
             $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
             $entrevista->poblacion = $persona_receptora->getPoblacion();      

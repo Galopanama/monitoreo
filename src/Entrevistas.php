@@ -358,16 +358,14 @@ class Entrevistas {
         }
     }
     // The function request the database all Alcanzados
-    public static function getAlcanzado ($id_persona_receptora , $id_subreceptor){
+    public static function getAlcanzado ($id_subreceptor){
 
         $sql = "select * from " . Constantes::ALCANZADOS ;// As there is a view created with that purpose 
 
-        $sql .= " where id_persona_receptora = ? and ";
-
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " and id_subreceptor = " . $_SESSION["id_usuario"] . " ";
-        }   
-        echo $sql;
+            $sql .= " where id_subreceptor = ? ";
+        }
+        
 
         // Abrimos la conexion de la base de datos
         // The connection to the database is open
@@ -380,7 +378,7 @@ class Entrevistas {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // The parameter are associated to the attriute listed as well as the datatype is specified
-            $stmt->bind_param('si', $id_persona_receptora, $id_subreceptor);
+            $stmt->bind_param('i', $id_subreceptor);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The sentence get executed
@@ -504,6 +502,7 @@ class Entrevistas {
             }
             $stmt->close();
             $mysqli->close();
+            // llamar a un metodo nuevo que se va a llamar compruebaAlcanzados()
         }
         else {
             throw new Exception("Error de BD: " . $mysqli->error);
