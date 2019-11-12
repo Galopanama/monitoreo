@@ -55,7 +55,7 @@ function getAllIndividuales() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
         // Edit a list with all the instances of class Persona Receptora and name and Id from Promotor
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // se cambia getId_persona_receptora por getId_cedula_persona_receptora
             $entrevista->poblacion = $persona_receptora->getPoblacion();      
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
                                                                                         
@@ -92,7 +92,7 @@ function getAllGrupales() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
         // Return the list of interviews with te id and name of the Promotor 
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // tambien se cambia getId_cedula_persona_receptora en lugar de getId_persona_receptora
             $entrevista->poblacion = $persona_receptora->getPoblacion();                        // esto se hace para añadir atributos a un objeto que no 
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();  // son parte del objeto en si. Solo se hace
                                                                                                 // porque PHP lo permite. igual que Java 
@@ -124,7 +124,7 @@ function getAlcanzados() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora 
         // Edit a list with all the instances of class Persona Receptora and name 
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // mismo cambio que las anteriores funciones
             $entrevista->poblacion = $persona_receptora->getPoblacion();      
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
                                                                                         

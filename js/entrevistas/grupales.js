@@ -187,7 +187,7 @@ $(document).ready(function() {
         
             tabla += '<tr>';
             tabla +=    '<td>Cédula</td>';
-            tabla +=    '<td>' + d.id_persona_receptora + '</td>';
+            tabla +=    '<td>' + d.id_cedula_persona_receptora + '</td>';
             tabla += '</tr>';
 
             tabla += '<tr>';

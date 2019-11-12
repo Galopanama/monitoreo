@@ -17,7 +17,7 @@ class PersonasReceptoras {
     const tipos_poblacion_permitidos = array('HSH','TSF','TRANS');
 
     // the function retrieve the data from the class PersonaReceptora 
-    public static function getPersonaReceptora ($id_persona_receptora){
+    public static function getPersonaReceptora ($id_cedula_persona_receptora){
         // The basic query starts here
         $sql = "select * from " . Constantes::PERSONA_RECEPTORA;
 
@@ -34,7 +34,7 @@ class PersonasReceptoras {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // the value of username is asigned with the datatype that they are using the method bind_param
-            $stmt->bind_param('i', $id_persona_receptora);
+            $stmt->bind_param('i', $id_cedula_persona_receptora);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The request gets executed
@@ -84,12 +84,12 @@ class PersonasReceptoras {
         // Vamos a comprobar primero que no existe una persona con el mismo id (cédula)
         // Check that there is no user with the id number
         try{
-            PersonasReceptoras::getPersonaReceptora($datos['id_persona_receptora']);
+            PersonasReceptoras::getPersonaReceptora($datos['id_cedula_persona_receptora']);
             // Si el código ha llegado aquí, la persona receptora ya existía, ya que no ha entrado en el catch de la excepción
             // Lanzamos una nueva excepción indicando que la persona receptora existe
             // If there is a user witht the smae 'id', means that there is a person created already, therefore I can't be created a new user with this id
             // id is a unique field in the database that is one of the limitations impose. Also id is a unique number in the real life, so it can not be two people with the same id 
-            throw new ValidationException(serialize(array("id_persona_receptora" => "La persona receptora ya existe")));
+            throw new ValidationException(serialize(array("id_cedula_persona_receptora" => "La persona receptora ya existe")));
         }
         catch (PersonaReceptoraNotFoundException $e) {
             // La persona receptora no existe, por tanto, podemos crearlo
@@ -122,8 +122,8 @@ class PersonasReceptoras {
             // We create the arrau $errores to store any errors found in an array and afterwards will be returned to the user so he can know where is the error
             $errores = array();
 
-            if (strlen($datos['id_persona_receptora']) < PersonasReceptoras::MIN_TAM_CEDULA || strlen($datos['id_persona_receptora']) > PersonasReceptoras::MAX_TAM_CEDULA) {
-                $errores['id_persona_receptora'] = "Tamaño del campo cédula de la persona receptora incorrecto. Debe ser entre " . PersonasReceptoras::MIN_TAM_CEDULA . ' y ' . PersonasReceptoras::MAX_TAM_CEDULA . ' caracteres.';
+            if (strlen($datos['id_cedula_persona_receptora']) < PersonasReceptoras::MIN_TAM_CEDULA || strlen($datos['id_cedula_persona_receptora']) > PersonasReceptoras::MAX_TAM_CEDULA) {
+                $errores['id_cedula_persona_receptora'] = "Tamaño del campo cédula de la persona receptora incorrecto. Debe ser entre " . PersonasReceptoras::MIN_TAM_CEDULA . ' y ' . PersonasReceptoras::MAX_TAM_CEDULA . ' caracteres.';
             }
             //comprobar que la cédula es válida - buscar u algoritmo que valide la cedula. Los hay que comprueban el DNI
             // Chech that id_cedula is valid
@@ -146,7 +146,7 @@ class PersonasReceptoras {
                 //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
                 // Join the parameters with the attributes. The datatype has been specify too
                 $stmt->bind_param('sis', 
-                    $datos['id_persona_receptora'],
+                    $datos['id_cedula_persona_receptora'],
                     $poblacion_originaria,
                     $datos['poblacion']
                 );

@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 // To show 10 rows at the time
 $numero_filas_mostrar = 10;
 // Send the data if not empty row 
-if (!empty($_POST['id_persona_receptora_buscada_1'])) {
+if (!empty($_POST['id_cedula_persona_receptora_buscada_1'])) {
     // Keep the errors in an array if found
     $errores = array(); 
     // Vamos a comprobar si los datos necesarios están
@@ -30,7 +30,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
     for ($i = 1; $i <= $numero_filas_mostrar; $i++) {
         // Pararemos de contar cuando la cedula esté vacía
         // Stops when the id not filled
-        if (empty($_POST['id_persona_receptora_buscada_' . $i])){
+        if (empty($_POST['id_cedula_persona_receptora_buscada_' . $i])){
             // Si la fila está vacía, paramos de validar
             $numero_filas_enviadas = $i - 1; //Como esta ya está vacía y el contador se ha incrementado, hay que restar uno
             break;                           //Deduct one from the number of row sent as the counter started with 1
@@ -63,14 +63,14 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
             // Tenemos que tener en cuenta que si la persona no existe, hay que crearla antes de introducir los datos en la tabla entrevistas
             // ya que existe una clave ajena que afecta
             try { // Check if the person already exixts already in the database
-                PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_buscada_' . $i]);
+                PersonasReceptoras::getPersonaReceptora($_POST['id_cedula_persona_receptora_buscada_' . $i]);
 
                 
             } // if not found the person, create one with the initial fields required for the system
             catch (PersonaReceptoraNotFoundException $e) {
                 // Si no existe, el identificador no lo obtenemos del campo id_persona_receptora, sino de id_persona_receptora_buscada
                 $datos_persona_receptora = [
-                    'id_persona_receptora' => $_POST['id_persona_receptora_buscada_' . $i],
+                    'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada_' . $i],
                     'poblacion' => $_POST['poblacion_' . $i],
                     'poblacion_originaria' => $_POST['poblacion_originaria_' . $i]?true:false
                 ];
@@ -100,7 +100,7 @@ if (!empty($_POST['id_persona_receptora_buscada_1'])) {
                 //  We create and associative array with the attributes of the group interview as keys
                 $datos = [
                     'id_promotor' => $_SESSION['usuario_id'], 
-                    'id_persona_receptora' => $_POST['id_persona_receptora_buscada_' . $i], 
+                    'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada_' . $i], 
                     'condones_entregados' => $_POST['condones_entregados_' . $i],
                     'lubricantes_entregados' => $_POST['lubricantes_entregados_' . $i],
                     'materiales_educativos_entregados' => $_POST['materiales_educativos_entregados_' . $i],

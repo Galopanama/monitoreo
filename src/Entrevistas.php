@@ -21,7 +21,7 @@ class Entrevistas {
     // the parameter fecha must be in the format YYYY-MM-DD
 
     // The function request the database one Entrevista Individual  
-    public static function getEntrevistaIndividual ($id_promotor, $id_persona_receptora, $fecha){
+    public static function getEntrevistaIndividual ($id_promotor, $id_cedula_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::INDIVIDUAL; 
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
@@ -29,7 +29,7 @@ class Entrevistas {
         }
 
         $sql .= " where id_promotor = ? and " .
-                "id_persona_receptora = ? and " .
+                "id_cedula_persona_receptora = ? and " .
                 "fecha = ? ";
 
         if ($_SESSION["tipo_de_usuario"] === "promotor") {   // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
@@ -51,7 +51,7 @@ class Entrevistas {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // The parameter are associated to the attriute listed as well as the datatype is specified
-            $stmt->bind_param('iss', $id_promotor, $id_persona_receptora, $fecha);
+            $stmt->bind_param('iss', $id_promotor, $id_cedula_persona_receptora, $fecha);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The sentence get executed
@@ -83,7 +83,7 @@ class Entrevistas {
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
             return new EntrevistaIndividual(
                 $individual['id_promotor'], 
-                $individual['id_persona_receptora'], 
+                $individual['id_cedula_persona_receptora'], 
                 $individual['fecha'], 
                 $individual['condones_entregados'], 
                 $individual['lubricantes_entregados'], 
@@ -100,7 +100,7 @@ class Entrevistas {
         }
     }
     // the function request the databse information about the Entrevistas Grupales 
-    public static function getEntrevistaGrupal($id_promotor, $id_persona_receptora, $fecha){
+    public static function getEntrevistaGrupal($id_promotor, $id_cedula_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::GRUPAL ;  // The query is declared in a variable called $sql
     
         // If the subreceptor is who query for the information we need to include it here
@@ -109,7 +109,7 @@ class Entrevistas {
         }
 
         $sql .= "where id_promotor = ? and " .
-                "id_persona_receptora = ? and " .
+                "id_cedula_persona_receptora = ? and " .
                 "fecha = ? ";
         // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
         if ($_SESSION["tipo_de_usuario"] === "promotor") {  
@@ -131,7 +131,7 @@ class Entrevistas {
                     
         //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
         // The parameter are associated to the attriute listed as well as the datatype is specified
-        $mysqli->bind_param('iss', $id_promotor, $id_persona_receptora, $fecha);
+        $mysqli->bind_param('iss', $id_promotor, $id_cedula_persona_receptora, $fecha);
                     
         // Ejecutamos la sentencia con los valores ya establecidos
         // The sentence get executed
@@ -147,7 +147,7 @@ class Entrevistas {
                             
         // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de EntrevistaGrupal
         // The object created from the database has the following attributes. The named with the same name as the attributes of the table EntrevistasGrupal
-        return new EntrevisaGrupal($grupal['id_promotor'], $grupal['id_persona_receptora'], $grupal['fecha'], 
+        return new EntrevisaGrupal($grupal['id_promotor'], $grupal['id_cedula_persona_receptora'], $grupal['fecha'], 
         $grupal['condones_entregados'], $grupal['lubricantes_entregados'], $grupal['materiales_educativos_entregados'], 
         $grupal['region_de_salud'], $grupal['area'], $grupal['estilos_de_autocuidado'], $grupal['ddhh_estigma_discriminacion'], 
         $grupal['uso_correcto_y_constantes_del_condon'], $grupal['salud_sexual_e_its'], $grupal['ofrecimiento_y_referencia_a_la_prueba_de_vih'], 
@@ -219,7 +219,7 @@ class Entrevistas {
                 
                 $array_entrevistas[] = new EntrevistaIndividual(
                     $entrevista['id_promotor'],
-                    $entrevista['id_persona_receptora'],
+                    $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
@@ -316,7 +316,7 @@ class Entrevistas {
                 
                 $array_entrevistas[] = new EntrevistaGrupal(
                     $entrevista['id_promotor'],
-                    $entrevista['id_persona_receptora'],
+                    $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
@@ -410,7 +410,7 @@ class Entrevistas {
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
             return new Alcanzado_por_Subreceptor(
                 $alcanzado['id_promotor'], 
-                $alcanzado['id_persona_receptora'],
+                $alcanzado['id_cedula_persona_receptora'],
                 $alcanzado['fecha'],
                 $alcanzado['condones_entregados'],
                 $alcanzado['lubricantes_entregados'],
@@ -466,7 +466,7 @@ class Entrevistas {
             throw new ValidationException (serialize($errores));// serialize stores the values that have an error and retunr if to the user with a message
         }
 
-        $sql = "insert into " . Constantes::INDIVIDUAL . " (id_promotor, id_persona_receptora, fecha, condones_entregados, lubricantes_entregados, ".
+        $sql = "insert into " . Constantes::INDIVIDUAL . " (id_promotor, id_cedula_persona_receptora, fecha, condones_entregados, lubricantes_entregados, ".
             "materiales_educativos_entregados, uso_del_condon, uso_de_alcohol_y_drogas_ilicitas, informacion_CLAM, referencia_a_prueba_de_VIH, referencia_a_clinica_TB) " .
             " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?)";
         // Preparamos la sentencia anterior
@@ -476,7 +476,7 @@ class Entrevistas {
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
             $stmt->bind_param('isiiiiiiii', 
                 $datos['id_promotor'],
-                $datos['id_persona_receptora'],
+                $datos['id_cedula_persona_receptora'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],
@@ -559,7 +559,7 @@ class Entrevistas {
         }
         $sql = "insert into " . Constantes::GRUPAL . " (
                 id_promotor, 
-                id_persona_receptora, 
+                id_cedula_persona_receptora, 
                 fecha, 
                 condones_entregados, 
                 lubricantes_entregados,
@@ -587,7 +587,7 @@ class Entrevistas {
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
             $stmt->bind_param('isiiissiiiiiiiiiiii', 
                 $datos['id_promotor'],
-                $datos['id_persona_receptora'],
+                $datos['id_cedula_persona_receptora'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],

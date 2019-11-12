@@ -14,7 +14,7 @@ class Alcanzado extends Entrevista
 
     public function __construct(
         $id_promotor,
-        $id_persona_receptora,
+        $id_cedula_persona_receptora,
         $fecha,
         $condones_entregados,
         $lubricantes_entregados,
@@ -23,7 +23,7 @@ class Alcanzado extends Entrevista
         $total_lubricantes,
         $total_materiales_educativos
     ) {
-        parent::__construct($id_promotor, $id_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
+        parent::__construct($id_promotor, $id_cedula_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
         $this->total_condones = $total_condones;
         $this->total_lubricantes = $total_lubricantes;
         $this->total_materiales_educativos = $total_materiales_educativos;

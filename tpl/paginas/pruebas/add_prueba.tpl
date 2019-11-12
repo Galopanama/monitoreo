@@ -45,9 +45,9 @@
               </small>
             <!--
               <td class="col-md-3">
-                <input type="hidden" id="id_persona_receptora" name="id_persona_receptora" value="{$id_persona_receptora}" /> 
-                <input type="text" class="form-control typeahead" id="id_persona_receptora_buscada" name="id_persona_receptora_buscada"
-                  value="{$id_persona_receptora_buscada}" placeholder="Cédula" />
+                <input type="hidden" id="id_cedula_persona_receptora" name="id_cedula_persona_receptora" value="{$id_cedula_persona_receptora}" /> 
+                <input type="text" class="form-control typeahead" id="id_cedula_persona_receptora_buscada" name="id_cedula_persona_receptora_buscada"
+                  value="{$id_cedula_persona_receptora_buscada}" placeholder="Cédula" />
                 <small id="registroHelpBlock" class="form-text text-muted">
                   Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
                 </small>
@@ -57,15 +57,15 @@
             </td>
             <td class="col-md-1">
               <input class="form-check-input col-sm-10" type="checkbox" id="poblacion_originaria" name="poblacion_originaria"
-                {if $poblacion_originaria ne ''} checked{/if} {if $id_persona_receptora ne '' } disabled {/if}/>
+                {if $poblacion_originaria ne ''} checked{/if} {if $id_cedula_persona_receptora ne '' } disabled {/if}/>
             </td>
             <td class="col-md-1">
-              <select class="custom-select d-block" id="poblacion" name="poblacion" required {if $id_persona_receptora ne '' } disabled {/if}> 
+              <select class="custom-select d-block" id="poblacion" name="poblacion" required {if $id_cedula_persona_receptora ne '' } disabled {/if}> 
                 {html_options values=$tipos_poblacion_permitidos output=$tipos_poblacion_permitidos selected=$poblacion}
               </select>
             </td>
             <td class="text-center col-md-1">
-              <select class="custom-select d-block" id="realizacion_prueba" name="realizacion_prueba" required {if $id_persona_receptora ne '' } disabled {/if}> 
+              <select class="custom-select d-block" id="realizacion_prueba" name="realizacion_prueba" required {if $id_cedula_persona_receptora ne '' } disabled {/if}> 
                   {html_options values=$realizacion_prueba output=$realizacion_prueba selected=$realizacion_prueba}
                 </select>
             </td>
@@ -78,7 +78,7 @@
                 name="consejeria_post_prueba" {if $consejeria_post_prueba ne ''} checked{/if} />
             </td>
             <td class="text-center col-md-1">
-              <select class="custom-select d-block" id="resultado_prueba" name="resultado_prueba" required {if $id_persona_receptora ne '' } disabled {/if}> 
+              <select class="custom-select d-block" id="resultado_prueba" name="resultado_prueba" required {if $id_cedula_persona_receptora ne '' } disabled {/if}> 
                   {html_options values=$resultados_posibles output=$resultados_posibles selected=$resultado_prueba}
                 </select>
             </td>

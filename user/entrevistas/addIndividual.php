@@ -12,14 +12,14 @@ require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
 // Send the data if not empty row 
-if (!empty($_POST['id_persona_receptora_buscada'])) {
+if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se introduce la palabra cedula para unificar nomenclatura
     // Se han enviado datos
     // Keep the errors in an array if found
     $errores = array();
     // Vamos a comprobar si los datos necesarios están
     // Check if the following fields are filled. They are necesary to submit the form
-    if (empty($_POST['id_persona_receptora_buscada'])){
-        $errores['id_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la entrevista"; // error message to return if not filled. Explains error
+    if (empty($_POST['id_cedula_persona_receptora_buscada'])){
+        $errores['id_cedula_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la entrevista"; // error message to return if not filled. Explains error
     }   // refered to id of the person
 
     if (!is_numeric($_POST['condones_entregados'])){
@@ -45,13 +45,13 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
         $mysqli->autocommit(false);
 
         try {   // check if the person is already in the database
-            PersonasReceptoras::getPersonaReceptora($_POST['id_persona_receptora_buscada']);
+            PersonasReceptoras::getPersonaReceptora($_POST['id_cedula_persona_receptora_buscada']);
             
         }       // if the person has not been recorded already in the database, the code will create one now with the details mentiones below 
         catch (PersonaReceptoraNotFoundException $e) {
-            // Si no existe, el identificador no lo obtenemos del campo id_persona_receptora, sino de id_persona_receptora_buscada
+            // Si no existe, el identificador no lo obtenemos del campo id_cedula_persona_receptora, sino de id_cedula_persona_receptora_buscada
             $datos_persona_receptora = [
-                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
+                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada'],
                 'poblacion' => $_POST['poblacion'],
                 'poblacion_originaria' => $_POST['poblacion_originaria']?true:false
             ];
@@ -77,7 +77,7 @@ if (!empty($_POST['id_persona_receptora_buscada'])) {
             // vamos a crear un array con dichas claves
             $datos = [
                 'id_promotor' => $_SESSION['usuario_id'],
-                'id_persona_receptora' => $_POST['id_persona_receptora_buscada'],
+                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora'],
                 'condones_entregados' => $_POST['condones_entregados'],
                 'lubricantes_entregados' => $_POST['lubricantes_entregados'],
                 'materiales_educativos_entregados' => $_POST['materiales_educativos_entregados'],

@@ -30,8 +30,8 @@ $(document).ready(function() {
         $(".alert-danger").toggleClass('d-none');               // si los hay, los pone visibles
     }
 
-    $(document).on('change', '.id_persona_receptora_buscada', checkPersonaExiste); //Jquery disparador cada vez que cambie id... ejecuta la funcion
-    $(document).on('keyup', '.id_persona_receptora_buscada', checkPersonaExiste);
+    $(document).on('change', '.id_cedula_persona_receptora_buscada', checkPersonaExiste); //Jquery disparador cada vez que cambie id... ejecuta la funcion
+    $(document).on('keyup', '.id_cedula_persona_receptora_buscada', checkPersonaExiste);
                                                         //. busca a todos los elementos que tengas esa clase
 
     function checkPersonaExiste(){
@@ -47,12 +47,12 @@ $(document).ready(function() {
         request.done(function (response) {  // que pasa cuando no se ha enviado sin fallo 
             if(response.error == 0){        // response en un parametro que se le pasa a la funcion done
                 if (response.found == 1) {
-                    $("#id_persona_receptora_" + index).val($("#id_persona_receptora_buscada").val());
+                    $("#id_cedula_persona_receptora_" + index).val($("#id_cedula_persona_receptora_buscada").val());
                     $("#poblacion_" + index).val(response.poblacion).prop( "disabled", true ); // cambia el atributo
                     $("#poblacion_originaria_" + index).prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
                 }                           // el index se refiere a la posicion en que se han enviado dentro de todas las filas
                 else {
-                    $("#id_persona_receptora_" + index).val('');
+                    $("#id_cedula_persona_receptora_" + index).val('');
                     $("#poblacion_originaria_" + index).prop( "disabled", false );
                     $("#poblacion_" + index).prop( "disabled", false );
                 }

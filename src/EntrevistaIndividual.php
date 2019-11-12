@@ -15,7 +15,7 @@ class EntrevistaIndividual extends Entrevista
 
     public function __construct(
         $id_promotor,
-        $id_persona_receptora,
+        $id_cedula_persona_receptora,
         $fecha,
         $condones_entregados,
         $lubricantes_entregados,
@@ -27,7 +27,7 @@ class EntrevistaIndividual extends Entrevista
         $referencia_a_clinica_tb
     ) {
 
-        parent::__construct($id_promotor, $id_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
+        parent::__construct($id_promotor, $id_cedula_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
         $this->uso_del_condon = $uso_del_condon;
         $this->uso_de_alcohol_y_drogas_ilicitas = $uso_de_alcohol_y_drogas_ilicitas;
         $this->informacion_clam = $informacion_clam;
