@@ -78,7 +78,7 @@ if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se in
             // vamos a crear un array con dichas claves
             $datos = [
                 'id_promotor' => $_SESSION['usuario_id'],
-                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora'],
+                'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora_buscada'],
                 'region_de_salud' => $_POST['region_de_salud'],
                 'condones_entregados' => $_POST['condones_entregados'],
                 'lubricantes_entregados' => $_POST['lubricantes_entregados'],
