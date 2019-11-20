@@ -34,7 +34,7 @@ class PersonasReceptoras {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // the value of username is asigned with the datatype that they are using the method bind_param
-            $stmt->bind_param('i', $id_cedula_persona_receptora);
+            $stmt->bind_param('s', $id_cedula_persona_receptora);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The request gets executed
