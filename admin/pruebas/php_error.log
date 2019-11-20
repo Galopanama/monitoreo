@@ -1,0 +1,60 @@
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php on line 14
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php on line 28
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Undefined index: error in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 38
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 38
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Undefined index: exito_titulo in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 43
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 43
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Undefined index: exito_mensaje in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 45
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Notice:  Trying to get property 'value' of non-object in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/c53b1684a33c6fe58cf6b515a22b5dcf07ad6002_0.file.pruebas.tpl.php on line 45
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:0
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/pruebas/pruebas.php:40
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[26-Oct-2019 08:08:45 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123

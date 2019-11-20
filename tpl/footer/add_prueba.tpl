@@ -1,3 +1,3 @@
-<script type="text/javascript" src="{$_WEB_PATH_}/js/prueba/add_prueba.js"></script>
+<script type="text/javascript" src="{$_WEB_PATH_}/js/pruebas/add_prueba.js"></script>
 
 

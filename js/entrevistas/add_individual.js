@@ -30,26 +30,26 @@ $(document).ready(function() {
         $(".alert-danger").toggleClass('d-none');
     }
 
-    $(document).on('change', '#id_persona_receptora_buscada', checkPersonaExiste);  // DISPARADORES DE JQUERY
-    $(document).on('keyup', '#id_persona_receptora_buscada', checkPersonaExiste);   // change y keyup son eventos de la pagina, relacionados 
-
+    $(document).on('change', '#id_cedula_persona_receptora_buscada', checkPersonaExiste);                                              // DISPARADORES DE JQUERY
+    $(document).on('keyup', '#id_cedula_persona_receptora_buscada', checkPersonaExiste);                                                // change y keyup son eventos de la pagina, relacionados 
+                                                                                                                                  //# busca en el id del elemento html no de la clase. 
     function checkPersonaExiste(){
         var request = $.ajax({
             url: "ajax.php?funcion=buscar",
             method: "POST",
-            data: { key: $("#id_persona_receptora_buscada").val() },
+            data: { key: $("#id_cedula_persona_receptora_buscada").val() },
             dataType: "json"
         });
 
         request.done(function (response) {
-            if(response.error == 0){    // errores controlados tales como error en la "BD en la consulta"
+            if(response.error == 0){                                                                                            // errores controlados tales como error en la "BD en la consulta"
                 if (response.found == 1) {
-                    $("#id_persona_receptora").val($("#id_persona_receptora_buscada").val());
+                    $("#id_cedula_persona_receptora").val($("#id_cedula_persona_receptora_buscada").val());
                     $("#poblacion").val(response.poblacion).prop( "disabled", true );
                     $("#poblacion_originaria").prop( "checked", response.poblacion_originaria ).prop( "disabled", true );
                 }
                 else {
-                    $("#id_persona_receptora").val('');
+                    $("#id_cedula_persona_receptora").val('');
                     $("#poblacion_originaria").prop( "disabled", false );
                     $("#poblacion").prop( "disabled", false );
                 }
@@ -60,7 +60,7 @@ $(document).ready(function() {
         });
 
         request.fail(function (jqXHR, textStatus) {
-            alert("Ocurrió un error: " + textStatus);  // para reflejar los errores que no son controlados en el script, como errores de conexion
+            alert("Ocurrió un error: " + textStatus);                                                                            // para reflejar los errores que no son controlados en el script, como errores de conexion
         });
     }
 });

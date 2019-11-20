@@ -1,6 +1,8 @@
 <?php
+// The class Usuario belong to the Model.  
+// It is a father class 
+// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
 
-// issue_17. Se necesita implementar la interfaz JsonSerializable para poder pasar al objeto json los atributos privados posteriormente
 class Usuario implements \JsonSerializable{
 
     private $id;
@@ -98,7 +100,7 @@ class Usuario implements \JsonSerializable{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -107,6 +109,8 @@ class Usuario implements \JsonSerializable{
         return $vars;
     }
 }
+
+// The class Subreceptor is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Subreceptor extends Usuario{
 
@@ -129,7 +133,7 @@ class Subreceptor extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -138,6 +142,8 @@ class Subreceptor extends Usuario{
         return $vars;
     }
 }
+
+// The class Promotor is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Promotor extends Usuario{
 
@@ -148,7 +154,7 @@ class Promotor extends Usuario{
     public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$id_cedula,$organizacion,$id_subreceptor){
     
         parent::__construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
-        $this->id_cedula = $id_cedula; //* Ojear en el siguiente campo, porque se repite el nombre de la variable */
+        $this->id_cedula = $id_cedula; 
         $this->organizacion = $organizacion;
         $this->id_subreceptor = $id_subreceptor;
 
@@ -180,7 +186,7 @@ class Promotor extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -189,6 +195,8 @@ class Promotor extends Usuario{
         return $vars;
     }
 }
+
+// The class Tecnologo is the child of Usuario and inherits all the atributes from it, as well as having of their own
 
 class Tecnologo extends Usuario{
 
@@ -199,7 +207,7 @@ class Tecnologo extends Usuario{
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
         $this->numero_de_registro = $numero_de_registro;
-        $this->id_cedula = $id_cedula;  // se repite con el campo en la clase Promotor** propuesta de cambio para otro nombre 
+        $this->id_cedula = $id_cedula;   
 
     }
 
@@ -221,7 +229,7 @@ class Tecnologo extends Usuario{
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * Es necesario para poder utilizar el método json_encode (issue_17)
+     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
      */
     public function jsonSerialize()
     {
@@ -232,7 +240,5 @@ class Tecnologo extends Usuario{
 
 } 
 
-// Dependiendo del tipo de usuario hay que crear un nivel de acceso a la base de datos. Por lo tanto,
-// tendria que ser desde este fichero o mas bien desde el fichero de acceso. 
 
 ?>

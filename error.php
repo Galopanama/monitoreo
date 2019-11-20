@@ -1,4 +1,6 @@
 <?php
+
+// It load the error messages and destroy them when the session is finish
 session_start();
 
 require_once 'config/config.php';
