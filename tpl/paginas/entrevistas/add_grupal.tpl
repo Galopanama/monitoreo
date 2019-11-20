@@ -67,9 +67,9 @@
           {for $index=1 to $numero_filas_mostrar}
           <tr>
             <td class="col-md-15">
-              <input type="hidden" id="id_persona_receptora_{$index}" name="id_persona_receptora_{$index}" value="{$valores[$index]['id_persona_receptora']}" /> 
-              <input type="text" class="form-control typeahead id_persona_receptora_buscada" id="id_persona_receptora_buscada_{$index}" name="id_persona_receptora_buscada_{$index}"
-                value="{$valores[$index]['id_persona_receptora_buscada']}" placeholder="Cédula" {if $index eq 1}required{/if} />
+              <input type="hidden" id="id_cedula_persona_receptora_{$index}" name="id_cedula_persona_receptora_{$index}" value="{$valores[$index]['id_cedula_persona_receptora']}" /> 
+              <input type="text" class="form-control typeahead id_cedula_persona_receptora_buscada" id="id_cedula_persona_receptora_buscada_{$index}" name="id_cedula_persona_receptora_buscada_{$index}"
+                value="{$valores[$index]['id_cedula_persona_receptora_buscada']}" placeholder="Cédula" {if $index eq 1}required{/if} />
                 {if $index eq 1}
                   <small id="registroHelpBlock" class="form-text text-muted">
                     Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
@@ -78,10 +78,10 @@
             </td>
             <td class="col-md-1">
               <input class="form-check-input col-sm-10" type="checkbox" id="poblacion_originaria_{$index}" name="poblacion_originaria_{$index}"
-                {if $valores[$index]['poblacion_originaria'] ne ''} checked{/if} {if $valores[$index]['id_persona_receptora'] ne '' } disabled {/if}/>
+                {if $valores[$index]['poblacion_originaria'] ne ''} checked{/if} {if $valores[$index]['id_cedula_persona_receptora'] ne '' } disabled {/if}/>
             </td>
             <td class="col-md-1">
-              <select class="custom-select d-block" id="poblacion_{$index}" name="poblacion_{$index}" {if $index eq 1}required{/if} {if $valores[$index]['id_persona_receptora'] ne '' } disabled {/if}> 
+              <select class="custom-select d-block" id="poblacion_{$index}" name="poblacion_{$index}" {if $index eq 1}required{/if} {if $valores[$index]['id_cedula_persona_receptora'] ne '' } disabled {/if}> 
                 {html_options values=$tipos_poblacion_permitidos output=$tipos_poblacion_permitidos selected=$valores[$index]['poblacion']}
               </select>
             </td>

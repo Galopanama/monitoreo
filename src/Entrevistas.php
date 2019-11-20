@@ -6,21 +6,22 @@
 require_once __DIR__ . '/Entrevista.php';
 require_once __DIR__ . '/EntrevistaIndividual.php';
 require_once __DIR__ . '/EntrevistaGrupal.php';
+require_once __DIR__ . '/Alcanzado.php';
 require_once __DIR__ . '/constantes.php'; 
 require_once __DIR__ . '/../lib/DB.php';
 require_once __DIR__ . '/Excepciones.php';
 
 
 class Entrevistas {
-// Some constants have been declared in order to help the user to fill infromation correctly as well as to enforce certain conditions
+// Some constants have been declared in order to help the user to fill information correctly as well as to enforce certain conditions
     const regiones_de_salud_permitidas = array('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas');
 
     
     // El parametro fecha debe ser una fecha en el formato YYYY-MM-DD
     // the parameter fecha must be in the format YYYY-MM-DD
 
-    // The function request the database one entrevista individual  
-    public static function getEntrevistaIndividual ($id_promotor, $id_persona_receptora, $fecha){
+    // The function request the database one Entrevista Individual  
+    public static function getEntrevistaIndividual ($id_promotor, $id_cedula_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::INDIVIDUAL; 
 
         if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
@@ -28,7 +29,7 @@ class Entrevistas {
         }
 
         $sql .= " where id_promotor = ? and " .
-                "id_persona_receptora = ? and " .
+                "id_cedula_persona_receptora = ? and " .
                 "fecha = ? ";
 
         if ($_SESSION["tipo_de_usuario"] === "promotor") {   // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
@@ -50,7 +51,7 @@ class Entrevistas {
 
             //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // The parameter are associated to the attriute listed as well as the datatype is specified
-            $stmt->bind_param('iss', $id_promotor, $id_persona_receptora, $fecha);
+            $stmt->bind_param('iss', $id_promotor, $id_cedula_persona_receptora, $fecha);
 
             // Ejecutamos la sentencia con los valores ya establecidos
             // The sentence get executed
@@ -82,8 +83,9 @@ class Entrevistas {
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
             return new EntrevistaIndividual(
                 $individual['id_promotor'], 
-                $individual['id_persona_receptora'], 
+                $individual['id_cedula_persona_receptora'], 
                 $individual['fecha'], 
+                $individual['region_de_salud'],
                 $individual['condones_entregados'], 
                 $individual['lubricantes_entregados'], 
                 $individual['materiales_educativos_entregados'], 
@@ -98,8 +100,8 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // the function request the databse the infromation from the Entrevistas Grupales 
-    public static function getEntrevistaGrupal($id_promotor, $id_persona_receptora, $fecha){
+    // the function request the databse information about the Entrevistas Grupales 
+    public static function getEntrevistaGrupal($id_promotor, $id_cedula_persona_receptora, $fecha){
         $sql = "select * from " . Constantes::GRUPAL ;  // The query is declared in a variable called $sql
     
         // If the subreceptor is who query for the information we need to include it here
@@ -108,7 +110,7 @@ class Entrevistas {
         }
 
         $sql .= "where id_promotor = ? and " .
-                "id_persona_receptora = ? and " .
+                "id_cedula_persona_receptora = ? and " .
                 "fecha = ? ";
         // The id of promotor is required to enforce that only show entrevistas loaded by herself/himself
         if ($_SESSION["tipo_de_usuario"] === "promotor") {  
@@ -130,7 +132,7 @@ class Entrevistas {
                     
         //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
         // The parameter are associated to the attriute listed as well as the datatype is specified
-        $mysqli->bind_param('iss', $id_promotor, $id_persona_receptora, $fecha);
+        $mysqli->bind_param('iss', $id_promotor, $id_cedula_persona_receptora, $fecha);
                     
         // Ejecutamos la sentencia con los valores ya establecidos
         // The sentence get executed
@@ -146,15 +148,29 @@ class Entrevistas {
                             
         // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de EntrevistaGrupal
         // The object created from the database has the following attributes. The named with the same name as the attributes of the table EntrevistasGrupal
-        return new EntrevisaGrupal($grupal['id_promotor'], $grupal['id_persona_receptora'], $grupal['fecha'], 
-        $grupal['condones_entregados'], $grupal['lubricantes_entregados'], $grupal['materiales_educativos_entregados'], 
-        $grupal['region_de_salud'], $grupal['area'], $grupal['estilos_de_autocuidado'], $grupal['ddhh_estigma_discriminacion'], 
-        $grupal['uso_correcto_y_constantes_del_condon'], $grupal['salud_sexual_e_its'], $grupal['ofrecimiento_y_referencia_a_la_prueba_de_vih'], 
-        $grupal['clam_y_otros_servicios'], $grupal['salud_anal'], $grupal['hormonizacion'], $grupal['apoyo_y_orientacion_psicologica'], 
-        $grupal['diversidad_sexual_identidad_expresion_de_genero'], $grupal['tuberculosis_y_coinfecciones'],$grupal['infecciones_oportunistas']);
+        return new EntrevistaGrupal(
+            $grupal['id_promotor'], 
+            $grupal['id_cedula_persona_receptora'], 
+            $grupal['fecha'], 
+            $grupal['condones_entregados'], 
+            $grupal['lubricantes_entregados'], 
+            $grupal['materiales_educativos_entregados'], 
+            $grupal['region_de_salud'], 
+            $grupal['area'], 
+            $grupal['estilos_de_autocuidado'],
+            $grupal['ddhh_estigma_discriminacion'], 
+            $grupal['uso_correcto_y_constantes_del_condon'], 
+            $grupal['salud_sexual_e_its'], 
+            $grupal['ofrecimiento_y_referencia_a_la_prueba_de_vih'], 
+            $grupal['clam_y_otros_servicios'], 
+            $grupal['salud_anal'], 
+            $grupal['hormonizacion'], 
+            $grupal['apoyo_y_orientacion_psicologica'], 
+            $grupal['diversidad_sexual_identidad_expresion_de_genero'], 
+            $grupal['tuberculosis_y_coinfecciones'],
+            $grupal['infecciones_oportunistas']);
     }
-
-    // The function request the database all entrevistas individuales  
+    // The function request the database all Entrevistas Individuales  
     public static function getAllEntrevistasIndividuales ($id_promotor = null, $id_subreceptor = null){
         $sql = "select * from " . Constantes::INDIVIDUAL . " e ";   // The query is declared in a variable called $sql
     
@@ -219,8 +235,9 @@ class Entrevistas {
                 
                 $array_entrevistas[] = new EntrevistaIndividual(
                     $entrevista['id_promotor'],
-                    $entrevista['id_persona_receptora'],
+                    $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
+                    $entrevista['region_de_salud'],
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
                     $entrevista['materiales_educativos_entregados'],
@@ -251,7 +268,7 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // The function request the database all entrevistas grupales 
+    // The function request the database all Entrevistas Grupales 
     public static function getAllEntrevistasGrupales ($id_promotor = null, $id_subreceptor = null){
         $sql = "select * from " . Constantes::GRUPAL . " e ";   // The query is declared in a variable called $sql
 
@@ -316,7 +333,7 @@ class Entrevistas {
                 
                 $array_entrevistas[] = new EntrevistaGrupal(
                     $entrevista['id_promotor'],
-                    $entrevista['id_persona_receptora'],
+                    $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
@@ -357,7 +374,71 @@ class Entrevistas {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
     }
-    // This function will be use to add individual interviews
+    // The function request the database all Alcanzados
+    public static function getAlcanzado ($id_subreceptor){
+
+        $sql = "select * from " . Constantes::ALCANZADOS ;// As there is a view created with that purpose 
+
+        if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
+            $sql .= " where id_subreceptor = ? ";
+        }
+        
+
+        // Abrimos la conexion de la base de datos
+        // The connection to the database is open
+        $db = new DB();
+        $mysqli = $db->conecta();
+
+        // Preparaos la sentencia anterior
+        // The sentence gets prepared in the variable $stmt
+        if ($stmt = $mysqli->prepare($sql)) {
+
+            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
+            // The parameter are associated to the attriute listed as well as the datatype is specified
+            $stmt->bind_param('i', $id_subreceptor);
+
+            // Ejecutamos la sentencia con los valores ya establecidos
+            // The sentence get executed
+            $stmt->execute();
+
+            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
+            // Once requested the sentece, we would be able to manipulate the information in the object called $result
+            $result = $stmt->get_result();
+
+            // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
+            // We request the object to return the information in one line per entrevista
+            $alcanzados = $result->fetch_all(MYSQLI_ASSOC);
+
+            // Cerramos la conexión
+            // The connection gets close
+            $stmt->close();
+                
+            if(sizeof($alcanzados) !== 1) {
+                // If there size is 0 or more than 1 there is an error with the login of with the itreview requested. The user gets informed with an error message
+                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
+                throw new AlcanzadoNotFoundException("La persona no ha sido alcanzada aún");
+            }
+
+            // Puesto que esta consulta sólo ha devuelto 1 entrevista, obtenemos los datos de la primera posición del array
+            // if the size 1, the object indivudual would display the only entrevista individual that the user has requested 
+            $alcanzado = $alcanzados[0];
+            
+            // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de Alcanzado
+            // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
+            return new Alcanzado_por_Subreceptor(
+                $alcanzado['id_promotor'], 
+                $alcanzado['id_cedula_persona_receptora'],
+                $alcanzado['fecha'],
+                $alcanzado['condones_entregados'],
+                $alcanzado['lubricantes_entregados'],
+                $alcanzado['materiales_educativos_entregados'], 
+                $alcanzado['total_condones'], 
+                $alcanzado['total_lubricantes'], 
+                $alcanzado['total_materiales_educativos']
+            );
+        }
+    }
+    // This function will be use to add Individual Interviews
     public static function addIndividual($datos, $db = null){
         
         // Si el objeto db no es nulo, estamos en una transacción
@@ -384,6 +465,10 @@ class Entrevistas {
         // We store the errors in a variable in return it to the user associated to the attribute in which the information was not correct
         $errores = array();
 
+        if (!in_array($datos['region_de_salud'], Entrevistas::regiones_de_salud_permitidas)){
+            $errores['region_de_salud'] = "Seleccione una región de salud correcta";
+        }
+
         if (!is_numeric($datos['condones_entregados']) || $datos['condones_entregados'] < 0) {
             $errores['condones_entregados'] = 'El número de condones entregados debe ser 0 o más';
         }
@@ -402,17 +487,30 @@ class Entrevistas {
             throw new ValidationException (serialize($errores));// serialize stores the values that have an error and retunr if to the user with a message
         }
 
-        $sql = "insert into " . Constantes::INDIVIDUAL . " (id_promotor, id_persona_receptora, fecha, condones_entregados, lubricantes_entregados, ".
-            "materiales_educativos_entregados, uso_del_condon, uso_de_alcohol_y_drogas_ilicitas, informacion_CLAM, referencia_a_prueba_de_VIH, referencia_a_clinica_TB) " .
-            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "insert into " . Constantes::INDIVIDUAL . " (
+            id_promotor, 
+            id_cedula_persona_receptora, 
+            fecha, 
+            region_de_salud, 
+            condones_entregados, 
+            lubricantes_entregados, ".
+            "materiales_educativos_entregados, 
+            uso_del_condon, 
+            uso_de_alcohol_y_drogas_ilicitas, 
+            informacion_CLAM, 
+            referencia_a_prueba_de_VIH, 
+            referencia_a_clinica_TB) " .
+            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         // Preparamos la sentencia anterior
         // the query to add information to the table entrevistaIndividual gets prepared
         if ($stmt = $mysqli->prepare($sql)) {
             $fecha = "now()";//Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
-            $stmt->bind_param('isiiiiiiii', 
+            $stmt->bind_param('issiiiiiiii', 
                 $datos['id_promotor'],
-                $datos['id_persona_receptora'],
+                $datos['id_cedula_persona_receptora'],
+                $datos['region_de_salud'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],
@@ -438,13 +536,14 @@ class Entrevistas {
             }
             $stmt->close();
             $mysqli->close();
+            // llamar a un metodo nuevo que se va a llamar compruebaAlcanzados()
         }
         else {
             throw new Exception("Error de BD: " . $mysqli->error);
         }
         
     }
-
+    // This function will be use to add Group Interviews
     public static function addGrupal($datos, $db = null){
         
         // Si el objeto db no es nulo, estamos en una transacción
@@ -494,7 +593,7 @@ class Entrevistas {
         }
         $sql = "insert into " . Constantes::GRUPAL . " (
                 id_promotor, 
-                id_persona_receptora, 
+                id_cedula_persona_receptora, 
                 fecha, 
                 condones_entregados, 
                 lubricantes_entregados,
@@ -522,7 +621,7 @@ class Entrevistas {
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
             $stmt->bind_param('isiiissiiiiiiiiiiii', 
                 $datos['id_promotor'],
-                $datos['id_persona_receptora'],
+                $datos['id_cedula_persona_receptora'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],

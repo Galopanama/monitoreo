@@ -21,12 +21,12 @@ class EntrevistaGrupal extends Entrevista {
     private $tuberculosis_y_coinfecciones;
     private $infecciones_oportunistas;
 
-    public function __construct ($id_promotor,$id_persona_receptora,$fecha,$condones_entregados,$lubricantes_entregados,$materiales_educativos_entregados,
+    public function __construct ($id_promotor,$id_cedula_persona_receptora,$fecha,$condones_entregados,$lubricantes_entregados,$materiales_educativos_entregados,
     $region_de_salud,$area,$estilos_de_autocuidado,$ddhh_estigma_discriminacion,$uso_correcto_y_constantes_del_condon,
     $salud_sexual_e_its,$ofrecimiento_y_referencia_a_la_prueba_de_vih,$clam_y_otros_servicios,$salud_anal,$hormonizacion,$apoyo_y_orientacion_psicologica,
     $diversidad_sexual_identidad_expresion_de_genero,$tuberculosis_y_coinfecciones,$infecciones_oportunistas){
 
-        parent::__construct ($id_promotor,$id_persona_receptora,$fecha,$condones_entregados,$lubricantes_entregados,$materiales_educativos_entregados);
+        parent::__construct ($id_promotor,$id_cedula_persona_receptora,$fecha,$condones_entregados,$lubricantes_entregados,$materiales_educativos_entregados);
         $this->region_de_salud = $region_de_salud;
         $this->area = $area;
         $this->estilos_de_autocuidado = $estilos_de_autocuidado;

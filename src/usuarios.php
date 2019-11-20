@@ -8,7 +8,7 @@ require_once __DIR__ . '/Usuario.php';
 require_once __DIR__ . '/Excepciones.php';
 
 class Usuarios {
-// Some constants have been declared in order to help the user to fill infromation correctly as well as to enforce certain conditions
+// Some constants have been declared in order to help the user to fill information correctly as well as to enforce certain conditions
     const MIN_TAM_LOGIN = 8;
     const MAX_TAM_LOGIN = 16;
     const MIN_TAM_PASSWORD = 8;

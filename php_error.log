@@ -1,0 +1,152 @@
+[23-Oct-2019 16:45:48 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:45:48 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:45:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:45:48 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:45:48 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:45:56 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:45:56 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:45:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:45:56 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:45:56 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:46:13 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:46:13 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:46:13 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:46:13 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:46:13 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP Notice:  Undefined index: error_message in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php on line 9
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:47:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:48:37 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:48:37 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:48:37 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:48:37 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:48:37 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:50:44 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:50:44 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:50:44 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:50:44 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:50:44 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:52:08 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:52:08 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:52:08 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:52:08 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:52:08 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:52:37 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:52:37 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:52:37 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:52:37 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:52:37 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:54:10 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:54:10 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:54:10 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:54:10 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:54:10 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[23-Oct-2019 16:55:50 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[23-Oct-2019 16:55:50 America/Los_Angeles] PHP Stack trace:
+[23-Oct-2019 16:55:50 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[23-Oct-2019 16:55:50 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[23-Oct-2019 16:55:50 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 06:52:31 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 06:52:31 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 06:52:31 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 06:52:31 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 06:52:31 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 06:52:43 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 06:52:43 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 06:52:43 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 06:52:43 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 06:52:43 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP Notice:  Undefined index: error_message in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php on line 9
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 06:52:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 06:58:20 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 06:58:20 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 06:58:20 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 06:58:20 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 06:58:20 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP Notice:  Undefined index: error_message in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php on line 9
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:02:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:03:06 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 07:03:06 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:03:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:03:06 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 07:03:06 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 07:04:15 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 07:04:15 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:04:15 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:04:15 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 07:04:15 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP Notice:  Undefined index: error_message in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php on line 9
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:04:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:04:50 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 07:04:50 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 07:04:50 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 07:04:50 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 07:04:50 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 08:05:14 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 08:05:14 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:05:14 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 08:05:14 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 08:05:14 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[26-Oct-2019 08:12:35 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[26-Oct-2019 08:12:35 America/Los_Angeles] PHP Stack trace:
+[26-Oct-2019 08:12:35 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[26-Oct-2019 08:12:35 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[26-Oct-2019 08:12:35 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 13:13:58 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 13:13:58 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 13:13:58 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 13:13:58 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 13:13:58 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 13:22:53 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 13:22:53 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 13:22:53 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 13:22:53 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 13:22:53 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 14:16:18 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 14:16:18 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 14:16:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 14:16:18 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 14:16:18 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 14:26:58 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 14:26:58 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 14:26:58 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 14:26:58 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 14:26:58 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 14:27:13 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 14:27:13 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 14:27:13 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 14:27:13 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 14:27:13 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 14:27:17 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 14:27:17 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 14:27:17 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 14:27:17 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 14:27:17 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7
+[04-Nov-2019 14:27:40 America/Los_Angeles] PHP Notice:  session_start(): A session had already been started - ignoring in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php on line 7
+[04-Nov-2019 14:27:40 America/Los_Angeles] PHP Stack trace:
+[04-Nov-2019 14:27:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:0
+[04-Nov-2019 14:27:40 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/error.php:6
+[04-Nov-2019 14:27:40 America/Los_Angeles] PHP   3. session_start() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/config/config.php:7

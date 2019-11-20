@@ -38,7 +38,7 @@ function getAllIndividuales() {
         // It is diplayed one object for iteration of the code showing the atributes implicits in the Individual interview
         // Vamos a editar la lista, y mostrando los datos de la persona receptora y el nombre del promotor
         foreach($lista as $entrevistaIndividual) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevistaIndividual->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevistaIndividual->getId_cedula_persona_receptora());
             $entrevistaIndividual->poblacion = $persona_receptora->getPoblacion();   // Php allows to bring atributes from another table and display it here
             $entrevistaIndividual->poblacion_originaria = $persona_receptora->getPoblacion_originaria();// This values are relevants for the user
             // adds the information about the promotor who introduced the data in the system
@@ -66,7 +66,7 @@ function getAllGrupales() {
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
         // Edit a list with all the instances of class Persona Receptora and name and Id from Promotor
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_persona_receptora());
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora());
             $entrevista->poblacion = $persona_receptora->getPoblacion();     
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
                                                                                          

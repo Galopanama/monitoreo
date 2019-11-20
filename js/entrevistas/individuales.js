@@ -3,7 +3,7 @@
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
-    var table = $('#entrevistasIndividuales').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
+    var table = $('#entrevistasIndividuales').DataTable( {// plugin de JQuery al que le das las colunas de una clase. llama al ajax
         "ajax": "ajax.php?funcion=getAllIndividuales",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
@@ -15,6 +15,7 @@ $(document).ready(function() {
             },
             { "data": "nombre_promotor" },
             { "data": "fecha" },
+            { "data": "region_de_salud" },
             { "data": "condones_entregados" },
             { "data": "lubricantes_entregados" },
             { "data": "materiales_educativos_entregados" },
@@ -108,7 +109,7 @@ $(document).ready(function() {
         
             tabla += '<tr>';
             tabla +=    '<td>Cédula</td>';
-            tabla +=    '<td>' + d.id_persona_receptora + '</td>';
+            tabla +=    '<td>' + d.id_cedula_persona_receptora + '</td>';
             tabla += '</tr>';
 
             tabla += '<tr>';
