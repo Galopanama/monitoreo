@@ -15,6 +15,7 @@ require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se introduce la palabra cedula para unificar nomenclatura
     // Se han enviado datos
     // Keep the errors in an array if found
+
     $errores = array();
     // Vamos a comprobar si los datos necesarios están
     // Check if the following fields are filled. They are necesary to submit the form
@@ -78,6 +79,7 @@ if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se in
             $datos = [
                 'id_promotor' => $_SESSION['usuario_id'],
                 'id_cedula_persona_receptora' => $_POST['id_cedula_persona_receptora'],
+                'region_de_salud' => $_POST['region_de_salud'],
                 'condones_entregados' => $_POST['condones_entregados'],
                 'lubricantes_entregados' => $_POST['lubricantes_entregados'],
                 'materiales_educativos_entregados' => $_POST['materiales_educativos_entregados'],
@@ -130,6 +132,10 @@ $smarty->assign('titulo', 'Añadir entrevista individual');
 // Necesitamos cargar un array con los tipos de usuario válidos. Dicho array está en la clase Usuarios
 // The types of user are loaded after the 'tipos_de_poblacion_permitidos' (Trans,TSF,HSH)
 $smarty->assign('tipos_poblacion_permitidos', PersonasReceptoras::tipos_poblacion_permitidos);
+
+// De igual forma, cargamos las regiones de salud
+// We load the regiones de salud that are allowed
+$smarty->assign('regiones_de_salud', Entrevistas::regiones_de_salud_permitidas);
 
 // La variable main se utilizará en el archivo footer.php
 $main = $smarty->fetch("paginas/entrevistas/add_individual.tpl");

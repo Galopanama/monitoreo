@@ -15,6 +15,7 @@ $numero_filas_mostrar = 10;
 // Send the data if not empty row 
 if (!empty($_POST['id_cedula_persona_receptora_buscada_1'])) {
     // Keep the errors in an array if found
+    
     $errores = array(); 
     // Vamos a comprobar si los datos necesarios están
     // Check for the data to reach the minimum filled 

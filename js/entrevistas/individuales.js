@@ -15,6 +15,7 @@ $(document).ready(function() {
             },
             { "data": "nombre_promotor" },
             { "data": "fecha" },
+            { "data": "region_de_salud" },
             { "data": "condones_entregados" },
             { "data": "lubricantes_entregados" },
             { "data": "materiales_educativos_entregados" },

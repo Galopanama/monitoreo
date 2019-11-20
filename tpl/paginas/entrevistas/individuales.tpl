@@ -25,6 +25,7 @@
             <th>Datos receptor/a</th>
             <th>Promotor</th>
             <th>Fecha</th>
+            <th>Region de Salud</th>
             <th>Condones entregados</th>
             <th>Lubricantes entregados</th>
             <th>Materiales educativos entregados</th>
@@ -40,6 +41,7 @@
             <th>Datos receptor/a</th>
             <th>Promotor</th>
             <th>Fecha</th>
+            <th>Region de Salud</th>
             <th>Condones entregados</th>
             <th>Lubricantes entregados</th>
             <th>Materiales educativos entregados</th>

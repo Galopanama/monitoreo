@@ -13,7 +13,7 @@ require_once __DIR__ . '/Excepciones.php';
 
 
 class Entrevistas {
-// Some constants have been declared in order to help the user to fill infromation correctly as well as to enforce certain conditions
+// Some constants have been declared in order to help the user to fill information correctly as well as to enforce certain conditions
     const regiones_de_salud_permitidas = array('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas');
 
     
@@ -85,6 +85,7 @@ class Entrevistas {
                 $individual['id_promotor'], 
                 $individual['id_cedula_persona_receptora'], 
                 $individual['fecha'], 
+                $individual['region_de_salud'],
                 $individual['condones_entregados'], 
                 $individual['lubricantes_entregados'], 
                 $individual['materiales_educativos_entregados'], 
@@ -147,12 +148,27 @@ class Entrevistas {
                             
         // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de EntrevistaGrupal
         // The object created from the database has the following attributes. The named with the same name as the attributes of the table EntrevistasGrupal
-        return new EntrevisaGrupal($grupal['id_promotor'], $grupal['id_cedula_persona_receptora'], $grupal['fecha'], 
-        $grupal['condones_entregados'], $grupal['lubricantes_entregados'], $grupal['materiales_educativos_entregados'], 
-        $grupal['region_de_salud'], $grupal['area'], $grupal['estilos_de_autocuidado'], $grupal['ddhh_estigma_discriminacion'], 
-        $grupal['uso_correcto_y_constantes_del_condon'], $grupal['salud_sexual_e_its'], $grupal['ofrecimiento_y_referencia_a_la_prueba_de_vih'], 
-        $grupal['clam_y_otros_servicios'], $grupal['salud_anal'], $grupal['hormonizacion'], $grupal['apoyo_y_orientacion_psicologica'], 
-        $grupal['diversidad_sexual_identidad_expresion_de_genero'], $grupal['tuberculosis_y_coinfecciones'],$grupal['infecciones_oportunistas']);
+        return new EntrevistaGrupal(
+            $grupal['id_promotor'], 
+            $grupal['id_cedula_persona_receptora'], 
+            $grupal['fecha'], 
+            $grupal['condones_entregados'], 
+            $grupal['lubricantes_entregados'], 
+            $grupal['materiales_educativos_entregados'], 
+            $grupal['region_de_salud'], 
+            $grupal['area'], 
+            $grupal['estilos_de_autocuidado'],
+            $grupal['ddhh_estigma_discriminacion'], 
+            $grupal['uso_correcto_y_constantes_del_condon'], 
+            $grupal['salud_sexual_e_its'], 
+            $grupal['ofrecimiento_y_referencia_a_la_prueba_de_vih'], 
+            $grupal['clam_y_otros_servicios'], 
+            $grupal['salud_anal'], 
+            $grupal['hormonizacion'], 
+            $grupal['apoyo_y_orientacion_psicologica'], 
+            $grupal['diversidad_sexual_identidad_expresion_de_genero'], 
+            $grupal['tuberculosis_y_coinfecciones'],
+            $grupal['infecciones_oportunistas']);
     }
     // The function request the database all Entrevistas Individuales  
     public static function getAllEntrevistasIndividuales ($id_promotor = null, $id_subreceptor = null){
@@ -221,6 +237,7 @@ class Entrevistas {
                     $entrevista['id_promotor'],
                     $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
+                    $entrevista['region_de_salud'],
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
                     $entrevista['materiales_educativos_entregados'],
@@ -448,6 +465,10 @@ class Entrevistas {
         // We store the errors in a variable in return it to the user associated to the attribute in which the information was not correct
         $errores = array();
 
+        if (!in_array($datos['region_de_salud'], Entrevistas::regiones_de_salud_permitidas)){
+            $errores['region_de_salud'] = "Seleccione una región de salud correcta";
+        }
+
         if (!is_numeric($datos['condones_entregados']) || $datos['condones_entregados'] < 0) {
             $errores['condones_entregados'] = 'El número de condones entregados debe ser 0 o más';
         }
@@ -466,17 +487,30 @@ class Entrevistas {
             throw new ValidationException (serialize($errores));// serialize stores the values that have an error and retunr if to the user with a message
         }
 
-        $sql = "insert into " . Constantes::INDIVIDUAL . " (id_promotor, id_cedula_persona_receptora, fecha, condones_entregados, lubricantes_entregados, ".
-            "materiales_educativos_entregados, uso_del_condon, uso_de_alcohol_y_drogas_ilicitas, informacion_CLAM, referencia_a_prueba_de_VIH, referencia_a_clinica_TB) " .
-            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "insert into " . Constantes::INDIVIDUAL . " (
+            id_promotor, 
+            id_cedula_persona_receptora, 
+            fecha, 
+            region_de_salud, 
+            condones_entregados, 
+            lubricantes_entregados, ".
+            "materiales_educativos_entregados, 
+            uso_del_condon, 
+            uso_de_alcohol_y_drogas_ilicitas, 
+            informacion_CLAM, 
+            referencia_a_prueba_de_VIH, 
+            referencia_a_clinica_TB) " .
+            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         // Preparamos la sentencia anterior
         // the query to add information to the table entrevistaIndividual gets prepared
         if ($stmt = $mysqli->prepare($sql)) {
             $fecha = "now()";//Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
-            $stmt->bind_param('isiiiiiiii', 
+            $stmt->bind_param('issiiiiiiii', 
                 $datos['id_promotor'],
                 $datos['id_cedula_persona_receptora'],
+                $datos['region_de_salud'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],

@@ -21,6 +21,18 @@
   <div class="container-fluid">
     <h4 class="mb-3">Información de la entrevista</h4>
     <form method="POST" class="needs-validation" novalidate>
+
+      <div class="form-row">
+        <div class="col-auto">
+          <label for="region_de_salud">Región de salud</label>
+          <select class="custom-select d-block" id="region_de_salud" name="region_de_salud" required> 
+            {html_options values=$regiones_de_salud output=$regiones_de_salud selected=$region_de_salud}
+          </select>
+        </div>
+      </div>
+
+      <hr />
+
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -41,7 +53,7 @@
           <tr>
             <td class="col-md-3">
               <input type="hidden" id="id_cedula_persona_receptora" name="id_cedula_persona_receptora" value="{$id_cedula_persona_receptora}" /> 
-              <input type="text" class="form-control typeahead" id="id_cedula_persona_receptora_buscada" name="id_cedula_persona_receptora_buscada"
+              <input type="text" class="form-control typeahead id_cedula_persona_receptora_buscada" id="id_cedula_persona_receptora_buscada" name="id_cedula_persona_receptora_buscada"
                 value="{$id_cedula_persona_receptora_buscada}" placeholder="Cédula" />
               <small id="registroHelpBlock" class="form-text text-muted">
                 Si la cédula ya existe, los campos población y pob. originaria se deshabilitarán
