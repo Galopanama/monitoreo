@@ -493,8 +493,8 @@ class Entrevistas {
             fecha, 
             region_de_salud, 
             condones_entregados, 
-            lubricantes_entregados, ".
-            "materiales_educativos_entregados, 
+            lubricantes_entregados, 
+            materiales_educativos_entregados, 
             uso_del_condon, 
             uso_de_alcohol_y_drogas_ilicitas, 
             informacion_CLAM, 
