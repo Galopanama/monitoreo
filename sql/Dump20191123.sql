@@ -25,9 +25,10 @@ DROP TABLE IF EXISTS `alcanzados`;
 CREATE TABLE `alcanzados` (
   `id_cedula_persona_receptora` varchar(12) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
-  `nombre_subreceptor` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `region_de_salud` enum('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas') NOT NULL,
-  PRIMARY KEY (`id_cedula_persona_receptora`)
+  PRIMARY KEY (`id_cedula_persona_receptora`),
+  UNIQUE KEY `id_cedula_persona_receptora` (`id_cedula_persona_receptora`),
+  CONSTRAINT `id_cedula_persona_receptora` FOREIGN KEY (`id_cedula_persona_receptora`) REFERENCES `persona_receptora` (`id_cedula_persona_receptora`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,34 +38,8 @@ CREATE TABLE `alcanzados` (
 
 LOCK TABLES `alcanzados` WRITE;
 /*!40000 ALTER TABLE `alcanzados` DISABLE KEYS */;
+INSERT INTO `alcanzados` VALUES ('20202020','2019-11-22','Bocas_del_Toro'),('2222222','2019-11-22','Colón'),('31433333','2019-11-22','Bocas_del_Toro'),('3331333','2019-11-22','Coclé'),('3332333','2019-11-22','Panamá_Oeste_2');
 /*!40000 ALTER TABLE `alcanzados` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `persona_en_proceso`
---
-
-DROP TABLE IF EXISTS `persona_en_proceso`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `persona_en_proceso` (
-  `id_cedula_persona_receptora` varchar(12) NOT NULL,
-  `fecha_inicio` time NOT NULL,
-  `id_promotor` int(11) NOT NULL,
-  `condones` int(2) NOT NULL,
-  `lubricantes` int(2) NOT NULL,
-  `materiales_educativos` int(2) NOT NULL,
-  PRIMARY KEY (`id_cedula_persona_receptora`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `persona_en_proceso`
---
-
-LOCK TABLES `persona_en_proceso` WRITE;
-/*!40000 ALTER TABLE `persona_en_proceso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `persona_en_proceso` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -79,7 +54,9 @@ CREATE TABLE `persona_receptora` (
   `poblacion_originaria` tinyint(1) NOT NULL COMMENT 'perteneciente a un grupo de población indígena',
   `poblacion` enum('HSH','TSF','TRANS','') NOT NULL COMMENT 'grupo en el que se identifica',
   `datos_actualizados` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_cedula_persona_receptora`)
+  PRIMARY KEY (`id_cedula_persona_receptora`),
+  UNIQUE KEY `id_cedula_persona_receptora` (`id_cedula_persona_receptora`),
+  KEY `poblacion` (`poblacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,7 +66,7 @@ CREATE TABLE `persona_receptora` (
 
 LOCK TABLES `persona_receptora` WRITE;
 /*!40000 ALTER TABLE `persona_receptora` DISABLE KEYS */;
-INSERT INTO `persona_receptora` VALUES ('111111111',1,'TSF','2019-10-10 13:16:56'),('1212121212',1,'HSH','2019-10-10 13:20:33'),('12345678',1,'HSH','2019-10-10 13:13:58'),('1313131',1,'TSF','2019-11-10 23:26:16'),('20202020',1,'TRANS','2019-10-18 18:26:04'),('2222222',1,'HSH','2019-10-11 18:39:57'),('31433333',0,'TSF','2019-10-10 13:15:02'),('3333333',1,'HSH','2019-10-11 18:40:57'),('44444444',1,'HSH','2019-10-12 18:30:43'),('55555555',1,'HSH','2019-10-12 18:31:29'),('88888888',1,'TRANS','2019-10-19 16:29:59'),('99999999',1,'TRANS','2019-10-19 16:28:34');
+INSERT INTO `persona_receptora` VALUES ('111111111',1,'TSF','2019-10-10 13:16:56'),('1212121212',1,'HSH','2019-10-10 13:20:33'),('12345678',1,'HSH','2019-10-10 13:13:58'),('1313131',1,'TSF','2019-11-10 23:26:16'),('13131313',1,'HSH','2019-11-18 04:20:51'),('1515151',1,'HSH','2019-11-20 16:17:57'),('16161616',0,'TRANS','2019-11-20 18:03:47'),('20202020',1,'TRANS','2019-10-18 18:26:04'),('2222222',1,'HSH','2019-10-11 18:39:57'),('31433333',0,'TSF','2019-10-10 13:15:02'),('3331333',1,'HSH','2019-11-21 19:22:35'),('3332333',1,'TSF','2019-11-21 19:24:18'),('3333333',1,'HSH','2019-10-11 18:40:57'),('4141414',1,'HSH','2019-11-18 04:23:49'),('4441444',1,'HSH','2019-11-21 19:04:15'),('44444444',1,'HSH','2019-10-12 18:30:43'),('55555555',1,'HSH','2019-10-12 18:31:29'),('6666666',1,'HSH','2019-11-14 21:40:56'),('7771777',0,'TSF','2019-11-15 15:54:56'),('7772777',1,'TSF','2019-11-15 16:09:59'),('7777777',1,'HSH','2019-11-14 22:01:35'),('8888888',0,'TSF','2019-11-15 15:51:41'),('88888888',1,'TRANS','2019-10-19 16:29:59'),('99999999',1,'TRANS','2019-10-19 16:28:34');
 /*!40000 ALTER TABLE `persona_receptora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,9 +140,81 @@ CREATE TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` (
 
 LOCK TABLES `promotor_realiza_actividad_grupal_con_personas_receptoras` WRITE;
 /*!40000 ALTER TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` DISABLE KEYS */;
-INSERT INTO `promotor_realiza_actividad_grupal_con_personas_receptoras` VALUES (17,'111111111','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'111111111','2019-10-16','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,2,2,2),(17,'1212121212','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'12345678','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'1313131','2019-11-10','Colón','Colon',1,1,1,1,1,1,1,1,1,1,1,1,5,5,5),(17,'20202020','2019-10-18','Bocas_del_Toro','Bocas',1,1,0,0,0,0,0,0,0,0,0,0,20,20,20),(17,'2222222','2019-10-11','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,8,8,8),(17,'2222222','2019-10-18','Bocas_del_Toro','Bocas',0,1,0,0,0,0,0,0,0,0,0,0,5,5,35),(17,'31433333','2019-10-18','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,6,7,8),(17,'3333333','2019-10-19','Panamá_Oeste_1','Panama',1,1,0,0,1,0,0,1,1,1,1,1,22,22,22),(17,'44444444','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'44444444','2019-10-18','Bocas_del_Toro','Bocas',1,1,1,0,0,1,0,0,0,0,0,0,9,9,9),(17,'55555555','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,30,30,30),(17,'88888888','2019-10-19','Herrera','Los santos',1,0,0,0,0,0,0,0,0,1,0,0,1,1,1),(17,'88888888','2019-11-10','Panamá_Oeste_1','Panama',1,1,0,0,0,0,0,0,0,0,0,0,2,2,2),(17,'99999999','2019-10-19','Coclé','Cocle',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0);
+INSERT INTO `promotor_realiza_actividad_grupal_con_personas_receptoras` VALUES (17,'111111111','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'111111111','2019-10-16','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,2,2,2),(17,'1212121212','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'1212121212','2019-11-14','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,50,50,50),(17,'12345678','2019-10-10','Bocas_del_Toro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'12345678','2019-11-22','Bocas_del_Toro','Colegio',1,0,0,0,1,0,0,0,0,1,0,0,2,2,2),(17,'1313131','2019-11-10','Colón','Colon',1,1,1,1,1,1,1,1,1,1,1,1,5,5,5),(17,'1313131','2019-11-14','Colón','Colon',1,0,0,0,0,0,0,0,0,0,0,0,10,10,10),(17,'20202020','2019-10-18','Bocas_del_Toro','Bocas',1,1,0,0,0,0,0,0,0,0,0,0,20,20,20),(17,'20202020','2019-11-22','Bocas_del_Toro','Hospital',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'2222222','2019-10-11','Panamá_Metro','Panama',1,1,0,0,0,0,0,0,0,0,0,0,8,8,8),(17,'2222222','2019-10-18','Bocas_del_Toro','Bocas',0,1,0,0,0,0,0,0,0,0,0,0,5,5,35),(17,'31433333','2019-10-18','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,6,7,8),(17,'31433333','2019-11-14','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'31433333','2019-11-22','Bocas_del_Toro','Hospital',0,0,0,0,0,0,0,0,1,1,0,0,39,39,39),(17,'3331333','2019-11-21','Coclé','Calle',0,0,0,1,0,0,0,0,0,0,0,0,20,20,20),(17,'3332333','2019-11-21','Herrera','Escuela',1,0,0,0,0,0,0,0,0,0,0,0,39,39,39),(17,'3333333','2019-10-19','Panamá_Oeste_1','Panama',1,1,0,0,1,0,0,1,1,1,1,1,22,22,22),(17,'4141414','2019-11-17','Chiriquí','Chiriqui',1,0,0,0,0,0,0,0,0,0,0,0,20,20,20),(17,'44444444','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1),(17,'44444444','2019-10-18','Bocas_del_Toro','Bocas',1,1,1,0,0,1,0,0,0,0,0,0,9,9,9),(17,'55555555','2019-10-12','Panamá_Metro','Panama',1,0,0,0,0,0,0,0,0,0,0,0,30,30,30),(17,'7771777','2019-11-15','Bocas_del_Toro','Gogol',1,0,0,0,0,0,0,0,0,0,0,0,10,10,10),(17,'88888888','2019-10-19','Herrera','Los santos',1,0,0,0,0,0,0,0,0,1,0,0,1,1,1),(17,'88888888','2019-11-10','Panamá_Oeste_1','Panama',1,1,0,0,0,0,0,0,0,0,0,0,2,2,2),(17,'99999999','2019-10-19','Coclé','Cocle',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0),(17,'99999999','2019-11-14','Bocas_del_Toro','Bocas',1,0,0,0,0,0,0,0,0,0,0,0,1,1,1);
 /*!40000 ALTER TABLE `promotor_realiza_actividad_grupal_con_personas_receptoras` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_grupal` AFTER INSERT ON `promotor_realiza_actividad_grupal_con_personas_receptoras` FOR EACH ROW BEGIN
+	DECLARE total_condones INTEGER;
+	DECLARE total_lubricantes INTEGER;
+	DECLARE total_materiales INTEGER;
+    DECLARE min_valor INTEGER default 40;
+       
+    
+	IF NEW.`id_cedula_persona_receptora` in (
+		SELECT id_cedula_persona_receptora
+		FROM `promotor_realiza_actividad_grupal_con_personas_receptoras`
+	)
+	THEN  
+		SET total_condones = (
+			select sum(condones_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(condones_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+	
+		SET total_lubricantes = (
+			select sum(lubricantes_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(lubricantes_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+        
+        SET total_materiales = (
+			select sum(materiales_educativos_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(materiales_educativos_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+        IF (total_condones >= min_valor AND total_lubricantes >= min_valor AND total_materiales >= min_valor )
+        THEN
+			INSERT INTO alcanzados (id_cedula_persona_receptora, fecha, region_de_salud)
+            VALUES (NEW.id_cedula_persona_receptora, now(), NEW.region_de_salud);
+		END IF;
+	END IF;
+    
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `promotor_realiza_entrevista_individual`
@@ -178,6 +227,7 @@ CREATE TABLE `promotor_realiza_entrevista_individual` (
   `id_promotor` int(11) NOT NULL,
   `id_cedula_persona_receptora` varchar(12) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
+  `region_de_salud` enum('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas') COLLATE utf8_spanish_ci NOT NULL,
   `uso_del_condon` tinyint(1) DEFAULT NULL,
   `uso_de_alcohol_y_drogas_ilicitas` tinyint(1) DEFAULT NULL,
   `informacion_CLAM` tinyint(1) DEFAULT NULL,
@@ -187,7 +237,6 @@ CREATE TABLE `promotor_realiza_entrevista_individual` (
   `lubricantes_entregados` int(11) DEFAULT NULL,
   `materiales_educativos_entregados` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_promotor`,`id_cedula_persona_receptora`,`fecha`),
-  KEY `persona_receptora` (`id_cedula_persona_receptora`),
   CONSTRAINT `persona_receptora` FOREIGN KEY (`id_cedula_persona_receptora`) REFERENCES `persona_receptora` (`id_cedula_persona_receptora`) ON UPDATE CASCADE,
   CONSTRAINT `promotor` FOREIGN KEY (`id_promotor`) REFERENCES `promotor` (`id_usuario`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='entrevista individual a individuos. Formulario 1';
@@ -199,7 +248,7 @@ CREATE TABLE `promotor_realiza_entrevista_individual` (
 
 LOCK TABLES `promotor_realiza_entrevista_individual` WRITE;
 /*!40000 ALTER TABLE `promotor_realiza_entrevista_individual` DISABLE KEYS */;
-INSERT INTO `promotor_realiza_entrevista_individual` VALUES (17,'111111111','2019-10-10',1,0,1,0,0,0,0,0),(17,'111111111','2019-10-16',0,0,0,1,1,39,39,39),(17,'1212121212','2019-10-15',1,0,0,0,0,40,40,40),(17,'1212121212','2019-10-18',1,1,1,1,1,4,4,4),(17,'12345678','2019-10-10',1,1,1,1,1,5,5,5),(17,'12345678','2019-10-16',0,0,1,1,0,35,35,35),(17,'1313131','2019-11-10',1,1,1,1,1,5,5,5),(17,'20202020','2019-10-18',1,1,1,1,1,20,20,20),(17,'2222222','2019-10-11',1,1,0,0,0,1,0,0),(17,'2222222','2019-10-17',0,0,0,0,0,20,20,20),(17,'31433333','2019-10-10',1,0,0,0,0,1,1,1),(17,'31433333','2019-10-19',0,0,1,1,1,3,2,1),(17,'3333333','2019-10-11',1,0,0,0,0,22,2,2),(17,'44444444','2019-10-12',1,0,0,0,0,50,50,50),(17,'55555555','2019-10-12',1,0,0,0,0,15,15,15),(17,'88888888','2019-10-19',1,1,1,1,1,4,4,4),(17,'88888888','2019-11-08',0,0,1,0,0,1,1,1),(17,'99999999','2019-10-19',1,0,1,1,1,75,75,75);
+INSERT INTO `promotor_realiza_entrevista_individual` VALUES (17,'111111111','2019-10-10','Bocas_del_Toro',1,0,1,0,0,0,0,0),(17,'111111111','2019-10-16','Bocas_del_Toro',0,0,0,1,1,39,39,39),(17,'111111111','2019-11-22','Bocas_del_Toro',0,0,1,0,0,1,1,1),(17,'1212121212','2019-10-15','Bocas_del_Toro',1,0,0,0,0,40,40,40),(17,'1212121212','2019-10-18','Bocas_del_Toro',1,1,1,1,1,4,4,4),(17,'12345678','2019-10-10','Bocas_del_Toro',1,1,1,1,1,5,5,5),(17,'12345678','2019-10-16','Bocas_del_Toro',0,0,1,1,0,35,35,35),(17,'1313131','2019-11-10','Bocas_del_Toro',1,1,1,1,1,5,5,5),(17,'1313131','2019-11-14','Bocas_del_Toro',0,0,1,0,0,5,5,5),(17,'1313131','2019-11-22','Panamá_Oeste_1',0,0,1,0,0,15,15,15),(17,'16161616','2019-11-20','Chiriquí',0,1,1,0,0,2,2,2),(17,'20202020','2019-10-18','Bocas_del_Toro',1,1,1,1,1,20,20,20),(17,'2222222','2019-10-11','Bocas_del_Toro',1,1,0,0,0,1,0,0),(17,'2222222','2019-10-17','Bocas_del_Toro',0,0,0,0,0,20,20,20),(17,'2222222','2019-11-22','Colón',1,0,0,0,0,20,20,20),(17,'31433333','2019-10-10','Bocas_del_Toro',1,0,0,0,0,1,1,1),(17,'31433333','2019-10-19','Bocas_del_Toro',0,0,1,1,1,3,2,1),(17,'3331333','2019-11-21','Herrera',1,0,0,0,0,25,25,25),(17,'3331333','2019-11-22','Coclé',1,0,0,0,0,1,1,1),(17,'3332333','2019-11-21','Herrera',1,0,0,0,0,50,50,50),(17,'3332333','2019-11-22','Panamá_Oeste_2',0,0,1,0,0,2,2,2),(17,'3333333','2019-10-11','Bocas_del_Toro',1,0,0,0,0,22,2,2),(17,'4141414','2019-11-17','Chiriquí',1,0,0,0,0,21,21,21),(17,'4441444','2019-11-21','Bocas_del_Toro',0,1,0,0,0,5,5,5),(17,'44444444','2019-10-12','Bocas_del_Toro',1,0,0,0,0,50,50,50),(17,'55555555','2019-10-12','Bocas_del_Toro',1,0,0,0,0,15,15,15),(17,'7771777','2019-11-15','Bocas_del_Toro',1,0,0,0,0,5,5,5),(17,'7777777','2019-11-15','Bocas_del_Toro',0,1,0,0,0,5,5,5),(17,'88888888','2019-10-19','Bocas_del_Toro',1,1,1,1,1,4,4,4),(17,'88888888','2019-11-08','Bocas_del_Toro',0,0,1,0,0,1,1,1),(17,'99999999','2019-10-19','Bocas_del_Toro',1,0,1,1,1,75,75,75),(17,'99999999','2019-11-14','Bocas_del_Toro',0,1,0,0,0,4,4,4);
 /*!40000 ALTER TABLE `promotor_realiza_entrevista_individual` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -211,15 +260,63 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `sin_alcanzar_individual` AFTER INSERT ON `promotor_realiza_entrevista_individual` FOR EACH ROW BEGIN
-    	IF id_cedula_persona_receptora not in (id_cedula_persona_receptora.persona_en_proceso) THEN BEGIN 
-        	INSERT INTO persona_en_proceso (id_cedula_persona_receptora, fecha_incio, id_promotor, condones, lubricantes, materiales_educativos)
-            VALUES ('NEW.id_cedula_persona_receptora', 'now()', 'new.id_promotor', 'new.condones_entregados', 'new.lubricantes_entregados', 'new.materiales_educativos_entregados');
-		END;
-        ELSEIF id_cedula_persona_receptora in (id_cedula_persona_receptora.persona_en_proceso) THEN BEGIN
-			INSERT INTO persona_en_proceso (condones, lubricantes, materiales_educativos)
-            VALUES ('condones' + 'new.condones_entregados', 'lubricantes' + 'new.lubricantes_entregados', 'materiales_educativos' + 'new.materiales_educativos_entregados');
-		END; END IF;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_individual` AFTER INSERT ON `promotor_realiza_entrevista_individual` FOR EACH ROW BEGIN
+	DECLARE total_condones INTEGER;
+	DECLARE total_lubricantes INTEGER;
+	DECLARE total_materiales INTEGER;
+    DECLARE min_valor INTEGER default 40;
+    
+	IF NEW.`id_cedula_persona_receptora` in (
+		SELECT id_cedula_persona_receptora
+		FROM `promotor_realiza_actividad_grupal_con_personas_receptoras`
+	)
+	THEN  
+		SET total_condones = (
+			select sum(condones_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(condones_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+	
+		SET total_lubricantes = (
+			select sum(lubricantes_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(lubricantes_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+        
+        SET total_materiales = (
+			select sum(materiales_educativos_entregados)
+			from promotor_realiza_actividad_grupal_con_personas_receptoras
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+		)
+        + 
+        (
+			select sum(materiales_educativos_entregados)
+			from promotor_realiza_entrevista_individual
+			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
+        );
+        
+        IF (total_condones >= min_valor AND total_lubricantes >= min_valor AND total_materiales >= min_valor )
+        THEN
+        
+			INSERT INTO alcanzados (id_cedula_persona_receptora, fecha, id_subreceptor, region_de_salud)
+            VALUES (NEW.id_cedula_persona_receptora, now(), id_subreceptor, NEW.region_de_salud);
+		END IF;
+	END IF;
+    
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -337,7 +434,7 @@ CREATE TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` (
 
 LOCK TABLES `tecnologo_realiza_prueba_vih_a_persona_receptora` WRITE;
 /*!40000 ALTER TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` DISABLE KEYS */;
-INSERT INTO `tecnologo_realiza_prueba_vih_a_persona_receptora` VALUES (16,'111111111','2019-10-10','se_realizó','si','si','reactivo'),(16,'2222222','2019-10-11','se_realizó','si','si','no_reactivo');
+INSERT INTO `tecnologo_realiza_prueba_vih_a_persona_receptora` VALUES (16,'111111111','2019-10-10','se_realizó','si','si','reactivo'),(16,'1313131','2019-11-13','se_realizó','si','si','reactivo'),(16,'2222222','2019-10-11','se_realizó','si','si','no_reactivo');
 /*!40000 ALTER TABLE `tecnologo_realiza_prueba_vih_a_persona_receptora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -424,7 +521,8 @@ CREATE TABLE `usuario` (
   `password` varchar(256) COLLATE utf8_spanish_ci NOT NULL,
   `salt` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_usuario`),
-  UNIQUE KEY `login` (`login`)
+  UNIQUE KEY `login` (`login`),
+  KEY `id_usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='registro de los usuarios independientemente del rol';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -527,4 +625,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-12 11:11:04
+-- Dump completed on 2019-11-23 10:35:57
