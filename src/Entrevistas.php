@@ -425,7 +425,7 @@ class Entrevistas {
             
             // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de Alcanzado
             // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
-            return new Alcanzado_por_Subreceptor(
+            return new Alcanzado(
                 $alcanzado['id_promotor'], 
                 $alcanzado['id_cedula_persona_receptora'],
                 $alcanzado['fecha'],
