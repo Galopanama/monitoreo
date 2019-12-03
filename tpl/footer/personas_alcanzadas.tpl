@@ -1,0 +1,1 @@
+<script type="text/javascript" src="{$_WEB_PATH_}/js/resultados/personas_alcanzadas.js"></script>

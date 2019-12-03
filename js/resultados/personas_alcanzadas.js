@@ -1,6 +1,11 @@
 // este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
 /**
  * Inicializamos la tabla con las siguientes opciones
+ * 
+ * 
+ * Pero si yo lo que quiero es hacer una presentacion diferente de los datos, quizas tendria que tener un
+ * fichero js diferente... donde se le den formato a los datos en relacion a lo que yo quiero mostrar
+ * 
  */
 $(document).ready(function() {
     var table = $('#total_por_subreceptor').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax

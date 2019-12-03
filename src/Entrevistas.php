@@ -172,13 +172,14 @@ class Entrevistas {
     }
     // The function request the database all Entrevistas Individuales  
     public static function getAllEntrevistasIndividuales ($id_promotor = null, $id_subreceptor = null){
+        
         $sql = "select * from " . Constantes::INDIVIDUAL . " e ";   // The query is declared in a variable called $sql
     
-        // The id_promotor gets set
+        // The id_promotor is assigned
         if (!is_null($id_promotor)) {
             $sql .= " where e.id_promotor = ?";
         }
-        // The id_subreceptor get set
+        // The id_subreceptor gets set
         else if (!is_null($id_subreceptor)) {
             $sql .= ", " . Constantes::PROMOTOR . " p 
                 where e.id_promotor = p.id_usuario
@@ -201,7 +202,8 @@ class Entrevistas {
         // Creamos un array en el que guardaremos los usuarios
         // The users get stored in an array
         $array_entrevistas = array();
-
+        
+        // Preparaos la sentencia anterior
         // The sentence gets prepared in the variable $stmt
         if ($stmt = $mysqli->prepare($sql)) {
             
@@ -372,70 +374,6 @@ class Entrevistas {
             // The connection with the database is close and an error messaeg return to the user
             $mysqli->close();
             throw new Exception("Error de BD: " . $mysqli->error);
-        }
-    }
-    // The function request the database all Alcanzados
-    public static function getAlcanzado ($id_subreceptor){
-
-        $sql = "select * from " . Constantes::ALCANZADOS ;// As there is a view created with that purpose 
-
-        if ($_SESSION["tipo_de_usuario"] === "subreceptor") {
-            $sql .= " where id_subreceptor = ? ";
-        }
-        
-
-        // Abrimos la conexion de la base de datos
-        // The connection to the database is open
-        $db = new DB();
-        $mysqli = $db->conecta();
-
-        // Preparaos la sentencia anterior
-        // The sentence gets prepared in the variable $stmt
-        if ($stmt = $mysqli->prepare($sql)) {
-
-            //Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
-            // The parameter are associated to the attriute listed as well as the datatype is specified
-            $stmt->bind_param('i', $id_subreceptor);
-
-            // Ejecutamos la sentencia con los valores ya establecidos
-            // The sentence get executed
-            $stmt->execute();
-
-            // Una vez ejecutada la consulta, obtenemos un objeto que tendra todos los resultados que la consulta haya obtenido
-            // Once requested the sentece, we would be able to manipulate the information in the object called $result
-            $result = $stmt->get_result();
-
-            // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
-            // We request the object to return the information in one line per entrevista
-            $alcanzados = $result->fetch_all(MYSQLI_ASSOC);
-
-            // Cerramos la conexión
-            // The connection gets close
-            $stmt->close();
-                
-            if(sizeof($alcanzados) !== 1) {
-                // If there size is 0 or more than 1 there is an error with the login of with the itreview requested. The user gets informed with an error message
-                // La consulta ha devuelto 0 ó más de 1 resultado, por tanto el login introducido no era correcto o existe un problema con el usuario
-                throw new AlcanzadoNotFoundException("La persona no ha sido alcanzada aún");
-            }
-
-            // Puesto que esta consulta sólo ha devuelto 1 entrevista, obtenemos los datos de la primera posición del array
-            // if the size 1, the object indivudual would display the only entrevista individual that the user has requested 
-            $alcanzado = $alcanzados[0];
-            
-            // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de Alcanzado
-            // The object created from the database has the following attributes. The named with the same name as the attributes of the table Entrevistas
-            return new Alcanzado(
-                $alcanzado['id_promotor'], 
-                $alcanzado['id_cedula_persona_receptora'],
-                $alcanzado['fecha'],
-                $alcanzado['condones_entregados'],
-                $alcanzado['lubricantes_entregados'],
-                $alcanzado['materiales_educativos_entregados'], 
-                $alcanzado['total_condones'], 
-                $alcanzado['total_lubricantes'], 
-                $alcanzado['total_materiales_educativos']
-            );
         }
     }
     // This function will be use to add Individual Interviews
