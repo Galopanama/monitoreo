@@ -1,7 +1,7 @@
 <?php
 // The class Alcanzada belong to the Model.  
 // The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
-
+require_once __DIR__ . '/PersonaReceptora.php';
 
 class PersonaAlcanzada extends PersonaReceptora{
     

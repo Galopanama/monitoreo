@@ -1,2 +1,1 @@
-<!-- cargamos los estilos para el signo + de la tabla -->
-<link href="{$_WEB_PATH_}/css/usuarios/usuarios.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

@@ -166,13 +166,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/alcanzados.php">
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/resultados/personas_alcanzadas.php">
               <span data-feather=""></span>
-              Ver Alcanzados
+              Ver Personas Alcanzadas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="{$_WEB_PATH_}/tpl/main.html"> <!-- Esto lo he calzado por mi cuenta-->
               <span data-feather="activity"></span>
               Graficas
             </a>
@@ -240,12 +240,6 @@
             <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/pruebas.php">
               <span data-feather="heart"></span>
               Ver Pruebas
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="activity"></span>
-              Graficas
             </a>
           </li>
           <li class="nav-item">

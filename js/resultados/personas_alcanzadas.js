@@ -1,92 +1,76 @@
 // este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
 /**
- * Inicializamos la tabla con las siguientes opciones
- * 
- * 
- * Pero si yo lo que quiero es hacer una presentacion diferente de los datos, quizas tendria que tener un
- * fichero js diferente... donde se le den formato a los datos en relacion a lo que yo quiero mostrar
- * 
+ * Inicializamos la tabla con las siguientes opciones 
+ *  
  */
-$(document).ready(function() {
-    var table = $('#total_por_subreceptor').DataTable( {// plugin de jquery al que le das las colunas de una clase. llama al ajax
-        "ajax": "ajax.php?funcion=getAlcanzados",
-        "columns": [
-            // La primera columna nos permitirá expandir para mostrar datos extra
-            {
-                "className":      'details-control',
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ''},
-            { "data": "total_condones" },
-            { "data": "total_lubricantes" },
-            { "data": "total_materiales_educativos" },
-            { "data": "id_subreceptor"} 
-        ],
-        // Botones para exportar el listado
-        dom: 'Bfrtip',
-        "buttons": [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
 
-    
-    // Add event listener for opening and closing details
-    $('#total_por_subreceptor tbody').on('click', 'td.details-control', function () {
-        let tr = $(this).closest('tr');
-        let row = table.row( tr );
- 
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        }
-        else {
-            // Open this row
-            row.child( format(row.data()) ).show();
-            tr.addClass('shown');
-        }
-    } );
-
-    /* Formatting function for row details - modify as you need */
-    function format ( d ) {
-        let tabla = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+$(document).ready(function() {   
+                                                                                                                                  //# busca en el id del elemento html no de la clase. 
+    function personasAlcanzadas(){
         
-            tabla += '<tr>';
-            tabla +=    '<td>Cédula</td>';
-            tabla +=    '<td>' + d.id_cedula_persona_receptora + '</td>';
-            tabla += '</tr>';
+        let poblacion = 
+            $('input[name="poblacion[]"]:checked').map(function(_, el) {    // Estas dos veriables se declaran para que sea
+                return $(el).val();                                         // mas facil trabajar con el JSon. Verdad o no?
+            }).get();
 
-            tabla += '<tr>';
-            tabla +=    '<td>Población originaria</td>';
-            if(d.poblacion_originaria==1){
-                tabla +=    '<td>Sí</td>';
-            }
-            else{
-                tabla +=    '<td>No</td>';
-            }
-            tabla += '</tr>';
+        let regiones =
+            $('input[name="regiones[]"]:checked').map(function(_, el){
+                return $(el).val();
+            }).get();
 
-            tabla += '<tr>';
-            tabla +=    '<td>Población</td>';
-            tabla +=    '<td>' + d.poblacion + '</td>';
-            tabla += '</tr>';
+
+        var request = $.ajax({
+            url: "ajax.php",
+            method: "POST",
+            data: { 
+                "funcion": "getPersonasAlcanzadas",
+                "filtro": {
+                    "poblacion" : poblacion, 
+                    "fecha": {                     
+                        "desde": $("#desde").val(),
+                        "hasta": $("#hasta").val()
+                        },
+                    "regiones": regiones  
+            
+                }
+            },
+            dataType: "json"
+        });
+
+        /** Esta parte... no tengo muy claro lo que hace. Dice algo asi:
+         * 
+         * Cuando la variable request se procesa correctamente, si devuelve un error = a 0... ??
+         *      y si devuleve un error message, imprimelo en una ventana emergente para informar. (que es lo que me pasa amenudo)
+         * 
+         * 
+         * Si le peticion falla, imprime un mensaje en una ventana emergente con un mensaje 
+         * 
+         * */ 
         
-        tabla += '</table>';
+        request.done(function (response) {
+           
+            // var poblaciones = array["TRANS", "HSH", "TSF"];
+            
+            let poblacion = document.querySelector('poblacion');
+            console.log(poblacion);
+            console.log('Hola');
 
-        return tabla;
-    }
+            function ajustarObjetivoAnual(poblacion){ 
+                if (poblacion == "TRANS") { ObjetivoAnual = 100 };  // ObejtivoAnual es un numero especifico para
+                if (poblacion == "HSH") { ObjetivoAnual = 350 };    // cada organizacion. 
+                if (poblacion == "TSF") { ObjetivoAnual= 125 };       
+            };
+
+            console.log(ajustarObjetivoAnual());
+          
+        });
+
+        request.fail(function (jqXHR, textStatus) {
+            alert("Ocurrió un error: " + textStatus);          // para reflejar los errores que no son controlados en el script, como errores de conexion
+        });
+    };
+
+    $("#enviar").on('click', personasAlcanzadas);
 
 
-    /**
-     * Vamos a mostrar los posibles mensajes de exito que hubiesen ocurrido
-     */
-    if ($(".alert-success").find('h4').html() != "") {
-        $(".alert-success").toggleClass('d-none');
-    }
-    
-    // Y los mensajes de error
-    if ($(".alert-danger").find('p').html() != "") {
-        $(".alert-danger").toggleClass('d-none');
-    }
-    
-} );
+});
