@@ -17,7 +17,8 @@ class PersonasAlcanzadas {
     const regiones_de_salud_permitidas = array('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas');
     const realizacion_prueba = array('no_se_realizó','se_realizó');
     const resultados_posibles = array('no_reactivo','reactivo');
-
+    const FORMATO_FECHA_JAVASCRIPT = 'd/m/Y'; // Si el formato de fecha que se envía en el codigo javascript cambia, habría que modificar esta variable
+    const FORMATO_FECHA_MYSQL = 'Y-m-d';
 
     // El parametro fecha debe ser una fecha en el formato YYYY-MM-DD
     // the parameter fecha must be in the format YYYY-MM-DD
@@ -36,13 +37,14 @@ class PersonasAlcanzadas {
         }
         
         // // Fechas 
-        if (extract($filtros['fecha']['desde'])) {
-            $sql .= " and (A.fecha_alcanzado BETWEEN '$filtros(['fecha']['desde'])' "; 
+        // Lo primero que haremos será validar las fechas
+        if (($fecha_desde = DateTime::createFromFormat(PersonasAlcanzadas::FORMATO_FECHA_JAVASCRIPT, $filtros['fecha']['desde'])) 
+            && ($fecha_hasta = DateTime::createFromFormat(PersonasAlcanzadas::FORMATO_FECHA_JAVASCRIPT, $filtros['fecha']['hasta'])) ){
+            // Las fechas llegan y son válidas, por tanto las ponemos
+            $sql .= " and (A.fecha_alcanzado BETWEEN '" . $fecha_desde->format(PersonasAlcanzadas::FORMATO_FECHA_MYSQL) . 
+                "' AND '" . $fecha_hasta->format(PersonasAlcanzadas::FORMATO_FECHA_MYSQL) . "') ";
         }
 
-        if (extract($filtros['fecha']['hasta'])) {
-            $sql .= "and '$filtros(['fecha']['hasta']))' ";
-        }
 
         // Regiones
         if (sizeof($filtros['regiones']) > 0) {
