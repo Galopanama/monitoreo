@@ -26,7 +26,7 @@ class PersonasAlcanzadas {
     // The function request the database 
     public static function getPersonasAlcanzadasFiltradas ($filtros){ //porque aqui se llama filtros y en el JS se llama filtro??
 
-        $sql = "select count(A.id_cedula_persona_receptora) as Total_de_Personas_Alcanzadas, P.poblacion, A.fecha_alcanzado
+        $sql = "select A.region_de_salud, count(A.id_cedula_persona_receptora) as Total_de_Personas_Alcanzadas
                 from " . Constantes::ALCANZADOS . " as A," . Constantes::PERSONA_RECEPTORA . " as P ";      // As there is a view created with that purpose 
 
         $sql .= " where A.id_cedula_persona_receptora = P.id_cedula_persona_receptora ";                   
@@ -48,11 +48,11 @@ class PersonasAlcanzadas {
 
         // Regiones
         if (sizeof($filtros['regiones']) > 0) {
-            $sql .= "and P.poblacion in ('" . implode("','", $filtros['regiones']) . "')";
+            $sql .= "and A.region_de_salud in ('" . implode("','", $filtros['regiones']) . "')";
         }
 
         // ordenados por poblaciones clave
-        $sql .= " group by P.poblacion ";
+        $sql .= " group by P.poblacion, A.region_de_salud ";
 
         // Abrimos la conexion de la base de datos
         // The connection to the database is open
