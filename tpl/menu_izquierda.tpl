@@ -172,7 +172,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/tpl/main.html"> <!-- Esto lo he calzado por mi cuenta-->
+            <a class="nav-link active" href=""> <!-- Esto lo he calzado por mi cuenta-->
               <span data-feather="activity"></span>
               Graficas
             </a>

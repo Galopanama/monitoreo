@@ -35,41 +35,21 @@ class PersonasAlcanzadas {
             $sql .= " and P.poblacion in ('" . implode("','", $filtros['poblacion']) . "')";
         }
         
-        // Fechas 
-        // if (in_array($filtros['fecha']['desde'], $filtros['fecha']['hasta']) ) {
-        //     $sql .= " and (A.fecha_alcanzado between '$filtros['fecha'].['desde']' and '$filtros['fecha'].['hasta'])' ";
-        // }
+        // // Fechas 
+        if (extract($filtros['fecha']['desde'])) {
+            $sql .= " and (A.fecha_alcanzado BETWEEN '$filtros(['fecha']['desde'])' "; 
+        }
+
+        if (extract($filtros['fecha']['hasta'])) {
+            $sql .= "and '$filtros(['fecha']['hasta']))' ";
+        }
 
         // Regiones
         if (sizeof($filtros['regiones']) > 0) {
-            $sql .= " and P.poblacion in ('" . implode("','", $filtros['regiones']) . "')";
+            $sql .= "and P.poblacion in ('" . implode("','", $filtros['regiones']) . "')";
         }
 
-
-        
-
-        /*
-        if ($filtros["desde"]){
-            $sql .= " and A.fecha <= ? ";
-        }    
-        if ($filtros["hasta"]){
-            $sql .= " and A.fecha >= ? ";
-        } 
-        if ($filtros["regiones"] == "Bocas_del_Toro"){}
-        if ($filtros["regiones"] == "Chiriquí"){}
-        if ($filtros["regiones"] == "Coclé"){}
-        if ($filtros["regiones"] == "Colón"){}
-        if ($filtros["regiones"] == "Herrera"){}
-        if ($filtros["regiones"] == "Los_Santos"){}
-        if ($filtros["regiones"] == "Panamá_Metro"){}
-        if ($filtros["regiones"] == "Panamá_Oeste_1"){}
-        if ($filtros["regiones"] == "Panamá_Oeste_2"){}
-        if ($filtros["regiones"] == "San_Miguelito"){}
-        if ($filtros["regiones"] == "Veraguas"){}
-        */
-
-        // Vamos a ordenar las más nuevas primero
-        // The interviews gets ordered starting from the latest
+        // ordenados por poblaciones clave
         $sql .= " group by P.poblacion ";
 
         // Abrimos la conexion de la base de datos

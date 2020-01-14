@@ -697,3 +697,296 @@ Stack trace:
 [13-Jan-2020 12:05:13 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$filtros' (T_VARIABLE) in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 41
 [13-Jan-2020 12:05:22 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$filtros' (T_VARIABLE) in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 41
 [13-Jan-2020 12:06:20 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$filtros' (T_VARIABLE) in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 41
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:16:41 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: Error de BD:  in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:78
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:16:55 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: Error de BD:  in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:78
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:18:12 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: Error de BD:  in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:78
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:52 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:19:54 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: Error de BD:  in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:78
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 48
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   4. sizeof() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:48
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP Warning:  PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(): Couldn't fetch mysqli in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 05:33:05 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: Error de BD:  in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:78
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 78
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'desde' not found or invalid function name in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP   4. array_map(*uninitialized*, *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:01:11 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Function name must be a string in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(36): PersonasAlcanzadas::getPersonasAlcanzadasFiltradas(Array)
+#1 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php(22): getPersonasAlcanzadas()
+#2 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP Warning:  array_search() expects parameter 2 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:13:20 America/Los_Angeles] PHP   4. array_search(*uninitialized*, *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP Warning:  array_search() expects parameter 2 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:19:41 America/Los_Angeles] PHP   4. array_search(*uninitialized*, *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP Warning:  array_keys() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   4. array_keys(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP Warning:  array_keys() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 43
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:25:15 America/Los_Angeles] PHP   4. array_keys(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:43
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP Warning:  array_values() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   4. array_values(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP Warning:  array_values() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 43
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:27:42 America/Los_Angeles] PHP   4. array_values(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:43
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP Warning:  extract() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   4. extract(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP Warning:  extract() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 43
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:31:51 America/Los_Angeles] PHP   4. extract(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:43
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP Warning:  extract() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 39
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   4. extract(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:39
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP Warning:  extract() expects parameter 1 to be array, string given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 43
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP Stack trace:
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[14-Jan-2020 06:32:02 America/Los_Angeles] PHP   4. extract(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:43

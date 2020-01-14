@@ -37,13 +37,13 @@
     <input type="checkbox" class="poblacion" name="poblacion[]" id="TRANS" value="TRANS">
     <label for="TRANS">TRANS</label><br>
 </div>
-<div>
+{* <div>
   <h4>LA FECHA</h4>
     <label for="desde">Desde</label>
     <input type="text" name="desde" id="desde">
     <label for="hasta">Hasta</label>
     <input type="text" name="hasta" id="hasta" >
-</div>
+</div> *}
 <div>
   <h4>LA REGION/ES DE SALUD</h4>
     <h6>Mostrara las regiones marchadas</h6>
