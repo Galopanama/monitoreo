@@ -44,4 +44,4 @@ $main =
 
 require_once '../../footer.php';
 
-$smarty->display('grafica_Pie.html');
+$smarty->display('grafica_alcanzados_Barras.html');

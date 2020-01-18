@@ -36,11 +36,11 @@ if ($_SESSION['error']){
 }
 
 // Rest of the View is called
-$main = $smarty->fetch("paginas/resultados/personas_alcanzadas.tpl");
+$main = $smarty->fetch("paginas/resultados/personas_alcanzadas.tpl"); // que es html del formulario
 
-$footer = $smarty->fetch("footer/personas_alcanzadas.tpl"); 
+$footer = $smarty->fetch("footer/personas_alcanzadas.tpl");  // que contiene funciones y bibliotecas de DatePicker
 
 
 require_once '../../footer.php';
 
-$smarty->display('esqueleto_dashboard.html');
+$smarty->display('esqueleto_dashboard.html');  

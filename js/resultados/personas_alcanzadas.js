@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {   
-                                                                                                                                  //# busca en el id del elemento html no de la clase. 
+    var respuesta = [] ;                                                                                                                              //# busca en el id del elemento html no de la clase. 
     function personasAlcanzadas(){
         
         let poblacion = 
@@ -47,23 +47,96 @@ $(document).ready(function() {
          * 
          * */ 
         
+
         request.done(function (response) {
            
-            // var poblaciones = array["TRANS", "HSH", "TSF"];
-            
-            let poblacion = document.querySelector('poblacion');
-            console.log(poblacion);
-            console.log('Hola');
+            var respuesta = response;
 
-            function ajustarObjetivoAnual(poblacion){ 
-                if (poblacion == "TRANS") { ObjetivoAnual = 100 };  // ObejtivoAnual es un numero especifico para
-                if (poblacion == "HSH") { ObjetivoAnual = 350 };    // cada organizacion. 
-                if (poblacion == "TSF") { ObjetivoAnual= 125 };       
-            };
+            console.log(response);
+            console.log(response[5]["poblacion"]);
 
-            console.log(ajustarObjetivoAnual());
-          
-        });
+            respuesta.forEach(function(resultado){ console.log(resultado.region_de_salud) })
+
+
+
+
+      
+
+
+
+            // ChartIt(respuesta);
+
+            // function ChartIt(respuesta){
+
+            //         dividir_objeto();
+
+            //         const ctx = document.getElementById("canvas");
+            //         let myChart = new Chart(ctx, {
+            //             type: 'bar',
+            //             data: {   
+            //                 labels: R,
+            //                 datasets: [  // cada uno de las poblaciones va a tener un barra que lo represente
+            //                     {                               // y esta se recoje en la siguiente propiedad y dentro de parentesis
+            //                     label: "TSF",
+            //                     data: [1,1,1,1,1],
+            //                     backgroundColor: "#ff0000",
+            //                     borderWidth:1,
+            //                     borderColor: '#000000'                
+            //                     },
+            //                     {
+            //                     label: "HSH",                          
+            //                     data: [3,2,3,2,3],                        
+            //                     backgroundColor: "#33ccff",
+            //                     borderWidth:1,
+            //                     borderColor: '#000000',                
+            //                     },
+            //                     {
+            //                     label: "TRANS",
+            //                     data: [1,3,5,2,4],
+            //                     backgroundColor: "#ff66cc",
+            //                     borderWidth:1,
+            //                     borderColor: '#000000'
+            //                     }
+            //                 ]
+            //                 },
+            //                 options: {
+            //                 responsive: true,
+            //                 scales: {
+            //                     yAxes: [{
+            //                         display: true,
+            //                         ticks: {
+            //                         beginAtZero: true,
+            //                         //steps: ,        los campos comentados pueden reactivarse en caso de ser necesario. 
+            //                         //stepValue: ,    sin embargo por ahora se mantendran fuera del uso, ya que no alteran el resultado mostrado
+            //                         max: 10
+            //                         }
+            //                     }]
+            //                 }
+            //             }
+            //         })
+            //     }
+
+
+        }); 
+
+            // let region_de_salud = [];
+
+            // for i in response {
+            //     region_de_salud [] = push.;
+            // }
+
+            // const region_de_salud = response.map( item=> {
+            //     console.log("region_de_salud");
+            // })
+            // const poblacion = response.map( item=> {
+            //     console.log(poblacion);
+            // })
+            // const Total_de_Personas_Alcanzadas = response.map( item=> {
+            //     console.log(Total_de_Personas_Alcanzadas);
+            // })
+
+
+        
 
         request.fail(function (jqXHR, textStatus) {
             alert("Ocurrió un error: " + textStatus);          // para reflejar los errores que no son controlados en el script, como errores de conexion
