@@ -50,93 +50,87 @@ $(document).ready(function() {
 
         request.done(function (response) {
            
-            var respuesta = response;
+            let regiones_de_salud = {};
+            let poblaciones = {};
+            poblaciones["TSF"] = {
+                backgroundColor: "#ff0000",
+                borderColor: "#000",
+                borderWidth:1,
+            };
+            poblaciones["HSH"] = {
+                backgroundColor: "#33ccff",
+                borderColor: "#000",
+                borderWidth:1,
+            };
+            poblaciones["TRANS"] = {
+                backgroundColor: "#ff66cc",
+                borderColor: "#000",
+                borderWidth:1
+            };
+            nombre_regiones = [];
 
-            console.log(response);
-            console.log(response[5]["poblacion"]);
+           response.forEach(function(resultado){ 
+                poblaciones[resultado.poblacion][region_de_salud] = resultado.Total_de_Personas_Alcanzadas;
+                nombre_regiones.push(resultado.region_de_salud);
 
-            respuesta.forEach(function(resultado){ console.log(resultado.region_de_salud) })
+                // if (!resultado.region_de_salud in regiones_de_salud){
+                //     // Si la region no existe, la creamos, y ponemos sus poblaciones a 0
+                //     regiones_de_salud[resultado.region_de_salud] = poblaciones;
+                //     nombre_regiones.push(resultado.region_de_salud);
+                // }
+
+                // regiones_de_salud[resultado.region_de_salud][resultado.poblacion] = resultado.Total_de_Personas_Alcanzadas;                
+            });
+
+            dataset = [];
+            poblaciones.forEach(function(poblacion, idx){
+                data = {
+                    label: idx,
+                    // recorrer el array de nombre regiones para generar un array con el número de alcanzados de dichas regiones
+                    // para esta poblacion
+                    data: nombre_regiones.map(function(reg){
+                        return poblacion.reg;
+                    }),
+                    backgroundColor: "#ff0000",
+                    borderWidth:1,
+                    borderColor: '#000000'
+                };
+                dataset.push(data);
+            });
 
 
+            ChartIt(regiones_de_salud, nombre_regiones);
 
+            function ChartIt(datos){
 
-      
+                    dividir_objeto();
 
-
-
-            // ChartIt(respuesta);
-
-            // function ChartIt(respuesta){
-
-            //         dividir_objeto();
-
-            //         const ctx = document.getElementById("canvas");
-            //         let myChart = new Chart(ctx, {
-            //             type: 'bar',
-            //             data: {   
-            //                 labels: R,
-            //                 datasets: [  // cada uno de las poblaciones va a tener un barra que lo represente
-            //                     {                               // y esta se recoje en la siguiente propiedad y dentro de parentesis
-            //                     label: "TSF",
-            //                     data: [1,1,1,1,1],
-            //                     backgroundColor: "#ff0000",
-            //                     borderWidth:1,
-            //                     borderColor: '#000000'                
-            //                     },
-            //                     {
-            //                     label: "HSH",                          
-            //                     data: [3,2,3,2,3],                        
-            //                     backgroundColor: "#33ccff",
-            //                     borderWidth:1,
-            //                     borderColor: '#000000',                
-            //                     },
-            //                     {
-            //                     label: "TRANS",
-            //                     data: [1,3,5,2,4],
-            //                     backgroundColor: "#ff66cc",
-            //                     borderWidth:1,
-            //                     borderColor: '#000000'
-            //                     }
-            //                 ]
-            //                 },
-            //                 options: {
-            //                 responsive: true,
-            //                 scales: {
-            //                     yAxes: [{
-            //                         display: true,
-            //                         ticks: {
-            //                         beginAtZero: true,
-            //                         //steps: ,        los campos comentados pueden reactivarse en caso de ser necesario. 
-            //                         //stepValue: ,    sin embargo por ahora se mantendran fuera del uso, ya que no alteran el resultado mostrado
-            //                         max: 10
-            //                         }
-            //                     }]
-            //                 }
-            //             }
-            //         })
-            //     }
+                    const ctx = document.getElementById("canvas");
+                    let myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {   
+                            labels: nombre_regiones,
+                            datasets: dataset,
+                            options: {
+                                    responsive: true,
+                                    scales: {
+                                        yAxes: [{
+                                            display: true,
+                                            ticks: {
+                                            beginAtZero: true,
+                                            //steps: ,        los campos comentados pueden reactivarse en caso de ser necesario. 
+                                            //stepValue: ,    sin embargo por ahora se mantendran fuera del uso, ya que no alteran el resultado mostrado
+                                            max: 10
+                                            }
+                                        }]
+                                    }
+                                }
+                    }});
+            }
 
 
         }); 
-
-            // let region_de_salud = [];
-
-            // for i in response {
-            //     region_de_salud [] = push.;
-            // }
-
-            // const region_de_salud = response.map( item=> {
-            //     console.log("region_de_salud");
-            // })
-            // const poblacion = response.map( item=> {
-            //     console.log(poblacion);
-            // })
-            // const Total_de_Personas_Alcanzadas = response.map( item=> {
-            //     console.log(Total_de_Personas_Alcanzadas);
-            // })
-
-
-        
+    
 
         request.fail(function (jqXHR, textStatus) {
             alert("Ocurrió un error: " + textStatus);          // para reflejar los errores que no son controlados en el script, como errores de conexion
