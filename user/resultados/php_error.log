@@ -1602,3 +1602,39 @@ Stack trace:
 [15-Jan-2020 14:39:59 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
 [15-Jan-2020 14:39:59 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
 [15-Jan-2020 14:39:59 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 35
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   4. sizeof(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:35
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Warning:  implode(): Invalid arguments passed in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   4. implode(*uninitialized*, *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 50
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:26:35 America/Los_Angeles] PHP   4. sizeof(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:50
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 35
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   4. sizeof(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:35
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Warning:  implode(): Invalid arguments passed in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 36
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   4. implode(*uninitialized*, *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:36
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php on line 50
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP Stack trace:
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:0
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   2. getPersonasAlcanzadas() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:22
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   3. PersonasAlcanzadas::getPersonasAlcanzadasFiltradas($filtros = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/resultados/ajax.php:36
+[20-Jan-2020 14:29:00 America/Los_Angeles] PHP   4. sizeof(*uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasAlcanzadas.php:50
