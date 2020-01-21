@@ -47,16 +47,16 @@
 <div>
   <h4>LA REGION/ES DE SALUD</h4>
     <h6>Mostrara las regiones marchadas</h6>
-    <input type="checkbox" name="regiones[]" id="Bocas_del_Toro" value="Bocas_del_Toro">Bocas_del_Toro<br>
+    <input type="checkbox" name="regiones[]" id="Bocas_del_Toro" value="Bocas_del_Toro">Bocas del Toro<br>
     <input type="checkbox" name="regiones[]" id="Chiriquí" value="Chiriquí">Chiriquí<br> 
     <input type="checkbox" name="regiones[]" id="Coclé" value="Coclé">Coclé<br> 
     <input type="checkbox" name="regiones[]" id="Colón" value="Colón">Colón<br> 
     <input type="checkbox" name="regiones[]" id="Herrera" value="Herrera" >Herrera<br> 
-    <input type="checkbox" name="regiones[]" id="Los_Santos" value="Los_Santos">Los_Santos<br> 
-    <input type="checkbox" name="regiones[]" id="Panamá_Metro" value="Panamá_Metro">Panamá_Metro<br> 
-    <input type="checkbox" name="regiones[]" id="Panamá_Oeste_1" value="Panamá_Oeste_1">Panamá_Oeste_1<br> 
-    <input type="checkbox" name="regiones[]" id="Panamá_Oeste_2" value="Panamá_Oeste_2">Panamá_Oeste_2<br>
-    <input type="checkbox" name="regiones[]" id="San_Miguelito" value="San_Miguelito">San_Miguelito<br>
+    <input type="checkbox" name="regiones[]" id="Los_Santos" value="Los_Santos">Los Santos<br> 
+    <input type="checkbox" name="regiones[]" id="Panamá_Metro" value="Panamá_Metro">Panamá Metro<br> 
+    <input type="checkbox" name="regiones[]" id="Panamá_Oeste_1" value="Panamá_Oeste_1">Panamá Oeste 1<br> 
+    <input type="checkbox" name="regiones[]" id="Panamá_Oeste_2" value="Panamá_Oeste_2">Panamá Oeste 2<br>
+    <input type="checkbox" name="regiones[]" id="San_Miguelito" value="San_Miguelito">San Miguelito<br>
     <input type="checkbox" name="regiones[]" id="Veraguas" value="Veraguas">Veraguas<br>
 </div>
   <br>

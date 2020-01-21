@@ -40,54 +40,84 @@ $(document).ready(function() {
 
         request.done(function (response) {
            
-            
-            let regiones_de_salud = {}; // seria regiones_de_salud o region_de_salud??
             let poblaciones = {};
             poblaciones["TSF"] = {
                 backgroundColor: "#ff0000",
                 borderColor: "#000",
                 borderWidth:1,
+                data: []
             };
             poblaciones["HSH"] = {
                 backgroundColor: "#33ccff",
                 borderColor: "#000",
                 borderWidth:1,
+                data: []
             };
             poblaciones["TRANS"] = {
                 backgroundColor: "#ff66cc",
                 borderColor: "#000",
-                borderWidth:1
+                borderWidth:1,
+                data: []
             };
 
-            nombre_regiones = [];
-            response.forEach(function(){ 
-                poblaciones[response.poblacion].region_de_salud = response.Total_de_Personas_Alcanzadas;
-                nombre_regiones.push(response.region_de_salud);
+            // Guarda sólo una vez el nombre de las regiones que tengan datos
+            let nombre_regiones = [];
 
-                if (!response.region_de_salud in regiones_de_salud){
-                    // Si la region no existe, la creamos, y ponemos sus poblaciones a 0
-                    regiones_de_salud[response.region_de_salud] = poblaciones;
-                    nombre_regiones.push(response.region_de_salud);
+            // Recorremos la respuesta y guardamos los datos
+            response.forEach(function(resultado){
+
+                poblaciones[resultado.poblacion]["data"][resultado.region_de_salud] = resultado.Total_de_Personas_Alcanzadas;
+
+                if (nombre_regiones.indexOf(resultado.region_de_salud) == -1){
+                    // Si la region no existe, la añadimos a una lista
+                    nombre_regiones.push(resultado.region_de_salud);
                 }
-
-                regiones_de_salud[response.region_de_salud][response.poblacion] = response.Total_de_Personas_Alcanzadas;                
             });
 
+            // Creo un array donde voy a guardar las distintas poblaciones que formarán la gráfica
+            // Cada población es en realidad un objeto con unas propiedades.
+            // En este caso, hemos creado el objeto poblaciones de tal forma que cada una de sus propiedades
+            // se corresponda con la propiedad que espera la gráfica
             dataset = [];
+            // Con entries obtenemos todas las propiedades de un objeto en un pequeño array:
+            // en el elemento 0 del array estará la key y en el elemento 1 el valor
             arrayPoblaciones = Object.entries(poblaciones);
-            arrayPoblaciones.forEach(function (poblaciones, Total_de_Personas_Alcanzadas){
-                data = {
-                    label: poblaciones,
+
+            // Recorremos cada una de las poblaciones
+            arrayPoblaciones.forEach(function (elem){
+                // Ya que utilizamos la misma estructura al crear nuestro objeto de poblaciones que las que necesita la gráfica
+                // vamos a aprovecharlo, y cogemos de base nuestro propio objeto
+                let poblacion = elem[1];
+                // Como decíamos, el label viene en el 0
+                poblacion.label = elem[0];
+
+                /*
+                Esta es quizás la propiedad más compleja. Hemos sustituido la propiedad data por una función que 
+                lo que hará será recorrer el array de nombres, y por cada una de esas regiones de salud, obtendrá
+                el número de alcanzados para esa población y esa región en concreto
+                */
+                poblacion.data = nombre_regiones.map(function(region){
+                    return elem[1]["data"][region]?elem[1]["data"][region]:0;
+                    // La línea anterior equivale a lo siguiente:
+                    // if (elem[1]["data"][region]){
+                    //     return elem[1]["data"][region];
+                    // }
+                    // else return 0;
+                });
+                /*data = {
+                    label: elem[0],
                     // recorrer el array de nombre regiones para generar un array con el número de alcanzados de dichas regiones
                     // para esta poblacion
-                    data: nombre_regiones.map(function(Total_de_Personas_Alcanzadas){
-                        return poblacion.Total_de_Personas_Alcanzadas;
+                    data: nombre_regiones.map(function(region){
+                        return elem[1]["data"][region]?elem[1]["data"][region]:0;
                     }),
                     backgroundColor: "#ff0000",
                     borderWidth:1,
                     borderColor: '#000000'
-                };
-                dataset.push(data);
+                };*/
+                // Una vez que ya tenemos la estructura necesaria para dicha población, la añadimos al array, que será lo que
+                // usaremos en la gráfica para representar las variables
+                dataset.push(poblacion);
             });
 
 
@@ -97,7 +127,9 @@ $(document).ready(function() {
                     let myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {   
-                            labels: nombre_regiones,
+                            labels: nombre_regiones.map(function(region){
+                                return region.replace(/_/g, " ");
+                            }),
                             datasets: dataset,
                             options: {
                                     responsive: true,
@@ -116,7 +148,7 @@ $(document).ready(function() {
                     }});
             }
 
-            ChartIt(regiones_de_salud, nombre_regiones);
+            ChartIt();
 
 
         }); 
