@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `monitoreo` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+USE `monitoreo`;
 -- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
 --
 -- Host: 127.0.0.1    Database: monitoreo
@@ -24,7 +26,7 @@ DROP TABLE IF EXISTS `alcanzados`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `alcanzados` (
   `id_cedula_persona_receptora` varchar(12) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha_alcanzado` date NOT NULL,
   `region_de_salud` enum('Bocas_del_Toro','Chiriquí','Coclé','Colón','Herrera','Los_Santos','Panamá_Metro','Panamá_Oeste_1','Panamá_Oeste_2','San_Miguelito','Veraguas') NOT NULL,
   PRIMARY KEY (`id_cedula_persona_receptora`),
   UNIQUE KEY `id_cedula_persona_receptora` (`id_cedula_persona_receptora`),
@@ -66,7 +68,7 @@ CREATE TABLE `persona_receptora` (
 
 LOCK TABLES `persona_receptora` WRITE;
 /*!40000 ALTER TABLE `persona_receptora` DISABLE KEYS */;
-INSERT INTO `persona_receptora` VALUES ('111111111',1,'TSF','2019-10-10 13:16:56'),('1212121212',1,'HSH','2019-10-10 13:20:33'),('12345678',1,'HSH','2019-10-10 13:13:58'),('1313131',1,'TSF','2019-11-10 23:26:16'),('13131313',1,'HSH','2019-11-18 04:20:51'),('1515151',1,'HSH','2019-11-20 16:17:57'),('16161616',0,'TRANS','2019-11-20 18:03:47'),('20202020',1,'TRANS','2019-10-18 18:26:04'),('2222222',1,'HSH','2019-10-11 18:39:57'),('31433333',0,'TSF','2019-10-10 13:15:02'),('3331333',1,'HSH','2019-11-21 19:22:35'),('3332333',1,'TSF','2019-11-21 19:24:18'),('3333333',1,'HSH','2019-10-11 18:40:57'),('4141414',1,'HSH','2019-11-18 04:23:49'),('4441444',1,'HSH','2019-11-21 19:04:15'),('44444444',1,'HSH','2019-10-12 18:30:43'),('55555555',1,'HSH','2019-10-12 18:31:29'),('6666666',1,'HSH','2019-11-14 21:40:56'),('7771777',0,'TSF','2019-11-15 15:54:56'),('7772777',1,'TSF','2019-11-15 16:09:59'),('7777777',1,'HSH','2019-11-14 22:01:35'),('8888888',0,'TSF','2019-11-15 15:51:41'),('88888888',1,'TRANS','2019-10-19 16:29:59'),('99999999',1,'TRANS','2019-10-19 16:28:34');
+INSERT INTO `persona_receptora` VALUES ('111111111',1,'TSF','2019-10-10 18:16:56'),('1212121212',1,'HSH','2019-10-10 18:20:33'),('12345678',1,'HSH','2019-10-10 18:13:58'),('1313131',1,'TSF','2019-11-11 04:26:16'),('13131313',1,'HSH','2019-11-18 09:20:51'),('1515151',1,'HSH','2019-11-20 21:17:57'),('16161616',0,'TRANS','2019-11-20 23:03:47'),('20202020',1,'TRANS','2019-10-18 23:26:04'),('2222222',1,'HSH','2019-10-11 23:39:57'),('31433333',0,'TSF','2019-10-10 18:15:02'),('3331333',1,'HSH','2019-11-22 00:22:35'),('3332333',1,'TSF','2019-11-22 00:24:18'),('3333333',1,'HSH','2019-10-11 23:40:57'),('4141414',1,'HSH','2019-11-18 09:23:49'),('4441444',1,'HSH','2019-11-22 00:04:15'),('44444444',1,'HSH','2019-10-12 23:30:43'),('55555555',1,'HSH','2019-10-12 23:31:29'),('6666666',1,'HSH','2019-11-15 02:40:56'),('7771777',0,'TSF','2019-11-15 20:54:56'),('7772777',1,'TSF','2019-11-15 21:09:59'),('7777777',1,'HSH','2019-11-15 03:01:35'),('8888888',0,'TSF','2019-11-15 20:51:41'),('88888888',1,'TRANS','2019-10-19 21:29:59'),('99999999',1,'TRANS','2019-10-19 21:28:34');
 /*!40000 ALTER TABLE `persona_receptora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +154,10 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_grupal` AFTER INSERT ON `promotor_realiza_actividad_grupal_con_personas_receptoras` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_grupal`  
+AFTER INSERT ON `promotor_realiza_actividad_grupal_con_personas_receptoras` FOR EACH ROW 
+BEGIN
+
 	DECLARE total_condones INTEGER;
 	DECLARE total_lubricantes INTEGER;
 	DECLARE total_materiales INTEGER;
@@ -188,8 +193,8 @@ DELIMITER ;;
 			from promotor_realiza_entrevista_individual
 			where id_cedula_persona_receptora = NEW.id_cedula_persona_receptora
         );
-        
-        
+     
+     
         SET total_materiales = (
 			select sum(materiales_educativos_entregados)
 			from promotor_realiza_actividad_grupal_con_personas_receptoras
@@ -207,6 +212,7 @@ DELIMITER ;;
 			INSERT INTO alcanzados (id_cedula_persona_receptora, fecha, region_de_salud)
             VALUES (NEW.id_cedula_persona_receptora, now(), NEW.region_de_salud);
 		END IF;
+        
 	END IF;
     
 END */;;
@@ -237,6 +243,7 @@ CREATE TABLE `promotor_realiza_entrevista_individual` (
   `lubricantes_entregados` int(11) DEFAULT NULL,
   `materiales_educativos_entregados` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_promotor`,`id_cedula_persona_receptora`,`fecha`),
+  KEY `persona_receptora` (`id_cedula_persona_receptora`),
   CONSTRAINT `persona_receptora` FOREIGN KEY (`id_cedula_persona_receptora`) REFERENCES `persona_receptora` (`id_cedula_persona_receptora`) ON UPDATE CASCADE,
   CONSTRAINT `promotor` FOREIGN KEY (`id_promotor`) REFERENCES `promotor` (`id_usuario`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='entrevista individual a individuos. Formulario 1';
@@ -260,7 +267,11 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_individual` AFTER INSERT ON `promotor_realiza_entrevista_individual` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `alcanzado_individual` 
+AFTER INSERT ON `promotor_realiza_entrevista_individual` 
+FOR EACH ROW 
+BEGIN
+
 	DECLARE total_condones INTEGER;
 	DECLARE total_lubricantes INTEGER;
 	DECLARE total_materiales INTEGER;
@@ -439,71 +450,6 @@ INSERT INTO `tecnologo_realiza_prueba_vih_a_persona_receptora` VALUES (16,'11111
 UNLOCK TABLES;
 
 --
--- Temporary view structure for view `total`
---
-
-DROP TABLE IF EXISTS `total`;
-/*!50001 DROP VIEW IF EXISTS `total`*/;
-SET @saved_cs_client     = @@character_set_client;
-/*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `total` AS SELECT 
- 1 AS `id_cedula_persona_receptora`,
- 1 AS `total_condones`,
- 1 AS `total_lubricantes`,
- 1 AS `total_materiales_educativos`,
- 1 AS `Promotor_1`,
- 1 AS `Promotor_2`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `total_grupales`
---
-
-DROP TABLE IF EXISTS `total_grupales`;
-/*!50001 DROP VIEW IF EXISTS `total_grupales`*/;
-SET @saved_cs_client     = @@character_set_client;
-/*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `total_grupales` AS SELECT 
- 1 AS `total_C`,
- 1 AS `total_L`,
- 1 AS `total_M`,
- 1 AS `id_cedula_persona_receptora`,
- 1 AS `id_promotor`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `total_individuales`
---
-
-DROP TABLE IF EXISTS `total_individuales`;
-/*!50001 DROP VIEW IF EXISTS `total_individuales`*/;
-SET @saved_cs_client     = @@character_set_client;
-/*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `total_individuales` AS SELECT 
- 1 AS `total_C`,
- 1 AS `total_L`,
- 1 AS `total_M`,
- 1 AS `id_cedula_persona_receptora`,
- 1 AS `id_promotor`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `total_por_subreceptor`
---
-
-DROP TABLE IF EXISTS `total_por_subreceptor`;
-/*!50001 DROP VIEW IF EXISTS `total_por_subreceptor`*/;
-SET @saved_cs_client     = @@character_set_client;
-/*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `total_por_subreceptor` AS SELECT 
- 1 AS `id_cedula_persona_receptora`,
- 1 AS `total_condones`,
- 1 AS `total_lubricantes`,
- 1 AS `total_materiales_educativos`,
- 1 AS `id_subreceptor`*/;
-SET character_set_client = @saved_cs_client;
-
---
 -- Table structure for table `usuario`
 --
 
@@ -543,78 +489,6 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'monitoreo'
 --
-
---
--- Final view structure for view `total`
---
-
-/*!50001 DROP VIEW IF EXISTS `total`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
-/*!50001 VIEW `total` AS select `i`.`id_cedula_persona_receptora` AS `id_cedula_persona_receptora`,(`i`.`total_C` + `g`.`total_C`) AS `total_condones`,(`i`.`total_L` + `g`.`total_L`) AS `total_lubricantes`,(`i`.`total_M` + `g`.`total_M`) AS `total_materiales_educativos`,`i`.`id_promotor` AS `Promotor_1`,`g`.`id_promotor` AS `Promotor_2` from (`total_grupales` `i` left join `total_individuales` `g` on((`i`.`id_cedula_persona_receptora` = `g`.`id_cedula_persona_receptora`))) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `total_grupales`
---
-
-/*!50001 DROP VIEW IF EXISTS `total_grupales`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
-/*!50001 VIEW `total_grupales` AS select sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`condones_entregados`) AS `total_C`,sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`lubricantes_entregados`) AS `total_L`,sum(`promotor_realiza_actividad_grupal_con_personas_receptoras`.`materiales_educativos_entregados`) AS `total_M`,`promotor_realiza_actividad_grupal_con_personas_receptoras`.`id_cedula_persona_receptora` AS `id_cedula_persona_receptora`,`promotor_realiza_actividad_grupal_con_personas_receptoras`.`id_promotor` AS `id_promotor` from `promotor_realiza_actividad_grupal_con_personas_receptoras` group by `promotor_realiza_actividad_grupal_con_personas_receptoras`.`id_cedula_persona_receptora` */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `total_individuales`
---
-
-/*!50001 DROP VIEW IF EXISTS `total_individuales`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
-/*!50001 VIEW `total_individuales` AS select sum(`promotor_realiza_entrevista_individual`.`condones_entregados`) AS `total_C`,sum(`promotor_realiza_entrevista_individual`.`lubricantes_entregados`) AS `total_L`,sum(`promotor_realiza_entrevista_individual`.`materiales_educativos_entregados`) AS `total_M`,`promotor_realiza_entrevista_individual`.`id_cedula_persona_receptora` AS `id_cedula_persona_receptora`,`promotor_realiza_entrevista_individual`.`id_promotor` AS `id_promotor` from `promotor_realiza_entrevista_individual` group by `promotor_realiza_entrevista_individual`.`id_cedula_persona_receptora` */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `total_por_subreceptor`
---
-
-/*!50001 DROP VIEW IF EXISTS `total_por_subreceptor`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_general_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`127.0.0.1` SQL SECURITY DEFINER */
-/*!50001 VIEW `total_por_subreceptor` AS select `total`.`id_cedula_persona_receptora` AS `id_cedula_persona_receptora`,`total`.`total_condones` AS `total_condones`,`total`.`total_lubricantes` AS `total_lubricantes`,`total`.`total_materiales_educativos` AS `total_materiales_educativos`,`promotor`.`id_subreceptor` AS `id_subreceptor` from (`total` join `promotor`) where (`total`.`Promotor_1` and (`total`.`Promotor_2` = `promotor`.`id_usuario`) and (`total`.`total_condones` >= 40) and (`total`.`total_lubricantes` >= 40) and (`total`.`total_materiales_educativos` >= 40)) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -625,4 +499,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-23 10:35:57
+-- Dump completed on 2020-01-27 13:51:43

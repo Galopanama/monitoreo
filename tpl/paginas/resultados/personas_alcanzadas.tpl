@@ -17,14 +17,14 @@
 
 <form id="formulario" action= 'ajax.php' method="POST"> 
 <input type="hidden" name="funcion" value="getPersonasAlcanzadas">
-<div>                               
+{* <div>                               
   <h3>ELIGE UN TIPO DE GRAFICA</h3>
   <input type="radio" name="grafica" id="bar" value="bar">
   <label for="bar">Barra</label><br>
   <input type="radio" name="grafica" id="pie" value="pie">
   <label for="pie">Pie</label><br>
   <br>
-</div>
+</div> *}
 <div>
   <h3>ELIGE UN FILTRO PARA LA VISUALIZACION</h3>
 </div>
