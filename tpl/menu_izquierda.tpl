@@ -166,13 +166,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/alcanzados.php">
-              <span data-feather=""></span>
-              Ver Alcanzados
+            <a class="nav-link active" href="{$_WEB_PATH_}/user/resultados/personas_alcanzadas.php">
+              <span data-feather="pie-chart"></span>
+              Ver Personas Alcanzadas
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
+          {* <li class="nav-item">
+            <a class="nav-link active" href=""> <!-- Esto lo he calzado por mi cuenta-->
               <span data-feather="activity"></span>
               Graficas
             </a>
@@ -182,7 +182,7 @@
               <span data-feather="columns"></span>
               Estadisticas
             </a>
-          </li>
+          </li> *}
           COMPARTIR 
           <li class="nav-item">
             <a class="nav-link active" href="https://ydray.com/" target="_blank">
@@ -242,18 +242,12 @@
               Ver Pruebas
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="activity"></span>
-              Graficas
-            </a>
-          </li>
-          <li class="nav-item">
+          {* <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="columns"></span>
               Estadisticas
             </a>
-          </li>
+          </li> *}
           COMPARTIR
           <li class="nav-item">
             <a class="nav-link active" href="https://ydray.com/" target="_blank">
@@ -324,7 +318,7 @@
               Ver Entrevistas Grupales
             </a>
           </li>
-          <li class="nav-item">
+          {* <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="activity"></span>
               Graficas
@@ -335,7 +329,7 @@
               <span data-feather="columns"></span>
               Estadisticas
             </a>
-          </li>
+          </li> *}
           COMPARTIR
           <li class="nav-item">
             <a class="nav-link active" href="https://ydray.com/" target="_blank">

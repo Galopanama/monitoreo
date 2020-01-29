@@ -253,3 +253,11 @@
 [26-Oct-2019 08:12:04 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
 [26-Oct-2019 08:12:04 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
 [26-Oct-2019 08:12:04 America/Los_Angeles] PHP   7. content_5da21bd3aa0867_39362379() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP Warning:  require_once(/Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Alcanzado.php): failed to open stream: No such file or directory in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Entrevistas.php on line 9
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP Stack trace:
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/entrevistas/ajax.php:0
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/entrevistas/ajax.php:12
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP Fatal error:  require_once(): Failed opening required '/Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Alcanzado.php' (include_path='.:/Applications/nginxstack-1.14.2-3/php/lib/php') in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Entrevistas.php on line 9
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP Stack trace:
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/entrevistas/ajax.php:0
+[27-Jan-2020 11:37:54 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/entrevistas/ajax.php:12

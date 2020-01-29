@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../security/autorizador.php';
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
-require_once __DIR__ . '/../../src/Alcanzado.php';
+require_once __DIR__ . '/../../src/PersonasAlcanzadas.php';
 
 
 //the user can retrieve the information of all the interviews. 
@@ -24,9 +24,6 @@ switch($_GET['funcion']){
         exit;
     case "getAllGrupales":
         echo json_encode(getAllGrupales());
-        exit;
-    case "getAlcanzados":
-        echo json_encode(getAlcanzados());
         exit;
     case "buscar":
         echo json_encode(buscar_persona_receptora($_POST['key']));
@@ -102,38 +99,6 @@ function getAllGrupales() {
 
         return prepara_para_json($lista);
     }
-    catch (Exception $e) {
-        $array_response['error'] = 1;
-        $array_response['errorMessage'] = $e->getMessage();
-        return $array_response;
-    }
-}
-
-/**
- * Devuelve todas las personas receptoras Alcanzadas
- * Return all the Personas receptoras Alcanzadas
- */
-function getAlcanzados() {
-    try {
-        if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
-            // Si el usuario es un promotor, pasamos su id en el campo id_promotor
-            // If the user is promotor, we pass the id to show only the interviews with the same id
-            $lista = Entrevistas::getAlcanzado($_SESSION['usuario_id']); // The object Entrevista gets called
-        }
-
-        // Vamos a editar la lista, y añadir los datos de la persona receptora 
-        // Edit a list with all the instances of class Persona Receptora and name 
-        foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // mismo cambio que las anteriores funciones
-            $entrevista->poblacion = $persona_receptora->getPoblacion();      
-            $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
-                                                                                        
-            $subreceptor = Usuarios::getUsuarioById($entrevista->getId_subreceptor());
-            $entrevista->nombre_subreceptor = $subreceptor->getNombre();
-        }
-
-        return prepara_para_json($lista);
-    }// If there is any exception, send and error message
     catch (Exception $e) {
         $array_response['error'] = 1;
         $array_response['errorMessage'] = $e->getMessage();

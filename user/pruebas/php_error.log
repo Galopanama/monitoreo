@@ -1791,3 +1791,8 @@
 [13-Nov-2019 14:05:05 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
 [13-Nov-2019 14:05:05 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
 [13-Nov-2019 14:05:05 America/Los_Angeles] PHP   7. content_5d9e65007db7c1_13494002() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[23-Jan-2020 17:18:32 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104

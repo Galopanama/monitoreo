@@ -1,1 +1,0 @@
-<script type="text/javascript" src="{$_WEB_PATH_}/js/entrevistas/alcanzados.js"></script>
