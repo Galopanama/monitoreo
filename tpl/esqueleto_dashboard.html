@@ -11,12 +11,15 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <!-- Custom styles for this template -->
     <link href="{$_WEB_PATH_}/css/dashboard.css" rel="stylesheet">
-
     <!-- CSS for datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+    <!-- Libreria del Chart.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <!-- CSS estilos de Chart.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+
 
     {$_HEADER_EXTRA}
 
@@ -33,6 +36,11 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           {$_MAIN}
+
+          <div>
+            <canvas id="canvas" height="300" width="600"></canvas>
+          </div>
+
 
           <!-- EL script que viene debajo corresponde al SOCIAL MEDIA FEED
           <script async src="https://walls.io/js/wallsio-widget-1.2.js" data-wallurl="https://walls.io/h4b3d?nobackground=1&amp;show_header=0" data-title="Forteleciendo respuestas al HIV en Panama" data-width="100%" data-autoheight="1" data-injectloadmorebutton="1" data-loadmoretext="Load more posts" data-loadmorecount="5" data-height="300" data-lazyload="1"></script>    

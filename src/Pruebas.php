@@ -15,7 +15,9 @@ class Pruebas {
     const resultados_posibles = array('no_reactivo','reactivo');
     // The function return all the pruebas
     public static function getAllPruebas ($id_tecnologo = null, $id_subreceptor = null){  
+        
         $sql = "select * from " . Constantes::PRUEBA . " p ";   // A query to the sql is declared in the variable sql. An aliase has been used    (usamos el alias "p" para la tabla pruebas)
+        
         if (!is_null($id_tecnologo)) {                          // The id of tecnologo is required to enforce that s/he only access to the pruebas that s/he has load
             $sql .= " where p.id_tecnologo = ?";
         }
