@@ -4,9 +4,9 @@
  * The information can it can be searched by the organisantions' name as well as just the name of the Promotor
  */
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios subreceptores
-// it is only permited the access to the user 'subreceptor'
-$perfiles_aceptados = array('subreceptor');
+// Restringimos el acceso sólo a usuarios administrador
+// it is only permited the access to the user 'administrador'
+$perfiles_aceptados = array('administrador');
 require_once __DIR__ . '/../../security/autorizador.php';
 // Llama a los siguientes archivos del Modelo
 // Call the files from the Model
@@ -37,7 +37,6 @@ function getPersonasAlcanzadas() {
     return ($personas);   
 }
 
-
 /** devuleve al informacion de las PurebasRealizadas
  * que vamos a utlizar para llevar a los graficos
  */
@@ -47,10 +46,3 @@ function getPersonasAlcanzadas() {
 // function getPruebasRealizadas() {
 
 // }
-
-
-
-
-
-
-
