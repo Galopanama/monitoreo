@@ -37,19 +37,6 @@
               </li>
             </ul>
           </li> 
-          VISUALIZAR DATOS
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="activity"></span>
-              Graficas
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="columns"></span>
-              Estadisticas
-            </a>
-          </li>
           GESTIONAR USUARIOS
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/admin/usuarios/index.php">
@@ -60,7 +47,7 @@
           OBSERVATIORIO DE ACTIVIDADES SEGUN LOS ACTORES
           <li>
             <ul class="nav flex-column">
-              <li class="nav-item">
+              {* <li class="nav-item">
                 <ul>
                   <li>
                   <a class="nav-link active" href="#"> 
@@ -81,11 +68,11 @@
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> *}
               <li class="nav-item">
                 <a class="nav-link active" href="{$_WEB_PATH_}/admin/pruebas/pruebas.php">
                   <span data-feather="heart"></span>
-                  Ver purebas de los Tecnologos Medicos
+                  Ver pruebas de los Tecnologos Medicos
                 </a>
               </li>
               <li class="nav-item">
@@ -101,6 +88,13 @@
                 </a>
               </li>
             </ul>
+          </li>
+          VISUALIZAR DATOS
+          <li class="nav-item">
+            <a class="nav-link active" href="{$_WEB_PATH_}/admin/resultados/personas_alcanzadas.php">
+              <span data-feather="activity"></span>
+              Grafica de l@s Alcanzad@s
+            </a>
           </li>
           COMPARTIR 
           <li class="nav-item">
@@ -156,13 +150,13 @@
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/entrevistas/grupales.php">
               <span data-feather="users"></span>
-              Ver Entrevistas Grupales
+              Ver Actividades Grupales
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{$_WEB_PATH_}/user/pruebas/pruebas.php">
               <span data-feather="heart"></span>
-              Ver pruebas realizadas
+              Ver Pruebas realizadas
             </a>
           </li>
           <li class="nav-item">
