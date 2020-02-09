@@ -145,7 +145,7 @@ class Entrevistas {
                     
         // Le pedimos al objeto de resultados que nos devuelva una fila (en este caso la unica) en forma de array asociativo
         // We request the object to return the information in one line per entrevista
-        $grupal = $result->fetch_array(MYSQL_ASSOC); 
+        $grupal = $result->fetch_array(MYSQLI_ASSOC); 
                             
         // Creamos el objeto con los valores que hemos obtenido de la base de datos ordenados segun requiere el constructor de EntrevistaGrupal
         // The object created from the database has the following attributes. The named with the same name as the attributes of the table EntrevistasGrupal
