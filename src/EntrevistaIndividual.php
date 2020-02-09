@@ -8,6 +8,7 @@ require_once 'Entrevista.php';
 class EntrevistaIndividual extends Entrevista
 {
     private $region_de_salud;
+    private $area;
     private $uso_del_condon;
     private $uso_de_alcohol_y_drogas_ilicitas;
     private $informacion_clam;
@@ -19,6 +20,7 @@ class EntrevistaIndividual extends Entrevista
         $id_cedula_persona_receptora,
         $fecha,
         $region_de_salud,
+        $area,
         $condones_entregados,
         $lubricantes_entregados,
         $materiales_educativos_entregados,
@@ -31,6 +33,7 @@ class EntrevistaIndividual extends Entrevista
 
         parent::__construct($id_promotor, $id_cedula_persona_receptora, $fecha, $condones_entregados, $lubricantes_entregados, $materiales_educativos_entregados);
         $this->region_de_salud = $region_de_salud;
+        $this->area = $area;
         $this->uso_del_condon = $uso_del_condon;
         $this->uso_de_alcohol_y_drogas_ilicitas = $uso_de_alcohol_y_drogas_ilicitas;
         $this->informacion_clam = $informacion_clam;
@@ -44,6 +47,14 @@ class EntrevistaIndividual extends Entrevista
 
     public function getRegion_de_salud(){
         return $this->region_de_salud;
+    }
+
+    public function setArea($area){
+        $this->area = $area;
+    }
+
+    public function getArea(){
+        return $this->area;
     }
     
     public function setUso_del_condon($uso_del_condon)

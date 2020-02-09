@@ -41,9 +41,12 @@ function getPersonasAlcanzadas() {
 /** devuleve al informacion de las PurebasRealizadas
  * que vamos a utlizar para llevar a los graficos
  */
-function getPruebasRealizadas() {
 
-}
+// AUN ESTA POR DESARROLLAR 
+
+// function getPruebasRealizadas() {
+
+// }
 
 
 
