@@ -29,6 +29,13 @@
             {html_options values=$regiones_de_salud output=$regiones_de_salud selected=$region_de_salud}
           </select>
         </div>
+        <div class="col-auto">
+          <label for="area">Área</label>
+          <input type="text" class="form-control" id="area" name="area" placeholder="Área" value="{$area}" required>
+          <small id="areaHelpBlock" class="form-text text-muted">
+              Máx. 20 caracteres
+            </small>
+        </div>
       </div>
 
       <hr />

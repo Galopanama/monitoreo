@@ -86,6 +86,7 @@ class Entrevistas {
                 $individual['id_cedula_persona_receptora'], 
                 $individual['fecha'], 
                 $individual['region_de_salud'],
+                $individual['area'],
                 $individual['condones_entregados'], 
                 $individual['lubricantes_entregados'], 
                 $individual['materiales_educativos_entregados'], 
@@ -240,6 +241,7 @@ class Entrevistas {
                     $entrevista['id_cedula_persona_receptora'],
                     $date->format('d-m-Y'),
                     $entrevista['region_de_salud'],
+                    $entrevista['area'],
                     $entrevista['condones_entregados'],
                     $entrevista['lubricantes_entregados'],
                     $entrevista['materiales_educativos_entregados'],
@@ -430,6 +432,7 @@ class Entrevistas {
             id_cedula_persona_receptora, 
             fecha, 
             region_de_salud, 
+            area,
             condones_entregados, 
             lubricantes_entregados, 
             materiales_educativos_entregados, 
@@ -438,17 +441,18 @@ class Entrevistas {
             informacion_CLAM, 
             referencia_a_prueba_de_VIH, 
             referencia_a_clinica_TB) " .
-            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Preparamos la sentencia anterior
         // the query to add information to the table entrevistaIndividual gets prepared
         if ($stmt = $mysqli->prepare($sql)) {
             $fecha = "now()";//Enlazamos los parametros con los valores pasados, indicando ademas el tipo de cada uno
             // the information gets assigned to the name of the attributes of the class that are in the database and with the specification of their datatype
-            $stmt->bind_param('issiiiiiiii', 
+            $stmt->bind_param('isssiiiiiiii', 
                 $datos['id_promotor'],
                 $datos['id_cedula_persona_receptora'],
                 $datos['region_de_salud'],
+                $datos['area'],
                 $datos['condones_entregados'],
                 $datos['lubricantes_entregados'],
                 $datos['materiales_educativos_entregados'],
