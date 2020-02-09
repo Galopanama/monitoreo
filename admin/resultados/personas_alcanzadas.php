@@ -1,14 +1,13 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios subreceptores
-// Access only permited to the user 'subreceptor'
-$perfiles_aceptados = array ('subreceptor');
+// Restringimos el acceso sólo a usuarios administrador
+// Access only permited to the user 'administrador'
+$perfiles_aceptados = array ('administrador');
 require_once __DIR__ . '/../../security/autorizador.php';
-
 
 // Cargamos el estilo de la página
 // Load the page's styles
-// $header = $smarty->fetch("header/personas_alcanzadas.tpl");
+$header = $smarty->fetch("header/personas_alcanzadas.tpl");
 
 // Vamos a comprobar si hay mensajes en la sesión
 // Check for session messages
@@ -37,11 +36,11 @@ if ($_SESSION['error']){
 }
 
 // Rest of the View is called
-//$main = $smarty->fetch("paginas/resultados/personas_alcanzadas.tpl");   // no estoy seguro de que esto haga falta 
+$main = $smarty->fetch("paginas/resultados/personas_alcanzadas.tpl"); // que es html del formulario
 
-//$footer = $smarty->fetch("footer/personas_alcanzadas.tpl");             // no estoy seguro de que esto haga falta 
-$main = 
+$footer = $smarty->fetch("footer/personas_alcanzadas.tpl");  // que contiene funciones y bibliotecas de DatePicker
+
 
 require_once '../../footer.php';
 
-$smarty->display('grafica_alcanzados_Barras.html');
+$smarty->display('esqueleto_dashboard.html');  
