@@ -554,7 +554,7 @@ class Entrevistas {
                 diversidad_sexual_identidad_expresion_de_genero, 
                 tuberculosis_y_coinfecciones, 
                 infecciones_oportunistas) " .
-            " values (?, ?, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+            " values (?, ?,now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
         // the query to add information to the table prueba gets prepared
         // Preparamos la sentencia anterior
 
