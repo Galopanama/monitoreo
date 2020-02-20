@@ -1796,3 +1796,398 @@ Stack trace:
 #0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
 #1 {main}
   thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 05:47:02 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 05:47:58 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 05:55:59 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:04:26 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:05:35 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:05:55 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:07:42 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:08:06 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   2. PersonasReceptoras::add($datos = *uninitialized*, $db = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:41
+[14-Feb-2020 13:09:18 America/Los_Angeles] PHP   3. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:87
+[14-Feb-2020 13:09:26 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:11:11 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:12:17 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:56 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:13:57 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:14:05 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 55
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:39 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Couldn't fetch mysqli_stmt in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Warning:  PersonasReceptoras::getPersonaReceptora(): Property access is not allowed yet in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 58
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP Stack trace:
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:0
+[14-Feb-2020 13:20:40 America/Los_Angeles] PHP   2. PersonasReceptoras::getPersonaReceptora($id_cedula_persona_receptora = *uninitialized*) /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php:28
+[14-Feb-2020 13:26:44 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to a member function getConexion() on boolean in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php:104
+Stack trace:
+#0 /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/user/pruebas/addPrueba.php(41): PersonasReceptoras::add(Array, true)
+#1 {main}
+  thrown in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/PersonasReceptoras.php on line 104

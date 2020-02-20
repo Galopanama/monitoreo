@@ -12,7 +12,7 @@ require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 
 // Send the data if not empty row 
-if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se introduce la palabra cedula para unificar nomenclatura
+if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            
     // Se han enviado datos
     // Keep the errors in an array if found
 
@@ -22,6 +22,14 @@ if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {            // se in
     if (empty($_POST['id_cedula_persona_receptora_buscada'])){
         $errores['id_cedula_persona_receptora_buscada'] = "Debe especificar la persona a la que va a realizar la entrevista"; // error message to return if not filled. Explains error
     }   // refered to id of the person
+
+    if (empty($_POST['region_de_salud'])){
+        $errores['region_de_salud'] = "Debe especificar la región de salud"; // error message to return if not filled. Explains error
+    }
+
+    if (empty($_POST['area'])){
+        $errores['area'] = "Debe especificar el área"; // error message to return if not filled. Explains error
+    } 
 
     if (!is_numeric($_POST['condones_entregados'])){
         $errores['condones_entregados'] = "Debe especificar el número de condones entregados, aunque sea 0"; // error message to return if not filled. Explains error

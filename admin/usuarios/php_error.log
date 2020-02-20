@@ -178,3 +178,91 @@
 [09-Oct-2019 15:48:57 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
 [09-Oct-2019 15:48:57 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
 [09-Oct-2019 15:48:57 America/Los_Angeles] PHP   7. content_5d9e6357aee859_05817968() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP Stack trace:
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[13-Feb-2020 08:48:43 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP Stack trace:
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/update.php:0
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/update.php:175
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[13-Feb-2020 08:54:00 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP Stack trace:
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[13-Feb-2020 08:54:55 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP Stack trace:
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[17-Feb-2020 08:09:02 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP Stack trace:
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[20-Feb-2020 06:01:48 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP Stack trace:
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[20-Feb-2020 06:03:02 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP Stack trace:
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[20-Feb-2020 06:03:30 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP Warning:  preg_match_all() expects parameter 2 to be string, array given in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php on line 43
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP Stack trace:
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:0
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   2. Smarty->fetch() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/admin/usuarios/add.php:93
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   3. Smarty->_execute() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:116
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   4. Smarty_Internal_Template->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_templatebase.php:232
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   5. Smarty_Template_Compiled->render() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_internal_template.php:216
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   6. Smarty_Template_Compiled->getRenderedTemplateCode() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_compiled.php:114
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   7. content_5d9f2d14297645_35006409() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/sysplugins/smarty_template_resource_base.php:123
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   8. smarty_modifier_capitalize() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/tpl/smarty/templates_c/064f36e32d724e507a7929a39121e739c5c71af2_0.file.add_update.tpl.php:124
+[20-Feb-2020 06:04:12 America/Los_Angeles] PHP   9. preg_match_all() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/lib/Smarty/plugins/modifier.capitalize.php:43
