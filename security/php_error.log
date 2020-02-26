@@ -1092,3 +1092,6 @@
 [14-Nov-2019 11:24:53 America/Los_Angeles] PHP Stack trace:
 [14-Nov-2019 11:24:53 America/Los_Angeles] PHP   1. {main}() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:0
 [14-Nov-2019 11:24:53 America/Los_Angeles] PHP   2. require_once() /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/security/login.php:3
+[26-Feb-2020 14:51:54 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ')' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Usuarios.php on line 442
+[26-Feb-2020 14:52:11 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ')' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Usuarios.php on line 442
+[26-Feb-2020 14:52:24 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ')' in /Applications/nginxstack-1.14.2-3/nginx/html/monitoreo/src/Usuarios.php on line 442

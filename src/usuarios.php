@@ -431,14 +431,14 @@ class Usuarios {
                         break;
                     case "tecnologo":
                         // prepare the sentence
-                        $sql2 = "insert into tecnologo (id_tecnologo, numero_de_registro, id_cedula) values (?, ?, ?)";
+                        $sql2 = "insert into tecnologo (id_tecnologo, numero_de_registro) values (?, ?)";
                         if($stmt2 = $mysqli->prepare($sql2)){
                             // Esta consulta necesita el id que se acaba de insertar (autogenerado por mysql), el numero de registro y su cedula
                             // Associate the values introduce with the variables 
-                            $stmt2->bind_param('iis', 
+                            $stmt2->bind_param('ii', 
                                 $id_usuario,
-                                $datos['numero_de_registro'],
-                                $datos['id_cedula']
+                                $datos['numero_de_registro']
+                                //$datos['id_cedula']
                             );
 
                             if(!$stmt2->execute()){
