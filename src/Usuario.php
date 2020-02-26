@@ -203,9 +203,9 @@ class Tecnologo extends Usuario{
     private $numero_de_registro;
     //private $id_cedula;
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$numero_de_registro) //$id_cedula){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$numero_de_registro){
 
-        parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
+        parent::__construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
         $this->numero_de_registro = $numero_de_registro;
         //$this->id_cedula = $id_cedula;   
 

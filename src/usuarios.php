@@ -750,7 +750,7 @@ class Usuarios {
                         $usuario['telefono'],
                         $usuario['password'],
                         $usuario['activo'],
-                        $tecnologo['numero_de_registro'],
+                        $tecnologo['numero_de_registro']
                         //$tecnologo['id_cedula']
                     );
                 }

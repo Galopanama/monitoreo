@@ -101,10 +101,10 @@
           Introduce sólo números
         </small>
       </div>
-      <div class="col-md-6 mb-3">
+      {* <div class="col-md-6 mb-3">
         <label for="id_cedula">Cédula:</label>
         <input type="text" class="form-control" id="id_cedula" name="id_cedula" value="{$id_cedula}" placeholder="Cédula"> 
-      </div>
+      </div> *}
     </div>
 
     <div class="promotor tipo_hidden d-none">
