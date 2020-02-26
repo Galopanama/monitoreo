@@ -1,7 +1,7 @@
 <?php
 
 // In this file there are the common action from Smarty. it will reduce the amount of code to write afterwards, as it will load all from this one file
-
+// En esta 
 $smarty->assign('_HEADER_EXTRA', $header);
 
 $smarty->assign('_FOOTER_EXTRA', $footer);

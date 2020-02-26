@@ -161,7 +161,7 @@ class Promotor extends Usuario{
     }
 
     public function setId_cedula ($id_cedula){
-        $this->id_cedula = $id_cedula;
+       $this->id_cedula = $id_cedula;
     }
 
     public function getId_cedula (){
@@ -201,13 +201,13 @@ class Promotor extends Usuario{
 class Tecnologo extends Usuario{
 
     private $numero_de_registro;
-    private $id_cedula;
+    //private $id_cedula;
 
-    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$numero_de_registro,$id_cedula){
+    public function __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo,$numero_de_registro) //$id_cedula){
 
         parent:: __construct($id,$login,$nombre,$apellidos,$tipo_de_usuario,$telefono,$password,$activo);
         $this->numero_de_registro = $numero_de_registro;
-        $this->id_cedula = $id_cedula;   
+        //$this->id_cedula = $id_cedula;   
 
     }
 
@@ -219,13 +219,13 @@ class Tecnologo extends Usuario{
         return $this->numero_de_registro;
     }
 
-    public function setId_cedula($id_cedula){
-        $this->id_cedula = $id_cedula;
-    }
+    // public function setId_cedula($id_cedula){
+    //     $this->id_cedula = $id_cedula;
+    // }
 
-    public function getId_cedula(){
-        return $this->id_cedula;
-    }
+    // public function getId_cedula(){
+    //     return $this->id_cedula;
+    // }
 
     /**
      * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas

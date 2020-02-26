@@ -740,7 +740,7 @@ class Usuarios {
 
                 // the query will return the tecnologos 
                 if ($result = $mysqli->query($sql)) {
-                    $promotor = $result->fetch_assoc();
+                    $tecnologo = $result->fetch_assoc();
                     return new Tecnologo(
                         $usuario['id_usuario'],
                         $usuario['login'],
@@ -750,8 +750,8 @@ class Usuarios {
                         $usuario['telefono'],
                         $usuario['password'],
                         $usuario['activo'],
-                        $promotor['numero_de_registro'],
-                        $promotor['id_cedula']
+                        $tecnologo['numero_de_registro'],
+                        //$tecnologo['id_cedula']
                     );
                 }
                 else {
