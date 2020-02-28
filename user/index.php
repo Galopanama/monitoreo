@@ -1,17 +1,20 @@
 <?php
 /**
- * The initial page that the all user will see is index. It displays the options of the left hand side menu from
- * where they can reach any other functionality of the application 
+ * La pagina inicial que todos los usuarios (excepto el Adminstrador que tiene otra especifica para su perfil) 
+ * van a ver al conectarse es index.php
+ * 
+ * Desde aqui se muestra informacion sobre los Derechos Humanos (que puede variarse hacia otros contenidos 
+ * mas relavantes) y se presenta el menu de la izquierda que guarda todas las funcionalidades para 
+ * navegar por la plataforma.
  */
 require_once __DIR__ . '/../config/config.php';
-// Restringimos el acceso sólo a usuarios 'promotor', 'subreceptor', 'tecnologo'
-// Restricted acccess to users 'promotor', 'subreceptor', 'tecnologo'
+
+// Se restringe el acceso sólo a usuarios tipo 'promotor', 'subreceptor', 'tecnologo'
 $perfiles_aceptados = array('promotor', 'subreceptor', 'tecnologo');
 require_once __DIR__ . '/../security/autorizador.php';
 
 
 // La variable main se utilizará en el archivo footer.php
-// the variable main is located in the file footer.php so it is called from here
 $main = $smarty->fetch("paginas/index_usuarios.tpl");
 
 require_once '../footer.php';

@@ -1,18 +1,13 @@
 <?php
 /*
  * Este archivo será usado para las operaciones mínimas del archivo de configuración.
- * This file has been created to be reuse and reduce the amount of code needed to start the connections
- * The connection for the database has been done to two different computers   
+ * La conexion a la base de datos se ha configurado desde dos computadoras diferentes 
  */
-session_start();
+session_start(); // llamada a la sesion para empezar
 
-// Datos para Smarty
-// ISSUE_21: para mantener la configuración correcta cuando se ejecuta en Windows y en Mac
+// Para mantener la configuración correcta cuando se ejecuta en Windows y en Mac
 // voy a definir un root_path dependiendo del sistema en el que esté
  
-
-// The details to start the connection to the database 
-// Depending on the cumputer in which I am working I will define a different rootpath 
 if ($_SERVER['SERVER_NAME'] === "monitoreo.test") {
     // monitoreo.test es el nombre del servidor cuando lo ejecuto en windows
     define ('_ROOT_PATH_', 'C:/WinNMP/WWW/Monitoreo/monitoreo');
@@ -35,7 +30,6 @@ define ('_WEB_PATH_', 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERV
 
 
 // Vamos a crear el objeto Smarty, pues se usará en todas las páginas
-// An object Smarty has been created and it loads the templates, configuration, compilers and cache
 include_once _ROOT_PATH_ . '/lib/Smarty/Smarty.class.php';
 $smarty = new Smarty();
 $smarty->setTemplateDir(_ROOT_PATH_ . '/tpl/');
@@ -45,5 +39,4 @@ $smarty->setCacheDir(_ROOT_PATH_ . '/tpl/smarty/cache/');
 $smarty->assign('_WEB_PATH_', _WEB_PATH_);
 
 // En la mayoría de páginas necesitaremos la variable tipo de usuario para poder realizar cierto tipo de acciones
-// When the connection starts, the variable type of user is needed to allow access to certain pages
 $smarty->assign('tipo_usuario', $_SESSION['tipo_de_usuario']);

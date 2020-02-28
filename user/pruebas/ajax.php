@@ -4,16 +4,18 @@
  * The information can it can be searched by the organisantions' name as well as just the name of the Tecnologo
  */
 require_once __DIR__ . '/../../config/config.php';
+
 // Restringimos el acceso sólo a usuarios tecnologos y subreceptores
-// it is only permited the access to the user 'tecnologo' and 'subreceptor'
 $perfiles_aceptados = array('tecnologo','subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
-// Call the files from the Model
+
+// Llamamos a los ficheros del Modelo
 require_once __DIR__ . '/../../src/Pruebas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
-//User allowed can retrieve the information of all the pruebas. 
-//The information return as an Json object
+
+// Solo los usuarios con permiso podran recuperar esta informacion
+// La informacion se devuelve en un objeto JSon
 switch($_GET['funcion']){
     case "getAllPruebas":                                  
         echo json_encode(getAllPruebas());                 
@@ -24,15 +26,14 @@ switch($_GET['funcion']){
         exit;
 }
 /**
- * Devuelve todas las pruebas
- * Return all the pruebas
+ * Devuelve todas las pruebas del tecnologo
  */
 function getAllPruebas() {
     try {
         $lista = Pruebas::getAllPruebas();
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del tecnologo
-        // the loop is going to show all the information where there is an instance of Prueba and display the attributes. 
-        // The display include the attributes from the tecnologo and Id, poblacion with which identify, poblacion_originatia from the persona receptora  
+        // El loop va a mostrar la informacion donde haya una instancia del objeto Prueba, mostrando sus atributos
+        // Se incluyen informacion del tecnologo e informacion de la poblacion
         foreach($lista as $prueba) {
             $persona_receptora = PersonasReceptoras::getPersonaReceptora($prueba->getId_cedula_persona_receptora());
             $prueba->poblacion = $persona_receptora->getPoblacion();                        
@@ -41,7 +42,8 @@ function getAllPruebas() {
             $prueba->nombre_tecnologo = $tecnologo->getNombre() . ' ' . $tecnologo->getApellidos();
         }
         return prepara_para_json($lista);
-    }   // if there are any errors will be catch here and notify with an error message
+        
+    }   // Si hubiera errores se capturan en esta sentencia y se notifican con un mensaje al usuario
     catch (Exception $e) {
         $array_response['error'] = 1;
         $array_response['errorMessage'] = $e->getMessage();
@@ -51,15 +53,14 @@ function getAllPruebas() {
 
 /**
  * Busca una PERSONA RECEPTORA dada una cadena de búsqueda
- * If the  user want to look for a a Person inside the database can be found 
  */
 function buscar_persona_receptora($cadena) {
     $array_response['found'] = 1;
     $array_response['error'] = 0;
     try{
         $persona = PersonasReceptoras::getPersonaReceptora($cadena);
-        $array_response['poblacion'] = $persona->getPoblacion();                        // the atributes of poblacion and poblacion originaria are
-        $array_response['poblacion_originaria'] = $persona->getPoblacion_originaria(); // added to the display
+        $array_response['poblacion'] = $persona->getPoblacion();                        
+        $array_response['poblacion_originaria'] = $persona->getPoblacion_originaria(); 
     }
     catch (PersonaReceptoraNotFoundException $e) {
         $array_response['found'] = 0;
@@ -72,7 +73,7 @@ function buscar_persona_receptora($cadena) {
 
     return $array_response;
 }
-// this lines prepare the data coming in an array type, and transforme it in Json
+// Desde aqui se preparan los datos que regresan de la peticion. Al volver en un array se tranforman a JSon
 function prepara_para_json($array) {
     return array("data" => $array);
 }

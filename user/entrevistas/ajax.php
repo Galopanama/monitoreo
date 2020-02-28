@@ -1,23 +1,22 @@
 <?php
 /**
- * This file returns all the interviews from the individuals and groups 
- * The information can it can be searched by the organisantions' name as well as just the name of the Promotor
+ * Este ficehro devuleve toda la informacion de las entrevistas individuales y grupales
  */
 require_once __DIR__ . '/../../config/config.php';
+
 // Restringimos el acceso sólo a usuarios promotores y subreceptores
-// it is only permited the access to the user 'promotor' and 'subreceptor'
 $perfiles_aceptados = array('promotor', 'subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
-// Llama a los siguientes archivos del Modelo
-// Call the files from the Model
+
+// Llamamos a los siguientes archivos del Modelo
 require_once __DIR__ . '/../../src/Entrevistas.php';
 require_once __DIR__ . '/../../src/PersonasReceptoras.php';
 require_once __DIR__ . '/../../src/Usuarios.php';
 require_once __DIR__ . '/../../src/PersonasAlcanzadas.php';
 
 
-//the user can retrieve the information of all the interviews. 
-//The information return as an Json object
+// Solo los usuarios con permiso podran recuperar esta informacion
+// La informacion se devuelve en un objeto JSon
 switch($_GET['funcion']){
     case "getAllIndividuales":
         echo json_encode(getAllIndividuales());
@@ -34,25 +33,22 @@ switch($_GET['funcion']){
 
 /**
  * Devuelve todas las entrevistas individuales
- * Return all the personal interviews
  */
 function getAllIndividuales() {
     try {
+        // Comprueba si el usuario es promotor o Subreceptor
         if($_SESSION['tipo_de_usuario'] === 'promotor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor
-            // If the user is promotor, we pass the id to show only the interviews with the same id
-            $lista = Entrevistas::getAllEntrevistasIndividuales($_SESSION['usuario_id'], null); // The object Entrevista gets called
+            $lista = Entrevistas::getAllEntrevistasIndividuales($_SESSION['usuario_id'], null); 
         }
         else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
             // Si el usuario es subreceptor, pasamos el segundo argumento al método para indicar el id
-            // If the user is subreceptor, we pass the id and only return the objects that contains the same id
             $lista = Entrevistas::getAllEntrevistasIndividuales(null, $_SESSION['usuario_id']); // The object Entrevista gets called
         }
 
         // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
-        // Edit a list with all the instances of class Persona Receptora and name and Id from Promotor
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // se cambia getId_persona_receptora por getId_cedula_persona_receptora
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); 
             $entrevista->poblacion = $persona_receptora->getPoblacion();      
             $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();
                                                                                         
@@ -61,7 +57,7 @@ function getAllIndividuales() {
         }
 
         return prepara_para_json($lista);
-    }// If there is any exception, send and error message
+    }// Si hay alguna excepcion se caputa y se manda un mensaje
     catch (Exception $e) {
         $array_response['error'] = 1;
         $array_response['errorMessage'] = $e->getMessage();
@@ -72,13 +68,11 @@ function getAllIndividuales() {
 
 /**
  * Devuelve todas las entrevistas grupales
- * Returns all the group interviews
  */
 function getAllGrupales() {
     try {
         if($_SESSION['tipo_de_usuario'] === 'promotor'){
             // Si el usuario es un promotor, pasamos su id en el campo id_promotor
-            // If the user is promotor, we pass the id to show only the interviews with the same id
             $lista = Entrevistas::getAllEntrevistasGrupales($_SESSION['usuario_id'], null);
         }
         else if ($_SESSION['tipo_de_usuario'] === 'subreceptor'){
@@ -86,13 +80,13 @@ function getAllGrupales() {
             $lista = Entrevistas::getAllEntrevistasGrupales(null, $_SESSION['usuario_id']);
         }
 
-        // Vamos a editar la lista, y añadir los datos de la persona receptora y el nombre del promotor
-        // Return the list of interviews with te id and name of the Promotor 
+        // Editamos la lista y añadimos los datos de la persona receptora y el nombre del promotor
+        // Php permite añadir atributos de otros objetos
         foreach($lista as $entrevista) {
-            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); // tambien se cambia getId_cedula_persona_receptora en lugar de getId_persona_receptora
-            $entrevista->poblacion = $persona_receptora->getPoblacion();                        // esto se hace para añadir atributos a un objeto que no 
-            $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();  // son parte del objeto en si. Solo se hace
-                                                                                                // porque PHP lo permite. igual que Java 
+            $persona_receptora = PersonasReceptoras::getPersonaReceptora($entrevista->getId_cedula_persona_receptora()); 
+            $entrevista->poblacion = $persona_receptora->getPoblacion();                        
+            $entrevista->poblacion_originaria = $persona_receptora->getPoblacion_originaria();  
+                                                                                                
             $promotor = Usuarios::getUsuarioById($entrevista->getId_promotor());
             $entrevista->nombre_promotor = $promotor->getNombre() . ' ' . $promotor->getApellidos();
         }
@@ -109,9 +103,8 @@ function getAllGrupales() {
 
 /**
  * Busca una PERSONA RECEPTORA dada una cadena de búsqueda
- * Look for the object Persona Receptora and return the atributes detailed
- * If not found will return a message to inform about it
- * If any other error, return a message to inform about it 
+ * Si no se encuentra, devolverá un mensaje informando de ello
+ * Si hay otro error, se devuelve un mensaje que informa de la fuente del error
  */
 function buscar_persona_receptora($cadena) {
     $array_response['found'] = 1;
@@ -132,7 +125,7 @@ function buscar_persona_receptora($cadena) {
 
     return $array_response;
 }
-// Function to convert and array to json  
+// Esta funcion convierte un array en un objeto Json
 function prepara_para_json($array) {
     return array("data" => $array);
 }

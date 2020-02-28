@@ -1,3 +1,7 @@
+<!-- Se configura el menu de la izquierda para todos los usuarios
+Segun el "tipo de usuario", se presentara un resultado u otro
+Desde esta pagina se direciona al usuario por los difereentes ficheros y funciones de FOMODI -->
+
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
   <div class="sidebar-sticky">
     <ul class="nav flex-column">

@@ -1,6 +1,7 @@
 <?php
 
-// It load the error messages and destroy them when the session is finish
+// Carga los mensajes de error cuando suceden 
+// Los destruye cuando la sesion termina
 session_start();
 
 require_once 'config/config.php';

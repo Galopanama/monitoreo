@@ -1,29 +1,29 @@
 <?php
 /**
- * This file returns all the interviews from the individuals and groups 
- * The information can it can be searched by the organisantions' name as well as just the name of the Promotor
+ * Este fichero devuelve la informacion de las Personas Alcanzadas a los Subreceptores 
+ * Y puede alojar la funcion que devuelva los resultados de las Pruebas  
  */
 require_once __DIR__ . '/../../config/config.php';
-// Restringimos el acceso sólo a usuarios subreceptores
-// it is only permited the access to the user 'subreceptor'
+
+// Restringimos el acceso sólo a usuarios subreceptorexs
 $perfiles_aceptados = array('subreceptor');
 require_once __DIR__ . '/../../security/autorizador.php';
+
 // Llama a los siguientes archivos del Modelo
-// Call the files from the Model
 require_once __DIR__ . '/../../src/Usuarios.php';
 require_once __DIR__ . '/../../src/PersonasAlcanzadas.php';
 
 
-//the user can retrieve the information of all the interviews. 
-//The information return as an Json object
+// El usuario recupera la informacion de las personas Alcanzadas 
+// La informacion se devuelve en un objeto JSon
 
 switch($_POST['funcion']){
     case "getPersonasAlcanzadas":
         echo json_encode(getPersonasAlcanzadas());
         exit;
-    case "getPruebasRealizadas":
-        echo json_encode(getPruebasRealizadas());
-        exit;
+    // case "getPruebasRealizadas":
+    //     echo json_encode(getPruebasRealizadas());
+    //     exit;
     default:
         exit;
 }

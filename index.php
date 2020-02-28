@@ -1,6 +1,6 @@
 <?php
-// This page will redirect the user depending on their user type
-// Esta pagina direcciona al usuario dependiendo del tipo de sea (Administrad@r u otros)
+// Esta pagina va a direccionar al usuario dependiendo de su tipo 
+// (Adminstrador por un lado y los demas por otro)
 
 require_once 'config/config.php';
 
