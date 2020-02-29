@@ -1,5 +1,7 @@
-// este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
 /**
+ * Este fichero va a dar formato a la informacion que viene del servidor en respuesta a la peticion de 
+ * Entrevsitas Individuales
+ * 
  * Inicializamos la tabla con las siguientes opciones
  */
 $(document).ready(function() {
@@ -87,24 +89,24 @@ $(document).ready(function() {
     } );
 
     
-    // Add event listener for opening and closing details
+    // Se añade la funcion para desplegar la informacion de los usuarios
     $('#entrevistasIndividuales tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  
         if ( row.child.isShown() ) {
-            // This row is already open - close it
+            // La ventana (submenu) esta abierto y ordena cerrarlo
             row.child.hide();
             tr.removeClass('shown');
         }
         else {
-            // Open this row
+            // La ventana (submenu) esta cerrada y al activarlo, se abrirá
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
     } );
 
-    /* Formatting function for row details - modify as you need */
+    // Se da el formato de la fila 
     function format ( d ) {
         let tabla = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
         

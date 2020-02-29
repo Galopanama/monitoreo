@@ -1,4 +1,7 @@
-
+/**
+ * DataPiker nos facilita la eleccion de la fecha desde un calendario con funcionalidades 
+ * que facilitan la insercion de datos y reduce la posibilidad de introducir datos erroneos
+ */
 $(document).ready(function() {
   var dateFormat = "dd/mm/yy";
   var desde = $( "#desde" )   //Jquery por eso se $

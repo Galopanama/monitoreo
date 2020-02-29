@@ -1,3 +1,6 @@
+/**
+ * El fichero se encarga de la búsqueda de nombres de los subrecptores
+ */
 $(document).ready(function () {
     var subreceptores = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace("value"),

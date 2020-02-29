@@ -1,7 +1,8 @@
-
 /**
- * Inicializamos la tabla con las siguientes opciones
+ * Inicializamos la tabla de Usuarios con las siguientes opciones
  */
+
+// Se carga cuando recibe la llamada de la funcion getAll de ajax.php 
 $(document).ready(function() {
     var table = $('#usuarios').DataTable( {
         "ajax": "ajax.php?funcion=getAll",
@@ -72,7 +73,7 @@ $(document).ready(function() {
     } );
 
     /**
-     * Con este "truco" conseguimos que exista un checkbox que permita ver o no los usuarios desactivados
+     * Con esta opcion  conseguimos que exista un checkbox que permita ver o no los usuarios desactivados
      */
     $(document).on('change', '#mostrar_inactivos', function(){
         let buscar = '^Activo';
@@ -152,24 +153,24 @@ $(document).ready(function() {
                      
     } );
 
-    // Add event listener for opening and closing details
+    // Se añade la funcion para desplegar la informacion de los usuarios
     $('#usuarios tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  
         if ( row.child.isShown() ) {
-            // This row is already open - close it
+            // La ventana (submenu) esta abierto y ordena cerrarlo
             row.child.hide();
             tr.removeClass('shown');
         }
         else {
-            // Open this row
+            // La ventana (submenu) esta cerrada y al activarlo, se abrirá
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
     } );
 
-    /* Formatting function for row details - modify as you need */
+    // Se da el formato de la fila segun el tipo de usuario 
     function format ( d ) {
         let tabla = '';
         switch (d.tipo_de_usuario){
@@ -184,7 +185,6 @@ $(document).ready(function() {
                 tabla = creaSubtabla(
                     {
                         'Nº de registro': d.numero_de_registro,
-                        'Cédula': d.id_cedula
                     }
                 );
                 break;

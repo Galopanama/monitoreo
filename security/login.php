@@ -1,44 +1,46 @@
 <?php
-// This file will check the login name and password of anybody who wants to access to FOMODI
+
+/**
+ * Este fichero comprueba el nombre de acceso y la contraseña (login y password) 
+ * de cualquier persona que quiera acceder a FOMODI
+ */
+
 require_once '../config/config.php';
 
-//Comprobamos si es sólo para mostrar la página o es para realizar el logado
-// Check the username and password
+
+// Comprobacion de validez del nombre y contraseña para validar el accesso
 if($_POST['username'] || $_POST['password']){
     
-    //Realiza el login
-    // The usuarios from the database needs to be called as the information stored there will be used to compared with the one introduced by the user
+    // Se llama al fichero de usurios ya que se manipularán valores de esta tabla al navegar FOMODI
     require_once '../src/Usuarios.php';
     try {
+        // Primero se comprueba que el nombre (login) del usuario sea valido
         $usuario = Usuarios::getUsuarioByUsername($_POST['username'], true, true);
-        // Initially the user name gets checked
         
-
-        // If the password is veryfied and is correct, the data will be assigned to the variable SESSION
+        // Despues se comprueba la contraseña (password). En caso de validarse se asignan 
+        // el id y el tipo de usuario a las variables de SESSION, que servirán para hacer 
+        // cumplir las restricciones de acceso a datos
         if (password_verify($_POST["password"], $usuario->getPassword())) {                 
             $_SESSION['usuario_id'] = $usuario->getId();                                    
             $_SESSION['tipo_de_usuario'] = $usuario->getTipo_de_usuario();
         }
         else {
-            // Si no, simplemente informamos de login incorrecto
-            // If not, the user will be inform
+            // En caso contrario, simplemente se informa del login incorrecto y se deniega el acceso
             $_SESSION['login_error'] = "Login incorrecto";
         }
     }
     catch (UsuarioNotFoundException $e) {
-        // El usuario no existe. No mostraremos más información por seguridad
-        // If the user does not exist, no extra information will be show as a security messure
+        // Si el usuario no existe. No mostraremos más información por seguridad
         $_SESSION['login_error'] = "Login incorrecto";
     }
     catch (Exception $e) {
-        // If the error is related to the database, the user will be informed
+        // Si el error esta en la base de datos, se informa del origen del fallo al usuario
         $_SESSION['login_error'] = "Error de BD";
     }
     
-    // Si no han ocurrido errores durante el login
-    // If there are no errors, it will be check the type of user and redirect consequently to the user type and its privilige
+    // Si no han ocurrido errores durante el login se redirige al usuario
+    // en relacion a su tipo, a una pagina de inicio (index)
     if(!isset($_SESSION['login_error'])){
-        // Redirigir a cada usuario a su web correspondiente
         switch ($_SESSION['tipo_de_usuario']){
             case 'administrador':
                 header('Location: ' . _WEB_PATH_ . '/admin/index.php');
@@ -52,7 +54,6 @@ if($_POST['username'] || $_POST['password']){
 
 // Si llega aquí, es que no se estaba realizando el login, o que este ha fallado
 // En caso de que hubiese errores, los mostramos y los borramos
-// If there has been any errors they will be shown and the variable SESSION will be deleted afterwards
 if (isset($_SESSION['login_error'])){
     $smarty->assign('login_error', $_SESSION['login_error']);
     // Y borramos la variable

@@ -1,12 +1,12 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Controla que no haya campos invalidos cuando se rellena el formulario
 (function () {
     "use strict";
     window.addEventListener(
         "load",
         function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            // Recoge todos los formularios a los que queremos aplicarles un formato y verifica que la informacion cumpla las condiciones
             var forms = document.getElementsByClassName("needs-validation");
-            // Loop over them and prevent submission
+            // Revisa la informacion para que esta sea correcta
             var validation = Array.prototype.filter.call(forms, function (form) {
                 form.addEventListener(
                     "submit",
@@ -33,6 +33,7 @@ $(document).ready(function() {
     $(document).on('change', '#id_cedula_persona_receptora_buscada', checkPersonaExiste);  // DISPARADORES DE JQUERY
     $(document).on('keyup', '#id_cedula_persona_receptora_buscada', checkPersonaExiste);   // change y keyup son eventos de la pagina, relacionados 
 
+    // busca si la persona existe dentro de la base de datos (busca dentro del objeto BD por su id)
     function checkPersonaExiste(){
         var request = $.ajax({
             url: "ajax.php?funcion=buscar",
@@ -41,8 +42,9 @@ $(document).ready(function() {
             dataType: "json"
         });
 
+    // Se encarga de organizar la respuesta 
         request.done(function (response) {
-            if(response.error == 0){    // errores controlados tales como error en la "BD en la consulta"
+            if(response.error == 0){    
                 if (response.found == 1) {
                     $("#id_cedula_persona_receptora").val($("#id_cedula_persona_receptora_buscada").val());
                     $("#poblacion").val(response.poblacion).prop( "disabled", true );

@@ -1,5 +1,9 @@
 <?php
-// This file will be called when the user close the session. That way all the variables of the session will be destroyed
+/**
+ * Este fichero se llama cuando se cierra la sesion, de modo que todas las variables 
+ * que se hayan manipulado serán destruidas.
+ */
+
 require_once '../config/config.php';
 
 session_destroy();

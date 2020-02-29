@@ -1,16 +1,14 @@
-// este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
-/**
- * Inicializamos la tabla con las siguientes opciones 
- *  
+/** 
+ * Desde este fichero vamos a traducir del formualrio a la grafica 
  */
 
-$(document).ready(function() {   
-    // var respuesta = [] ;                                      //# busca en el id del elemento html no de la clase. 
+$(document).ready(function() {    
     function personasAlcanzadas(){
-        
+
+        // Las dos variable a continuacion van a facilitar la recogida de informacion de las poblaciones y regiones de salud selecionadas
         let poblacion = 
-            $('input[name="poblacion[]"]:checked').map(function(_, el) {    // Estas dos veriables se declaran para que sea
-                return $(el).val();                                         // mas facil trabajar con el JSon. Verdad o no?
+            $('input[name="poblacion[]"]:checked').map(function(_, el) {    
+                return $(el).val();                                         
             }).get();
 
         let regiones =
@@ -18,7 +16,7 @@ $(document).ready(function() {
                 return $(el).val();
             }).get();
 
-
+        // Desde aqui se realiza la recogida y tratamiento de las variables 
         var request = $.ajax({
             url: "ajax.php",
             method: "POST",
@@ -37,7 +35,7 @@ $(document).ready(function() {
             dataType: "json"
         }); 
         
-
+        // organizaciones de la respuesta y la parte visual para la representacion gráfica
         request.done(function (response) {
            
             let poblaciones = {};
@@ -147,7 +145,7 @@ $(document).ready(function() {
                                 }
                     }});
             }
-
+            // llamada a la funcion Chartit que esta definida en las lineas anteriores
             ChartIt();
 
 

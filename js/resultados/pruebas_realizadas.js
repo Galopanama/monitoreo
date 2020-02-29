@@ -1,14 +1,12 @@
-// este fichero va a traducir lo que viene del servidor y se va a mostrar al usuario de la applicaion 
 /**
+ * Este fichero esta incompleto y pertence al las tarea que se pretendia conseguir de 
+ * visualizar las pruebas que se han realizado.
+ * Puede reutilizarse o destruirse. A gusto del desarrollador
  * 
- * 
- * 
- * Pero si yo lo que quiero es hacer una presentacion diferente de los datos, quizas tendria que tener un
- * fichero js diferente... donde se le den formato a los datos en relacion a lo que yo quiero mostrar
- * 
+ * Tambien contine aclaraciones sobre como funciona JavaScript sintacticamnete
  */
 
-$(document).ready(function() {   // Le falta aqui los paramertros que va a recibir o no??
+$(document).ready(function() {   
     //# busca en el id del elemento html no de la clase. 
     function pruebasRealizadas(){
         var request = $.ajax({
@@ -17,16 +15,16 @@ $(document).ready(function() {   // Le falta aqui los paramertros que va a recib
             data: { 
                 "filtro": {
                 "grafica" : $("#grafica"),
-                "poblacion" : $("#poblacion"), // Aunque aqui poodrian incluirse los tres valores (HSH, TSF, TRANS)
+                "poblacion" : $("#poblacion"), 
                 "fecha": {
                     "desde": $("#desde"),
                     "hasta": $("#hasta")
                     },
-                "regiones": $("#regiones"), // al igual que en poblacion, deberia poder contener un array. 
+                "regiones": $("#regiones"), 
+                // al igual que en poblacion, deberia poder contener un array. 
                 // estos dos campos son los nuevos que no estan en la otra pagina
                 "prueba": $("#prueba"),
                 "reactivos": $("#reactivos")
-            // Como puede ser que se genere dinamicamente la informacion desde aqui??
                 }
             },
             dataType: "json"
@@ -35,7 +33,9 @@ $(document).ready(function() {   // Le falta aqui los paramertros que va a recib
 
 
 
-        // no se como se monta la respuesta
+        // Aqui debe mostrarse la construccion de "response". 
+        // Se recomienda observar el fichero de PersonasAlcanzadas
+
 
         request.done(function (response) {
             if(response.error == 0){                                                                                            // errores controlados tales como error en la "BD en la consulta"
@@ -49,4 +49,4 @@ $(document).ready(function() {   // Le falta aqui los paramertros que va a recib
         request.fail(function (jqXHR, textStatus) {
             alert("Ocurrió un error: " + textStatus);                                                                            // para reflejar los errores que no son controlados en el script, como errores de conexion
         });
-};
+    }

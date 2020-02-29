@@ -1,9 +1,10 @@
 /**
- * Inicializamos la tabla con las siguientes opciones
+ * Este fichero se encarga de organizar el contenido respuesta de la base de datos sobre las Pruebas
+ * Se organiza en un tabla con las siguientes opciones 
  */
 
 $(document).ready(function() {
-    var table = $('#pruebas').DataTable( {  // tpl. se relaciona al nombre de la tabla a la que estamos asociando la tabla
+    var table = $('#pruebas').DataTable( {  
         "ajax": "ajax.php?funcion=getAllPruebas",
         "columns": [
             // La primera columna nos permitirá expandir para mostrar datos extra
@@ -52,24 +53,24 @@ $(document).ready(function() {
     } );
 
     
-    // Add event listener for opening and closing details
+    // Se añada la funcion para abrir y cerrar los menus de cada fila
     $('#pruebas tbody').on('click', 'td.details-control', function () {
         let tr = $(this).closest('tr');
         let row = table.row( tr );
  
         if ( row.child.isShown() ) {
-            // This row is already open - close it
+            // Cuando el submenu esta abierto y se quiere cerrar
             row.child.hide();
             tr.removeClass('shown');
         }
         else {
-            // Open this row
+            // Cuando el submenu esta cerrado y se quiere abrir
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
     } );
 
-    /* Formatting function for row details - modify as you need */
+    /* Este es el formato que se le da a la tabla */
     function format ( d ) {
         let tabla = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
         
