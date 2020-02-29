@@ -1,7 +1,9 @@
 <?php
 
-// The class Prueba belong to the Model.  
-// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
+/**
+ * LA clase Prueba pertenece al Modelo
+ * Los atributos son provados y las funciones publicas para permitir la manipulacion de los valores pero no de la clase
+ */
 
 class Prueba implements \JsonSerializable{
 
@@ -83,8 +85,8 @@ class Prueba implements \JsonSerializable{
     }
 
     /**
-     * Este método devuelve todas las propiedades del objeto Prueba
-     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
+     * Este método devuelve todas las propiedades del objeto Prueba, tanto públicas como privadas como un objeto JSon
+     * Resulta mas rapido y ligero para manipular
      */
     public function jsonSerialize()
     {

@@ -1,3 +1,5 @@
+<!--Pagina con la estructura visual de las entrevistas individuales cuando estas se añaden-->
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap r pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Añadir entrevista individual</h1>
   <div class="btn-toolbar mb-2 mb-md-0">

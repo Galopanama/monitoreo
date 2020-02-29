@@ -1,3 +1,5 @@
+<!--Pagina que contiene la parte visual de la insercion de nuevas pruebas por parte del Tecnologo-->
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap r pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Añadir Prueba</h1>
   <div class="btn-toolbar mb-2 mb-md-0">

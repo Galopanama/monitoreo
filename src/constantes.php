@@ -1,6 +1,8 @@
 <?php
-/** The file constantes will ease the reference to the table's name by assigning constant names and 
- * reduce the time in case that table names change in the future */
+/** 
+ * La clase de Constantes se crea para facilitar las peticiones a la base de datos.
+ * Reduce las lineas de las peticiones a la base de datos y resulta mas facil de mantener
+ */
 
 class Constantes {
 

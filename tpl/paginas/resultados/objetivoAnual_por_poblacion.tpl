@@ -1,3 +1,7 @@
+<!--Introduccion a la parte visual de los objetivos anuales por organizacion
+Explicado con anterioridad, esta funcinoalidad esta en proceso, aunque innacabada
+El codigo se puede utilizar o deshechar-->
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Personas Alcanzadas </h1>
   <div class="btn-toolbar mb-2 mb-md-0">

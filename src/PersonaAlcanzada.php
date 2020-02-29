@@ -1,6 +1,13 @@
 <?php
-// The class Alcanzada belong to the Model.  
-// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
+
+/**
+ * La clase PersoanAlcnazada pertenece al Modelo
+ * Es una clase hija de PersonaReceptora, por lo que hereda todos los atributos de esta, añadiendo algunos propios
+ * Los atributos son prívados y las funciones publicas para permitir la manipulacion de los valores pero no de la clase
+ * 
+ * Se llama a la Clase Entrevista para traer todos sus atributos y métodos
+ */ 
+
 require_once __DIR__ . '/PersonaReceptora.php';
 
 class PersonaAlcanzada extends PersonaReceptora{
@@ -10,10 +17,10 @@ class PersonaAlcanzada extends PersonaReceptora{
 
     public function __construct(
         $id_cedula_persona_receptora, 
-        $fecha_alcanzado,                           // Parece que tengo que poner todos los argumentos que vienen 
-        $region_de_salud,                           // de la clase padre. Aunque realmente yo no los necesito
-        $poblacion_originaria,                      // hay alguna forma para no ponerlos todos 
-        $poblacion,                                 // ...o mas bien la herencia tiene que hacerse aqui solo(linea 20)
+        $fecha_alcanzado,                           
+        $region_de_salud,                           
+        $poblacion_originaria,                       
+        $poblacion,                                 
         $datos_actualizados)
     {
     
@@ -40,9 +47,10 @@ class PersonaAlcanzada extends PersonaReceptora{
     }
 
     /**
-     * Este método devuelve todas las propiedades del objeto Alcanzada, tanto públicas como privadas
-     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the information in a lighter and faster way
+     * Este método devuelve todas las propiedades del objeto PersonaAlcanzada, tanto públicas como privadas como un objeto JSon
+     * Resulta mas rapido y ligero para manipular
      */
+
     public function jsonSerialize()
     {
         $vars = get_object_vars($this);

@@ -1,7 +1,13 @@
 <?php
-// The class EntrevistaGrupal belong to the Model.  
-// It is a child of Entrevista and inherits all the atributes from it 
-// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
+
+/**
+ * La clase EntrevistaGrupal pertenece al Modelo 
+ * Es una clase hija de Entrevista, por lo que hereda todos los atributos de esta, añadiendo algunos propios
+ * Los atributos son prívados y las funciones publicas para permitir la manipulacion de los valores pero no de la clase
+ * 
+ * Se llama a la Clase Entrevista para traer todos sus atributos y métodos
+ */
+
 require_once 'Entrevista.php';
 
 class EntrevistaGrupal extends Entrevista {
@@ -157,8 +163,8 @@ class EntrevistaGrupal extends Entrevista {
     }
 
     /**
-     * Este método devuelve todas las propiedades del objeto Entrevista, tanto públicas como privadas
-     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
+     * Este método devuelve todas las propiedades del objeto EntrevistaGrupal, tanto públicas como privadas como un objeto JSon
+     * Resulta mas rapido y ligero para manipular
      */
     public function jsonSerialize()
     {

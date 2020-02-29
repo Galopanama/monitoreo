@@ -1,6 +1,10 @@
 <?php
-// The class PersonaReceptora belong to the Model.  
-// The atributes are private and the functions public in order to allow the manipulation of the value of the instances and not the class
+
+/**
+ * LA clase PersonaReceptora pertenece al Modelo
+ * Los atributos son privados y las funciones públicas para permitir la manipulacion de los valores pero no de la clase
+ */
+
 
 class PersonaReceptora implements \JsonSerializable{
 
@@ -50,8 +54,8 @@ class PersonaReceptora implements \JsonSerializable{
     }
 
     /**
-     * Este método devuelve todas las propiedades del objeto Usuario, tanto públicas como privadas
-     * The method json Serialize return all the attributes of the object class. It is needed to maniplate the infromation in a lighter and faster way
+     * Este método devuelve todas las propiedades del objeto PersonaReceptora, tanto públicas como privadas como un objeto JSon
+     * Resulta mas rapido y ligero para manipular
      */
     public function jsonSerialize()
     {
