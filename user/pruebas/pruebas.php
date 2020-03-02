@@ -1,4 +1,7 @@
 <?php
+/**
+ * Desde este fichero se interactua con la respuetas del servidor a las peticiones de las Pruebas
+ */
 
 require_once __DIR__ . '/../../config/config.php';
 

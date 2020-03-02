@@ -29,7 +29,8 @@ switch($_POST['funcion']){
 }
 
 
-/** Devuelve la informacion de las PersonasAlcanzadas
+/** 
+ * Devuelve la informacion de las PersonasAlcanzadas
  * que vamos a utilizar para llevar a los graficos
  */
 function getPersonasAlcanzadas() {

@@ -114,6 +114,8 @@ if (!empty($_POST['id_cedula_persona_receptora_buscada'])) {
             catch (Exception $e) {
                 $errores[] = $e->getMessage();
             }
+
+            if (empty($errores)){
                 // Si no hay errores se devolvera un mensaje de exito
                 // y se direcciona al usuario a la pagina donde se muestra la lista de resultados
                 $_SESSION['exito_titulo'] = "Entrevista añadida con éxito";

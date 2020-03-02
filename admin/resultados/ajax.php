@@ -1,22 +1,20 @@
 <?php
 /**
- * This file returns all the interviews from the individuals and groups 
- * The information can it can be searched by the organisantions' name as well as just the name of the Promotor
+ * Este fichero devuelve la informacion de las Personas Alcanzadas al Adinsitrador 
+ * Y puede alojar la funcion que devuelva los resultados de las Pruebas  
  */
 require_once __DIR__ . '/../../config/config.php';
 // Restringimos el acceso sólo a usuarios administrador
-// it is only permited the access to the user 'administrador'
 $perfiles_aceptados = array('administrador');
 require_once __DIR__ . '/../../security/autorizador.php';
+
 // Llama a los siguientes archivos del Modelo
-// Call the files from the Model
 require_once __DIR__ . '/../../src/Usuarios.php';
 require_once __DIR__ . '/../../src/PersonasAlcanzadas.php';
 
 
-//the user can retrieve the information of all the interviews. 
-//The information return as an Json object
-
+// El usuario recupera la informacion de las personas Alcanzadas 
+// La informacion se devuelve en un objeto JSon
 switch($_POST['funcion']){
     case "getPersonasAlcanzadas":
         echo json_encode(getPersonasAlcanzadas());
@@ -29,7 +27,8 @@ switch($_POST['funcion']){
 }
 
 
-/** Devuelve la informacion de las PersonasAlcanzadas
+/** 
+ * Devuelve la informacion de las PersonasAlcanzadas
  * que vamos a utilizar para llevar a los graficos
  */
 function getPersonasAlcanzadas() {
@@ -37,7 +36,8 @@ function getPersonasAlcanzadas() {
     return ($personas);   
 }
 
-/** devuleve al informacion de las PurebasRealizadas
+/** 
+ * devuleve al informacion de las PurebasRealizadas
  * que vamos a utlizar para llevar a los graficos
  */
 

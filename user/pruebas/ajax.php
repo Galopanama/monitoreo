@@ -1,7 +1,7 @@
 <?php
 /**
- * This file returns all the pruebas from the pruebas
- * The information can it can be searched by the organisantions' name as well as just the name of the Tecnologo
+ * Desde este fichero se accede a todas las pruebas
+ * La informacion puede ser revisada por los subrecptores al igual que por los tecnologos
  */
 require_once __DIR__ . '/../../config/config.php';
 

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Desde este fichero se van a manejar las respuesta de la base de datos y la visualizacion de mensajes 
+ * para con el usuario Subreceptor
+ */
 
 require_once __DIR__ . '/../../config/config.php';
 
